@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Money Concept — Guía Completa ICT/FVG</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050810;
+    --bg2: #0a0f1e;
+    --bg3: #0e1428;
+    --panel: #111827;
+    --panel2: #161d2e;
+    --border: #1e2d4a;
+    --accent1: #00e5ff;
+    --accent2: #ff6b35;
+    --accent3: #a855f7;
+    --accent4: #10b981;
+    --accent5: #f59e0b;
+    --red: #ef4444;
+    --green: #22c55e;
+    --text: #e2e8f0;
+    --text2: #94a3b8;
+    --text3: #64748b;
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.7; overflow-x: hidden; }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(5,8,16,0.93); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; height: 54px; overflow-x: auto; gap: 0; }
+  nav a { color: var(--text2); text-decoration: none; font-family: var(--font-mono); font-size: 11px; letter-spacing: .05em; padding: 0 14px; height: 54px; display: flex; align-items: center; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .2s, border-color .2s; }
+  nav a:hover { color: var(--accent1); border-bottom-color: var(--accent1); }
+  nav .logo { font-family: var(--font-display); font-weight: 800; font-size: 14px; color: var(--accent1); margin-right: 1.5rem; letter-spacing: .1em; border: none !important; padding-left: 0; }
+  .hero { position: relative; padding: 5rem 2rem 4rem; text-align: center; overflow: hidden; }
+  .hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(0,229,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,.04) 1px, transparent 1px); background-size: 40px 40px; }
+  .hero-glow { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 800px; height: 400px; border-radius: 50%; background: radial-gradient(ellipse, rgba(0,229,255,.15) 0%, transparent 70%); z-index: 0; pointer-events: none; }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero-badge { display: inline-block; background: rgba(0,229,255,.1); border: 1px solid rgba(0,229,255,.3); color: var(--accent1); font-family: var(--font-mono); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 1.5rem; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; background: linear-gradient(135deg, #fff 0%, var(--accent1) 50%, var(--accent3) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+  .hero p { color: var(--text2); font-size: 1.05rem; max-width: 580px; margin: 0 auto 2rem; }
+  .hero-tags { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; }
+  .hero-tag { background: var(--panel2); border: 1px solid var(--border); color: var(--text2); font-size: 12px; font-family: var(--font-mono); padding: 4px 12px; border-radius: 4px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .section { padding: 4rem 0; }
+  .section + .section { border-top: 1px solid var(--border); }
+  .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2.5rem; }
+  .section-number { font-family: var(--font-mono); font-size: 11px; color: var(--accent1); border: 1px solid var(--accent1); padding: 3px 8px; border-radius: 3px; letter-spacing: .1em; flex-shrink: 0; }
+  .section-header h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: #fff; }
+  .section-header h2 span { color: var(--accent1); }
+  .card-grid { display: grid; gap: 1.2rem; }
+  .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: border-color .2s, transform .2s; position: relative; overflow: hidden; }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--card-accent, var(--accent1)); }
+  .card:hover { border-color: var(--card-accent, var(--accent1)); transform: translateY(-2px); }
+  .card-icon { font-size: 1.8rem; margin-bottom: .8rem; }
+  .card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: #fff; margin-bottom: .5rem; }
+  .card p { color: var(--text2); font-size: .88rem; line-height: 1.6; }
+  .concept-block { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; }
+  .concept-block h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+  .tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; padding: 2px 8px; border-radius: 3px; font-weight: 400; }
+  .tag-cyan  { background: rgba(0,229,255,.15);  color: var(--accent1); border: 1px solid rgba(0,229,255,.3); }
+  .tag-orange{ background: rgba(255,107,53,.15); color: var(--accent2); border: 1px solid rgba(255,107,53,.3); }
+  .tag-purple{ background: rgba(168,85,247,.15); color: var(--accent3); border: 1px solid rgba(168,85,247,.3); }
+  .tag-green { background: rgba(16,185,129,.15); color: var(--accent4); border: 1px solid rgba(16,185,129,.3); }
+  .tag-amber { background: rgba(245,158,11,.15); color: var(--accent5); border: 1px solid rgba(245,158,11,.3); }
+  .tag-red   { background: rgba(239,68,68,.15);  color: var(--red);     border: 1px solid rgba(239,68,68,.3); }
+  .bullet-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; margin-top: .8rem; }
+  .bullet-list li { padding-left: 1.4rem; position: relative; color: var(--text2); font-size: .9rem; }
+  .bullet-list li::before { content: '▸'; position: absolute; left: 0; color: var(--bullet-color, var(--accent1)); font-size: .7rem; top: .15em; }
+  .bullet-list li strong { color: var(--text); }
+  .highlight { background: rgba(0,229,255,.06); border-left: 3px solid var(--accent1); border-radius: 0 8px 8px 0; padding: 1rem 1.2rem; color: var(--text2); font-size: .9rem; margin: 1rem 0; }
+  .highlight.orange { background: rgba(255,107,53,.06); border-color: var(--accent2); }
+  .highlight.purple { background: rgba(168,85,247,.06); border-color: var(--accent3); }
+  .highlight.green  { background: rgba(16,185,129,.06); border-color: var(--accent4); }
+  .highlight.amber  { background: rgba(245,158,11,.06); border-color: var(--accent5); }
+  .highlight.red    { background: rgba(239,68,68,.06);  border-color: var(--red); }
+  .chart-wrap { background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; overflow: hidden; }
+  .chart-label { font-family: var(--font-mono); font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1rem; }
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step { display: flex; gap: 1.2rem; padding: 1.2rem 0; border-bottom: 1px dashed var(--border); }
+  .step:last-child { border-bottom: none; }
+  .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent1); color: #000; font-family: var(--font-display); font-weight: 800; font-size: .85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-content h4 { font-family: var(--font-display); font-weight: 700; color: #fff; margin-bottom: .3rem; }
+  .step-content p { color: var(--text2); font-size: .88rem; }
+  .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .pros { background: var(--panel); border-radius: 10px; padding: 1.2rem; border: 1px solid var(--border); border-top: 2px solid var(--green); }
+  .cons { background: var(--panel); border-radius: 10px; padding: 1.2rem; border: 1px solid var(--border); border-top: 2px solid var(--red); }
+  .pros h4 { color: var(--green); font-family: var(--font-display); font-size: .95rem; margin-bottom: .8rem; }
+  .cons h4 { color: var(--red); font-family: var(--font-display); font-size: .95rem; margin-bottom: .8rem; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.2rem 0; }
+  .faq-q { font-family: var(--font-display); font-weight: 700; font-size: .95rem; color: var(--accent1); margin-bottom: .5rem; }
+  .faq-a { color: var(--text2); font-size: .88rem; }
+  .quote-box { background: linear-gradient(135deg, rgba(168,85,247,.1), rgba(0,229,255,.06)); border: 1px solid rgba(168,85,247,.3); border-radius: 12px; padding: 1.8rem 2rem; text-align: center; margin: 2rem 0; }
+  .quote-text { font-family: var(--font-display); font-size: 1.1rem; color: #fff; font-weight: 700; line-height: 1.5; }
+  .quote-sub { color: var(--text3); font-size: .8rem; margin-top: .6rem; font-family: var(--font-mono); }
+  .ind-card { background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; padding: 1.3rem; border-top-width: 2px; }
+  .ind-card h4 { color: #fff; font-family: var(--font-display); font-weight: 700; font-size: .95rem; margin-bottom: .4rem; }
+  .ind-card p { color: var(--text2); font-size: .85rem; }
+  @media (max-width: 640px) { .pros-cons { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg2); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">SMC ◈ ICT</span>
+  <a href="#estructura">Estructura</a>
+  <a href="#bos">BOS &amp; ChOCh</a>
+  <a href="#fvg">Fair Value Gap</a>
+  <a href="#liquidez">Liquidez</a>
+  <a href="#indicadores">Indicadores</a>
+  <a href="#estrategia">Estrategia</a>
+  <a href="#faq">FAQ</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge">ICT · Smart Money Concept · Guía Completa</div>
+    <h1>Dinero Inteligente:<br>Estructura, FVG y Liquidez</h1>
+    <p>Guía educativa avanzada basada en el concepto Smart Money de Michael Huddleston (ICT) — estructura de mercado, Fair Value Gaps, liquidez y cómo operarlos con precisión institucional.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Break of Structure</span>
+      <span class="hero-tag">Change of Character</span>
+      <span class="hero-tag">Fair Value Gap</span>
+      <span class="hero-tag">Liquidez / SSL / BSL</span>
+      <span class="hero-tag">Order Blocks</span>
+      <span class="hero-tag">ATAS Platform</span>
+    </div>
+  </div>
+</header>
+
+<!-- 01 QUÉ ES SMC -->
+<section class="section" id="estructura">
+<div class="container">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2>¿Qué es el <span>Smart Money Concept</span>?</h2>
+  </div>
+  <div class="card-grid card-grid-3" style="margin-bottom:2rem">
+    <div class="card" style="--card-accent:#00e5ff">
+      <div class="card-icon">🏦</div>
+      <h3>Origen y Creador</h3>
+      <p>Desarrollado por el trader y analista americano <strong>Michael Huddleston</strong>, conocido como <em>The Inner Circle Trader (ICT)</em>. Popularizó el concepto a través de YouTube.</p>
+    </div>
+    <div class="card" style="--card-accent:#a855f7">
+      <div class="card-icon">🎯</div>
+      <h3>Filosofía Central</h3>
+      <p>El mercado no es aleatorio. Los grandes jugadores institucionales (bancos, fondos de cobertura) manipulan el precio para <strong>recoger liquidez</strong> antes de mover en su dirección real.</p>
+    </div>
+    <div class="card" style="--card-accent:#ff6b35">
+      <div class="card-icon">📐</div>
+      <h3>Los 3 Pilares</h3>
+      <p>El concepto se basa en: <strong>Estructura de Mercado</strong> (BOS/ChOCh), <strong>Fair Value Gaps</strong> (zonas de desequilibrio) y <strong>Liquidez</strong> (caza de stop losses).</p>
+    </div>
+  </div>
+  <div class="highlight">
+    <strong>Aplicabilidad:</strong> Aunque ICT prefiere no operar con criptomonedas, el patrón es aplicable en cualquier marco temporal y mercado: Forex, acciones, materias primas, futuros de índices (NQ, ES, GC, oro, plata).
+  </div>
+</div>
+</section>
+
+<!-- 02 BOS & ChOCh -->
+<section class="section" id="bos">
+<div class="container">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2>Estructura de Mercado: <span>BOS &amp; ChOCh</span></h2>
+  </div>
+
+  <p style="color:var(--text2); margin-bottom:1.5rem">Una de las preguntas más importantes al operar es: <strong style="color:#fff">¿en qué dirección abrir una posición?</strong> El SMC usa dos métodos para determinar la estructura del mercado.</p>
+
+  <!-- BOS -->
+  <div class="concept-block">
+    <h3>Break of Structure (BOS) <span class="tag tag-cyan">CONTINUACIÓN DE TENDENCIA</span></h3>
+    <p style="color:var(--text2); margin-bottom:1.2rem">El mercado crea un patrón de <strong>impulso → corrección → impulso → corrección</strong>. El BOS confirma que la tendencia sigue vigente al romper el swing previo en la misma dirección.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-label">▸ BOS Alcista — Serie de Higher Highs (HH) + Higher Lows (HL)</div>
+      <svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:230px">
+        <defs>
+          <pattern id="g1" width="70" height="46" patternUnits="userSpaceOnUse">
+            <path d="M 70 0 L 0 0 0 46" fill="none" stroke="#1e2d4a" stroke-width=".5"/>
+          </pattern>
+        </defs>
+        <rect width="700" height="230" fill="#0e1428"/>
+        <rect width="700" height="230" fill="url(#g1)"/>
+        <!-- precio zigzag alcista -->
+        <polyline points="30,195 110,148 160,168 245,105 295,130 385,68 425,95 510,44 555,62 640,22"
+          fill="none" stroke="#00e5ff" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- HH -->
+        <line x1="110" y1="148" x2="110" y2="115" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="100" y="112" fill="#22c55e" font-size="9" font-family="Space Mono">HH1</text>
+        <line x1="245" y1="105" x2="245" y2="72" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="235" y="69" fill="#22c55e" font-size="9" font-family="Space Mono">HH2</text>
+        <line x1="385" y1="68" x2="385" y2="35" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="375" y="32" fill="#22c55e" font-size="9" font-family="Space Mono">HH3</text>
+        <line x1="510" y1="44" x2="510" y2="11" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="500" y="10" fill="#22c55e" font-size="9" font-family="Space Mono">HH4</text>
+        <!-- HL -->
+        <line x1="160" y1="168" x2="160" y2="200" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="148" y="213" fill="#ef4444" font-size="9" font-family="Space Mono">HL1</text>
+        <line x1="295" y1="130" x2="295" y2="162" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="283" y="175" fill="#ef4444" font-size="9" font-family="Space Mono">HL2</text>
+        <line x1="425" y1="95" x2="425" y2="127" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="413" y="140" fill="#ef4444" font-size="9" font-family="Space Mono">HL3</text>
+        <!-- BOS labels -->
+        <rect x="168" y="90" width="60" height="17" rx="3" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width=".8"/>
+        <text x="172" y="102" fill="#22c55e" font-size="9" font-family="Space Mono">BOS ↑</text>
+        <rect x="305" y="52" width="60" height="17" rx="3" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width=".8"/>
+        <text x="309" y="64" fill="#22c55e" font-size="9" font-family="Space Mono">BOS ↑</text>
+        <rect x="435" y="30" width="60" height="17" rx="3" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width=".8"/>
+        <text x="439" y="42" fill="#22c55e" font-size="9" font-family="Space Mono">BOS ↑</text>
+        <text x="16" y="224" fill="#64748b" font-size="8.5" font-family="Space Mono">Los HL permanecen intactos → tendencia alcista confirmada</text>
+      </svg>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+      <div>
+        <p style="color:var(--accent4);font-family:var(--font-mono);font-size:.8rem;margin-bottom:.5rem">▸ TENDENCIA ALCISTA</p>
+        <ul class="bullet-list" style="--bullet-color:var(--accent4)">
+          <li>Serie de <strong>Higher Highs (HH)</strong> — máximos ascendentes</li>
+          <li>Serie de <strong>Higher Lows (HL)</strong> — mínimos ascendentes</li>
+          <li>BOS cuando el precio rompe un HH previo</li>
+          <li>Los niveles rojos (swing lows) deben permanecer intactos</li>
+        </ul>
+      </div>
+      <div>
+        <p style="color:var(--red);font-family:var(--font-mono);font-size:.8rem;margin-bottom:.5rem">▸ TENDENCIA BAJISTA</p>
+        <ul class="bullet-list" style="--bullet-color:var(--red)">
+          <li>Serie de <strong>Lower Lows (LL)</strong> — mínimos descendentes</li>
+          <li>Serie de <strong>Lower Highs (LH)</strong> — máximos descendentes</li>
+          <li>BOS cuando el precio rompe un LL previo</li>
+          <li>Los niveles verdes (swing highs) deben permanecer intactos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ChOCh -->
+  <div class="concept-block">
+    <h3>Change of Character (ChOCh) <span class="tag tag-orange">SEÑAL DE REVERSIÓN</span></h3>
+    <p style="color:var(--text2); margin-bottom:1.2rem">El ChOCh indica un <strong>cambio de tendencia</strong>: un cambio en el comportamiento del mercado o una nueva fase del sentimiento causada por actividad institucional. Es el proceso <em>inverso</em> al BOS.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-label">▸ ChOCh — Debilitamiento de tendencia bajista → Señal de reversión alcista</div>
+      <svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:230px">
+        <rect width="700" height="230" fill="#0e1428"/>
+        <rect width="700" height="230" fill="url(#g1)"/>
+        <!-- Bajista -->
+        <polyline points="30,40 100,82 155,58 235,125 285,95 365,158 405,128 465,185 510,168"
+          fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- LH labels -->
+        <text x="90" y="100" fill="#ef4444" font-size="9" font-family="Space Mono">LH1</text>
+        <text x="225" y="143" fill="#ef4444" font-size="9" font-family="Space Mono">LH2</text>
+        <text x="355" y="175" fill="#ef4444" font-size="9" font-family="Space Mono">LH3</text>
+        <!-- LL labels -->
+        <text x="143" y="52" fill="#64748b" font-size="9" font-family="Space Mono">LL1</text>
+        <text x="273" y="88" fill="#64748b" font-size="9" font-family="Space Mono">LL2</text>
+        <text x="393" y="120" fill="#64748b" font-size="9" font-family="Space Mono">LL3</text>
+        <!-- Reversión (verde punteado) -->
+        <polyline points="510,168 548,142 585,152 645,98 685,112"
+          fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="7,3"/>
+        <!-- ChOCh zona -->
+        <rect x="496" y="100" width="104" height="82" rx="5" fill="rgba(245,158,11,.08)" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="4,2"/>
+        <text x="518" y="94" fill="#f59e0b" font-size="10" font-family="Space Mono" font-weight="bold">ChOCh ↑</text>
+        <text x="502" y="140" fill="#f59e0b" font-size="8.5" font-family="Space Mono">LH roto</text>
+        <text x="502" y="155" fill="#f59e0b" font-size="8.5" font-family="Space Mono">LL intacto</text>
+        <text x="16" y="222" fill="#64748b" font-size="8.5" font-family="Space Mono">El precio rompe el último LH sin hacer nuevo LL → potencial reversión alcista</text>
+      </svg>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+      <div class="highlight green" style="margin:0">
+        <strong style="color:var(--green)">ChOCh Alcista:</strong> En tendencia bajista, el precio rompe el último <em>máximo (LH)</em> sin haber roto antes el swing low más cercano. Las líneas verdes se eliminan pero las rojas permanecen.
+      </div>
+      <div class="highlight orange" style="margin:0">
+        <strong style="color:var(--accent2)">ChOCh Bajista:</strong> En tendencia alcista, el precio rompe el último <em>mínimo (HL)</em> sin haber formado un máximo más alto. Los niveles rojos se rompen pero los verdes permanecen.
+      </div>
+    </div>
+    <div class="highlight amber">
+      💡 <strong>Estrategia combinada:</strong> Si combinas los Order Blocks con el ChOCh — entrando sólo cuando se produce un ChOCh — obtienes una base sólida y de alta precisión. La estrategia price action <strong>Quasimodo</strong> se basa precisamente en el Change of Character.
+    </div>
+  </div>
+
+  <!-- Indicador Fractals -->
+  <div class="concept-block" style="padding:1.5rem">
+    <h3>🔧 Indicador Fractals (ATAS) <span class="tag tag-purple">HERRAMIENTA CLAVE</span></h3>
+    <p style="color:var(--text2);margin-bottom:1rem">Muestra automáticamente los swing highs y swing lows del mercado. Ajústalo con puntos transparentes y visualización de líneas para identificar la estructura visualmente.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
+      <div style="background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:1rem;border-left:3px solid var(--green)">
+        <h4 style="color:var(--green);font-family:var(--font-display);font-size:.9rem;margin-bottom:.4rem">Señal LONG ↑</h4>
+        <p style="color:var(--text2);font-size:.85rem">Busca entradas largas si el precio rompe los <strong>niveles verdes</strong> (swing highs) mientras los rojos (swing lows) permanecen intactos.</p>
+      </div>
+      <div style="background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:1rem;border-left:3px solid var(--red)">
+        <h4 style="color:var(--red);font-family:var(--font-display);font-size:.9rem;margin-bottom:.4rem">Señal SHORT ↓</h4>
+        <p style="color:var(--text2);font-size:.85rem">Abre posiciones cortas sólo si las velas rompen los <strong>niveles rojos</strong> (swing lows) pero dejan intactos los verdes (swing highs).</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 03 FVG -->
+<section class="section" id="fvg">
+<div class="container">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2>Fair Value Gap <span>(FVG)</span> — La Brecha</h2>
+  </div>
+
+  <p style="color:var(--text2);margin-bottom:1.5rem">Los <strong style="color:#fff">Fair Value Gaps (FVG)</strong> son movimientos impulsivos del precio causados por un desequilibrio de fuerzas entre compradores y vendedores. Fueron desarrollados por Michael Huddleston (ICT) como parte del Smart Money Concept.</p>
+
+  <!-- Definición -->
+  <div class="concept-block">
+    <h3>Definición del Patrón <span class="tag tag-cyan">3 VELAS</span></h3>
+    <p style="color:var(--text2);margin-bottom:1.2rem">Un FVG es un patrón formado por <strong>3 velas</strong> en el que existe una brecha entre la primera y la tercera vela que la vela central no cubre. Las mechas y cuerpos de la primera y tercera vela <strong>no se superponen ni se tocan</strong>.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-label">▸ FVG Alcista (izquierda) — FVG Bajista (derecha)</div>
+      <svg viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:270px">
+        <rect width="700" height="270" fill="#0e1428"/>
+        <rect width="700" height="270" fill="url(#g1)"/>
+        <!-- === FVG ALCISTA === -->
+        <!-- Vela 1 -->
+        <line x1="90" y1="182" x2="90" y2="195" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="78" y="195" width="24" height="48" rx="2" fill="rgba(34,197,94,.35)" stroke="#22c55e" stroke-width="1.5"/>
+        <line x1="90" y1="243" x2="90" y2="252" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="68" y="175" fill="#94a3b8" font-size="9.5" font-family="Space Mono">Vela 1</text>
+        <!-- HIGH vela 1 -->
+        <line x1="102" y1="182" x2="310" y2="182" stroke="#22c55e" stroke-width=".8" stroke-dasharray="5,3"/>
+        <text x="318" y="186" fill="#22c55e" font-size="8.5" font-family="Space Mono">High V1</text>
+        <!-- Vela 2 grande -->
+        <line x1="170" y1="118" x2="170" y2="130" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="158" y="130" width="24" height="120" rx="2" fill="rgba(34,197,94,.55)" stroke="#22c55e" stroke-width="1.5"/>
+        <line x1="170" y1="250" x2="170" y2="260" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="150" y="112" fill="#94a3b8" font-size="9.5" font-family="Space Mono">Vela 2</text>
+        <!-- Vela 3 -->
+        <line x1="250" y1="95" x2="250" y2="108" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="238" y="108" width="24" height="58" rx="2" fill="rgba(34,197,94,.35)" stroke="#22c55e" stroke-width="1.5"/>
+        <line x1="250" y1="166" x2="250" y2="178" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="230" y="90" fill="#94a3b8" font-size="9.5" font-family="Space Mono">Vela 3</text>
+        <!-- LOW vela 3 -->
+        <line x1="238" y1="166" x2="70" y2="166" stroke="#ef4444" stroke-width=".8" stroke-dasharray="5,3"/>
+        <text x="18" y="170" fill="#ef4444" font-size="8.5" font-family="Space Mono">Low V3</text>
+        <!-- FVG zona alcista -->
+        <rect x="66" y="166" width="260" height="16" rx="3" fill="rgba(245,158,11,.28)" stroke="#f59e0b" stroke-width="1.3"/>
+        <text x="105" y="178" fill="#f59e0b" font-size="10" font-family="Space Mono" font-weight="bold">◈ FVG ALCISTA (brecha)</text>
+        <text x="66" y="225" fill="#64748b" font-size="8" font-family="Space Mono">Brecha = High V1 — Low V3</text>
+
+        <!-- separador -->
+        <line x1="370" y1="15" x2="370" y2="260" stroke="#1e2d4a" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+        <!-- === FVG BAJISTA === -->
+        <!-- Vela 1 -->
+        <line x1="420" y1="46" x2="420" y2="58" stroke="#ef4444" stroke-width="1.5"/>
+        <rect x="408" y="58" width="24" height="62" rx="2" fill="rgba(239,68,68,.35)" stroke="#ef4444" stroke-width="1.5"/>
+        <line x1="420" y1="120" x2="420" y2="132" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="400" y="40" fill="#94a3b8" font-size="9.5" font-family="Space Mono">Vela 1</text>
+        <!-- LOW vela 1 -->
+        <line x1="408" y1="120" x2="610" y2="120" stroke="#ef4444" stroke-width=".8" stroke-dasharray="5,3"/>
+        <text x="618" y="124" fill="#ef4444" font-size="8.5" font-family="Space Mono">Low V1</text>
+        <!-- Vela 2 grande -->
+        <line x1="500" y1="62" x2="500" y2="75" stroke="#ef4444" stroke-width="1.5"/>
+        <rect x="488" y="75" width="24" height="140" rx="2" fill="rgba(239,68,68,.55)" stroke="#ef4444" stroke-width="1.5"/>
+        <line x1="500" y1="215" x2="500" y2="228" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="480" y="56" fill="#94a3b8" font-size="9.5" font-family="Space Mono">Vela 2</text>
+        <!-- Vela 3 -->
+        <line x1="580" y1="132" x2="580" y2="146" stroke="#ef4444" stroke-width="1.5"/>
+        <rect x="568" y="146" width="24" height="70" rx="2" fill="rgba(239,68,68,.35)" stroke="#ef4444" stroke-width="1.5"/>
+        <line x1="580" y1="216" x2="580" y2="228" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="560" y="126" fill="#94a3b8" font-size="9.5" font-family="Space Mono">Vela 3</text>
+        <!-- HIGH vela 3 -->
+        <line x1="592" y1="132" x2="398" y2="132" stroke="#22c55e" stroke-width=".8" stroke-dasharray="5,3"/>
+        <text x="380" y="130" fill="#22c55e" font-size="8.5" font-family="Space Mono">High V3</text>
+        <!-- FVG zona bajista -->
+        <rect x="396" y="120" width="230" height="12" rx="3" fill="rgba(245,158,11,.28)" stroke="#f59e0b" stroke-width="1.3"/>
+        <text x="430" y="130" fill="#f59e0b" font-size="10" font-family="Space Mono" font-weight="bold">◈ FVG BAJISTA</text>
+        <text x="398" y="248" fill="#64748b" font-size="8" font-family="Space Mono">Brecha = Low V1 — High V3</text>
+      </svg>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+      <div class="highlight green" style="margin:0">
+        <strong style="color:var(--green)">FVG Alcista:</strong> Brecha entre el <em>máximo de la Vela 1</em> y el <em>mínimo de la Vela 3</em>, formada en un movimiento ascendente. Las velas externas no se solapan.
+      </div>
+      <div class="highlight red" style="margin:0">
+        <strong style="color:var(--red)">FVG Bajista:</strong> Brecha entre el <em>mínimo de la Vela 1</em> y el <em>máximo de la Vela 3</em>, formada en un movimiento descendente. El principio es el mismo, invertido.
+      </div>
+    </div>
+  </div>
+
+  <!-- Significado -->
+  <div class="concept-block">
+    <h3>¿Qué significa un FVG? <span class="tag tag-amber">DESEQUILIBRIO INSTITUCIONAL</span></h3>
+    <p style="color:var(--text2);margin-bottom:1rem">El FVG es el área donde el precio se movió tan rápido que <strong>apenas hizo retrocesos</strong>. Es un salto de precio, un desequilibrio. Suele aparecer tras un <em>range</em> (zona de velas superpuestas) donde el Smart Money acumula posiciones.</p>
+    <ul class="bullet-list" style="--bullet-color:var(--accent5)">
+      <li><strong>Zona de máxima agresividad</strong> — el mercado está completamente dominado por compradores o vendedores.</li>
+      <li><strong>Huella institucional</strong> — si un gran hedge fund vende cientos de miles de contratos, puede causar una brecha en el mercado.</li>
+      <li><strong>Stop Loss como combustible</strong> — el bando opuesto intenta escapar activando sus stops, lo que acelera aún más el movimiento.</li>
+      <li><strong>Órdenes limitadas no ejecutadas</strong> — quedan órdenes pendientes dentro del FVG que actúan como freno cuando el precio regresa.</li>
+    </ul>
+    <div class="highlight amber">
+      💡 Un FVG suele aparecer después de un <strong>range</strong>. Una vez que el Smart Money llena sus posiciones en el range, comienza la tendencia de forma muy agresiva dejando el FVG como huella del desequilibrio.
+    </div>
+  </div>
+
+  <!-- 2 matices operativos -->
+  <h3 style="font-family:var(--font-display);font-size:1.15rem;color:#fff;margin-bottom:1rem">Los 2 Matices Operativos del FVG</h3>
+  <div class="card-grid card-grid-2">
+    <div class="card" style="--card-accent:var(--accent4)">
+      <div class="card-icon">1️⃣</div>
+      <h3>FVG como Order Block Reforzado</h3>
+      <p>El gap sirve como punto de referencia donde se produjo la acumulación antes de la brecha, indicando dónde construir un Order Block. Un OB que se forma <em>antes del FVG</em> es más fuerte que uno normal.</p>
+      <div class="highlight green" style="margin-top:.8rem;font-size:.83rem">
+        Si el precio vuelve y sobrevuela la zona del OB, puede convertirse en <strong>Breaker Block</strong> — señal para posición corta. La presencia del FVG amplifica la señal.
+      </div>
+    </div>
+    <div class="card" style="--card-accent:var(--accent1)">
+      <div class="card-icon">2️⃣</div>
+      <h3>FVG como Imán del Precio</h3>
+      <p>Al precio le gusta volver al FVG para <strong>"llenar volumen"</strong>. Al regresar, suele rango brevemente y luego continúa en la dirección original del impulso.</p>
+      <div class="highlight" style="margin-top:.8rem;font-size:.83rem">
+        Úsalo como <strong>objetivo de take profit</strong> y como <strong>zona de entrada</strong>. Es un soporte o resistencia fuerte dependiendo de por qué lado entre el precio.
+      </div>
+    </div>
+  </div>
+
+  <!-- SVG: Secuencia completa -->
+  <div class="chart-wrap" style="margin-top:1.5rem">
+    <div class="chart-label">▸ Secuencia operativa: Range → Impulso + FVG → Retorno → ChOCh → Long</div>
+    <svg viewBox="0 0 720 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:210px">
+      <rect width="720" height="210" fill="#0e1428"/>
+      <rect width="720" height="210" fill="url(#g1)"/>
+      <!-- Range -->
+      <rect x="15" y="85" width="150" height="62" rx="4" fill="rgba(100,116,139,.07)" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="40" y="78" fill="#64748b" font-size="8.5" font-family="Space Mono">① RANGE (acumulación)</text>
+      <rect x="24" y="103" width="14" height="22" rx="1" fill="rgba(34,197,94,.3)" stroke="#22c55e" stroke-width="1"/>
+      <rect x="46" y="99" width="14" height="26" rx="1" fill="rgba(239,68,68,.3)" stroke="#ef4444" stroke-width="1"/>
+      <rect x="68" y="101" width="14" height="22" rx="1" fill="rgba(34,197,94,.3)" stroke="#22c55e" stroke-width="1"/>
+      <rect x="90" y="97" width="14" height="28" rx="1" fill="rgba(239,68,68,.3)" stroke="#ef4444" stroke-width="1"/>
+      <rect x="112" y="99" width="14" height="24" rx="1" fill="rgba(34,197,94,.3)" stroke="#22c55e" stroke-width="1"/>
+      <rect x="134" y="95" width="14" height="28" rx="1" fill="rgba(34,197,94,.3)" stroke="#22c55e" stroke-width="1"/>
+      <!-- Impulso -->
+      <rect x="180" y="60" width="20" height="80" rx="1" fill="rgba(34,197,94,.55)" stroke="#22c55e" stroke-width="1.5"/>
+      <line x1="190" y1="50" x2="190" y2="60" stroke="#22c55e" stroke-width="1.5"/>
+      <rect x="208" y="42" width="20" height="78" rx="1" fill="rgba(34,197,94,.55)" stroke="#22c55e" stroke-width="1.5"/>
+      <rect x="236" y="30" width="20" height="66" rx="1" fill="rgba(34,197,94,.55)" stroke="#22c55e" stroke-width="1.5"/>
+      <!-- FVG zona -->
+      <rect x="170" y="96" width="90" height="28" rx="3" fill="rgba(245,158,11,.22)" stroke="#f59e0b" stroke-width="1.2"/>
+      <text x="178" y="114" fill="#f59e0b" font-size="9.5" font-family="Space Mono" font-weight="bold">◈ FVG</text>
+      <text x="170" y="140" fill="#64748b" font-size="8" font-family="Space Mono">② Impulso + FVG</text>
+      <!-- Subida -->
+      <polyline points="256,28 295,18 335,12 370,8"
+        fill="none" stroke="#22c55e" stroke-width="2.2"/>
+      <!-- Retorno -->
+      <polyline points="370,8 405,20 435,40 460,68 476,98"
+        fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <text x="385" y="12" fill="#94a3b8" font-size="8.5" font-family="Space Mono">③ Retorno al FVG</text>
+      <!-- FVG soporte zona -->
+      <rect x="462" y="96" width="72" height="28" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"/>
+      <text x="464" y="92" fill="#f59e0b" font-size="8.5" font-family="Space Mono">◈ soporte</text>
+      <!-- mini range -->
+      <rect x="472" y="107" width="10" height="11" rx="1" fill="rgba(34,197,94,.3)" stroke="#22c55e" stroke-width="1"/>
+      <rect x="486" y="105" width="10" height="13" rx="1" fill="rgba(239,68,68,.3)" stroke="#ef4444" stroke-width="1"/>
+      <rect x="500" y="106" width="10" height="12" rx="1" fill="rgba(34,197,94,.3)" stroke="#22c55e" stroke-width="1"/>
+      <!-- ChOCh label -->
+      <text x="462" y="140" fill="#22c55e" font-size="8.5" font-family="Space Mono">④ ChOCh ↑</text>
+      <!-- Rebote -->
+      <polyline points="510,108 545,88 575,70 615,48 660,28 700,14"
+        fill="none" stroke="#22c55e" stroke-width="2.5"/>
+      <!-- LONG arrow -->
+      <polygon points="510,108 520,96 528,108" fill="#22c55e"/>
+      <text x="534" y="100" fill="#22c55e" font-size="9.5" font-family="Space Mono" font-weight="bold">LONG ↑</text>
+      <text x="534" y="115" fill="#64748b" font-size="8" font-family="Space Mono">⑤ Nuevo impulso</text>
+    </svg>
+  </div>
+
+  <!-- FVG Invertido -->
+  <div class="concept-block" style="margin-top:1.5rem">
+    <h3>FVG Invertido (Inversion FVG) <span class="tag tag-red">INVERSIÓN DE ROL</span></h3>
+    <p style="color:var(--text2)">Un FVG invertido ocurre cuando la zona FVG, anteriormente soporte, <strong>cambia su papel y actúa como resistencia</strong> (o viceversa). Es similar al clásico principio de S/R invertidos al romperse.</p>
+    <ul class="bullet-list" style="--bullet-color:var(--red);margin-top:.8rem">
+      <li>Se produce cuando los alcistas <strong>no consiguen avanzar</strong> después de empujar el precio por encima del FVG.</li>
+      <li>El precio cae de vuelta por debajo de la zona FVG — ésta ahora actúa como <strong>resistencia</strong>.</li>
+      <li>El FVG alcista fallido se convierte en <strong>patrón bajista</strong> confirmado.</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- 04 LIQUIDEZ -->
+<section class="section" id="liquidez">
+<div class="container">
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2>Liquidez — <span>La Caza de Stops</span></h2>
+  </div>
+
+  <div class="quote-box">
+    <div class="quote-text">"Empiece hoy a abrir posiciones donde ayer tenía un stop loss."</div>
+    <div class="quote-sub">— Principio fundamental del Smart Money Concept (ICT)</div>
+  </div>
+
+  <div class="concept-block">
+    <h3>¿Qué es la Liquidez en ICT? <span class="tag tag-purple">CONCEPTO CENTRAL</span></h3>
+    <p style="color:var(--text2);margin-bottom:1rem">En el SMC, la liquidez se refiere a la <strong>acumulación de stop losses y liquidación de posiciones de participantes no informados</strong>. Estas posiciones sirven literalmente de presa fácil para el dinero institucional.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+      <div>
+        <p style="color:var(--accent3);font-family:var(--font-mono);font-size:.8rem;margin-bottom:.6rem">▸ EL PROBLEMA DE LOS GRANDES JUGADORES</p>
+        <ul class="bullet-list" style="--bullet-color:var(--accent3)">
+          <li>Necesitan llenar posiciones enormes — decenas o cientos de miles de contratos.</li>
+          <li>Para que alguien compre, debe haber quien venda. Necesitan contrapartida masiva.</li>
+          <li>Los traders minoristas colocan stops cerca de niveles clave obvios.</li>
+          <li>El Smart Money activa esos stops para conseguir el volumen que necesita.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="color:var(--accent2);font-family:var(--font-mono);font-size:.8rem;margin-bottom:.6rem">▸ DÓNDE SE CONCENTRA LA LIQUIDEZ</p>
+        <ul class="bullet-list" style="--bullet-color:var(--accent2)">
+          <li><strong>Buy-Side Liquidity (BSL)</strong> — por encima de máximos de swing, highs diarios/semanales.</li>
+          <li><strong>Sell-Side Liquidity (SSL)</strong> — por debajo de mínimos de swing, lows mensuales.</li>
+          <li>Extremos de retrocesos en V.</li>
+          <li>Dobles techos y dobles suelos (formaciones clásicas).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SVG stop hunt -->
+  <div class="chart-wrap">
+    <div class="chart-label">▸ Mecanismo de caza de stops — Range → Stop Hunt → FVG → Reversión → Tendencia real</div>
+    <svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:230px">
+      <rect width="720" height="230" fill="#0e1428"/>
+      <rect width="720" height="230" fill="url(#g1)"/>
+      <!-- range box -->
+      <rect x="15" y="85" width="155" height="78" rx="4" fill="rgba(100,116,139,.06)" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+      <!-- Máx range -->
+      <line x1="15" y1="90" x2="610" y2="90" stroke="#22c55e" stroke-width=".8" stroke-dasharray="5,4" opacity=".55"/>
+      <text x="618" y="94" fill="#22c55e" font-size="8" font-family="Space Mono">Máx</text>
+      <!-- Mín range -->
+      <line x1="15" y1="158" x2="480" y2="158" stroke="#ef4444" stroke-width=".8" stroke-dasharray="5,4" opacity=".55"/>
+      <text x="488" y="162" fill="#ef4444" font-size="8" font-family="Space Mono">Mín</text>
+      <!-- Stops label -->
+      <text x="18" y="180" fill="#f59e0b" font-size="8.5" font-family="Space Mono">⚡ STOP LOSSES bajo el range</text>
+      <text x="18" y="195" fill="#64748b" font-size="8" font-family="Space Mono">(traders largos a la espera de ruptura)</text>
+      <!-- velas range -->
+      <rect x="24" y="108" width="15" height="36" rx="1" fill="rgba(34,197,94,.3)" stroke="#22c55e" stroke-width="1"/>
+      <rect x="47" y="103" width="15" height="42" rx="1" fill="rgba(239,68,68,.3)" stroke="#ef4444" stroke-width="1"/>
+      <rect x="70" y="106" width="15" height="38" rx="1" fill="rgba(34,197,94,.3)" stroke="#22c55e" stroke-width="1"/>
+      <rect x="93" y="100" width="15" height="45" rx="1" fill="rgba(239,68,68,.3)" stroke="#ef4444" stroke-width="1"/>
+      <rect x="116" y="104" width="15" height="40" rx="1" fill="rgba(34,197,94,.3)" stroke="#22c55e" stroke-width="1"/>
+      <rect x="139" y="100" width="15" height="44" rx="1" fill="rgba(34,197,94,.3)" stroke="#22c55e" stroke-width="1"/>
+      <!-- Stop hunt vela roja grande -->
+      <rect x="196" y="160" width="22" height="52" rx="1" fill="rgba(239,68,68,.55)" stroke="#ef4444" stroke-width="1.5"/>
+      <line x1="207" y1="152" x2="207" y2="160" stroke="#ef4444" stroke-width="1.5"/>
+      <line x1="207" y1="212" x2="207" y2="222" stroke="#ef4444" stroke-width="1.5"/>
+      <rect x="184" y="150" width="46" height="78" rx="4" fill="rgba(239,68,68,.07)" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3,2"/>
+      <text x="188" y="144" fill="#ef4444" font-size="9.5" font-family="Space Mono" font-weight="bold">STOP HUNT</text>
+      <text x="188" y="238" fill="#ef4444" font-size="8.5" font-family="Space Mono">Activa stops → liquidez para SMC</text>
+      <!-- FVG -->
+      <rect x="235" y="152" width="68" height="18" rx="3" fill="rgba(245,158,11,.2)" stroke="#f59e0b" stroke-width="1"/>
+      <text x="238" y="165" fill="#f59e0b" font-size="9" font-family="Space Mono" font-weight="bold">◈ FVG</text>
+      <!-- Reversión -->
+      <rect x="230" y="98" width="22" height="62" rx="1" fill="rgba(34,197,94,.55)" stroke="#22c55e" stroke-width="1.5"/>
+      <line x1="241" y1="88" x2="241" y2="98" stroke="#22c55e" stroke-width="1.5"/>
+      <rect x="260" y="82" width="22" height="76" rx="1" fill="rgba(34,197,94,.55)" stroke="#22c55e" stroke-width="1.5"/>
+      <rect x="290" y="68" width="22" height="80" rx="1" fill="rgba(34,197,94,.55)" stroke="#22c55e" stroke-width="1.5"/>
+      <!-- Tendencia real -->
+      <polyline points="312,66 360,50 405,36 455,22 510,14 570,8 630,4 690,2"
+        fill="none" stroke="#22c55e" stroke-width="2.5"/>
+      <text x="420" y="38" fill="#22c55e" font-size="9.5" font-family="Space Mono" font-weight="bold">TENDENCIA REAL ↑</text>
+      <polygon points="318,64 325,54 330,66" fill="#22c55e"/>
+      <text x="336" y="58" fill="#22c55e" font-size="9" font-family="Space Mono">SMC entra LONG</text>
+    </svg>
+  </div>
+
+  <!-- 2 preguntas -->
+  <div class="concept-block" style="margin-top:1.5rem">
+    <h3>Las 2 Preguntas Clave del Trader SMC <span class="tag tag-cyan">FRAMEWORK MENTAL</span></h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem">
+      <div class="card" style="--card-accent:var(--accent1)">
+        <div style="font-size:1.5rem;margin-bottom:.5rem">❓</div>
+        <h3>Pregunta 1</h3>
+        <p>«<em>¿Dónde habría colocado mi stop loss en esta posición ayer?</em>»<br><br>
+        Identifica las zonas de concentración de stops de los minoristas. <strong>Esas son las zonas de liquidez</strong> que el Smart Money buscará.</p>
+      </div>
+      <div class="card" style="--card-accent:var(--accent3)">
+        <div style="font-size:1.5rem;margin-bottom:.5rem">🎯</div>
+        <h3>Pregunta 2</h3>
+        <p>«<em>¿Dónde abriré una operación hoy, sabiendo que mi stop proporciona liquidez al Smart Money?</em>»<br><br>
+        Coloca tu stop donde <strong>no haya liquidez institucional</strong> — fuera de las zonas que los grandes jugadores necesitan barrer.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight purple">
+    <strong>Insight clave:</strong> Si aprendes a identificar dónde se concentran los stops de los minoristas, a esperar la reacción inicial (stop hunt), y luego aguardar pacientemente la confirmación (ChOCh), verás lo acertado que estabas. Muchas de las mejores estrategias de trading se basan en la <strong>selección de liquidez</strong>. Los traders de éxito la sitúan en lo más alto de la lista de condiciones para entrar en una posición.
+  </div>
+</div>
+</section>
+
+<!-- 05 INDICADORES -->
+<section class="section" id="indicadores">
+<div class="container">
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2>Indicadores Clave — <span>Plataforma ATAS</span></h2>
+  </div>
+  <p style="color:var(--text2);margin-bottom:1.5rem">ICT opera sin indicadores (sólo con gráfico de velas), pero los usuarios de ATAS disponen de herramientas que <strong>aumentan la precisión y confirmación</strong> del análisis:</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-bottom:1.5rem">
+
+    <div class="ind-card" style="border-top-color:var(--accent1)">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem">
+        <span class="tag tag-cyan">FVG</span>
+        <h4>Indicador Fair Value Gap</h4>
+      </div>
+      <p>Reconoce y marca <strong>automáticamente</strong> las brechas de valor razonable en el gráfico. Permite ajustar transparencia y descripción. Resalta las zonas FVG para identificar soportes/resistencias potenciales al instante.</p>
+    </div>
+
+    <div class="ind-card" style="border-top-color:var(--accent2)">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem">
+        <span class="tag tag-orange">DELTA</span>
+        <h4>Indicador Delta</h4>
+      </div>
+      <p>Muestra los picos positivos y negativos de valor cuando se forma un FVG. Un pico negativo confirma un FVG bajista; un pico positivo confirma un FVG alcista. Confirma la activación de un lado del mercado.</p>
+    </div>
+
+    <div class="ind-card" style="border-top-color:var(--accent4)">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem">
+        <span class="tag tag-green">VOL PROFILE</span>
+        <h4>Perfil de Volumen</h4>
+      </div>
+      <p>Un <strong>perfil estrecho</strong> (pocas operaciones en ese nivel de precio) confirma que el precio cambió rápidamente sin mantenerse — desequilibrio, huella del FVG. Añade dos perfiles de mercado en el momento de formación del FVG.</p>
+    </div>
+
+    <div class="ind-card" style="border-top-color:var(--accent3)">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem">
+        <span class="tag tag-purple">IMBALANCE</span>
+        <h4>Stacked Imbalance</h4>
+      </div>
+      <p>Analiza la relación de compras y ventas entre niveles dentro de una vela. Determina los lugares donde las transacciones de uno de los lados tuvieron mayor ventaja. Barras rojas = dominio vendedor; barras verdes = dominio comprador.</p>
+    </div>
+
+    <div class="ind-card" style="border-top-color:var(--accent5)">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem">
+        <span class="tag tag-amber">FRACTALS</span>
+        <h4>Indicador Fractals</h4>
+      </div>
+      <p>Muestra automáticamente los swing highs (líneas verdes) y swing lows (líneas rojas). Imprescindible para identificar la estructura del mercado (BOS y ChOCh). Ajústalo con puntos transparentes y visualización de líneas.</p>
+    </div>
+
+    <div class="ind-card" style="border-top-color:#e879f9">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem">
+        <span style="background:rgba(232,121,249,.15);color:#e879f9;border:1px solid rgba(232,121,249,.3);font-family:var(--font-mono);font-size:10px;padding:2px 8px;border-radius:3px">FOOTPRINT</span>
+        <h4>Gráfico de Footprint</h4>
+      </div>
+      <p>Muestra las órdenes de compra y venta dentro de cada vela. <strong>Clústeres verdes brillantes</strong> = actividad compradora fuerte; rojos = vendedora. Confirma FVGs, detecta compradores/vendedores atrapados y valida la calidad del desequilibrio.</p>
+    </div>
+
+  </div>
+
+  <div class="highlight amber">
+    <strong>Speed Of Tape:</strong> Indicador adicional útil para detectar FVGs. Cuando se forma el patrón, indicará una <strong>alta velocidad de negociación</strong> — señal adicional de desequilibrio y agresividad institucional en ese nivel de precio.
+  </div>
+</div>
+</section>
+
+<!-- 06 ESTRATEGIA -->
+<section class="section" id="estrategia">
+<div class="container">
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <h2>Estrategia Completa — <span>Paso a Paso</span></h2>
+  </div>
+  <p style="color:var(--text2);margin-bottom:2rem">Combinando estructura de mercado, FVG, liquidez y confirmación de indicadores en un protocolo operativo claro.</p>
+
+  <div class="concept-block">
+    <h3>Protocolo Operativo SMC/FVG <span class="tag tag-cyan">3 PASOS</span></h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num" style="background:var(--accent1)">1</div>
+        <div class="step-content">
+          <h4>Determinar el Patrón y Contexto de Mercado</h4>
+          <p>Identifica la estructura vigente usando el Indicador Fractals (BOS alcista o bajista). Localiza las zonas FVG en tu timeframe. Confirma con: <strong>Delta</strong> (pico positivo/negativo), <strong>Perfil de Volumen</strong> (perfil estrecho = desequilibrio), <strong>Stacked Imbalance</strong> (barras del lado dominante) y <strong>Speed Of Tape</strong> (alta velocidad = agresividad institucional).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--accent3)">2</div>
+        <div class="step-content">
+          <h4>Determinar el Plan de Entrada en Posición</h4>
+          <p><strong style="color:var(--accent1)">Opción A — Orden Pendiente:</strong> Coloca una orden límite dentro de la zona FVG esperando el retorno del precio. Más agresivo, se llena automáticamente.<br><br>
+          <strong style="color:var(--accent4)">Opción B — Confirmación de Reversión:</strong> Espera a que el precio retorne al FVG y luego obtén confirmación: ChOCh en timeframe inferior, señal del indicador Delta, formación de reversión en gráfico Renko o Range. Menos señales falsas, entrada más tardía.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--accent4)">3</div>
+        <div class="step-content">
+          <h4>Determinar Stop Loss y Take Profit</h4>
+          <p><strong style="color:var(--red)">Stop Loss:</strong> Colócalo justo fuera del FVG — por encima del límite superior en shorts, por debajo del límite inferior en longs. El stop queda donde no hay liquidez institucional.<br><br>
+          <strong style="color:var(--green)">Take Profit:</strong> Se determina subjetivamente según el contexto. Lo ideal es colocarlo cerca de un soporte/resistencia importante. La ganancia potencial debe ser <strong>varias veces superior al riesgo</strong> (mínimo R:R 2:1, idealmente 3:1 o superior).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estrategia avanzada combinada -->
+  <div class="concept-block" style="margin-top:1.5rem">
+    <h3>Estrategia Avanzada: OB + ChOCh + Liquidez <span class="tag tag-purple">NIVEL AVANZADO</span></h3>
+    <p style="color:var(--text2);margin-bottom:1rem">La combinación más potente del SMC. Une los tres pilares del concepto en un único flujo operativo.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num" style="background:var(--accent5)">A</div>
+        <div class="step-content">
+          <h4>Identifica la Zona de Liquidez</h4>
+          <p>Localiza dónde se concentran los stops de los traders minoristas: por encima de máximos de swing, por debajo de mínimos, en formaciones clásicas (doble techo/suelo). Esas son tus zonas de interés donde el Smart Money irá a cazar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--accent3)">B</div>
+        <div class="step-content">
+          <h4>Espera el Stop Hunt y el FVG</h4>
+          <p>El mercado barrirá esa liquidez brevemente con un movimiento agresivo. Observa el FVG que deja ese impulso y el Order Block formado antes de él (OB anterior al FVG = más fuerte). El stop hunt es la señal de que el Smart Money está recolectando posiciones.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--accent1)">C</div>
+        <div class="step-content">
+          <h4>Confirma el ChOCh y Entra</h4>
+          <p>Tras el stop hunt, espera el Change of Character — ruptura del último nivel en dirección contraria al stop hunt, con los niveles del otro lado intactos. Esto confirma que el Smart Money terminó de recolectar y comienza el movimiento real. Entra en la dirección del ChOCh con stop fuera del FVG.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marcos temporales -->
+  <div class="concept-block" style="margin-top:1.5rem;padding:1.5rem">
+    <h3>Flujo Multi-Timeframe Recomendado <span class="tag tag-green">TIMEFRAMES</span></h3>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:.8rem">
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.8rem 1.2rem;flex:1;min-width:160px">
+        <div style="color:var(--accent1);font-family:var(--font-mono);font-size:.8rem;margin-bottom:.3rem">HTF — CONTEXTO</div>
+        <div style="color:#fff;font-weight:600;font-size:.9rem">Diario / 4H</div>
+        <div style="color:var(--text3);font-size:.8rem">Estructura macro, sesgo direccional, BOS/ChOCh HTF</div>
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.8rem 1.2rem;flex:1;min-width:160px">
+        <div style="color:var(--accent3);font-family:var(--font-mono);font-size:.8rem;margin-bottom:.3rem">MTF — SETUP</div>
+        <div style="color:#fff;font-weight:600;font-size:.9rem">1H / 30min</div>
+        <div style="color:var(--text3);font-size:.8rem">Identificación de FVG, Order Blocks, zonas de liquidez</div>
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.8rem 1.2rem;flex:1;min-width:160px">
+        <div style="color:var(--accent4);font-family:var(--font-mono);font-size:.8rem;margin-bottom:.3rem">LTF — ENTRADA</div>
+        <div style="color:#fff;font-weight:600;font-size:.9rem">5min / 3min Footprint</div>
+        <div style="color:var(--text3);font-size:.8rem">ChOCh de confirmación, señales de reversión en el FVG</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros & Cons -->
+  <h3 style="font-family:var(--font-display);font-size:1.15rem;color:#fff;margin:2rem 0 1rem">Ventajas y Desventajas del Trading con FVG</h3>
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>✓ Ventajas</h4>
+      <ul class="bullet-list" style="--bullet-color:var(--green)">
+        <li>Basada en los <strong>equilibrios reales de oferta y demanda</strong> — factores que realmente mueven los precios.</li>
+        <li>Forma eficiente de unirse a la tendencia actual del mercado.</li>
+        <li>Patrón <strong>confirmable con indicadores de volumen</strong> adicionales.</li>
+        <li>Aplicable en cualquier mercado y timeframe.</li>
+        <li>Entradas de alta precisión con stops ajustados → buen ratio R:R.</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h4>✗ Desventajas</h4>
+      <ul class="bullet-list" style="--bullet-color:var(--red)">
+        <li>Las zonas FVG pueden aparecer con <strong>demasiada frecuencia</strong> en el gráfico.</li>
+        <li>Las zonas pueden ser demasiado estrechas o demasiado anchas.</li>
+        <li>El patrón puede dar <strong>señales falsas</strong> sin confirmación de volumen.</li>
+        <li>Requiere experiencia para <strong>evaluar el contexto</strong> del mercado correctamente.</li>
+        <li>No hay directrices estrictas para stops y targets — sólo orientativas.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 07 FAQ -->
+<section class="section" id="faq">
+<div class="container">
+  <div class="section-header">
+    <span class="section-number">07</span>
+    <h2>Preguntas Frecuentes <span>(FAQ)</span></h2>
+  </div>
+  <div style="max-width:760px">
+    <div class="faq-item">
+      <div class="faq-q">¿Qué se considera trading de gap?</div>
+      <div class="faq-a">El trading de gap es una estrategia basada en la diferencia (gap) entre los precios de cierre y apertura. Los gaps suelen actuar como zonas de soporte y resistencia para el precio, ya que representan desequilibrios no resueltos.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Qué significa Fair Value Gap (FVG) en el trading?</div>
+      <div class="faq-a">El FVG es un área en un gráfico donde el precio se mueve con facilidad debido a un desequilibrio en las fuerzas de oferta y demanda. El movimiento se ralentiza cuando las fuerzas se equilibran, y la zona FVG actúa como soporte o resistencia fuerte.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿El FVG es un patrón alcista o bajista?</div>
+      <div class="faq-a">Puede ser ambos. Un FVG alcista se forma en un movimiento impulsivo ascendente (brecha entre High Vela1 y Low Vela3). Un FVG bajista se forma en un movimiento descendente (brecha entre Low Vela1 y High Vela3). La dirección del impulso determina el tipo.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Cuál es el mejor marco temporal para operar con FVG?</div>
+      <div class="faq-a">Depende del estilo de trading. La práctica habitual es usar gráficos diarios/4H para determinar el sesgo, 1H/30min para identificar el FVG y zonas de liquidez, y 5min/3min footprint para buscar la señal de entrada (ChOCh) dentro del FVG.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Cuál es el mejor indicador para los Fair Value Gaps?</div>
+      <div class="faq-a">ICT opera sólo con gráfico de velas — un buen ojo entrena la identificación visual. En la práctica, los desequilibrios se confirman mejor con el Perfil de Volumen, gráficos Footprint, Indicador Delta y Stacked Imbalance. Todos disponibles en ATAS.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Cómo practicar con FVG sin riesgo?</div>
+      <div class="faq-a">ATAS dispone del módulo <strong>Market Replay</strong>, un simulador que recrea condiciones de negociación con datos históricos reales. Permite ajustar velocidad, analizar footprints, aplicar todos los indicadores y operar en cuenta demo integrada — sin riesgo financiero.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿ATAS está relacionado con ICT?</div>
+      <div class="faq-a">No. La empresa ATAS NO está relacionada con Michael Huddleston (ICT) y no hace publicidad ni promociona sus estrategias. ATAS es un desarrollador de soluciones analíticas independiente. El patrón FVG es popular entre traders en general.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer style="background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 1.5rem;text-align:center">
+  <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:var(--accent1);margin-bottom:.5rem">Smart Money Concept · ICT · Guía Educativa</div>
+  <div style="color:var(--text3);font-size:.8rem;font-family:var(--font-mono);line-height:2">
+    Fuentes: Michael Huddleston (ICT) — Inner Circle Trader · ATAS Platform · Concepto de Dinero Inteligente Parte 2<br>
+    <span style="color:rgba(239,68,68,.8)">⚠ Sólo con fines educativos. No es asesoramiento de inversión. El trading implica riesgo de pérdida de capital.</span>
+  </div>
+</footer>
+
+</body>
+</html>
