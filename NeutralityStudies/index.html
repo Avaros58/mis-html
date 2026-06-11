@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA, China y Occidente | Guía de estudio interactiva</title>
+  <meta name="description" content="Guía de estudio interactiva sobre IA, China, Occidente, robótica, pagos digitales, sanciones y multipolaridad." />
+  <style>
+    :root{
+      --bg:#07111f; --panel:#0f1d31; --panel2:#132640; --ink:#eef6ff; --muted:#b7c6d9;
+      --accent:#6ee7f9; --accent2:#a7f3d0; --gold:#fcd34d; --rose:#fda4af; --line:rgba(255,255,255,.14);
+      --shadow:0 24px 70px rgba(0,0,0,.35); --radius:24px; --max:1180px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,#183b66 0,#07111f 42%,#050912 100%);color:var(--ink);line-height:1.55}
+    a{color:var(--accent)} .wrap{width:min(var(--max),92vw);margin:auto}.hero{position:relative;overflow:hidden;padding:38px 0 30px;border-bottom:1px solid var(--line)}
+    .hero:before{content:"";position:absolute;inset:-160px -120px auto auto;width:520px;height:520px;background:radial-gradient(circle,rgba(110,231,249,.28),transparent 65%);filter:blur(4px)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;position:relative;z-index:1}.kicker{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.06);padding:8px 12px;border-radius:999px;color:var(--accent2);font-weight:700;font-size:.92rem}
+    h1{font-size:clamp(2.35rem,6vw,5.2rem);line-height:.96;margin:18px 0 14px;letter-spacing:-.06em}.lead{font-size:clamp(1.04rem,2vw,1.25rem);color:var(--muted);max-width:68ch}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#05101d;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:12px 16px;border-radius:14px;font-weight:900;box-shadow:0 12px 30px rgba(110,231,249,.18);border:0;cursor:pointer}.btn.secondary{background:rgba(255,255,255,.07);color:var(--ink);border:1px solid var(--line);box-shadow:none}.media-card{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px}.main-image{display:block;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:#091626}.main-image img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;transition:transform .35s ease}.main-image:hover img{transform:scale(1.03)}.source-link{margin:12px 4px 2px;color:var(--muted);font-size:.94rem}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}.stat{padding:16px;border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:18px}.stat b{display:block;font-size:1.8rem;color:var(--gold)}.stat span{color:var(--muted);font-size:.9rem}.sticky-nav{position:sticky;top:0;z-index:50;background:rgba(7,17,31,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.tabs{display:flex;gap:10px;overflow:auto;padding:12px 0}.tab{white-space:nowrap;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);padding:12px 16px;border-radius:999px;font-weight:800;cursor:pointer}.tab.active{background:linear-gradient(135deg,rgba(110,231,249,.28),rgba(167,243,208,.2));border-color:rgba(110,231,249,.55)}main{padding:34px 0 60px}.section{display:none}.section.active{display:block}.panel{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.032));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-bottom:22px}.panel h2{font-size:clamp(1.75rem,3vw,2.6rem);line-height:1.08;margin:0 0 10px;letter-spacing:-.035em}.panel h3{font-size:1.35rem;margin:22px 0 8px;color:var(--accent2)}.panel p,.panel li{color:#dbe7f5}.muted{color:var(--muted)!important}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{border:1px solid var(--line);background:rgba(8,20,36,.7);border-radius:20px;padding:18px}.card h4{margin:0 0 8px;font-size:1.08rem;color:var(--accent)}.tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 9px;margin:4px 5px 4px 0;background:rgba(255,255,255,.06);font-size:.82rem;color:#dcecff}.accordion{border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:12px 0;background:rgba(255,255,255,.035)}.acc-btn{width:100%;text-align:left;background:transparent;color:var(--ink);border:0;padding:16px 18px;font-size:1rem;font-weight:900;cursor:pointer;display:flex;justify-content:space-between;gap:14px}.acc-body{max-height:0;overflow:hidden;transition:max-height .28s ease}.acc-body-inner{padding:0 18px 18px;color:#dce7f4}.acc-btn span:last-child{color:var(--accent)}.diagram{width:100%;background:#081629;border:1px solid var(--line);border-radius:22px;padding:14px;overflow:auto}.diagram svg{width:100%;height:auto;min-width:560px}.callout{border-left:4px solid var(--gold);background:rgba(252,211,77,.09);padding:14px 16px;border-radius:14px;margin:14px 0;color:#fff7cf}.callout.blue{border-left-color:var(--accent);background:rgba(110,231,249,.08)}.callout.green{border-left-color:var(--accent2);background:rgba(167,243,208,.08)}.checklist{display:grid;gap:10px}.check{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:14px;background:rgba(255,255,255,.045);border:1px solid var(--line)}.check input{transform:scale(1.25);margin-top:5px}.bar{height:26px;border-radius:999px;background:rgba(255,255,255,.09);overflow:hidden;border:1px solid var(--line);margin:8px 0 14px}.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px}.axis{display:flex;justify-content:space-between;color:var(--muted);font-size:.84rem}.timeline{position:relative;padding-left:24px}.timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),var(--accent2))}.event{position:relative;margin:16px 0;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.045)}.event:before{content:"";position:absolute;left:-23px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(252,211,77,.15)}.pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:end;min-height:310px}.pillar{border-radius:18px 18px 8px 8px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(110,231,249,.22),rgba(110,231,249,.05));padding:12px;display:flex;align-items:flex-end;justify-content:center;text-align:center;font-weight:900;color:#edfbff}.p1{height:84px}.p2{height:128px}.p3{height:170px}.p4{height:218px}.p5{height:270px;background:linear-gradient(180deg,rgba(167,243,208,.34),rgba(167,243,208,.07))}.image-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.zoomable{cursor:zoom-in}.modal{position:fixed;inset:0;background:rgba(0,0,0,.86);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal img,.modal svg{max-width:96vw;max-height:88vh;border-radius:18px;background:#07111f}.modal button{position:absolute;top:18px;right:18px;border:1px solid var(--line);background:#111827;color:#fff;padding:10px 14px;border-radius:12px;font-weight:900;cursor:pointer}.footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);background:rgba(0,0,0,.12)}.mini-index{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:14px}.mini-index button{padding:12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.045);color:var(--ink);font-weight:800;cursor:pointer}.quote{font-size:1.2rem;color:#f8fbff;border-left:5px solid var(--accent2);padding-left:16px}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:center}.legend{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}.legend div{padding:10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04)}
+    @media(max-width:850px){.hero-grid,.grid,.grid3,.split,.image-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.pillars{grid-template-columns:1fr;min-height:auto}.pillar{height:auto!important;min-height:70px}.mini-index{grid-template-columns:repeat(2,1fr)}.panel{padding:18px}.tabs{padding-left:4vw}.hero{padding-top:24px}}
+    @media print{.sticky-nav,.hero-actions,.acc-btn span:last-child,.modal{display:none!important}.section{display:block!important}.acc-body{max-height:none!important}.panel{break-inside:avoid;box-shadow:none}.tab{display:none}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">Guía interactiva de estudio · IA, China y poder global</div>
+        <h1>Cuando la tecnología deja de obedecer al centro</h1>
+        <p class="lead">Una lectura visual y organizada de la conversación entre Pascal y Arnold Bertrand sobre inteligencia artificial, robótica, pagos digitales, sanciones y multipolaridad.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#guia" onclick="activateTab('mapa')">Empezar la guía</a>
+          <a class="btn secondary" href="https://youtu.be/ndu2tzjFMHs?si=ZKZXyrBYq7XPjBhN" target="_blank" rel="noopener">Ver fuente original</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>5</b><span>capas de la IA</span></div>
+          <div class="stat"><b>2</b><span>modelos: control/difusión</span></div>
+          <div class="stat"><b>6</b><span>campos tecnológicos</span></div>
+          <div class="stat"><b>1</b><span>tesis central</span></div>
+        </div>
+      </div>
+      <aside class="media-card">
+        <a class="main-image zoomable" href="https://youtu.be/ndu2tzjFMHs?si=ZKZXyrBYq7XPjBhN" target="_blank" rel="noopener" aria-label="Abrir vídeo original en YouTube">
+          <img src="https://img.youtube.com/vi/ndu2tzjFMHs/maxresdefault.jpg" alt="Miniatura del vídeo original de Neutrality Studies" onerror="this.src='https://img.youtube.com/vi/ndu2tzjFMHs/hqdefault.jpg'" />
+        </a>
+        <p class="source-link">Imagen principal enlazada a la fuente original: <a href="https://youtu.be/ndu2tzjFMHs?si=ZKZXyrBYq7XPjBhN" target="_blank" rel="noopener">vídeo en YouTube</a>.</p>
+      </aside>
+    </div>
+  </header>
+
+  <nav class="sticky-nav" id="guia">
+    <div class="wrap tabs" role="tablist" aria-label="Secciones principales">
+      <button class="tab active" data-tab="mapa">Mapa general</button>
+      <button class="tab" data-tab="ia">IA y modelos</button>
+      <button class="tab" data-tab="tecnologia">Robots, drones y chips</button>
+      <button class="tab" data-tab="geopolitica">Geopolítica y Europa</button>
+      <button class="tab" data-tab="pagos">Pagos y sanciones</button>
+      <button class="tab" data-tab="estudio">Lectura crítica</button>
+      <button class="tab" data-tab="conclusiones">Conclusiones</button>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="section active" id="mapa">
+      <div class="panel">
+        <h2>Mapa de lectura: del monopolio a la difusión</h2>
+        <p>La conversación propone una tesis: la ventaja estratégica ya no depende sólo de controlar una infraestructura, sino de conseguir que una tecnología sea adoptada, adaptada y aplicada de forma masiva.</p>
+        <div class="split">
+          <div class="card">
+            <h4>Tesis central</h4>
+            <p class="quote">Occidente pierde poder cuando confunde control con liderazgo; China gana terreno cuando convierte la tecnología en infraestructura adoptable.</p>
+            <span class="tag">IA abierta</span><span class="tag">soberanía digital</span><span class="tag">multipolaridad</span><span class="tag">pagos alternativos</span>
+          </div>
+          <div class="diagram zoomable" data-zoom="conceptmap">
+            <svg viewBox="0 0 920 520" role="img" aria-label="Mapa conceptual general">
+              <defs><linearGradient id="g1" x1="0" x2="1"><stop stop-color="#6ee7f9"/><stop offset="1" stop-color="#a7f3d0"/></linearGradient></defs>
+              <rect width="920" height="520" rx="28" fill="#081629"/>
+              <circle cx="460" cy="260" r="88" fill="url(#g1)" opacity=".22" stroke="#6ee7f9" stroke-width="2"/>
+              <text x="460" y="250" text-anchor="middle" fill="#eef6ff" font-size="25" font-weight="800">Poder tecnológico</text>
+              <text x="460" y="282" text-anchor="middle" fill="#b7c6d9" font-size="15">se decide en la adopción</text>
+              <g fill="#132640" stroke="#6ee7f9" stroke-width="1.6">
+                <rect x="60" y="70" width="230" height="86" rx="18"/><rect x="630" y="70" width="230" height="86" rx="18"/>
+                <rect x="60" y="360" width="230" height="86" rx="18"/><rect x="630" y="360" width="230" height="86" rx="18"/>
+                <rect x="345" y="28" width="230" height="86" rx="18"/><rect x="345" y="406" width="230" height="86" rx="18"/>
+              </g>
+              <g fill="#eef6ff" font-size="18" font-weight="800" text-anchor="middle"><text x="175" y="106">IA y modelos</text><text x="745" y="106">Chips e infraestructura</text><text x="175" y="396">Robótica y drones</text><text x="745" y="396">Pagos y sanciones</text><text x="460" y="64">Aplicaciones</text><text x="460" y="442">Europa y aliados</text></g>
+              <g fill="#b7c6d9" font-size="13" text-anchor="middle"><text x="175" y="130">cerrado vs abierto</text><text x="745" y="130">dependencia vs pila propia</text><text x="175" y="420">hardware real y escala</text><text x="745" y="420">post-SWIFT posible</text><text x="460" y="88">valor económico final</text><text x="460" y="466">autonomía o subordinación</text></g>
+              <g stroke="url(#g1)" stroke-width="3" opacity=".8" fill="none"><path d="M290 112 C360 145 390 185 410 210"/><path d="M630 112 C560 145 530 185 510 210"/><path d="M290 405 C360 370 390 330 410 305"/><path d="M630 405 C560 370 530 330 510 305"/><path d="M460 114 V172"/><path d="M460 406 V348"/></g>
+            </svg>
+          </div>
+        </div>
+        <div class="mini-index">
+          <button onclick="activateTab('ia')">1. IA</button><button onclick="activateTab('tecnologia')">2. Robots</button><button onclick="activateTab('geopolitica')">3. Europa</button><button onclick="activateTab('pagos')">4. Pagos</button><button onclick="activateTab('estudio')">5. Crítica</button><button onclick="activateTab('conclusiones')">6. Síntesis</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Los dos movimientos de fondo</h2>
+        <div class="grid">
+          <div class="card"><h4>Movimiento occidental</h4><p>Controlar chips, modelos, nubes, aliados, sanciones y sistemas financieros. La lógica es impedir el acceso para conservar ventaja.</p><div class="bar"><i style="width:78%"></i></div><div class="axis"><span>control</span><span>exclusividad</span></div></div>
+          <div class="card"><h4>Movimiento chino</h4><p>Difundir modelos, abaratar costes, desplegar localmente, ofrecer pilas completas y favorecer la adopción por terceros países.</p><div class="bar"><i style="width:92%"></i></div><div class="axis"><span>difusión</span><span>adopción</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ia">
+      <div class="panel">
+        <h2>1. Inteligencia artificial: la capa decisiva no es el modelo, sino el uso</h2>
+        <p>Bertrand parte de la idea de la IA como tecnología de propósito general. El punto no es negar la importancia de chips o modelos, sino situarlos dentro de una cadena de valor más amplia.</p>
+        <div class="grid">
+          <div class="card">
+            <h4>La “tarta” de cinco capas</h4>
+            <div class="pillars" aria-label="Cinco capas de la inteligencia artificial">
+              <div class="pillar p1">Energía</div><div class="pillar p2">Chips</div><div class="pillar p3">Infraestructura</div><div class="pillar p4">Modelos</div><div class="pillar p5">Aplicaciones</div>
+            </div>
+            <p class="muted">La capa superior es la que convierte la tecnología en productividad, servicios y valor económico.</p>
+          </div>
+          <div class="card">
+            <h4>Analogía histórica</h4>
+            <p>Con la electricidad, el valor social no se concentró sólo en líneas o centrales, sino en bombillas, motores, frigoríficos y usos industriales. Con internet ocurrió algo parecido: el valor lo captaron plataformas y servicios construidos sobre la red.</p>
+            <div class="callout blue">La pregunta clave de la guía: ¿quién conseguirá que la IA se use de forma más amplia, barata y productiva?</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Control frente a difusión</h2>
+        <div class="grid">
+          <div class="card"><h4>Modelo estadounidense</h4><p>Restricciones de chips, modelos cerrados, servicios en nube, dependencia de API y protección de propiedad tecnológica.</p><ul><li>Menos acceso para rivales.</li><li>Mayor dependencia del proveedor.</li><li>Datos alojados en infraestructura externa.</li><li>Capacidad de sanción y bloqueo.</li></ul></div>
+          <div class="card"><h4>Modelo chino</h4><p>Modelos abiertos, despliegue local, coste bajo y propuesta de soberanía digital para empresas y países.</p><ul><li>Instalación en servidores propios.</li><li>Menor coste operativo.</li><li>Más control sobre datos.</li><li>Mayor difusión internacional.</li></ul></div>
+        </div>
+        <button class="acc-btn" onclick="toggleAcc(this)"><span>Ver desarrollo: por qué la difusión puede ser más poderosa que la exclusividad</span><span>+</span></button>
+        <div class="acc-body"><div class="acc-body-inner"><p>Si la IA se parece a internet o la electricidad, el valor no está sólo en poseer la infraestructura inicial. Está en conseguir que miles de empresas, administraciones y usuarios construyan sobre ella. Desde esa lógica, un modelo abierto y barato puede generar más dependencia positiva que un modelo cerrado y caro.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="tecnologia">
+      <div class="panel">
+        <h2>2. Chips, drones y robots: cuando el software necesita fábrica</h2>
+        <p>La conversación subraya que muchos campos decisivos no son puro software. Requieren manufactura, cadenas de suministro, integración de hardware y capacidad de producción a gran escala.</p>
+        <div class="grid3">
+          <div class="card"><h4>Chips</h4><p>Las restricciones estadounidenses empujan a China a construir su propia pila tecnológica: chips, infraestructura, modelos y aplicaciones.</p></div>
+          <div class="card"><h4>Drones</h4><p>La ventaja china en drones comerciales se presenta como una carrera prácticamente decidida, aunque menos visible mediáticamente que la IA.</p></div>
+          <div class="card"><h4>Robots humanoides</h4><p>Bertrand considera que pueden ser el gran producto que simbolice el liderazgo tecnológico chino, como el iPhone lo fue para Estados Unidos.</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Esquema didáctico: de la IA al robot físico</h2>
+        <div class="diagram zoomable" data-zoom="robotflow">
+          <svg viewBox="0 0 980 420" role="img" aria-label="Flujo desde modelos de IA hasta robots humanoides">
+            <rect width="980" height="420" rx="28" fill="#081629"/>
+            <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#6ee7f9"/></marker></defs>
+            <g fill="#132640" stroke="#6ee7f9" stroke-width="2"><rect x="45" y="76" width="170" height="100" rx="18"/><rect x="285" y="76" width="170" height="100" rx="18"/><rect x="525" y="76" width="170" height="100" rx="18"/><rect x="765" y="76" width="170" height="100" rx="18"/><rect x="285" y="250" width="410" height="92" rx="18" stroke="#a7f3d0"/></g>
+            <g fill="#eef6ff" font-size="20" font-weight="800" text-anchor="middle"><text x="130" y="118">Modelo IA</text><text x="370" y="118">Chip local</text><text x="610" y="118">Sensores</text><text x="850" y="118">Actuadores</text><text x="490" y="292">Robot humanoide</text></g>
+            <g fill="#b7c6d9" font-size="14" text-anchor="middle"><text x="130" y="146">razonamiento</text><text x="370" y="146">baja latencia</text><text x="610" y="146">visión / tacto</text><text x="850" y="146">movimiento</text><text x="490" y="320">IA encarnada en una máquina de consumo</text></g>
+            <g stroke="#6ee7f9" stroke-width="3" marker-end="url(#arr)"><line x1="215" y1="126" x2="285" y2="126"/><line x1="455" y1="126" x2="525" y2="126"/><line x1="695" y1="126" x2="765" y2="126"/><path d="M850 176 C840 250 725 292 696 296"/><path d="M130 176 C150 250 250 292 284 296"/></g>
+          </svg>
+        </div>
+        <div class="legend"><div><b>Idea clave:</b> el robot une IA, chips, sensores, software y fabricación.</div><div><b>Consecuencia:</b> quien domine la integración física puede dominar el siguiente ciclo tecnológico.</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="geopolitica">
+      <div class="panel">
+        <h2>3. Geopolítica tecnológica: aliados, friend-shoring y Europa</h2>
+        <p>La conversación interpreta el friend-shoring como el intento estadounidense de reorganizar la producción crítica dentro de su círculo de aliados, excluyendo a China. El problema es que esa estrategia puede reducir la autonomía europea.</p>
+        <div class="timeline">
+          <div class="event"><b>Restricciones tecnológicas</b><p>Estados Unidos intenta limitar el acceso chino a chips, modelos y tecnologías estratégicas.</p></div>
+          <div class="event"><b>Reacción china</b><p>China desarrolla alternativas propias y ofrece soluciones completas a terceros países.</p></div>
+          <div class="event"><b>Presión sobre aliados</b><p>Japón, Países Bajos y Europa quedan dentro de una arquitectura de control tecnológico.</p></div>
+          <div class="event"><b>Dilema europeo</b><p>Europa acepta narrativas y herramientas externas, mientras encarece su industria y pierde margen de maniobra.</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Europa como caso de dependencia estratégica</h2>
+        <div class="grid">
+          <div class="card"><h4>Dependencia tecnológica</h4><p>El uso de sistemas estadounidenses en sectores sensibles plantea dudas sobre quién define amenazas, prioridades y sesgos.</p></div>
+          <div class="card"><h4>Coste industrial</h4><p>Las barreras a tecnologías chinas, especialmente en energía verde, pueden elevar costes en una región que ya sufre desventaja energética.</p></div>
+        </div>
+        <div class="callout">La lectura del vídeo no presenta a Europa como árbitro autónomo, sino como espacio que sufre las consecuencias de estrategias diseñadas por otros.</div>
+      </div>
+    </section>
+
+    <section class="section" id="pagos">
+      <div class="panel">
+        <h2>4. Pagos digitales, SWIFT y sanciones</h2>
+        <p>El bloque financiero muestra cómo la infraestructura de pagos puede convertirse en un campo geopolítico tan importante como los chips o la IA.</p>
+        <div class="grid">
+          <div class="card"><h4>Modelo tradicional</h4><p>Banca internacional, tarjetas, SWIFT, dólar y sanciones financieras como instrumento de presión.</p></div>
+          <div class="card"><h4>Modelo emergente asiático</h4><p>Pagos QR, Alipay, WeChat Pay, redes interoperables y menor dependencia de sistemas financieros occidentales.</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Esquema: del pago QR a la erosión de SWIFT</h2>
+        <div class="diagram zoomable" data-zoom="payments">
+          <svg viewBox="0 0 980 500" role="img" aria-label="Esquema de pagos digitales alternativos">
+            <rect width="980" height="500" rx="28" fill="#081629"/>
+            <defs><marker id="arr2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#a7f3d0"/></marker></defs>
+            <g fill="#132640" stroke="#a7f3d0" stroke-width="2"><rect x="55" y="70" width="190" height="100" rx="18"/><rect x="305" y="70" width="190" height="100" rx="18"/><rect x="555" y="70" width="190" height="100" rx="18"/><rect x="305" y="310" width="190" height="100" rx="18"/><rect x="555" y="310" width="190" height="100" rx="18"/></g>
+            <g fill="#eef6ff" font-size="19" font-weight="800" text-anchor="middle"><text x="150" y="112">Comercio local</text><text x="400" y="112">QR nacional</text><text x="650" y="112">Alipay Plus</text><text x="400" y="352">Turista / usuario</text><text x="650" y="352">Menos fricción</text></g>
+            <g fill="#b7c6d9" font-size="14" text-anchor="middle"><text x="150" y="142">tienda, taxi, mercado</text><text x="400" y="142">red de pagos interna</text><text x="650" y="142">interoperabilidad regional</text><text x="400" y="382">escanea y paga</text><text x="650" y="382">menos tarjeta / SWIFT</text></g>
+            <g stroke="#a7f3d0" stroke-width="3" marker-end="url(#arr2)"><line x1="245" y1="120" x2="305" y2="120"/><line x1="495" y1="120" x2="555" y2="120"/><path d="M650 170 C625 230 520 300 495 350"/><line x1="495" y1="360" x2="555" y2="360"/></g>
+            <rect x="785" y="120" width="140" height="240" rx="18" fill="rgba(253,164,175,.10)" stroke="#fda4af"/>
+            <text x="855" y="205" fill="#fda4af" font-size="22" font-weight="900" text-anchor="middle">SWIFT</text><text x="855" y="236" fill="#b7c6d9" font-size="14" text-anchor="middle">pierde centralidad</text><text x="855" y="268" fill="#b7c6d9" font-size="14" text-anchor="middle">si el pago real</text><text x="855" y="292" fill="#b7c6d9" font-size="14" text-anchor="middle">circula por</text><text x="855" y="316" fill="#b7c6d9" font-size="14" text-anchor="middle">otras redes</text>
+          </svg>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>China e Irán: el límite práctico de las sanciones</h2>
+        <div class="accordion"><button class="acc-btn" onclick="toggleAcc(this)"><span>¿Qué cambia cuando China prohíbe cumplir ciertas sanciones estadounidenses?</span><span>+</span></button><div class="acc-body"><div class="acc-body-inner"><p>Hasta ese momento, muchas instituciones chinas practicaban un exceso de prudencia frente a sanciones de Estados Unidos. La intervención estatal china cambia el incentivo: cumplir con Washington puede convertirse en un problema dentro de China.</p></div></div></div>
+        <div class="accordion"><button class="acc-btn" onclick="toggleAcc(this)"><span>¿Por qué Washington puede quedar atrapado en su propia amenaza?</span><span>+</span></button><div class="acc-body"><div class="acc-body-inner"><p>Si aplica sanciones máximas contra bancos chinos, puede provocar una crisis financiera global. Si no las aplica, reduce la credibilidad futura de sus amenazas. Ese es el dilema que la conversación resume como pérdida de mordida del poder sancionador.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="estudio">
+      <div class="panel">
+        <h2>5. Lectura crítica guiada</h2>
+        <p>Esta sección ayuda a estudiar el argumento sin convertirlo en una lectura lineal. Separa tesis, supuestos, consecuencias y preguntas abiertas.</p>
+        <div class="grid3">
+          <div class="card"><h4>Tesis</h4><p>La difusión tecnológica puede ser más decisiva que el control de acceso.</p></div>
+          <div class="card"><h4>Supuesto</h4><p>La IA se comportará como electricidad o internet: valor máximo en aplicaciones.</p></div>
+          <div class="card"><h4>Consecuencia</h4><p>Los modelos abiertos y baratos pueden reorganizar dependencias geopolíticas.</p></div>
+        </div>
+        <h3>Preguntas de comprobación</h3>
+        <div class="checklist">
+          <label class="check"><input type="checkbox"><span>¿Distingo entre infraestructura, modelo y aplicación en IA?</span></label>
+          <label class="check"><input type="checkbox"><span>¿Puedo explicar por qué bloquear chips puede estimular competidores propios?</span></label>
+          <label class="check"><input type="checkbox"><span>¿Entiendo por qué los pagos QR asiáticos pueden debilitar sanciones basadas en SWIFT?</span></label>
+          <label class="check"><input type="checkbox"><span>¿Puedo resumir el dilema europeo entre alineamiento, coste energético y autonomía?</span></label>
+          <label class="check"><input type="checkbox"><span>¿Sé relacionar drones, robots humanoides y capacidad industrial?</span></label>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Matriz de estudio</h2>
+        <div class="grid">
+          <div class="card"><h4>Qué afirma el vídeo</h4><ul><li>China ofrece alternativas abiertas y baratas.</li><li>Estados Unidos se apoya en restricciones y sanciones.</li><li>Europa pierde autonomía al adoptar estrategias ajenas.</li></ul></div>
+          <div class="card"><h4>Qué conviene retener</h4><ul><li>La capa de aplicación decide el valor.</li><li>La escala industrial china es una ventaja transversal.</li><li>Las infraestructuras financieras alternativas reducen la coerción.</li></ul></div>
+        </div>
+        <div class="callout green">Clave pedagógica: no estudiar el vídeo como una suma de temas sueltos, sino como una cadena: IA abierta → aplicaciones → autonomía tecnológica → pagos alternativos → menor poder sancionador.</div>
+      </div>
+    </section>
+
+    <section class="section" id="conclusiones">
+      <div class="panel">
+        <h2>6. Conclusiones sintéticas</h2>
+        <div class="grid">
+          <div class="card"><h4>1. La aplicación supera al modelo</h4><p>La IA crea valor cuando se integra en procesos reales: empresas, administraciones, industria, robots y servicios.</p></div>
+          <div class="card"><h4>2. La apertura puede ser poder</h4><p>Modelos abiertos y baratos pueden generar dependencia positiva, adopción global y soberanía tecnológica para terceros.</p></div>
+          <div class="card"><h4>3. El bloqueo acelera alternativas</h4><p>Las restricciones a China estimulan chips, modelos e infraestructuras propias.</p></div>
+          <div class="card"><h4>4. Europa es el eslabón débil</h4><p>La región aparece subordinada, cara energéticamente y con poca base industrial en sectores emergentes.</p></div>
+          <div class="card"><h4>5. La sanción pierde monopolio</h4><p>Si pagos y comercio se desplazan a redes alternativas, SWIFT y el dólar conservan peso, pero pierden exclusividad.</p></div>
+          <div class="card"><h4>6. La multipolaridad se vuelve práctica</h4><p>No aparece sólo en discursos: aparece en centros de datos, robots, QR, chips, comercio electrónico y decisiones de empresas.</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Resumen final en una frase</h2>
+        <p class="quote">El poder tecnológico del nuevo ciclo no pertenecerá necesariamente a quien más bloquee, sino a quien consiga que sus herramientas sean más útiles, más baratas, más integrables y más difíciles de ignorar.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap"><p>Guía de estudio interactiva basada en la transcripción y resumen aportados. Fuente audiovisual original enlazada en la portada.</p></div></footer>
+  <div class="modal" id="modal"><button onclick="closeModal()">Cerrar ×</button><div id="modalContent"></div></div>
+
+<script>
+  const tabs=[...document.querySelectorAll('.tab')];
+  function activateTab(id){
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    const btn=document.querySelector(`.tab[data-tab="${id}"]`); if(btn) btn.classList.add('active');
+    document.getElementById('guia').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  tabs.forEach(btn=>btn.addEventListener('click',()=>activateTab(btn.dataset.tab)));
+  function toggleAcc(btn){
+    const body=btn.nextElementSibling; const icon=btn.querySelector('span:last-child');
+    const open=body.style.maxHeight && body.style.maxHeight!=='0px';
+    document.querySelectorAll('.acc-body').forEach(b=>{b.style.maxHeight='0px'; if(b.previousElementSibling) b.previousElementSibling.querySelector('span:last-child').textContent='+'});
+    if(!open){ body.style.maxHeight=body.scrollHeight+'px'; icon.textContent='−'; }
+  }
+  const modal=document.getElementById('modal'), modalContent=document.getElementById('modalContent');
+  document.querySelectorAll('.diagram.zoomable').forEach(el=>el.addEventListener('click',()=>{modalContent.innerHTML=el.innerHTML; modal.classList.add('open')}));
+  document.querySelectorAll('.main-image.zoomable').forEach(el=>el.addEventListener('click',(e)=>{ /* keep video link behavior */ }));
+  function closeModal(){modal.classList.remove('open');modalContent.innerHTML=''}
+  modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
