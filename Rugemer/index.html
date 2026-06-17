@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los Capitalistas del Siglo XXI — Werner Rügemer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  /* ===== BASE ===== */
+  :root {
+    --red: #c0392b;
+    --red-dark: #922b21;
+    --gold: #b7950b;
+    --dark: #1a1a2e;
+    --darker: #0f0f1e;
+    --mid: #16213e;
+    --card: #1e2640;
+    --card2: #252d4a;
+    --text: #e8e8f0;
+    --muted: #9fa8c4;
+    --accent: #e74c3c;
+    --accent2: #f39c12;
+    --blue: #2980b9;
+    --green: #27ae60;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--darker);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ===== HEADER ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--darker) 0%, #1a0a0a 50%, var(--mid) 100%);
+    border-bottom: 2px solid var(--red);
+    padding: 2.5rem 2rem 1.8rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(192,57,43,0.03) 40px, rgba(192,57,43,0.03) 41px);
+  }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; position: relative; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 0.3rem;
+    position: relative;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero-author { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.75rem; position: relative; }
+  .hero-tagline { font-size: 1rem; color: var(--muted); max-width: 640px; margin: 0 auto 1rem; font-style: italic; position: relative; }
+  .hero-stats { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1rem; position: relative; }
+  .hero-stat { text-align: center; }
+  .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--accent); display: block; }
+  .hero-stat-label { font-size: 0.7rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ===== TABS ===== */
+  .tabs-wrapper {
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    scrollbar-width: none;
+    padding: 0 0.5rem;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: 0.8rem 1.1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-transform: uppercase;
+    font-family: 'Source Sans 3', sans-serif;
+    flex-shrink: 0;
+  }
+  .tab:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ===== PANELS ===== */
+  .content { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
+  .panel { display: none; }
+  .panel.active { display: block; animation: fadeIn 0.35s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ===== TYPOGRAPHY ===== */
+  .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; color: #fff; margin-bottom: 0.3rem; }
+  .section-subtitle { font-size: 0.95rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .section-divider { width: 48px; height: 3px; background: var(--accent); margin: 0.5rem 0 1.5rem; border-radius: 2px; }
+
+  /* ===== CARDS ===== */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+  .card-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; margin-bottom: 0.4rem; }
+  .card p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  @media (max-width: 760px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  /* ===== TAG CLOUD CLICKEABLE ===== */
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.8rem 0; }
+  .tag {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .tag:hover {
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red);
+    transform: scale(1.03);
+  }
+
+  /* ===== PLAYER CARD CLICKEABLE ===== */
+  .player-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.5rem;
+    border-left: 4px solid var(--accent);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .player-card:hover { border-left-color: var(--accent2); background: var(--card2); }
+  .player-card.type-2 { border-left-color: var(--blue); }
+  .player-card.type-3 { border-left-color: var(--green); }
+  .player-card.type-4 { border-left-color: var(--gold); }
+  .player-card .player-name { font-family: 'Playfair Display', serif; font-size: 1rem; color: #fff; margin-bottom: 0.1rem; }
+  .player-card .player-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 0.2rem; display: block; }
+  .player-card.type-2 .player-tag { color: var(--blue); }
+  .player-card.type-3 .player-tag { color: var(--green); }
+  .player-card.type-4 .player-tag { color: var(--gold); }
+  .player-card .player-desc { font-size: 0.88rem; color: var(--muted); }
+  .player-card .player-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    padding: 0 0 0 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .player-card.open .player-expand {
+    max-height: 600px;
+    opacity: 1;
+    padding: 0.8rem 0 0 0;
+  }
+  .player-card .expand-indicator {
+    float: right;
+    font-size: 1.1rem;
+    color: var(--accent);
+    transition: transform 0.3s;
+  }
+  .player-card.open .expand-indicator { transform: rotate(180deg); }
+
+  /* ===== MODAL ===== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(4px);
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    max-width: 520px;
+    width: 100%;
+    padding: 1.8rem 2rem;
+    animation: modalIn 0.3s ease;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  @keyframes modalIn { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .modal-box .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+  }
+  .modal-box .modal-sub {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .modal-box p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
+  .modal-close {
+    margin-top: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .modal-close:hover { background: var(--red-dark); }
+
+  /* ===== QUOTE ===== */
+  .blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 1rem 1.5rem;
+    background: rgba(192,57,43,0.08);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--text);
+    margin: 1.25rem 0;
+    font-size: 0.95rem;
+  }
+  .blockquote cite { display: block; margin-top: 0.4rem; font-size: 0.75rem; font-style: normal; color: var(--muted); }
+
+  /* ===== STAT PILLS ===== */
+  .stat-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0; }
+  .stat-pill { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.9rem; text-align: center; min-width: 100px; }
+  .stat-pill-num { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--accent); display: block; }
+  .stat-pill-label { font-size: 0.7rem; color: var(--muted); }
+
+  /* ===== TABLES ===== */
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .compare-table th { padding: 0.6rem 0.8rem; background: var(--card2); color: var(--text); text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+  .compare-table td { padding: 0.6rem 0.8rem; color: var(--muted); border-bottom: 1px solid var(--border); vertical-align: top; }
+  .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .compare-table th:first-child, .compare-table td:first-child { color: var(--text); font-weight: 500; }
+
+  /* ===== ACCORDION ===== */
+  .accordion-item {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+  }
+  .accordion-header {
+    padding: 0.9rem 1.1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card);
+    transition: background 0.15s;
+    user-select: none;
+  }
+  .accordion-header:hover { background: var(--card2); }
+  .accordion-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #fff; }
+  .accordion-icon { font-size: 1.1rem; color: var(--accent); transition: transform 0.25s; }
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.2s;
+    padding: 0 1.1rem;
+    background: var(--darker);
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .accordion-item.open .accordion-body { max-height: 800px; padding: 0.8rem 1.1rem; }
+  .accordion-item.open .accordion-icon { transform: rotate(45deg); }
+
+  /* ===== INTRO BOX ===== */
+  .intro-box {
+    background: linear-gradient(135deg, rgba(192,57,43,0.10), rgba(31,97,141,0.10));
+    border: 1px solid rgba(192,57,43,0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .intro-box p { font-size: 0.95rem; color: var(--text); line-height: 1.8; }
+  .intro-box p + p { margin-top: 0.6rem; }
+
+  ul.styled { padding-left: 1.25rem; color: var(--muted); font-size: 0.88rem; }
+  ul.styled li { margin-bottom: 0.3rem; }
+  ul.styled li strong { color: var(--text); }
+
+  .flow-chart { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 1rem; margin: 1.25rem 0; text-align: center; }
+  .flow-step { display: inline-block; background: var(--red); color: white; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 30px; margin: 0.2rem 0.3rem; font-size: 0.8rem; min-width: 80px; }
+  .flow-step.alt { background: var(--blue); }
+  .flow-step.gold { background: var(--gold); }
+  .flow-step.green { background: var(--green); }
+  .flow-arrow { display: inline-block; font-size: 1.4rem; color: var(--muted); margin: 0 0.1rem; vertical-align: middle; }
+  .flow-row { margin: 0.2rem 0; }
+
+  .split-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 1.25rem; }
+  .split-side { padding: 1.25rem; background: var(--card); }
+  .split-side.west { border-right: 2px solid rgba(41,128,185,0.3); }
+  .split-header { font-family: 'Playfair Display', serif; font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; }
+  .split-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-blue { background: #2980b9; }
+  .dot-red { background: #c0392b; }
+  .split-row { display: flex; gap: 0.5rem; margin-bottom: 0.4rem; font-size: 0.85rem; color: var(--muted); align-items: flex-start; }
+  .split-row::before { content: '—'; color: var(--accent); flex-shrink: 0; }
+  @media (max-width: 700px) { .split-compare { grid-template-columns: 1fr; } .split-side.west { border-right: none; border-bottom: 2px solid rgba(41,128,185,0.3); } }
+
+  .chart-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem; }
+  .chart-label { font-size: 0.85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; }
+  .chart-wrap { position: relative; width: 100%; height: 220px; }
+
+  .progress-item { margin-bottom: 0.8rem; }
+  .progress-label { display: flex; justify-content: space-between; margin-bottom: 0.2rem; font-size: 0.82rem; color: var(--text); }
+  .progress-val { color: var(--accent); font-weight: 600; }
+  .progress-track { height: 6px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 4px; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); width: 0%; }
+
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 0.35rem; top: 0.5rem; bottom: 0.5rem; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--blue)); }
+  .timeline-item { position: relative; padding: 0 0 1.5rem 1.5rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -1.65rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--darker); }
+  .timeline-year { font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; margin-bottom: 0.15rem; }
+  .timeline-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem; }
+  .timeline-body { font-size: 0.85rem; color: var(--muted); }
+
+  footer { text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.75rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+
+  @media print {
+    .tabs-wrapper { display: none; }
+    .panel { display: block !important; }
+    body { background: white; color: black; }
+    .card, .player-card, .chart-box, .intro-box { background: #f5f5f5; border: 1px solid #ccc; }
+    .hero { background: #eee; border-bottom: 2px solid #c0392b; }
+    .hero h1 { color: #1a1a2e; }
+    .hero h1 span { color: #c0392b; }
+    .section-title { color: #1a1a2e; }
+    .tag { background: #eee; border: 1px solid #ccc; color: #333; }
+    .modal-overlay { display: none !important; }
+    .player-card .player-expand { max-height: none !important; opacity: 1 !important; padding: 0.8rem 0 0 0 !important; }
+    .player-card.open .player-expand { max-height: none !important; }
+    .accordion-body { max-height: none !important; padding: 0.8rem 1.1rem !important; }
+    .accordion-item.open .accordion-body { max-height: none !important; }
+    .accordion-icon { display: none; }
+    .progress-fill { background: #c0392b !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="hero">
+  <p class="hero-eyebrow">Análisis crítico · Werner Rügemer · 2018</p>
+  <h1>Los <span>Capitalistas</span> del Siglo XXI</h1>
+  <p class="hero-author">Werner Rügemer — <em>The Capitalists of the 21st Century</em></p>
+  <p class="hero-tagline">Un análisis riguroso del ascenso de los nuevos actores financieros transnacionales que dominan la economía global desde las sombras.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-num">$9B+</span><span class="hero-stat-label">Activos BlackRock</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">17.000+</span><span class="hero-stat-label">Empresas bajo control</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">4</span><span class="hero-stat-label">Ejes de tensión</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">1971</span><span class="hero-stat-label">Ruptura de Bretton Woods</span></div>
+  </div>
+</div>
+
+<!-- ===== TABS ===== -->
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab(this,'overview')">Visión General</button>
+    <button class="tab" onclick="switchTab(this,'evolution')">Evolución</button>
+    <button class="tab" onclick="switchTab(this,'players')">Actores</button>
+    <button class="tab" onclick="switchTab(this,'blackrock')">BlackRock</button>
+    <button class="tab" onclick="switchTab(this,'pe')">Private Equity</button>
+    <button class="tab" onclick="switchTab(this,'europe')">Europa</button>
+    <button class="tab" onclick="switchTab(this,'china')">China</button>
+    <button class="tab" onclick="switchTab(this,'risk')">Riesgo</button>
+    <button class="tab" onclick="switchTab(this,'charts')">Gráficos</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ============================================================ -->
+  <!-- PANEL 1: VISIÓN GENERAL                                      -->
+  <!-- ============================================================ -->
+  <div class="panel active" id="panel-overview">
+    <p class="section-title">Visión General</p>
+    <div class="section-divider"></div>
+
+    <div class="intro-box">
+      <p>Werner Rügemer disecciona en esta obra a los <strong>nuevos capitalistas del siglo XXI</strong>: un puñado de gestores de capital transnacionales —encabezados por BlackRock, Vanguard y State Street— que han reemplazado a los grandes bancos tradicionales como eje del poder financiero global.</p>
+    </div>
+
+    <div class="blockquote">
+      "¿Quiénes son los capitalistas, los financieros, los globalizadores? ¿Cuáles son sus nombres? ¿Cómo trabajan? ¿Qué hacen en política, en la sociedad, en la naturaleza?"
+      <cite>— Werner Rügemer, Introducción</cite>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <p class="card-title">Tesis central</p>
+        <p>El capitalismo del siglo XXI ya no está controlado por los grandes bancos visibles, sino por <strong>"organizadores de capital"</strong> como BlackRock, Vanguard y State Street, que actúan como propietarios anónimos y simultáneos de miles de corporaciones.</p>
+      </div>
+      <div class="card">
+        <p class="card-title">Los cuatro ejes de tensión</p>
+        <ul class="styled">
+          <li><strong>Generación / extracción:</strong> ¿Se crea riqueza nueva o se capturan rentas?</li>
+          <li><strong>Propiedad / control:</strong> ¿Quién decide realmente?</li>
+          <li><strong>Horizonte temporal:</strong> ¿Se piensa en años o en décadas?</li>
+          <li><strong>Riesgo:</strong> ¿Quién soporta finalmente las pérdidas?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAG CLOUD CLICKEABLE -->
+    <p style="font-size:0.9rem; color:var(--muted); margin-top:1.5rem; margin-bottom:0.5rem;">📌 Haz clic en cualquier etiqueta para ver su definición:</p>
+    <div class="tag-cloud">
+      <span class="tag" onclick="openModal('shadow-banking')">Shadow banking</span>
+      <span class="tag" onclick="openModal('clase-capitalista')">Clase capitalista transnacional</span>
+      <span class="tag" onclick="openModal('etf')">ETF / iShares</span>
+      <span class="tag" onclick="openModal('aladdin')">Aladdin</span>
+      <span class="tag" onclick="openModal('common-ownership')">Common Ownership</span>
+      <span class="tag" onclick="openModal('dark-pools')">Dark pools</span>
+      <span class="tag" onclick="openModal('paraisos')">Paraísos fiscales</span>
+      <span class="tag" onclick="openModal('puerta-giratoria')">Puerta giratoria</span>
+      <span class="tag" onclick="openModal('financiarizacion')">Financiarización</span>
+      <span class="tag" onclick="openModal('extraccion-valor')">Extracción de valor</span>
+      <span class="tag" onclick="openModal('transferencia-riesgo')">Transferencia del riesgo</span>
+      <span class="tag" onclick="openModal('ruta-seda')">Nueva Ruta de la Seda</span>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 2: EVOLUCIÓN                                           -->
+  <!-- ============================================================ -->
+  <div class="panel" id="panel-evolution">
+    <p class="section-title">Evolución del Capitalismo</p>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">El proceso histórico de transformación: del capitalismo industrial al capitalismo financiero extractivo.</p>
+
+    <div class="flow-chart">
+      <div class="flow-row">
+        <span class="flow-step">Capitalismo Industrial</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step alt">Financiarización</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step gold">Capitalismo Financiero</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step green">Capitalismo Extractivo</span>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card"><p class="card-title">🏭 Capitalismo Industrial</p><ul class="styled" style="font-size:0.85rem;"><li>Propiedad concentrada en empresarios</li><li>Producción de bienes tangibles</li><li>Beneficio por ventas e innovación</li><li>Riesgo asumido por el propietario</li></ul></div>
+      <div class="card" style="border-top:3px solid var(--blue);"><p class="card-title">📈 Financiarización</p><ul class="styled" style="font-size:0.85rem;"><li>Ruptura de Bretton Woods (1971)</li><li>Liberalización financiera</li><li>Expansión de fondos institucionales</li><li>Nacimiento de BlackRock, Vanguard</li></ul></div>
+      <div class="card" style="border-top:3px solid var(--red);"><p class="card-title">💰 Capitalismo Extractivo</p><ul class="styled" style="font-size:0.85rem;"><li>Extracción de valor mediante deuda</li><li>Transferencia del riesgo a terceros</li><li>Control concentrado sobre propiedad dispersa</li><li>Monetización de activos esenciales</li></ul></div>
+    </div>
+
+    <div class="blockquote">
+      "La financiarización no solo redistribuye beneficios: también redistribuye riesgos."
+      <cite>— Werner Rügemer</cite>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item"><p class="timeline-year">1944</p><p class="timeline-title">Bretton Woods</p><p class="timeline-body">Tipos de cambio fijos, predominio de la economía productiva.</p></div>
+      <div class="timeline-item"><p class="timeline-year">1971</p><p class="timeline-title">Ruptura de Bretton Woods</p><p class="timeline-body">Nixon suspende la convertibilidad del dólar en oro. Comienza la financiarización.</p></div>
+      <div class="timeline-item"><p class="timeline-year">1975</p><p class="timeline-title">Fundación de Vanguard</p><p class="timeline-body">John Bogle populariza los fondos indexados.</p></div>
+      <div class="timeline-item"><p class="timeline-year">1988</p><p class="timeline-title">Fundación de BlackRock</p><p class="timeline-body">Larry Fink funda BlackRock, inicialmente como gestora de riesgos.</p></div>
+      <div class="timeline-item"><p class="timeline-year">2008</p><p class="timeline-title">Crisis financiera global</p><p class="timeline-body">BlackRock se convierte en el "banco central en la sombra" de Occidente.</p></div>
+      <div class="timeline-item"><p class="timeline-year">2009</p><p class="timeline-title">BlackRock adquiere iShares</p><p class="timeline-body">Se sitúa en el centro de la revolución de los ETF.</p></div>
+      <div class="timeline-item"><p class="timeline-year">2018</p><p class="timeline-title">BlackRock supera 6,4 billones USD</p><p class="timeline-body">Friedrich Merz preside el consejo supervisor de BlackRock Alemania.</p></div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 3: ACTORES                                             -->
+  <!-- ============================================================ -->
+  <div class="panel" id="panel-players">
+    <p class="section-title">Los Actores del Capitalismo Financiero</p>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">Haz clic en cada tarjeta para desplegar el modus operandi detallado.</p>
+
+    <!-- LIGA 1 -->
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">Primera liga — Los organizadores de capital</p>
+    <div class="player-card" onclick="togglePlayer(this)">
+      <span class="player-tag">Liga 1 — Capital Organizers</span>
+      <span class="expand-indicator">▼</span>
+      <p class="player-name">BlackRock, Vanguard, State Street, Fidelity, Wellington...</p>
+      <p class="player-desc">Los "grandes organizadores de capital". Gestionan decenas de billones de dólares y son copropietarios simultáneos de las empresas más importantes de Occidente.</p>
+      <div class="player-expand">
+        <strong style="color:var(--text);">Modus operandi:</strong><br>
+        Operan como <em>shadow banks</em> sin la regulación de la banca tradicional. Su negocio consiste en administrar dinero ajeno (fondos de pensiones, aseguradoras, soberanos) cobrando comisiones. A través de la inversión pasiva (ETF, fondos indexados), se convierten en accionistas mayoritarios de miles de empresas, ejerciendo influencia sin asumir responsabilidad legal directa. Su poder deriva de la escala masiva y la capacidad de coordinar capital a nivel global.
+      </div>
+    </div>
+
+    <!-- LIGA 2 -->
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;margin-top:1.25rem;">Segunda liga — Private Equity</p>
+
+    <div class="player-card type-2" onclick="togglePlayer(this)">
+      <span class="player-tag">Private Equity — "Las langostas"</span>
+      <span class="expand-indicator">▼</span>
+      <p class="player-name">KKR, Carlyle, Blackstone, Apollo...</p>
+      <p class="player-desc">Compran empresas con deuda, las reestructuran agresivamente, extraen el máximo valor a corto plazo y las venden.</p>
+      <div class="player-expand">
+        <strong style="color:var(--text);">Modus operandi:</strong><br>
+        Utilizan el Leveraged Buyout (LBO): compran empresas con un 20% de capital propio y 80% de deuda. La deuda se traslada a la empresa adquirida (Debt Push-Down). Extraen valor mediante venta de activos (Sale &amp; Leaseback), dividendos extraordinarios y refinanciaciones. Venden en un plazo de 3 a 7 años. Conocidos en Alemania como "langostas" (Heuschrecken) por su carácter depredador.
+      </div>
+    </div>
+
+    <div class="player-card type-2" onclick="togglePlayer(this)">
+      <span class="player-tag">Hedge Funds — "Los saqueadores"</span>
+      <span class="expand-indicator">▼</span>
+      <p class="player-name">Bridgewater, Elliott, Millennium...</p>
+      <p class="player-desc">Especulan con posiciones cortas, divisas, deuda soberana. No producen nada; extraen valor de las fluctuaciones del mercado.</p>
+      <div class="player-expand">
+        <strong style="color:var(--text);">Modus operandi:</strong><br>
+        Operan con apalancamiento extremo y posiciones cortas (apuestan a la baja). Pueden desestabilizar empresas, divisas o incluso Estados. No generan valor productivo; su beneficio proviene de la volatilidad y la explotación de ineficiencias del mercado. Ray Dalio (Bridgewater) gestiona el mayor hedge fund del mundo.
+      </div>
+    </div>
+
+    <div class="player-card type-2" onclick="togglePlayer(this)">
+      <span class="player-tag">Venture Capital — "Los preparadores"</span>
+      <span class="expand-indicator">▼</span>
+      <p class="player-name">Sequoia, Andreessen Horowitz, Founders Fund...</p>
+      <p class="player-desc">Financian start-ups tecnológicas en fase temprana. Prepararon el terreno para Google, Facebook, Apple y la economía de plataformas.</p>
+      <div class="player-expand">
+        <strong style="color:var(--text);">Modus operandi:</strong><br>
+        Invierten en empresas tecnológicas en fases iniciales, asumiendo alto riesgo a cambio de participaciones significativas. Su objetivo es salir mediante OPV o venta a grandes tecnológicas. Peter Thiel (Founders Fund) es el ejemplo paradigmático. Han sido clave en la creación del complejo capitalista-digital-militar.
+      </div>
+    </div>
+
+    <div class="player-card type-2" onclick="togglePlayer(this)">
+      <span class="player-tag">Bancos de inversión de élite</span>
+      <span class="expand-indicator">▼</span>
+      <p class="player-name">Goldman Sachs, Morgan Stanley, Lazard...</p>
+      <p class="player-desc">Organizan fusiones y adquisiciones, estructuran la deuda y actúan como intermediarios privilegiados.</p>
+      <div class="player-expand">
+        <strong style="color:var(--text);">Modus operandi:</strong><br>
+        Actúan como asesores financieros en operaciones corporativas. Estructuran fusiones, adquisiciones, OPV y refinanciaciones. Cobran comisiones millonarias por cada operación. Funcionan como puerta giratoria entre el sector público y privado. Goldman Sachs es conocido por su red de ex-alumnos en puestos clave de gobiernos y bancos centrales.
+      </div>
+    </div>
+
+    <!-- ECONOMÍA DIGITAL -->
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;margin-top:1.25rem;">Economía digital</p>
+
+    <div class="player-card type-3" onclick="togglePlayer(this)">
+      <span class="player-tag">GAMFA — Los cinco jinetes del apocalipsis digital</span>
+      <span class="expand-indicator">▼</span>
+      <p class="player-name">Google, Apple, Microsoft, Facebook, Amazon</p>
+      <p class="player-desc">Promovidas y controladas en parte por los grandes organizadores de capital, penetran en "los poros más finos de la vida cotidiana".</p>
+      <div class="player-expand">
+        <strong style="color:var(--text);">Modus operandi:</strong><br>
+        Su modelo combina: 1) Extracción masiva de datos personales, 2) Monetización mediante publicidad y suscripciones, 3) Economías de escala que crean barreras de entrada infranqueables, 4) Colaboración con servicios de inteligencia (NSA, CIA). Cooperan con los grandes organizadores de capital que son sus principales accionistas. Han creado un complejo capitalista-digital-militar sin precedentes.
+      </div>
+    </div>
+
+    <div class="player-card type-4" onclick="togglePlayer(this)">
+      <span class="player-tag">Economía de plataforma</span>
+      <span class="expand-indicator">▼</span>
+      <p class="player-name">Uber, Airbnb, Deliveroo, Netflix, Flixbus...</p>
+      <p class="player-desc">Subcontratan trabajo sin relación laboral formal, concentran capital y datos.</p>
+      <div class="player-expand">
+        <strong style="color:var(--text);">Modus operandi:</strong><br>
+        Su modelo se basa en: 1) Subcontratación de trabajadores autónomos sin derechos laborales (falsos autónomos), 2) Extracción y monetización de datos de usuarios, 3) Competencia desleal con sectores regulados. Disfrazan modelos laborales del siglo XIX como "innovación tecnológica". Su valoración bursátil se basa en el crecimiento y la captura de mercado, no en la rentabilidad inmediata.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 4: BLACKROCK                                           -->
+  <!-- ============================================================ -->
+  <div class="panel" id="panel-blackrock">
+    <p class="section-title">BlackRock — El Banco en la Sombra más Grande del Mundo</p>
+    <div class="section-divider"></div>
+
+    <div class="stat-row">
+      <div class="stat-pill"><span class="stat-pill-num">$9B+</span><span class="stat-pill-label">Activos gestionados</span></div>
+      <div class="stat-pill"><span class="stat-pill-num">17.000+</span><span class="stat-pill-label">Empresas copropietarias</span></div>
+      <div class="stat-pill"><span class="stat-pill-num">5.000</span><span class="stat-pill-label">Servidores Aladdin</span></div>
+      <div class="stat-pill"><span class="stat-pill-num">150+</span><span class="stat-pill-label">Bancos centrales clientes</span></div>
+    </div>
+
+    <div class="blockquote">
+      "El americano es algo así como el presidente no declarado de la comunidad financiera mundial."
+      <cite>— Handelsblatt, sobre Larry Fink</cite>
+    </div>
+
+    <div class="accordion-item" onclick="toggleAccordion(this)">
+      <div class="accordion-header"><span class="accordion-title">Origen y ascenso de BlackRock</span><span class="accordion-icon">+</span></div>
+      <div class="accordion-body">Fundada en 1988 por Larry Fink. La crisis financiera fue su gran oportunidad: el gobierno de Obama le encargó gestionar la liquidación de Lehman Brothers. Los activos pasaron de 300.000 millones en 2004 a 9 billones en 2022.</div>
+    </div>
+
+    <div class="accordion-item" onclick="toggleAccordion(this)">
+      <div class="accordion-header"><span class="accordion-title">Aladdin: inteligencia artificial financiera</span><span class="accordion-icon">+</span></div>
+      <div class="accordion-body">5.000 servidores operados por 2.000 especialistas. Analiza riesgo para 150 fondos, 50 bancos centrales, la Reserva Federal y el BCE. Factores como guerras o movimientos sociales se incorporan para anticipar fluctuaciones.</div>
+    </div>
+
+    <div class="accordion-item" onclick="toggleAccordion(this)">
+      <div class="accordion-header"><span class="accordion-title">Dark pools y paraísos fiscales</span><span class="accordion-icon">+</span></div>
+      <div class="accordion-body">Opera en dark pools (40% de transacciones en EE.UU. en 2014). Cada participación está fragmentada en filiales en Delaware, Jersey, Luxemburgo, Países Bajos, Singapur, Islas Caimán.</div>
+    </div>
+
+    <div class="accordion-item" onclick="toggleAccordion(this)">
+      <div class="accordion-header"><span class="accordion-title">Common Ownership y propiedad común</span><span class="accordion-icon">+</span></div>
+      <div class="accordion-body">Copropietario simultáneo de empresas que compiten. Bayer-Monsanto, Linde-Praxair, Eon-RWE. Implicado en carteles de precios de aerolíneas y en el escándalo Cum-Ex.</div>
+    </div>
+
+    <div class="accordion-item" onclick="toggleAccordion(this)">
+      <div class="accordion-header"><span class="accordion-title">Redes de influencia política</span><span class="accordion-icon">+</span></div>
+      <div class="accordion-body">En EE.UU. dona a demócratas y republicanos. En Reino Unido, George Osborne. En Alemania, Friedrich Merz. En Francia, Jean-François Cirelli. En Suiza, Philipp Hildebrand. Lobby en la UE multiplicado por 10 entre 2011 y 2018.</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 5: PRIVATE EQUITY                                      -->
+  <!-- ============================================================ -->
+  <div class="panel" id="panel-pe">
+    <p class="section-title">Private Equity — La Maquinaria de Extracción</p>
+    <div class="section-divider"></div>
+
+    <div class="flow-chart">
+      <div class="flow-row">
+        <span class="flow-step">Comprar</span><span class="flow-arrow">→</span>
+        <span class="flow-step alt">Reestructurar</span><span class="flow-arrow">→</span>
+        <span class="flow-step gold">Extraer valor</span><span class="flow-arrow">→</span>
+        <span class="flow-step green">Vender</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-title">📊 Mecanismos clave del Private Equity</p>
+      <table class="compare-table">
+        <thead><tr><th>Instrumento</th><th>Funcionamiento</th><th>Efecto en la empresa</th></tr></thead>
+        <tbody>
+          <tr><td><strong>LBO</strong><br><span style="font-size:0.7rem;color:var(--muted);">Leveraged Buyout</span></td><td>Compra con 20% capital propio + 80% deuda</td><td>La empresa adquirida soporta la deuda. Aumento exponencial de rentabilidad</td></tr>
+          <tr><td><strong>Debt Push-Down</strong></td><td>La deuda de adquisición se transfiere a la empresa comprada</td><td>La empresa paga intereses de su propia compra. El fondo reduce su exposición</td></tr>
+          <tr><td><strong>Sale &amp; Leaseback</strong></td><td>Se venden activos (inmuebles, equipos) y se arriendan de nuevo</td><td>Liquidez inmediata para el fondo. Gasto recurrente permanente para la empresa</td></tr>
+          <tr><td><strong>Dividend Recapitalization</strong></td><td>La empresa adquiere nueva deuda y paga un dividendo extraordinario</td><td>El fondo recupera capital antes de vender. La deuda queda en la empresa</td></tr>
+          <tr><td><strong>SPV / Jurisdicciones</strong></td><td>Sociedades instrumentales en Jersey, Luxemburgo, Delaware</td><td>Aislamiento de riesgos, optimización fiscal, reducción de transparencia</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <p class="card-title">📌 Caso Tenovis (KKR)</p>
+        <p style="font-size:0.85rem;">Préstamo de 300M € desde Jersey · Venta de inmuebles por 50M € · Alquiler anual 6M € · 70 directivos con 5% de participación.</p>
+      </div>
+      <div class="card">
+        <p class="card-title">📌 Caso Celanese (Blackstone)</p>
+        <p style="font-size:0.85rem;">Retirada de bolsa · Reestructuración operativa · Dividendos extraordinarios · Salida a bolsa (IPO).</p>
+      </div>
+    </div>
+
+    <div class="blockquote">
+      "La empresa deja de ser una organización productiva y se convierte en una plataforma de extracción financiera."
+      <cite>— Werner Rügemer, sobre Tenovis</cite>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 6: EUROPA                                              -->
+  <!-- ============================================================ -->
+  <div class="panel" id="panel-europe">
+    <p class="section-title">Europa y Alemania — El Laboratorio de la Financiarización</p>
+    <div class="section-divider"></div>
+
+    <div class="intro-box">
+      <p>Si China representa el contraste externo, <strong>Alemania y Europa</strong> son el laboratorio donde el modelo financiero occidental se ha implantado con especial intensidad. Rügemer analiza cómo los grandes gestores de activos estadounidenses han penetrado en el tejido económico europeo.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <p class="card-title">🇩🇪 BlackRock en Alemania</p>
+        <ul class="styled">
+          <li>Mayor accionista de las 100 mayores empresas</li>
+          <li>Gestiona 270.000 millones € con 170 empleados</li>
+          <li>Oficina sin rótulos en Lenbachplatz 1, Múnich</li>
+          <li>Friedrich Merz (CDU) presidente del consejo (2016–2020)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="card-title">🚪 La puerta giratoria alemana</p>
+        <ul class="styled">
+          <li><strong>Friedrich Merz:</strong> CDU → BlackRock</li>
+          <li><strong>Lars-Hendrik Röller:</strong> Asesor de Merkel → BlackRock</li>
+          <li>Reuniones de Fink con Schäuble, Scholz, Altmaier, Gabriel (fuera del escrutinio público)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blockquote">
+      "¿A quién pertenece realmente esta república y tiene eso todavía algo que ver con estructuras democráticas?"
+      <cite>— Werner Rügemer</cite>
+    </div>
+
+    <div class="card">
+      <p class="card-title">🇪🇺 Organizadores de capital en Europa</p>
+      <p>BlackRock, Vanguard, State Street, Fidelity, Capital Group, Prudential, Northern Trust y Wellington poseen participaciones en <strong>todas las empresas del DAX</strong> y en un buen número de otras empresas europeas. Son ahora los <strong>propietarios de bancos y grupos industriales</strong> en Europa.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 7: CHINA                                               -->
+  <!-- ============================================================ -->
+  <div class="panel" id="panel-china">
+    <p class="section-title">China — Capitalismo de Dirección Comunista</p>
+    <div class="section-divider"></div>
+
+    <div class="intro-box">
+      <p>Rügemer dedica la tercera parte del libro a comparar el capitalismo chino con el occidental. China ha desarrollado un modelo diferente: el Estado y el Partido Comunista dirigen estratégicamente el capital, con objetivos a largo plazo.</p>
+    </div>
+
+    <div class="split-compare">
+      <div class="split-side west">
+        <p class="split-header"><span class="split-dot dot-blue"></span>Capitalismo occidental</p>
+        <div class="split-row">Capital "impaciente": beneficio a corto plazo</div>
+        <div class="split-row">Propietarios anónimos transnacionales</div>
+        <div class="split-row">Privatización de pensiones, sanidad, vivienda</div>
+        <div class="split-row">Estancamiento salarial de la mayoría</div>
+        <div class="split-row">Dependencia del FMI: austeridad</div>
+      </div>
+      <div class="split-side china">
+        <p class="split-header"><span class="split-dot dot-red"></span>Capitalismo chino</p>
+        <div class="split-row">Capital "paciente": objetivos a largo plazo</div>
+        <div class="split-row">Estado propietario del suelo; control estratégico</div>
+        <div class="split-row">Seguro médico para 1.300 millones</div>
+        <div class="split-row">Salarios medios triplicados (2005–2016)</div>
+        <div class="split-row">Préstamos al 1,5% sin condicionalidad política</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <p class="card-title">🚗 El modelo del vehículo eléctrico</p>
+        <p>China pasó de 0 a 579.000 coches eléctricos en 2017. El 99% de los 385.000 autobuses eléctricos del mundo circulan en China. Intervención estatal: exigencia de transferencia tecnológica, subvenciones, prohibición de modelos de alto consumo.</p>
+      </div>
+      <div class="card">
+        <p class="card-title">⚖️ La campaña anticorrupción</p>
+        <p>Entre 2012 y 2016, aproximadamente un millón de directivos y funcionarios fueron destituidos, arrestados y juzgados. Altos cargos del politburó condenados a cadena perpetua.</p>
+      </div>
+    </div>
+
+    <div class="blockquote">
+      "La República Popular se ha convertido en el país con más huelgas del mundo, aunque los sindicatos oficiales no participan."
+      <cite>— Werner Rügemer, Parte III</cite>
+    </div>
+
+    <div class="card">
+      <p class="card-title">🌏 La Nueva Ruta de la Seda</p>
+      <p>China construye una red global de infraestructura (carreteras, ferrocarriles, puertos) que abarca Asia, África, América Latina y Europa. Préstamos al 1,5% sin condiciones del FMI. Rügemer lo interpreta como "el amanecer fresco de una nueva historia diferente".</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 8: RIESGO                                              -->
+  <!-- ============================================================ -->
+  <div class="panel" id="panel-risk">
+    <p class="section-title">La Transferencia del Riesgo — El Eje Transversal</p>
+    <div class="section-divider"></div>
+
+    <div class="intro-box">
+      <p><strong>La pregunta que articula toda la obra no es solo quién gana, sino quién soporta finalmente las pérdidas.</strong> La financiarización no sólo redistribuye beneficios, sino también riesgos. En el capitalismo contemporáneo, la distancia entre decisión, beneficio y pérdida puede aumentar considerablemente.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card" style="border-top:3px solid var(--red);">
+        <p class="card-title">⚠️ En el Private Equity</p>
+        <p style="font-size:0.85rem;">El riesgo se traslada a la empresa adquirida (Debt Push-Down). La empresa paga los intereses de su propia compra. El fondo reduce su exposición.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--blue);">
+        <p class="card-title">⚠️ En las infraestructuras</p>
+        <p style="font-size:0.85rem;">El riesgo regulatorio y social se comparte con el Estado. Garantías públicas y contratos de larga duración protegen a los inversores.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--gold);">
+        <p class="card-title">⚠️ En las crisis soberanas</p>
+        <p style="font-size:0.85rem;">Irlanda 2011: las pérdidas bancarias fueron socializadas. Los beneficios de la recuperación fueron capturados por inversores privados.</p>
+      </div>
+    </div>
+
+    <div class="blockquote" style="border-left-color:var(--gold);">
+      "¿Quién posee el capital? No es lo más importante. ¿Quién decide cómo se usa? Más importante. ¿Quién soporta las consecuencias cuando las decisiones fallan? Lo más importante de todo."
+      <cite>— Werner Rügemer</cite>
+    </div>
+
+    <div class="card">
+      <p class="card-title">📊 Matriz de transferencia del riesgo</p>
+      <table class="compare-table">
+        <thead><tr><th>Actor</th><th>¿Quién soporta el riesgo?</th></tr></thead>
+        <tbody>
+          <tr><td>BlackRock, Vanguard, State Street</td><td>Inversores y ahorradores finales</td></tr>
+          <tr><td>Private Equity (KKR, Blackstone)</td><td>Empresa adquirida, trabajadores</td></tr>
+          <tr><td>Macquarie / Infraestructuras</td><td>Estado, contribuyentes, usuarios</td></tr>
+          <tr><td>Irlanda 2011 (crisis)</td><td>Contribuyente irlandés</td></tr>
+          <tr><td>Alemania / Europa</td><td>Soberanía democrática, ciudadanos</td></tr>
+          <tr><td>China</td><td>Absorbido por bancos públicos, Estado y gobierno</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 9: GRÁFICOS                                            -->
+  <!-- ============================================================ -->
+  <div class="panel" id="panel-charts">
+    <p class="section-title">Gráficos y Datos</p>
+    <div class="section-divider"></div>
+
+    <div class="grid-2">
+      <div class="chart-box">
+        <p class="chart-label">Top 5 organizadores de capital — Activos (billones USD)</p>
+        <div class="chart-wrap"><canvas id="chart1"></canvas></div>
+      </div>
+      <div class="chart-box">
+        <p class="chart-label">Vehículos eléctricos — Matriculaciones 2017 (miles)</p>
+        <div class="chart-wrap"><canvas id="chart2"></canvas></div>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <p class="chart-label">Crecimiento de activos de BlackRock (billones USD)</p>
+      <div class="chart-wrap"><canvas id="chart3"></canvas></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="chart-box">
+        <p class="chart-label">Inversión en renovables — 2017 (miles M$)</p>
+        <div class="chart-wrap"><canvas id="chart4"></canvas></div>
+      </div>
+      <div class="chart-box">
+        <p class="chart-label">Participación renovables (% 2008 vs 2017)</p>
+        <div class="chart-wrap"><canvas id="chart5"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-title">📈 BlackRock — Participación en empresas del DAX</p>
+      <div id="progress-container"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this) closeModal()">
+  <div class="modal-box">
+    <p class="modal-title" id="modalTitle">Título</p>
+    <span class="modal-sub" id="modalSub">Concepto clave</span>
+    <p id="modalBody">Descripción detallada del concepto.</p>
+    <button class="modal-close" onclick="closeModal()">Cerrar</button>
+  </div>
+</div>
+
+<footer>
+  <p>Basado en <em>Los Capitalistas del Siglo XXI</em> — Werner Rügemer (2018/2019)</p>
+  <p style="margin-top:0.2rem;">Haz clic en etiquetas y tarjetas para explorar conceptos y modus operandi.</p>
+</footer>
+
+<script>
+// ===== TAB SWITCHING =====
+function switchTab(btn, id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
+  if (id === 'charts') { setTimeout(initCharts, 150); setTimeout(initProgress, 350); }
+}
+
+// ===== ACCORDION =====
+function toggleAccordion(item) {
+  item.classList.toggle('open');
+}
+
+// ===== PLAYER CARD =====
+function togglePlayer(card) {
+  card.classList.toggle('open');
+}
+
+// ===== MODAL =====
+const modalData = {
+  'shadow-banking': {
+    title: 'Shadow Banking',
+    sub: 'Banca en la sombra',
+    body: 'Conjunto de intermediarios financieros que operan al margen de la regulación bancaria tradicional. Incluyen fondos de inversión, hedge funds, fondos de private equity y vehículos de titulización. No tienen acceso a los mecanismos de seguridad de los bancos tradicionales (depósitos garantizados, acceso a liquidez del banco central), pero tampoco están sujetos a sus requisitos de capital y supervisión. Su crecimiento ha sido exponencial desde la crisis de 2008.'
+  },
+  'clase-capitalista': {
+    title: 'Clase capitalista transnacional',
+    sub: 'Nueva élite global',
+    body: 'Grupo de élite financiera que opera por encima de las fronteras nacionales. No se identifica con ningún país en particular, sino con la red global de grandes gestores de activos, fondos de inversión y bancos de inversión. Comparten intereses comunes: maximización de la rentabilidad, libre circulación de capital, mínima regulación y protección de su posición privilegiada. Ejercen influencia sobre gobiernos, organismos internacionales y medios de comunicación.'
+  },
+  'etf': {
+    title: 'ETF / iShares',
+    sub: 'Exchange Traded Funds',
+    body: 'Fondos cotizados que replican índices bursátiles (DAX, S&P 500, MSCI) o sectores. iShares es la plataforma de ETF de BlackRock, la mayor del mundo. Permiten a pequeños inversores acceder a carteras diversificadas con costes reducidos. Sin embargo, su crecimiento masivo ha concentrado el poder accionarial en los grandes gestores, que se convierten en propietarios simultáneos de miles de empresas a través de estos vehículos.'
+  },
+  'aladdin': {
+    title: 'Aladdin',
+    sub: 'El cerebro tecnológico de BlackRock',
+    body: 'Sistema de inteligencia artificial y gestión de riesgos de BlackRock (Asset Liability and Debt Derivative Investment Network). 5.000 servidores operados por 2.000 especialistas. Analiza riesgos para más de 150 fondos, 50 bancos centrales, la Reserva Federal y el BCE. Incorpora factores como guerras, terremotos o cambios de gobierno para anticipar fluctuaciones de mercado. Es la herramienta que permite a BlackRock coordinar capital a escala global.'
+  },
+  'common-ownership': {
+    title: 'Common Ownership',
+    sub: 'Propiedad común',
+    body: 'Fenómeno por el cual los mismos grandes gestores (BlackRock, Vanguard, State Street) aparecen como accionistas relevantes de múltiples empresas que compiten entre sí. Ejemplo: BlackRock es copropietario de Bayer y Monsanto, de las principales aerolíneas estadounidenses, o de Eon y RWE. Esto plantea interrogantes sobre la competencia real y la concentración de poder económico, ya que los intereses de estas empresas pueden coordinarse indirectamente.'
+  },
+  'dark-pools': {
+    title: 'Dark Pools',
+    sub: 'Piscinas oscuras de liquidez',
+    body: 'Centros de negociación fuera de las bolsas reguladas donde compradores y vendedores permanecen anónimos. En 2014, el 40% de las transacciones bursátiles en EE.UU. ya ocurrían fuera de las bolsas tradicionales. Permiten a grandes inversores ejecutar operaciones sin que el mercado detecte sus movimientos, evitando fluctuaciones de precios. Reducen la transparencia del sistema financiero y favorecen a los grandes actores en detrimento de los pequeños inversores.'
+  },
+  'paraisos': {
+    title: 'Paraísos fiscales',
+    sub: 'Jurisdicciones opacas',
+    body: 'Países o territorios con baja o nula tributación, alta confidencialidad y regulación financiera laxa. BlackRock fragmenta sus participaciones en cientos de filiales en Delaware, Jersey, Luxemburgo, Países Bajos, Singapur, Islas Caimán. Esto permite optimizar la fiscalidad, reducir la transparencia y dificultar la identificación de los verdaderos propietarios de los activos. Son la infraestructura invisible del capitalismo financiero global.'
+  },
+  'puerta-giratoria': {
+    title: 'Puerta giratoria',
+    sub: 'Revolving door',
+    body: 'Fenómeno por el cual altos funcionarios públicos, políticos y asesores gubernamentales pasan a ocupar cargos en grandes corporaciones financieras, y viceversa. Ejemplos: Friedrich Merz (CDU) → presidente de BlackRock Alemania; Lars-Hendrik Röller (asesor de Merkel) → BlackRock; George Osborne (ministro de Hacienda británico) → asesor de BlackRock. Esto crea redes de influencia que operan al margen del control democrático.'
+  },
+  'financiarizacion': {
+    title: 'Financiarización',
+    sub: 'El proceso histórico',
+    body: 'Proceso mediante el cual los criterios financieros pasan a dominar las decisiones económicas. El centro de gravedad se desplaza desde la producción (fábricas, tecnología, bienes) hacia las finanzas (deuda, rentabilidad, valoración de activos). Se caracteriza por: 1) Expansión de los mercados financieros, 2) Auge de los fondos institucionales, 3) Maximización del valor para el accionista, 4) Uso estratégico de la deuda, 5) Creciente concentración del poder económico.'
+  },
+  'extraccion-valor': {
+    title: 'Extracción de valor',
+    sub: 'Valorización financiera',
+    body: 'Proceso mediante el cual el capital financiero obtiene rentabilidad no de la producción o la innovación, sino de la reorganización financiera de activos existentes. Mecanismos: recompra de acciones, dividendos extraordinarios financiados con deuda, venta de activos, reducción de costes laborales, optimización fiscal. La empresa deja de ser una organización productiva para convertirse en una plataforma de extracción de valor para sus propietarios financieros.'
+  },
+  'transferencia-riesgo': {
+    title: 'Transferencia del riesgo',
+    sub: 'El eje central del análisis',
+    body: 'La financiarización no solo redistribuye beneficios: también redistribuye riesgos. En el capitalismo clásico, el propietario que tomaba decisiones asumía directamente el riesgo. En el capitalismo contemporáneo, el riesgo se traslada a: trabajadores (despidos, precariedad), empresas adquiridas (deuda), ahorradores (pérdidas bursátiles), contribuyentes (rescates bancarios) y Estados (crisis soberanas). La pregunta definitiva: ¿quién soporta las consecuencias cuando las decisiones fallan?'
+  },
+  'ruta-seda': {
+    title: 'Nueva Ruta de la Seda',
+    sub: 'Belt and Road Initiative',
+    body: 'Proyecto global de infraestructura impulsado por China que incluye carreteras, ferrocarriles, puertos, fibra óptica y redes energéticas en Asia, África, América Latina y Europa. Los préstamos se ofrecen al 1,5% de interés, sin las condiciones de ajuste estructural del FMI o el Banco Mundial. Rügemer lo interpreta como una alternativa al orden financiero occidental y "el amanecer fresco de una nueva historia diferente".'
+  }
+};
+
+function openModal(key) {
+  const data = modalData[key];
+  if (!data) return;
+  document.getElementById('modalTitle').textContent = data.title;
+  document.getElementById('modalSub').textContent = data.sub;
+  document.getElementById('modalBody').textContent = data.body;
+  document.getElementById('modalOverlay').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+}
+
+// Cerrar modal con Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// ===== CHARTS =====
+let chartsInited = false;
+function initCharts() {
+  if (chartsInited) return;
+  chartsInited = true;
+
+  const textColor = '#9fa8c4';
+  const grid = 'rgba(255,255,255,0.06)';
+
+  new Chart(document.getElementById('chart1'), {
+    type: 'bar',
+    data: {
+      labels: ['BlackRock', 'Vanguard', 'Fidelity', 'State Street', 'JP Morgan'],
+      datasets: [{
+        label: 'Billones USD',
+        data: [9.1, 7.2, 4.5, 3.9, 2.7],
+        backgroundColor: ['#c0392b','#e74c3c','#e57373','#ef9a9a','#ffcdd2'],
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: grid } },
+               y: { ticks: { color: textColor, font: { size: 10 }, callback: v => '$' + v + 'T' }, grid: { color: grid } } }
+    }
+  });
+
+  new Chart(document.getElementById('chart2'), {
+    type: 'bar',
+    data: {
+      labels: ['China','EE.UU.','Noruega','Japón','Alemania','Reino Unido','Francia','Suecia','Canadá'],
+      datasets: [{
+        label: 'Miles de matriculaciones',
+        data: [579, 195.1, 62.3, 56, 54.5, 47.3, 41.7, 20.3, 18.4],
+        backgroundColor: '#c0392b',
+        borderRadius: 4
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: grid } },
+               y: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: grid } } }
+    }
+  });
+
+  new Chart(document.getElementById('chart3'), {
+    type: 'line',
+    data: {
+      labels: ['2004','2006','2008','2010','2012','2014','2016','2018','2020','2022'],
+      datasets: [{
+        label: 'Billones USD',
+        data: [0.3, 0.6, 1.3, 3.3, 3.9, 4.7, 5.1, 6.4, 7.8, 9.1],
+        borderColor: '#e74c3c',
+        backgroundColor: 'rgba(231,76,60,0.1)',
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: '#e74c3c',
+        pointRadius: 3
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: grid } },
+               y: { ticks: { color: textColor, font: { size: 10 }, callback: v => '$' + v + 'T' }, grid: { color: grid } } }
+    }
+  });
+
+  new Chart(document.getElementById('chart4'), {
+    type: 'doughnut',
+    data: {
+      labels: ['China','EE.UU.','UE','Resto'],
+      datasets: [{
+        data: [126, 40, 40, 54],
+        backgroundColor: ['#c0392b','#2980b9','#27ae60','#7f8c8d'],
+        borderWidth: 0,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: true, position: 'bottom', labels: { color: textColor, font: { size: 10 }, padding: 10, boxWidth: 12 } } }
+    }
+  });
+
+  new Chart(document.getElementById('chart5'), {
+    type: 'bar',
+    data: {
+      labels: ['China','Alemania','UE','EE.UU.','Canadá'],
+      datasets: [
+        { label: '2008', data: [16.5, 3.7, 22.2, 11, 8.6], backgroundColor: 'rgba(41,128,185,0.7)', borderRadius: 4 },
+        { label: '2017', data: [28.4, 5.2, 18.3, 10.5, 5.4], backgroundColor: '#c0392b', borderRadius: 4 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: true, position: 'top', labels: { color: textColor, font: { size: 10 }, boxWidth: 12 } } },
+      scales: { x: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: grid } },
+               y: { ticks: { color: textColor, font: { size: 10 }, callback: v => v + '%' }, grid: { color: grid } } }
+    }
+  });
+}
+
+// ===== PROGRESS BARS =====
+function initProgress() {
+  const container = document.getElementById('progress-container');
+  if (!container || container.innerHTML) return;
+  const data = [
+    { name: 'Vonovia (inmobiliaria)', val: 10 },
+    { name: 'RWE (energía)', val: 8.8 },
+    { name: 'Eon (energía)', val: 7.9 },
+    { name: 'Deutsche Bank', val: 6.5 },
+    { name: 'Lufthansa', val: 6.1 },
+    { name: 'Siemens', val: 5.8 },
+    { name: 'Bayer', val: 5.3 },
+    { name: 'BASF', val: 5.1 },
+    { name: 'Daimler', val: 4.9 },
+    { name: 'SAP', val: 4.7 }
+  ];
+  data.forEach(d => {
+    const pct = (d.val / 12 * 100).toFixed(0);
+    const color = d.val >= 9 ? '#c0392b' : d.val >= 7 ? '#e74c3c' : d.val >= 5.5 ? '#e57373' : '#ef9a9a';
+    container.innerHTML += `
+      <div class="progress-item">
+        <div class="progress-label"><span>${d.name}</span><span class="progress-val">${d.val}%</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:0%;background:${color}" data-w="${pct}%"></div></div>
+      </div>`;
+  });
+  setTimeout(() => {
+    document.querySelectorAll('.progress-fill').forEach(el => {
+      el.style.width = el.dataset.w;
+    });
+  }, 300);
+}
+</script>
+</body>
+</html>
