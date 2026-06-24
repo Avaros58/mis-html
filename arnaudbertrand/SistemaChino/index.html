@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema chino de organización representativa</title>
+  <meta name="description" content="Estructura, funcionamiento y supervisión democrática de los Congresos Populares en China.">
+
+  <!-- Vista previa para Facebook, LinkedIn y otras redes.
+       Si cambias el nombre de la carpeta en GitHub, sustituye estas tres URL absolutas. -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Sistema chino de organización representativa">
+  <meta property="og:description" content="Estructura, funcionamiento y supervisión democrática. PDF con visor integrado.">
+  <meta property="og:url" content="https://avaros58.github.io/mis-html/SistemaChino/">
+  <meta property="og:image" content="https://avaros58.github.io/mis-html/SistemaChino/portada-redes.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portada del informe Sistema chino de organización representativa">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sistema chino de organización representativa">
+  <meta name="twitter:description" content="Estructura, funcionamiento y supervisión democrática. PDF con visor integrado.">
+  <meta name="twitter:image" content="https://avaros58.github.io/mis-html/SistemaChino/portada-redes.jpg">
+
+  <style>
+    :root {
+      --navy:#172b4d;
+      --blue:#355c8a;
+      --gold:#c6a04a;
+      --paper:#f6f3ec;
+      --ink:#24303f;
+      --muted:#667085;
+      --white:#fff;
+      --shadow:0 18px 48px rgba(23,43,77,.15);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg,#eef2f6 0,#f8f7f3 320px,#f8f7f3 100%);
+    }
+    header{
+      background:var(--navy);
+      color:var(--white);
+      border-bottom:6px solid var(--gold);
+    }
+    .hero{
+      width:min(1120px,calc(100% - 32px));
+      margin:auto;
+      padding:44px 0 38px;
+    }
+    .eyebrow{color:#e4c46b;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem}
+    h1{font-size:clamp(2rem,5vw,4rem);line-height:1.06;margin:.45rem 0 .8rem;max-width:900px}
+    .subtitle{font-size:clamp(1.05rem,2vw,1.35rem);color:#d8e1ee;max-width:820px;line-height:1.5}
+    main{width:min(1120px,calc(100% - 32px));margin:32px auto 56px}
+    .intro{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:24px;
+      align-items:center;
+      margin-bottom:22px;
+    }
+    .intro p{margin:0;line-height:1.7;color:#475467;max-width:760px}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+    .btn{
+      appearance:none;border:0;border-radius:10px;padding:12px 16px;
+      font-weight:700;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+      transition:transform .15s ease,box-shadow .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(23,43,77,.12)}
+    .btn-primary{background:var(--navy);color:white}
+    .btn-secondary{background:white;color:var(--navy);border:1px solid #d0d5dd}
+    .viewer-shell{background:white;border-radius:18px;box-shadow:var(--shadow);overflow:hidden;border:1px solid #e4e7ec}
+    .viewer-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;background:#f3f5f8;border-bottom:1px solid #dfe4ea}
+    .viewer-title{font-weight:800;color:var(--navy)}
+    .viewer-note{font-size:.88rem;color:var(--muted)}
+    .pdf-frame{width:100%;height:78vh;min-height:620px;border:0;display:block;background:#dfe3e8}
+    .fallback{padding:24px;line-height:1.6;background:#fff8e8;border-top:1px solid #ead8a9}
+    .source{margin-top:24px;padding:18px 20px;border-left:4px solid var(--gold);background:white;border-radius:10px;box-shadow:0 8px 24px rgba(23,43,77,.06)}
+    .source a{color:var(--blue);font-weight:700}
+    footer{color:var(--muted);text-align:center;padding:0 20px 36px;font-size:.9rem}
+    @media (max-width:760px){
+      .intro{grid-template-columns:1fr}
+      .actions{justify-content:flex-start}
+      .viewer-bar{align-items:flex-start;flex-direction:column}
+      .pdf-frame{height:72vh;min-height:520px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <div class="eyebrow">Análisis estructural</div>
+      <h1>Sistema chino de organización representativa</h1>
+      <div class="subtitle">Estructura, funcionamiento y supervisión democrática de los Congresos Populares.</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-label="Presentación del documento">
+      <p>El documento puede leerse directamente dentro de esta página. Utiliza la rueda del ratón, el panel táctil o la barra de desplazamiento del visor para recorrer todas sus páginas.</p>
+      <div class="actions">
+        <button class="btn btn-primary" id="fullscreenBtn" type="button">⛶ Pantalla completa</button>
+        <a class="btn btn-secondary" href="sistema_chino_organizacion_representativa.pdf" target="_blank" rel="noopener">↗ Abrir PDF</a>
+        <a class="btn btn-secondary" href="sistema_chino_organizacion_representativa.pdf" download>↓ Descargar</a>
+      </div>
+    </section>
+
+    <section class="viewer-shell" id="viewerShell" aria-label="Visor del PDF">
+      <div class="viewer-bar">
+        <div class="viewer-title">Documento completo</div>
+        <div class="viewer-note">Puedes desplazarte, ampliar, imprimir o descargar desde los controles del visor.</div>
+      </div>
+
+      <object
+        id="pdfViewer"
+        class="pdf-frame"
+        data="sistema_chino_organizacion_representativa.pdf#view=FitH&toolbar=1&navpanes=0"
+        type="application/pdf">
+        <iframe
+          class="pdf-frame"
+          src="sistema_chino_organizacion_representativa.pdf#view=FitH&toolbar=1&navpanes=0"
+          title="Sistema chino de organización representativa">
+        </iframe>
+        <div class="fallback">
+          Tu navegador no puede mostrar el PDF dentro de la página.
+          <a href="sistema_chino_organizacion_representativa.pdf" target="_blank" rel="noopener">Ábrelo aquí</a>.
+        </div>
+      </object>
+    </section>
+
+    <aside class="source">
+      <strong>Fuente de referencia:</strong>
+      <a href="https://substack.com/@arnaudbertrand/note/c-277208425?utm_source=feed-email-digest" target="_blank" rel="noopener noreferrer">nota de Arnaud Bertrand en Substack</a>.
+    </aside>
+  </main>
+
+  <footer>Documento preparado para lectura y difusión pública.</footer>
+
+  <script>
+    const shell = document.getElementById('viewerShell');
+    const button = document.getElementById('fullscreenBtn');
+
+    button.addEventListener('click', async () => {
+      try {
+        if (!document.fullscreenElement) {
+          await shell.requestFullscreen();
+        } else {
+          await document.exitFullscreen();
+        }
+      } catch (error) {
+        window.open('sistema_chino_organizacion_representativa.pdf', '_blank', 'noopener');
+      }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+      button.textContent = document.fullscreenElement ? '⤢ Salir de pantalla completa' : '⛶ Pantalla completa';
+    });
+  </script>
+</body>
+</html>

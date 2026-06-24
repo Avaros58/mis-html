@@ -1,0 +1,11 @@
+PUBLICACIÓN EN GITHUB PAGES
+
+1. Copia la carpeta completa "SistemaChino" dentro de tu repositorio "mis-html".
+2. Haz Commit to main y después Push origin desde GitHub Desktop.
+3. La dirección prevista será:
+   https://avaros58.github.io/mis-html/SistemaChino/
+
+IMPORTANTE
+- No cambies los nombres de index.html, portada-redes.jpg ni del PDF.
+- Si renombras la carpeta, abre index.html con el Bloc de notas y cambia las URL que contienen /SistemaChino/ en las etiquetas og:url, og:image y twitter:image.
+- Facebook y otras redes pueden conservar una vista previa antigua. En ese caso, utiliza el Sharing Debugger de Facebook para volver a rastrear la dirección.
