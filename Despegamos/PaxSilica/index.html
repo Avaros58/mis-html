@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Despegamos · Pax Sílica · César Vidal</title>
+<!-- ============================================================
+         VISTA PREVIA PARA FACEBOOK, X/TWITTER, WHATSAPP Y LINKEDIN
+         IMPORTANTE: sustituye las dos URL marcadas cuando conozcas
+         la dirección definitiva de esta carpeta en GitHub Pages.
+         ============================================================ -->
+<meta content="La Pax Sílica: inteligencia artificial, chips, litio, tierras raras y la nueva dependencia geopolítica en la pugna tecnológica entre Estados Unidos y China." name="description"/>
+<link href="https://avaros58.github.io/mis-html/Despegamos/PaxSilica/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="es_ES" property="og:locale"/>
+<meta content="Despegamos · La Voz de César Vidal" property="og:site_name"/>
+<meta content="La Pax Sílica · IA, chips, litio y dependencia geopolítica" property="og:title"/>
+<meta content="Un análisis del nuevo orden tecnológico: control de chips, inteligencia artificial, minerales estratégicos y cadenas de suministro." property="og:description"/>
+<meta content="https://avaros58.github.io/mis-html/Despegamos/PaxSilica/" property="og:url"/>
+<meta content="https://avaros58.github.io/mis-html/Despegamos/PaxSilica/portada-pax-silica.png" property="og:image"/>
+<meta content="https://avaros58.github.io/mis-html/Despegamos/PaxSilica/portada-pax-silica.png" property="og:image:secure_url"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1731" property="og:image:width"/>
+<meta content="909" property="og:image:height"/>
+<meta content="La Pax Sílica: IA, chips, litio y nueva dependencia geopolítica" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="La Pax Sílica · IA, chips, litio y dependencia geopolítica" name="twitter:title"/>
+<meta content="Chips, inteligencia artificial, litio y tierras raras en la nueva disputa por el poder tecnológico mundial." name="twitter:description"/>
+<meta content="https://avaros58.github.io/mis-html/Despegamos/PaxSilica/portada-pax-silica.png" name="twitter:image"/>
+<meta content="La Pax Sílica: IA, chips, litio y nueva dependencia geopolítica" name="twitter:image:alt"/>
+
+<style>
+        /* === RESET Y BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a12;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            color: #e0e0f0;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 880px;
+            width: 100%;
+            background: #11111e;
+            border-radius: 2.5rem;
+            padding: 2.5rem 2.8rem 3rem;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.04);
+        }
+
+        /* === CABECERA === */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .brand-dot {
+            background: #e50914;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 14px #e5091470;
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            font-weight: 500;
+            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+            color: #d0d0ea;
+        }
+
+        .brand-text strong {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .brand-text .sep {
+            color: #666688;
+            margin: 0 6px;
+        }
+
+        /* === VIDEO THUMBNAIL === */
+        .video-card {
+            position: relative;
+            border-radius: 1.6rem;
+            overflow: hidden;
+            background: #0b0b16;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.7);
+            margin-bottom: 2.2rem;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: scale(1.003);
+            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.9);
+        }
+
+        .video-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #0e0e1a;
+            transition: filter 0.3s ease;
+        }
+
+        .video-card:hover img {
+            filter: brightness(0.7) saturate(1.1);
+        }
+
+        .play-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-card:hover .play-overlay {
+            opacity: 0.85;
+        }
+
+        .play-btn {
+            width: 74px;
+            height: 74px;
+            background: rgba(229, 9, 20, 0.92);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 50px rgba(229, 9, 20, 0.45);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(2px);
+        }
+
+        .play-btn svg {
+            width: 36px;
+            height: 36px;
+            fill: white;
+            margin-left: 5px;
+        }
+
+        /* === BADGE / ETIQUETA === */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.3rem 1.2rem 0.3rem 0.9rem;
+            border-radius: 60px;
+            color: #b4b4d0;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            background: #e50914;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* === TÍTULO DEL INFORME === */
+        .titulo-informe {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+
+        .subtitulo-informe {
+            color: #8a8aaa;
+            font-size: 0.95rem;
+            margin-bottom: 1.8rem;
+            border-left: 3px solid #e50914;
+            padding-left: 1rem;
+        }
+
+        /* === SECCIONES DEL INFORME === */
+        .seccion {
+            margin-bottom: 2rem;
+        }
+
+        .seccion h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #f0f0ff;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .seccion h2 .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e50914;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .seccion p {
+            color: #c8c8e2;
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .seccion ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.5rem 0 0.8rem 0;
+        }
+
+        .seccion ul li {
+            color: #c0c0da;
+            font-size: 0.93rem;
+            padding-left: 1.4rem;
+            position: relative;
+            margin-bottom: 0.35rem;
+        }
+
+        .seccion ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #e50914;
+            font-weight: 700;
+        }
+
+        .destacado {
+            color: #facc15;
+            font-weight: 500;
+        }
+
+        .cita-destacada {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid #e50914;
+            padding: 1rem 1.4rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1rem 0 0.8rem 0;
+            font-style: italic;
+            color: #e0e0f5;
+            font-size: 0.98rem;
+        }
+
+        .cita-destacada .autor {
+            display: block;
+            margin-top: 0.3rem;
+            font-style: normal;
+            color: #8899bb;
+            font-size: 0.85rem;
+        }
+
+        .cita-destacada .highlight {
+            color: #facc15;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        /* === BOTÓN Y PIE === */
+        .footer-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.2rem;
+            margin-top: 2.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .btn-youtube {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #1a1a2e;
+            color: #ddddf5;
+            padding: 0.7rem 1.8rem 0.7rem 1.5rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.25s ease;
+        }
+
+        .btn-youtube:hover {
+            background: #e50914;
+            color: white;
+            border-color: #e50914;
+            box-shadow: 0 0 28px #e5091440;
+            transform: scale(1.02);
+        }
+
+        .btn-youtube svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        .footer-meta {
+            color: #555577;
+            font-size: 0.78rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 650px) {
+            .container {
+                padding: 1.5rem 1.2rem 2rem;
+                border-radius: 1.8rem;
+            }
+            .titulo-informe {
+                font-size: 1.4rem;
+            }
+            .seccion h2 {
+                font-size: 1.1rem;
+            }
+            .play-btn {
+                width: 56px;
+                height: 56px;
+            }
+            .play-btn svg {
+                width: 28px;
+                height: 28px;
+            }
+            .brand-text {
+                font-size: 0.9rem;
+            }
+            .cita-destacada {
+                font-size: 0.88rem;
+                padding: 0.8rem 1rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .container {
+                padding: 1rem 0.9rem 1.5rem;
+            }
+            .footer-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-youtube {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<!-- ===== CABECERA ===== -->
+<div class="brand">
+<span class="brand-dot"></span>
+<div class="brand-text">
+<strong>Despegamos</strong> <span class="sep">·</span> La Voz de Cesar Vidal
+        </div>
+</div>
+<!-- ===== VIDEO THUMBNAIL ===== -->
+<a class="video-card" href="https://youtu.be/iNFpovVlgxQ?si=69m8HyqR4quHiJiI" rel="noopener noreferrer" target="_blank">
+<img alt="La Pax Sílica · IA, chips, litio y nueva dependencia geopolítica" fetchpriority="high" loading="eager" onerror="this.src='https://img.youtube.com/vi/iNFpovVlgxQ/maxresdefault.jpg'" src="portada-pax-silica.png"/>
+<div class="play-overlay">
+<div class="play-btn">
+<svg viewbox="0 0 24 24">
+<polygon points="5,3 19,12 5,21"></polygon>
+</svg>
+</div>
+</div>
+</a>
+<!-- ===== BADGE ===== -->
+<div class="badge">
+<span class="badge-dot"></span>
+        Análisis completo · Pax Sílica
+    </div>
+<!-- ===== TÍTULO DEL INFORME ===== -->
+<h1 class="titulo-informe">La Pax Sílica</h1>
+<div class="subtitulo-informe">El nuevo orden tecnológico de Estados Unidos</div>
+<!-- ===== INFORME ===== -->
+<!-- SECCIÓN 1: INTRODUCCIÓN -->
+<div class="seccion">
+<h2><span class="num">1</span> Introducción y Contexto General</h2>
+<p>El texto analiza la emergencia de un nuevo paradigma geopolítico denominado <strong>"Pax Sílica"</strong> (o Pax del Silicio), presentado como la versión contemporánea de la histórica "Pax Romana". La tesis central es que Estados Unidos, bajo la apariencia de una alianza para el desarrollo tecnológico, está implementando una estrategia de control y dominación global, utilizando la tecnología como principal herramienta de poder y coerción.</p>
+<p>Este concepto surge como respuesta al avance tecnológico de China y busca establecer una arquitectura de poder cerrada que gire en torno a los intereses de Washington. El análisis revela que esta "paz" no es más que una forma de guerra económica y de colonización moderna, donde la dependencia tecnológica se convierte en el nuevo yugo imperial.</p>
+</div>
+<!-- SECCIÓN 2: CONCEPTO -->
+<div class="seccion">
+<h2><span class="num">2</span> El Concepto de "Pax Sílica"</h2>
+<p>El término se establece por analogía con la <strong>Pax Romana</strong>, que el texto describe no como una paz genuina, sino como un período de dominación y muerte, citando la frase clásica que la define como <em>"nada más que muerte, desolación y destrucción"</em>. La "Pax Sílica" sigue el mismo principio, pero trasladado al ámbito tecnológico.</p>
+<ul>
+<li><strong>Definición:</strong> La política de Estados Unidos para detener el avance tecnológico chino y asegurar su dominio en el sector.</li>
+<li><strong>Naturaleza:</strong> No es una alianza de suma positiva, sino una <strong>jaula o muro</strong> que busca contener a China, pero también <strong>subordinar a sus propios aliados</strong>, a quienes convierte en estados clientes.</li>
+<li><strong>Objetivo Final:</strong> Crear un sistema cerrado en el que toda la cadena de valor de la inteligencia artificial (desde los minerales hasta el software) dependa de Estados Unidos.</li>
+</ul>
+</div>
+<!-- SECCIÓN 3: PILARES -->
+<div class="seccion">
+<h2><span class="num">3</span> Los Pilares de la Estrategia</h2>
+<p>La Pax Sílica se estructura en torno a cuatro objetivos estratégicos claros:</p>
+<ul>
+<li><strong>Romper la Dependencia de China:</strong> China posee un cuasi-monopolio en tierras raras. La estrategia busca responder a la capacidad china de condicionar las cadenas de suministro globales.</li>
+<li><strong>Preservar la Ventaja de EE.UU. en IA:</strong> EE.UU. mantiene una ventaja, pero China avanza a un ritmo mucho más rápido. La meta es frenar el ritmo chino, incluso si eso implica un crecimiento estancado para EE.UU.</li>
+<li><strong>Limitar y Disciplinar el Acceso al Ecosistema de IA:</strong> Se crea una jerarquía global con <strong>"aliados"</strong> y <strong>"clientes"</strong>, donde los segundos acceden a chips y servicios bajo condiciones fijadas por Washington.</li>
+<li><strong>Movilizar Capital Público y Privado:</strong> Participación activa del Departamento de Estado, el Pentágono, fondos soberanos de Oriente Medio e inversores institucionales.</li>
+</ul>
+</div>
+<!-- SECCIÓN 4: ACTORES CLAVE -->
+<div class="seccion">
+<h2><span class="num">4</span> Actores Clave y su Influencia</h2>
+<p>El texto revela una conexión directa entre los intereses corporativos, el poder político de EE.UU. y la nueva política tecnológica global:</p>
+<ul>
+<li><strong>Jacob Helber:</strong> Es el creador y principal impulsor de las reformas normativas para lanzar la Pax Sílica.</li>
+<li><strong>Vínculo con Palantir:</strong> Helber es el asesor principal de políticas del consejero delegado de Palantir, Alex Karp (socio de Peter Thiel). Una empresa tecnológica con fuertes lazos con la inteligencia y defensa de EE.UU. está moldeando la política exterior.</li>
+<li><strong>La Unión Europea:</strong> Su rol es descrito como una <strong>"entrega de la cuchara"</strong>, ya que, a pesar de anunciar planes para promover su propia IA, termina plegándose a los intereses de Washington.</li>
+</ul>
+</div>
+<!-- SECCIÓN 5: REACCIONES -->
+<div class="seccion">
+<h2><span class="num">5</span> Reacciones y Consecuencias Globales</h2>
+<p>La implementación de la Pax Sílica está generando nuevas alineaciones globales que el texto critica duramente:</p>
+<ul>
+<li><strong>Sumisión de Hispanoamérica:</strong> Países como Argentina, Chile, Costa Rica, Panamá y previsiblemente Colombia se suman a la iniciativa. Se critica que, en lugar de aprovechar su posición estratégica (el "Triángulo del Litio"), los líderes de estos países están <strong>"entregando" sus recursos</strong> a transnacionales estadounidenses.</li>
+<li><strong>Nueva Colonización:</strong> Se plantea la creación de <strong>zonas económicas exclusivas</strong> donde las empresas estadounidenses operen bajo su propia legislación, no la de los países anfitriones. Esto se presenta como una forma de <strong>manipulación electoral</strong> y censura contra quienes denuncien la nueva colonización.</li>
+</ul>
+</div>
+<!-- SECCIÓN 6: CONCLUSIÓN -->
+<div class="seccion">
+<h2><span class="num">6</span> Conclusión</h2>
+<div class="cita-destacada">
+<strong>“Quien controle la informática <span class="highlight">y</span> los minerales que la alimentan, dominará el siglo XXI”</strong>
+<span class="autor">— Jacob Helber, documento fundacional de la Pax Sílica</span>
+</div>
+<p>La estrategia estadounidense no busca un desarrollo equilibrado, sino consolidar un <strong>imperio tecnológico</strong>.</p>
+<p>Para los países en desarrollo, especialmente en <strong>Hispanoamérica</strong>, la elección no es entre izquierdas y derechas, sino entre políticos que defienden el interés nacional o aquellos que, como se denuncia en el texto, <strong>venden la soberanía de su país</strong> a cambio de beneficios personales.</p>
+<p>La entrega de recursos estratégicos (como el litio) y la aceptación de condiciones externas representan un <strong>retroceso histórico</strong>, perpetuando una relación de dependencia neocolonial que impide a estas naciones alcanzar un papel relevante en el nuevo orden geopolítico.</p>
+</div>
+<!-- ===== PIE / BOTÓN YOUTUBE ===== -->
+<div class="footer-actions">
+<a class="btn-youtube" href="https://youtu.be/iNFpovVlgxQ?si=69m8HyqR4quHiJiI" rel="noopener noreferrer" target="_blank">
+<svg viewbox="0 0 24 24">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+</svg>
+            Ver el video en YouTube
+        </a>
+<span class="footer-meta">🎙️ Despegamos · La Voz de Cesar Vidal</span>
+</div>
+</div>
+
+<!-- Para que la imagen aparezca al compartir, index.html y portada-pax-silica.png deben estar en la misma carpeta pública. Las URL de og:url, og:image, twitter:image y canonical deben ser absolutas y coincidir con la ruta definitiva de GitHub Pages. -->
+</body>
+</html>
