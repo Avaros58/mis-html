@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Monarquía Hispánica de los Austrias | Informe interactivo</title>
+  <meta name="description" content="Informe visual e interactivo sobre la estructura, legitimidad, gobierno, expansión y legado de la Monarquía Hispánica de los Austrias.">
+  <meta name="author" content="Diego Sánchez">
+  <meta name="theme-color" content="#6f1d2a">
+  <link rel="canonical" href="https://avaros58.github.io/mis-html/monarquia-hispanica/">
+
+  <!-- Open Graph: Facebook y LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="La Monarquía Hispánica de los Austrias">
+  <meta property="og:title" content="La Monarquía Hispánica de los Austrias">
+  <meta property="og:description" content="Estructura, legitimidad y proyección: informe visual con diagramas, cronología, mapas conceptuales y PDF descargable.">
+  <meta property="og:url" content="https://avaros58.github.io/mis-html/monarquia-hispanica/">
+  <meta property="og:image" content="https://avaros58.github.io/mis-html/monarquia-hispanica/portada-redes.jpg">
+  <meta property="og:image:secure_url" content="https://avaros58.github.io/mis-html/monarquia-hispanica/portada-redes.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portada del informe La Monarquía Hispánica de los Austrias">
+
+  <!-- Twitter Card / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="La Monarquía Hispánica de los Austrias">
+  <meta name="twitter:description" content="Informe visual sobre su estructura, legitimidad, gobierno, expansión y legado.">
+  <meta name="twitter:image" content="https://avaros58.github.io/mis-html/monarquia-hispanica/portada-redes.jpg">
+  <meta name="twitter:image:alt" content="Portada del informe La Monarquía Hispánica de los Austrias">
+
+  <style>
+    :root{
+      --burgundy:#6f1d2a;
+      --burgundy-dark:#4d111b;
+      --burgundy-soft:#8d3442;
+      --gold:#b88d3f;
+      --gold-soft:#d9bf85;
+      --cream:#f4efe4;
+      --paper:#fffdf8;
+      --ink:#302326;
+      --muted:#6b5e59;
+      --line:#ded2bd;
+      --green:#4f6b53;
+      --shadow:0 18px 48px rgba(67,27,31,.12);
+      --radius:18px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        linear-gradient(rgba(111,29,42,.025) 1px, transparent 1px),
+        var(--cream);
+      background-size:100% 22px;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      line-height:1.65;
+    }
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit}
+    button{font:inherit}
+    .skip-link{position:absolute;left:-9999px;top:0;background:#fff;padding:.8rem;z-index:999}
+    .skip-link:focus{left:1rem;top:1rem}
+    .container{width:min(calc(100% - 2rem),var(--max));margin-inline:auto}
+
+    .site-header{
+      position:sticky;top:0;z-index:100;
+      background:rgba(79,17,27,.96);
+      color:#fff;
+      border-bottom:3px solid var(--gold);
+      backdrop-filter:blur(12px);
+    }
+    .header-inner{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:.02em}
+    .brand-mark{width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.28);border-radius:50%;color:var(--gold-soft);font-size:1.35rem}
+    .header-actions{display:flex;gap:.55rem;flex-wrap:wrap}
+    .header-link{padding:.55rem .8rem;text-decoration:none;border:1px solid rgba(255,255,255,.22);border-radius:999px;font-size:.88rem}
+    .header-link:hover,.header-link:focus-visible{background:#fff;color:var(--burgundy-dark)}
+
+    .hero{padding:clamp(2.6rem,6vw,5rem) 0 3rem}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+    .kicker{margin:0 0 .75rem;color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:.82rem}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.13;color:var(--burgundy-dark)}
+    h1{font-size:clamp(2.65rem,6vw,5.35rem);margin:.1rem 0 1rem;letter-spacing:-.035em}
+    .hero-subtitle{font-family:Georgia,"Times New Roman",serif;font-style:italic;color:var(--gold);font-size:clamp(1.25rem,2.5vw,2rem);margin:0 0 1.2rem}
+    .hero-lede{font-size:1.08rem;max-width:65ch;color:#514348}
+    .actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:46px;padding:.72rem 1.05rem;border-radius:999px;text-decoration:none;font-weight:750;border:1px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--burgundy);color:white;box-shadow:0 8px 22px rgba(111,29,42,.22)}
+    .btn-primary:hover{background:var(--burgundy-dark)}
+    .btn-gold{background:var(--gold);color:#261b15}
+    .btn-light{background:rgba(255,255,255,.66);border-color:var(--line);color:var(--burgundy-dark)}
+    .hero-figure{position:relative}
+    .hero-figure a{display:block;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(111,29,42,.16)}
+    .hero-figure img{aspect-ratio:1200/630;object-fit:cover;width:100%}
+    .hero-figure::after{content:"1200 × 630 · imagen para redes";position:absolute;right:1rem;bottom:-1rem;background:var(--burgundy-dark);color:white;padding:.38rem .7rem;border-radius:999px;font-size:.76rem;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.6rem}
+    .stat{background:rgba(255,253,248,.75);border:1px solid var(--line);border-radius:16px;padding:1rem;text-align:center}
+    .stat strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:1.55rem;color:var(--burgundy)}
+    .stat span{font-size:.9rem;color:var(--muted)}
+
+    .explore{padding:2.4rem 0 5rem}
+    .section-intro{text-align:center;max-width:760px;margin:0 auto 1.4rem}
+    .section-intro h2{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 .75rem}
+    .section-intro p{color:var(--muted);margin:0}
+
+    .tabs-shell{background:rgba(255,253,248,.78);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+    .tablist{display:flex;gap:.2rem;overflow-x:auto;padding:.65rem;background:var(--burgundy-dark);scrollbar-width:thin}
+    .tab-button{flex:0 0 auto;border:0;background:transparent;color:#f8ead5;padding:.75rem .95rem;border-radius:999px;font-weight:750;cursor:pointer;white-space:nowrap}
+    .tab-button:hover,.tab-button:focus-visible{background:rgba(255,255,255,.13);outline:none}
+    .tab-button[aria-selected="true"]{background:var(--gold);color:#241812}
+    .tab-stage{min-height:280px;padding:clamp(1.2rem,3vw,2.2rem)}
+    .tab-placeholder{text-align:center;padding:3.6rem 1rem;color:var(--muted)}
+    .tab-placeholder .seal{width:78px;height:78px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;margin:0 auto 1rem;font-size:2rem;color:var(--burgundy)}
+    .tab-panel[hidden]{display:none}
+    .tab-panel h2{font-size:clamp(1.9rem,4vw,3rem);margin:.2rem 0 .4rem}
+    .panel-lede{font-size:1.07rem;color:#55474b;max-width:82ch}
+
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem;box-shadow:0 8px 22px rgba(67,27,31,.06)}
+    .card h3{margin:.1rem 0 .55rem;font-size:1.25rem}
+    .card p:last-child{margin-bottom:0}
+    .icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#f0e5ce;color:var(--burgundy);font-size:1.2rem;margin-bottom:.7rem}
+    .callout{border-left:5px solid var(--gold);background:#f7edda;border-radius:0 14px 14px 0;padding:1rem 1.1rem;margin:1.2rem 0}
+    .callout strong{color:var(--burgundy-dark)}
+    .note{font-size:.9rem;color:var(--muted)}
+
+    details{border:1px solid var(--line);background:var(--paper);border-radius:14px;margin:.75rem 0;overflow:hidden}
+    summary{cursor:pointer;list-style:none;padding:1rem 1.1rem;font-weight:800;color:var(--burgundy-dark);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"＋";color:var(--gold);font-size:1.25rem}
+    details[open] summary::after{content:"−"}
+    details[open] summary{border-bottom:1px solid var(--line);background:#fbf6ec}
+    .details-body{padding:1rem 1.1rem}
+
+    .diagram{margin:1.4rem 0;background:#faf5ea;border:1px solid var(--line);border-radius:20px;padding:1.25rem;overflow:auto}
+    .monarchy-map{min-width:720px;display:grid;grid-template-columns:1fr 1.15fr 1fr;grid-template-rows:auto auto auto;gap:1rem;align-items:center}
+    .node{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.85rem;text-align:center;box-shadow:0 5px 14px rgba(64,31,33,.06)}
+    .node strong{display:block;color:var(--burgundy-dark)}
+    .node small{display:block;color:var(--muted)}
+    .node-center{grid-column:2;grid-row:2;background:var(--burgundy);color:#fff;border-color:var(--burgundy);padding:1.2rem}
+    .node-center strong{color:#fff;font-size:1.2rem}
+    .node:nth-child(1){grid-column:1;grid-row:1}
+    .node:nth-child(2){grid-column:3;grid-row:1}
+    .node:nth-child(4){grid-column:1;grid-row:3}
+    .node:nth-child(5){grid-column:3;grid-row:3}
+    .node-link{grid-column:2;grid-row:1;text-align:center;color:var(--gold);font-weight:800}
+    .node-link-bottom{grid-column:2;grid-row:3;text-align:center;color:var(--gold);font-weight:800}
+
+    .flow{display:grid;grid-template-columns:repeat(7,auto);align-items:center;gap:.6rem;min-width:780px}
+    .flow-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem;text-align:center;min-width:135px}
+    .flow-arrow{color:var(--gold);font-size:1.7rem;text-align:center}
+
+    .timeline{position:relative;margin:1.5rem 0;padding-left:1.4rem}
+    .timeline::before{content:"";position:absolute;left:7px;top:.25rem;bottom:.25rem;width:2px;background:var(--gold-soft)}
+    .time-item{position:relative;padding:0 0 1.15rem 1.15rem}
+    .time-item::before{content:"";position:absolute;left:-1.39rem;top:.34rem;width:12px;height:12px;border-radius:50%;background:var(--burgundy);border:3px solid var(--cream)}
+    .time-item time{font-weight:850;color:var(--gold)}
+    .time-item strong{display:block;color:var(--burgundy-dark)}
+
+    .bars{display:grid;gap:1rem;margin:1.2rem 0}
+    .bar-row{display:grid;grid-template-columns:190px 1fr 90px;gap:.8rem;align-items:center}
+    .bar-track{height:16px;border-radius:999px;background:#eadfc9;overflow:hidden}
+    .bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--burgundy),var(--gold));width:var(--w)}
+    .bar-label{font-weight:750}
+    .bar-grade{text-align:right;color:var(--burgundy);font-weight:800}
+
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px;margin:1.2rem 0}
+    table{border-collapse:collapse;width:100%;min-width:700px;background:var(--paper)}
+    th,td{text-align:left;padding:.85rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+    th{background:var(--burgundy);color:#fff;font-size:.9rem}
+    tr:last-child td{border-bottom:0}
+    tbody tr:hover{background:#fbf4e7}
+
+    .concept-map{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:stretch}
+    .concept-center{grid-column:2;background:var(--burgundy);color:#fff;border-radius:18px;padding:1.3rem;text-align:center;display:grid;place-items:center;min-height:130px}
+    .concept-center strong{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem}
+    .concept-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1rem;text-align:center}
+    .concept-card strong{display:block;color:var(--burgundy-dark);margin-bottom:.25rem}
+
+    .conclusion{background:linear-gradient(135deg,var(--burgundy-dark),var(--burgundy));color:#fff;border-radius:22px;padding:clamp(1.4rem,4vw,2.4rem);margin-top:1.2rem;position:relative;overflow:hidden}
+    .conclusion::after{content:"✦";position:absolute;right:1.2rem;bottom:-1.5rem;font-size:7rem;color:rgba(255,255,255,.08)}
+    .conclusion h3{color:#fff;margin-top:0;font-size:1.55rem}
+
+    .video-frame{position:relative;aspect-ratio:16/9;background:#1d1114;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+    .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .resource-card{display:flex;flex-direction:column;align-items:flex-start;gap:.7rem}
+    .resource-card .btn{margin-top:auto}
+
+    footer{background:var(--burgundy-dark);color:#f5ead8;padding:2rem 0;border-top:4px solid var(--gold)}
+    .footer-grid{display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+    .footer-title{font-family:Georgia,"Times New Roman",serif;font-size:1.18rem;font-weight:700}
+    .footer-note{color:#d8c7bc;font-size:.9rem;max-width:68ch}
+    .back-top{text-decoration:none;border:1px solid rgba(255,255,255,.28);padding:.55rem .8rem;border-radius:999px}
+
+    .fade-in{animation:fade .28s ease}
+    @keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr}
+      .hero-figure{max-width:760px}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:1fr}
+      .concept-map{grid-template-columns:1fr}
+      .concept-center{grid-column:1}
+      .bar-row{grid-template-columns:145px 1fr 76px}
+    }
+    @media (max-width:650px){
+      .container{width:min(calc(100% - 1.1rem),var(--max))}
+      .header-inner{padding:.45rem 0;align-items:flex-start}
+      .brand span:last-child{display:none}
+      .header-actions{justify-content:flex-end}
+      .header-link{font-size:.78rem;padding:.42rem .62rem}
+      .hero{padding-top:2rem}
+      .actions .btn{width:100%}
+      .stats,.grid-2,.grid-4{grid-template-columns:1fr}
+      .tab-stage{padding:1rem}
+      .bar-row{grid-template-columns:1fr}
+      .bar-grade{text-align:left}
+      .hero-figure::after{font-size:.68rem;right:.4rem}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fade-in{animation:none}.btn{transition:none}}
+    @media print{.site-header,.tablist,.actions,.video-frame,.back-top{display:none!important}.tab-panel[hidden]{display:block!important}.tabs-shell{box-shadow:none}.tab-placeholder{display:none}body{background:white}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Volver al inicio">
+        <span class="brand-mark" aria-hidden="true">♛</span>
+        <span>La Monarquía Hispánica</span>
+      </a>
+      <nav class="header-actions" aria-label="Recursos principales">
+        <a class="header-link" href="informe.pdf" target="_blank" rel="noopener">Abrir PDF</a>
+        <a class="header-link" href="https://youtu.be/WfqL1mB1SXQ?si=PFnucbgJBWGct1pD" target="_blank" rel="noopener noreferrer">Ver vídeo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="titulo-principal">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="kicker">Informe de síntesis · Siglos XVI y XVII</p>
+            <h1 id="titulo-principal">La Monarquía Hispánica de los Austrias</h1>
+            <p class="hero-subtitle">Estructura, legitimidad y proyección</p>
+            <p class="hero-lede">Una lectura ordenada de la Monarquía como unión de reinos, jurisdicciones y territorios: su fundamento político, sus instituciones de gobierno, la expansión global, el pensamiento jurídico y las tensiones que acompañaron su conservación.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="informe.pdf" target="_blank" rel="noopener"><span aria-hidden="true">▣</span> Abrir informe completo</a>
+              <a class="btn btn-gold" href="https://youtu.be/WfqL1mB1SXQ?si=PFnucbgJBWGct1pD" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span> Ver vídeo en YouTube</a>
+              <button class="btn btn-light" type="button" data-open-tab="panorama"><span aria-hidden="true">⌄</span> Explorar el contenido</button>
+            </div>
+          </div>
+          <figure class="hero-figure">
+            <a href="portada-redes.jpg" target="_blank" rel="noopener" aria-label="Abrir la portada social a tamaño completo">
+              <img src="portada-redes.jpg" width="1200" height="630" alt="Portada del informe La Monarquía Hispánica de los Austrias">
+            </a>
+          </figure>
+        </div>
+
+        <div class="stats" aria-label="Datos básicos del proyecto">
+          <div class="stat"><strong>3</strong><span>obras de referencia</span></div>
+          <div class="stat"><strong>20</strong><span>páginas de síntesis</span></div>
+          <div class="stat"><strong>XVI-XVII</strong><span>periodo principal</span></div>
+          <div class="stat"><strong>Global</strong><span>proyección europea y atlántica</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="explore" aria-labelledby="explorar-titulo">
+      <div class="container">
+        <div class="section-intro">
+          <p class="kicker">Navegación interactiva</p>
+          <h2 id="explorar-titulo">El informe, organizado por grandes cuestiones</h2>
+          <p>Selecciona una pestaña. Cada bloque se mantiene oculto hasta pulsarlo y contiene desplegables, diagramas y cuadros de síntesis.</p>
+        </div>
+
+        <div class="tabs-shell">
+          <div class="tablist" role="tablist" aria-label="Secciones principales del informe">
+            <button class="tab-button" id="tab-panorama" role="tab" aria-selected="false" aria-controls="panorama" tabindex="0">Panorama</button>
+            <button class="tab-button" id="tab-arquitectura" role="tab" aria-selected="false" aria-controls="arquitectura" tabindex="-1">Arquitectura política</button>
+            <button class="tab-button" id="tab-poder" role="tab" aria-selected="false" aria-controls="poder" tabindex="-1">Poder y gobierno</button>
+            <button class="tab-button" id="tab-expansion" role="tab" aria-selected="false" aria-controls="expansion" tabindex="-1">Expansión y guerra</button>
+            <button class="tab-button" id="tab-pensamiento" role="tab" aria-selected="false" aria-controls="pensamiento" tabindex="-1">Pensamiento y derecho</button>
+            <button class="tab-button" id="tab-balance" role="tab" aria-selected="false" aria-controls="balance" tabindex="-1">Balance y legado</button>
+            <button class="tab-button" id="tab-recursos" role="tab" aria-selected="false" aria-controls="recursos" tabindex="-1">Recursos</button>
+          </div>
+
+          <div class="tab-stage">
+            <div class="tab-placeholder" id="tab-placeholder">
+              <div class="seal" aria-hidden="true">♜</div>
+              <strong>Elige una pestaña para comenzar</strong>
+              <p>La información aparecerá aquí sin recargar la página.</p>
+            </div>
+
+            <section class="tab-panel" id="panorama" role="tabpanel" aria-labelledby="tab-panorama" hidden tabindex="0">
+              <p class="kicker">Visión de conjunto</p>
+              <h2>Una monarquía compuesta, no un Estado uniforme</h2>
+              <p class="panel-lede">La Monarquía Hispánica fue una unión dinástica y jurisdiccional de coronas, reinos, provincias y territorios que conservaron leyes, fiscalidad, tribunales y tradiciones propias. Su unidad dependía de articular la diversidad alrededor del monarca.</p>
+
+              <div class="grid-3">
+                <article class="card"><div class="icon" aria-hidden="true">♛</div><h3>Unidad personal</h3><p>El mismo soberano reunía títulos diferentes y gobernaba cada territorio conforme a obligaciones y procedimientos particulares.</p></article>
+                <article class="card"><div class="icon" aria-hidden="true">⚖</div><h3>Diversidad jurídica</h3><p>Fueros, privilegios, Cortes, audiencias y jurisdicciones limitaban la uniformidad y obligaban a negociar la aplicación del poder.</p></article>
+                <article class="card"><div class="icon" aria-hidden="true">◎</div><h3>Proyección global</h3><p>Europa, el Mediterráneo, el Atlántico y las Indias convirtieron el gobierno en una empresa de escala intercontinental.</p></article>
+              </div>
+
+              <div class="callout"><strong>Idea central:</strong> su fortaleza residía en la flexibilidad para incorporar territorios; su principal dificultad nacía de gobernar, financiar y defender esa misma diversidad.</div>
+
+              <details>
+                <summary>¿Por qué se habla de “monarquía compuesta”?</summary>
+                <div class="details-body"><p>Porque no existía una única constitución para todos los dominios. Castilla, la Corona de Aragón, Italia, Flandes, Portugal y las Indias se vinculaban a la Corona mediante títulos y regímenes diferentes. La unidad era política y dinástica, no administrativa en sentido moderno.</p></div>
+              </details>
+              <details>
+                <summary>¿Qué elementos mantenían unido el conjunto?</summary>
+                <div class="details-body"><p>La Casa de Austria, la persona del rey, la religión católica, la administración de justicia, las redes de servicio, la corte, la diplomacia y la defensa común actuaban como vínculos superpuestos.</p></div>
+              </details>
+              <details>
+                <summary>¿Qué papel ocupó Castilla?</summary>
+                <div class="details-body"><p>Adquirió un peso especial por población, capacidad fiscal, proximidad a la corte y disponibilidad de recursos. Esa centralidad sostuvo gran parte de la acción exterior, pero también generó desequilibrios en el reparto de cargas.</p></div>
+              </details>
+            </section>
+
+            <section class="tab-panel" id="arquitectura" role="tabpanel" aria-labelledby="tab-arquitectura" hidden tabindex="0">
+              <p class="kicker">Estructura territorial</p>
+              <h2>La Corona como centro de una red de reinos</h2>
+              <p class="panel-lede">El sistema no funcionaba como una pirámide perfectamente centralizada, sino como una red de centros, consejos, virreinatos, gobernadores y élites que conectaban la decisión regia con realidades territoriales muy diferentes.</p>
+
+              <div class="diagram" aria-label="Mapa conceptual de la Monarquía compuesta">
+                <div class="monarchy-map">
+                  <div class="node"><strong>Castilla</strong><small>Cortes, Consejo, hacienda e Indias</small></div>
+                  <div class="node"><strong>Corona de Aragón</strong><small>Reinos, fueros y virreinatos</small></div>
+                  <div class="node-link">juramentos · servicio · justicia</div>
+                  <div class="node node-center"><strong>CORONA Y DINASTÍA</strong><small>unidad personal, dirección política y arbitraje</small></div>
+                  <div class="node"><strong>Italia y Flandes</strong><small>gobernadores, consejos y privilegios</small></div>
+                  <div class="node"><strong>Indias y Portugal</strong><small>instituciones propias e integración diferenciada</small></div>
+                  <div class="node-link-bottom">consejos · corte · religión · defensa</div>
+                </div>
+              </div>
+
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Espacio</th><th>Rasgo institucional</th><th>Vínculo con la Corona</th><th>Tensión principal</th></tr></thead>
+                  <tbody>
+                    <tr><td>Castilla</td><td>Consejos, Cortes y amplia capacidad fiscal</td><td>Base administrativa y financiera</td><td>Concentración de cargas</td></tr>
+                    <tr><td>Corona de Aragón</td><td>Pluralidad de reinos, fueros y pactismo</td><td>Juramento y respeto a derechos propios</td><td>Resistencia a la homogeneización</td></tr>
+                    <tr><td>Italia</td><td>Virreinatos y gobernaciones</td><td>Defensa estratégica y administración territorial</td><td>Distancia y rivalidades europeas</td></tr>
+                    <tr><td>Flandes</td><td>Provincias y privilegios consolidados</td><td>Herencia dinástica borgoñona</td><td>Conflicto político, fiscal y confesional</td></tr>
+                    <tr><td>Portugal</td><td>Corona e imperio propios</td><td>Unión dinástica con preservación institucional</td><td>Equilibrio entre integración y autonomía</td></tr>
+                    <tr><td>Indias</td><td>Consejo, audiencias, virreinatos y legislación específica</td><td>Soberanía de la Corona de Castilla</td><td>Distancia, legitimidad y protección del indígena</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <details><summary>Herencias que confluyeron en el modelo</summary><div class="details-body"><p><strong>Castellana:</strong> letrados, consejos, fiscalidad e impulso atlántico. <strong>Aragonesa y mediterránea:</strong> reinos diferenciados y virreinatos. <strong>Borgoñona:</strong> etiqueta, casa y cultura dinástica. <strong>Habsbúrgica:</strong> dimensión imperial. <strong>Americana:</strong> problemas jurídicos y administrativos inéditos.</p></div></details>
+            </section>
+
+            <section class="tab-panel" id="poder" role="tabpanel" aria-labelledby="tab-poder" hidden tabindex="0">
+              <p class="kicker">Autoridad y administración</p>
+              <h2>Del monarca guerrero al gobierno de los papeles</h2>
+              <p class="panel-lede">Carlos V y Felipe II compartieron la obligación de preservar una herencia compleja, pero representaron dos estilos de ejercicio del poder: movilidad, presencia militar y negociación directa en el primero; consulta, despacho y control documental en el segundo.</p>
+
+              <div class="diagram" aria-label="Flujo de gobierno de la Monarquía Hispánica">
+                <div class="flow">
+                  <div class="flow-box"><strong>Rey</strong><br><small>decisión y arbitraje</small></div><div class="flow-arrow">→</div>
+                  <div class="flow-box"><strong>Consejos</strong><br><small>consulta especializada</small></div><div class="flow-arrow">→</div>
+                  <div class="flow-box"><strong>Secretarios</strong><br><small>información y despacho</small></div><div class="flow-arrow">→</div>
+                  <div class="flow-box"><strong>Virreyes y audiencias</strong><br><small>ejecución territorial</small></div>
+                </div>
+              </div>
+
+              <div class="grid-2">
+                <article class="card"><h3>Carlos V</h3><p><strong>Estilo:</strong> viajero, militar y dinástico.</p><p><strong>Problema:</strong> convertir una herencia excepcional en una estructura política duradera.</p><p><strong>Clave:</strong> dinastía, defensa de la fe, búsqueda de orden cristiano y explicación doctrinal de sus decisiones.</p></article>
+                <article class="card"><h3>Felipe II</h3><p><strong>Estilo:</strong> sedentario, documental y burocrático.</p><p><strong>Problema:</strong> controlar una monarquía más extensa y compleja desde un centro estable.</p><p><strong>Clave:</strong> consultas, juntas, secretarios, corte y supervisión personal del expediente.</p></article>
+              </div>
+
+              <h3>Cronología de formación y consolidación</h3>
+              <div class="timeline">
+                <div class="time-item"><time>1474-1516</time><strong>Reyes Católicos</strong><span>Coordinación de coronas sin fusión institucional y expansión mediterránea y atlántica.</span></div>
+                <div class="time-item"><time>1516</time><strong>Acceso de Carlos al trono</strong><span>La sucesión plantea problemas de legitimidad, representación y adaptación a los reinos hispánicos.</span></div>
+                <div class="time-item"><time>1520-1521</time><strong>Comunidades de Castilla</strong><span>La revuelta obliga a reformular la relación entre proyecto imperial, reino y servicio político.</span></div>
+                <div class="time-item"><time>1521</time><strong>Dieta de Worms</strong><span>La ruptura religiosa transforma la misión europea de Carlos.</span></div>
+                <div class="time-item"><time>1556</time><strong>Abdicación y relevo dinástico</strong><span>Felipe II hereda los dominios hispánicos y consolida un gobierno más sedentario.</span></div>
+                <div class="time-item"><time>1580</time><strong>Incorporación de Portugal</strong><span>La unión dinástica amplía la proyección mundial conservando instituciones portuguesas.</span></div>
+              </div>
+
+              <details><summary>¿Era un poder absoluto sin límites?</summary><div class="details-body"><p>El rey aspiraba a decidir en última instancia, pero su poder estaba encuadrado por la ley natural, el bien común, los fueros, los privilegios, los juramentos y los procedimientos de consulta y justicia. La capacidad real dependía también de recursos, información y cooperación territorial.</p></div></details>
+              <details><summary>El papel de los letrados y secretarios</summary><div class="details-body"><p>La complejidad favoreció una administración profesional basada en conocimiento jurídico, escritura y archivo. Los letrados transformaban la voluntad política en consultas, normas y sentencias; los secretarios controlaban flujos de información y acceso al monarca.</p></div></details>
+            </section>
+
+            <section class="tab-panel" id="expansion" role="tabpanel" aria-labelledby="tab-expansion" hidden tabindex="0">
+              <p class="kicker">Escala imperial</p>
+              <h2>Guerra, fronteras y conservación</h2>
+              <p class="panel-lede">La Monarquía se desenvolvió en varios escenarios simultáneos. La defensa de territorios dispersos exigió diplomacia, ejércitos permanentes, armadas, fortificaciones, crédito y una movilización fiscal extraordinaria.</p>
+
+              <div class="grid-4">
+                <article class="card"><div class="icon">⚔</div><h3>Europa</h3><p>Rivalidad con Francia, conflictos en el Imperio y defensa de los Países Bajos.</p></article>
+                <article class="card"><div class="icon">☾</div><h3>Mediterráneo</h3><p>Presión otomana, defensa costera, Malta, Lepanto y control de rutas.</p></article>
+                <article class="card"><div class="icon">≋</div><h3>Atlántico</h3><p>Flotas, comunicaciones oceánicas, rivalidades navales y protección del comercio.</p></article>
+                <article class="card"><div class="icon">◉</div><h3>Indias</h3><p>Incorporación territorial, gobierno a distancia y creación de un orden jurídico específico.</p></article>
+              </div>
+
+              <h3>Intensidad cualitativa de los grandes desafíos</h3>
+              <div class="bars" aria-label="Gráfico cualitativo de desafíos">
+                <div class="bar-row"><span class="bar-label">Dispersión territorial</span><div class="bar-track"><div class="bar-fill" style="--w:94%"></div></div><span class="bar-grade">Muy alta</span></div>
+                <div class="bar-row"><span class="bar-label">Coste militar</span><div class="bar-track"><div class="bar-fill" style="--w:90%"></div></div><span class="bar-grade">Muy alto</span></div>
+                <div class="bar-row"><span class="bar-label">Dependencia del crédito</span><div class="bar-track"><div class="bar-fill" style="--w:84%"></div></div><span class="bar-grade">Alta</span></div>
+                <div class="bar-row"><span class="bar-label">Flexibilidad institucional</span><div class="bar-track"><div class="bar-fill" style="--w:78%"></div></div><span class="bar-grade">Alta</span></div>
+                <div class="bar-row"><span class="bar-label">Rapidez de comunicación</span><div class="bar-track"><div class="bar-fill" style="--w:32%"></div></div><span class="bar-grade">Limitada</span></div>
+              </div>
+              <p class="note">Representación cualitativa basada en las conclusiones del informe; no expresa una medición estadística.</p>
+
+              <div class="grid-2">
+                <article class="card"><h3>Indias: derecho e instituciones</h3><p>La expansión obligó a discutir títulos de dominio, naturaleza de los pueblos indígenas y condiciones de una guerra justa. Consejo de Indias, audiencias, virreinatos y recopilaciones legislativas construyeron una administración específica.</p><div class="callout"><strong>Rasgo distintivo:</strong> el poder de la Corona fue acompañado por una controversia jurídica sobre su propia legitimidad.</div></article>
+                <article class="card"><h3>Portugal y Flandes</h3><p><strong>Portugal</strong> ilustra una incorporación negociada que conservó leyes, moneda, administración y espacio imperial propios. <strong>Flandes</strong> muestra los límites del modelo cuando confluyeron privilegios territoriales, presión fiscal, distancia y fractura confesional.</p></article>
+              </div>
+
+              <details><summary>Hacienda y crédito</summary><div class="details-body"><p>Las empresas militares superaban los ingresos ordinarios. La Corona recurrió a servicios votados, impuestos castellanos, metales americanos y crédito de banqueros. La capacidad de movilización fue extraordinaria, pero también lo fueron el endeudamiento, los retrasos y las suspensiones de pagos.</p></div></details>
+              <details><summary>Ejército y transformación militar</summary><div class="details-body"><p>La profesionalización de los Tercios, la difusión de armas de fuego, la logística y las fortificaciones reforzaron la capacidad militar. A cambio, la defensa permanente elevó los costes y vinculó estrechamente guerra, fiscalidad y administración.</p></div></details>
+            </section>
+
+            <section class="tab-panel" id="pensamiento" role="tabpanel" aria-labelledby="tab-pensamiento" hidden tabindex="0">
+              <p class="kicker">Ideas y legitimidad</p>
+              <h2>Gobernar debía poder justificarse</h2>
+              <p class="panel-lede">Los textos analizados presentan una cultura política que no se limita a exaltar al príncipe. Reflexiona sobre el origen del poder, sus fines, el consentimiento, el derecho de resistencia, la guerra justa y la condición jurídica de los habitantes de los nuevos territorios.</p>
+
+              <div class="concept-map" aria-label="Mapa conceptual de legitimidad política">
+                <div class="concept-card"><strong>Ley natural</strong><span>Norma superior a la voluntad del gobernante.</span></div>
+                <div class="concept-card"><strong>Bien común</strong><span>Finalidad que justifica la autoridad.</span></div>
+                <div class="concept-card"><strong>Comunidad política</strong><span>Origen mediato del poder y sujeto de derechos.</span></div>
+                <div class="concept-card"><strong>Fueros y pactos</strong><span>Obligaciones históricas del monarca.</span></div>
+                <div class="concept-center"><strong>PODER REGIO LEGÍTIMO</strong></div>
+                <div class="concept-card"><strong>Justicia</strong><span>Deber de proteger y resolver conforme a derecho.</span></div>
+                <div class="concept-card"><strong>Príncipe virtuoso</strong><span>Prudencia, religión y servicio frente a arbitrariedad.</span></div>
+                <div class="concept-card"><strong>Derecho de gentes</strong><span>Reglas para relaciones entre pueblos y guerra.</span></div>
+                <div class="concept-card"><strong>Control de la tiranía</strong><span>Límites morales y políticos del mando.</span></div>
+              </div>
+
+              <div class="grid-3" style="margin-top:1.2rem">
+                <article class="card"><h3>Erasmismo cortesano</h3><p>Ofreció un lenguaje de paz cristiana, educación del príncipe y explicación moral de la política carolina, adaptado a los problemas concretos de la Monarquía.</p></article>
+                <article class="card"><h3>Escuela de Salamanca</h3><p>Vitoria, Suárez y otros autores abordaron soberanía, comunidad, ley, comercio, guerra y derechos de los pueblos con una proyección que excedió el ámbito hispánico.</p></article>
+                <article class="card"><h3>Razón de Estado y virtud</h3><p>La reflexión política discutió cómo conservar la Monarquía sin convertir la eficacia en una autorización para actuar al margen de la moral y la religión.</p></article>
+              </div>
+
+              <details><summary>La condición jurídica del indígena</summary><div class="details-body"><p>La legislación y la doctrina avanzaron hacia el reconocimiento del indígena como persona libre y vasallo de la Corona. La práctica fue conflictiva y desigual, pero la construcción jurídica introdujo límites, obligaciones protectoras y mecanismos de denuncia.</p></div></details>
+              <details><summary>Guerra justa: ius ad bellum e ius in bello</summary><div class="details-body"><p>No bastaba la conveniencia política. Era preciso discutir la causa justa, la autoridad competente, la proporcionalidad y el modo de conducir la guerra. La expansión transatlántica convirtió estas cuestiones en un problema central de legitimidad.</p></div></details>
+            </section>
+
+            <section class="tab-panel" id="balance" role="tabpanel" aria-labelledby="tab-balance" hidden tabindex="0">
+              <p class="kicker">Síntesis final</p>
+              <h2>Fortalezas, límites y legado</h2>
+              <p class="panel-lede">La Monarquía Hispánica fue capaz de coordinar una diversidad extraordinaria durante generaciones. Su duración no se explica solo por la fuerza militar, sino por la negociación institucional, la justicia, el servicio y la adaptación territorial.</p>
+
+              <div class="grid-3">
+                <article class="card"><h3>Fortalezas</h3><p>Flexibilidad institucional, cultura jurídica, administración letrada, diplomacia, redes de servicio y capacidad de movilización global.</p></article>
+                <article class="card"><h3>Límites</h3><p>Distancias, lentitud informativa, desigualdad fiscal, endeudamiento, multiplicación de frentes y conflictos entre dirección central y derechos territoriales.</p></article>
+                <article class="card"><h3>Legado</h3><p>Instituciones de gobierno transoceánico, derecho indiano, reflexión sobre soberanía y derecho de gentes, y una experiencia duradera de articulación política plural.</p></article>
+              </div>
+
+              <div class="conclusion">
+                <h3>Conclusión principal</h3>
+                <p>La Monarquía Hispánica no debe entenderse como un Estado nacional adelantado a su tiempo ni como una simple maquinaria de conquista. Fue una construcción dinástica y jurisdiccional que intentó convertir la diversidad en gobierno. Su grandeza y su fragilidad procedieron de la misma fuente: la ambición de mantener unidos territorios con leyes, intereses y distancias muy diferentes.</p>
+              </div>
+
+              <details><summary>Diez ideas para retener</summary><div class="details-body"><ol><li>La unidad era dinástica y política, no uniforme.</li><li>Cada territorio conservaba instituciones propias.</li><li>Carlos V desarrolló un ideario reconocible.</li><li>Las Comunidades obligaron a revisar la relación entre reino e Imperio.</li><li>Felipe II reforzó el gobierno documental.</li><li>Los consejos articulaban consulta y especialización.</li><li>La guerra condicionó hacienda y administración.</li><li>Las Indias generaron instituciones y debates jurídicos inéditos.</li><li>La religión fue un principio de cohesión y conflicto.</li><li>La diversidad hizo posible la expansión y dificultó su conservación.</li></ol></div></details>
+            </section>
+
+            <section class="tab-panel" id="recursos" role="tabpanel" aria-labelledby="tab-recursos" hidden tabindex="0">
+              <p class="kicker">Materiales del proyecto</p>
+              <h2>Informe, portada y vídeo</h2>
+              <p class="panel-lede">Los tres archivos de la carpeta funcionan con rutas relativas, tanto al abrir el proyecto en local como después de publicarlo en GitHub Pages.</p>
+
+              <div class="grid-3">
+                <article class="card resource-card"><div class="icon">▣</div><h3>Informe en PDF</h3><p>Versión completa, maquetada en A4 y preparada para lectura o descarga.</p><a class="btn btn-primary" href="informe.pdf" target="_blank" rel="noopener">Abrir informe.pdf</a></article>
+                <article class="card resource-card"><div class="icon">▧</div><h3>Portada para redes</h3><p>Imagen JPG de 1200 × 630 píxeles, optimizada para Facebook, LinkedIn y X.</p><a class="btn btn-light" href="portada-redes.jpg" target="_blank" rel="noopener">Abrir portada-redes.jpg</a></article>
+                <article class="card resource-card"><div class="icon">▶</div><h3>Vídeo relacionado</h3><p>Acceso directo a YouTube en una pestaña nueva, disponible aunque el reproductor incrustado se bloquee.</p><a class="btn btn-gold" href="https://youtu.be/WfqL1mB1SXQ?si=PFnucbgJBWGct1pD" target="_blank" rel="noopener noreferrer">Ver vídeo en YouTube</a></article>
+              </div>
+
+              <h3 style="margin-top:1.8rem">Reproductor incrustado</h3>
+              <div class="video-frame">
+                <iframe src="https://www.youtube-nocookie.com/embed/WfqL1mB1SXQ" title="Vídeo relacionado con la Monarquía Hispánica" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="actions"><a class="btn btn-primary" href="https://youtu.be/WfqL1mB1SXQ?si=PFnucbgJBWGct1pD" target="_blank" rel="noopener noreferrer">Ver vídeo en YouTube</a></div>
+
+              <h3>Obras de base</h3>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Obra</th><th>Aportación principal a la síntesis</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>Autoridad, poder y jurisdicción en la Monarquía Hispánica</em></td><td>Fundamentos jurídicos y filosóficos, Escuela de Salamanca, estatuto del indígena, pactismo, servicio y diplomacia.</td></tr>
+                    <tr><td><em>El pensamiento político del Emperador</em></td><td>Ideario de Carlos V, legitimidad de su acceso, revuelta comunera y erasmismo cortesano.</td></tr>
+                    <tr><td><em>La configuración de la Monarquía Hispánica</em></td><td>Corte, consejos, Cortes, ejército, hacienda, Indias, religión, Portugal, Flandes y proyección cultural.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">La Monarquía Hispánica de los Austrias</div>
+        <p class="footer-note">Proyecto visual basado en el informe de síntesis. Las barras del apartado de expansión son cualitativas y no constituyen datos estadísticos.</p>
+      </div>
+      <a class="back-top" href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const tabs = [...document.querySelectorAll('[role="tab"]')];
+      const panels = [...document.querySelectorAll('[role="tabpanel"]')];
+      const placeholder = document.getElementById('tab-placeholder');
+
+      function activate(id, updateHash = true) {
+        const target = document.getElementById(id);
+        const tab = document.getElementById('tab-' + id);
+        if (!target || !tab) return;
+
+        tabs.forEach(btn => {
+          const selected = btn === tab;
+          btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+          btn.tabIndex = selected ? 0 : -1;
+        });
+        panels.forEach(panel => {
+          panel.hidden = panel !== target;
+          panel.classList.toggle('fade-in', panel === target);
+        });
+        placeholder.hidden = true;
+        if (updateHash) history.replaceState(null, '', '#' + id);
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activate(tab.getAttribute('aria-controls')));
+        tab.addEventListener('keydown', event => {
+          let next = index;
+          if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+          else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = tabs.length - 1;
+          else return;
+          event.preventDefault();
+          tabs[next].focus();
+          activate(tabs[next].getAttribute('aria-controls'));
+        });
+      });
+
+      document.querySelectorAll('[data-open-tab]').forEach(button => {
+        button.addEventListener('click', () => {
+          const id = button.dataset.openTab;
+          activate(id);
+          document.querySelector('.tabs-shell').scrollIntoView({behavior:'smooth', block:'start'});
+          document.getElementById('tab-' + id).focus({preventScroll:true});
+        });
+      });
+
+      const initial = location.hash.slice(1);
+      if (panels.some(panel => panel.id === initial)) activate(initial, false);
+    })();
+  </script>
+</body>
+</html>
