@@ -1,0 +1,182 @@
+[
+  {
+    "id": "torre-cerredo",
+    "name": "Torre Cerredo",
+    "altitude": "2.650 m",
+    "type": "cumbre",
+    "massif": "Central",
+    "x": 50.5,
+    "y": 31.0,
+    "description": "Cumbre más alta de los Picos de Europa. Posición provisional en esta primera maqueta."
+  },
+  {
+    "id": "urriellu",
+    "name": "Picu Urriellu",
+    "altitude": "2.519 m",
+    "type": "cumbre",
+    "massif": "Central",
+    "x": 61.5,
+    "y": 37.5,
+    "description": "También conocido como Naranjo de Bulnes. Etiqueta vectorial y ficha interactiva."
+  },
+  {
+    "id": "pena-santa",
+    "name": "Peña Santa",
+    "altitude": "2.596 m",
+    "type": "cumbre",
+    "massif": "Occidental",
+    "x": 23.0,
+    "y": 33.5,
+    "description": "Una de las grandes cumbres del macizo Occidental."
+  },
+  {
+    "id": "torre-santa",
+    "name": "Torre Santa María",
+    "altitude": "2.486 m",
+    "type": "cumbre",
+    "massif": "Occidental",
+    "x": 27.0,
+    "y": 37.0,
+    "description": "Cumbre destacada del Cornión."
+  },
+  {
+    "id": "torrecerredo",
+    "name": "Cabrones",
+    "altitude": "2.553 m",
+    "type": "cumbre",
+    "massif": "Central",
+    "x": 54.5,
+    "y": 35.0,
+    "description": "Cumbre principal del entorno de Cerredo."
+  },
+  {
+    "id": "llambrión",
+    "name": "Llambrión",
+    "altitude": "2.642 m",
+    "type": "cumbre",
+    "massif": "Central",
+    "x": 46.0,
+    "y": 34.0,
+    "description": "Una de las cumbres más elevadas del macizo Central."
+  },
+  {
+    "id": "pena-vieja",
+    "name": "Peña Vieja",
+    "altitude": "2.617 m",
+    "type": "cumbre",
+    "massif": "Central",
+    "x": 74.0,
+    "y": 39.0,
+    "description": "Gran cumbre del sector oriental del macizo Central."
+  },
+  {
+    "id": "morra-lechugales",
+    "name": "Morra de Lechugales",
+    "altitude": "2.444 m",
+    "type": "cumbre",
+    "massif": "Oriental",
+    "x": 86.0,
+    "y": 42.0,
+    "description": "Techo del macizo Oriental o de Ándara."
+  },
+  {
+    "id": "torre-blanca",
+    "name": "Torre Blanca",
+    "altitude": "2.619 m",
+    "type": "cumbre",
+    "massif": "Central",
+    "x": 42.0,
+    "y": 33.0,
+    "description": "Cumbre del sector de Llambrión."
+  },
+  {
+    "id": "tesorero",
+    "name": "Pico Tesorero",
+    "altitude": "2.570 m",
+    "type": "cumbre",
+    "massif": "Central",
+    "x": 66.0,
+    "y": 34.5,
+    "description": "Cumbre próxima al entorno de Cabaña Verónica."
+  },
+  {
+    "id": "jultayu",
+    "name": "Jultayu",
+    "altitude": "1.940 m",
+    "type": "cumbre",
+    "massif": "Occidental",
+    "x": 18.0,
+    "y": 47.0,
+    "description": "Magnífico mirador sobre el Cares."
+  },
+  {
+    "id": "cotalba",
+    "name": "Cotalba",
+    "altitude": "2.026 m",
+    "type": "cumbre",
+    "massif": "Occidental",
+    "x": 11.0,
+    "y": 45.5,
+    "description": "Cumbre cercana a Vegarredonda."
+  },
+  {
+    "id": "vegarredonda",
+    "name": "Refugio de Vegarredonda",
+    "altitude": "1.460 m",
+    "type": "refugio",
+    "massif": "Occidental",
+    "x": 15.5,
+    "y": 58.0,
+    "description": "Refugio de montaña del macizo Occidental."
+  },
+  {
+    "id": "urriellu-ref",
+    "name": "Refugio de Urriellu",
+    "altitude": "1.960 m",
+    "type": "refugio",
+    "massif": "Central",
+    "x": 60.5,
+    "y": 52.0,
+    "description": "Refugio situado al pie de la cara oeste del Picu Urriellu."
+  },
+  {
+    "id": "collado-jermoso",
+    "name": "Collado Jermoso",
+    "altitude": "2.064 m",
+    "type": "refugio",
+    "massif": "Central",
+    "x": 44.5,
+    "y": 50.5,
+    "description": "Refugio con una de las panorámicas más conocidas del macizo Central."
+  },
+  {
+    "id": "bulnes",
+    "name": "Bulnes",
+    "altitude": "649 m",
+    "type": "pueblo",
+    "massif": "Central",
+    "x": 59.0,
+    "y": 69.0,
+    "description": "Pueblo de montaña en el concejo de Cabrales."
+  },
+  {
+    "id": "sotres",
+    "name": "Sotres",
+    "altitude": "1.050 m",
+    "type": "pueblo",
+    "massif": "Central",
+    "x": 76.5,
+    "y": 67.0,
+    "description": "Localidad situada en el corazón de los Picos de Europa."
+  },
+  {
+    "id": "lagos",
+    "name": "Lagos de Covadonga",
+    "altitude": "1.100 m",
+    "type": "lago",
+    "massif": "Occidental",
+    "x": 7.5,
+    "y": 65.0,
+    "description": "Conjunto lacustre del sector de Covadonga."
+  }
+]

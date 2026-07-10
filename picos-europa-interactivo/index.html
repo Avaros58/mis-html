@@ -1,64 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Picos de Europa | Panorama orográfico interactivo</title>
-  <meta name="description" content="Panorama orográfico interactivo de los Picos de Europa con zoom, buscador y puntos de interés." />
-  <meta property="og:title" content="Picos de Europa | Panorama interactivo" />
-  <meta property="og:description" content="Explora los Picos de Europa con zoom, buscador y puntos de interés." />
-  <meta property="og:image" content="assets/img/picos-interface-preview.png" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#102319">
+  <title>Atlas interactivo · Picos de Europa</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">▲</div>
-      <div><h1>Picos de Europa</h1><p>Panorama orográfico interactivo</p></div>
+<header class="topbar">
+  <div>
+    <p class="eyebrow">ATLAS INTERACTIVO · V1.0</p>
+    <h1>Picos de Europa</h1>
+  </div>
+  <button id="fullscreenBtn" class="ghost">Pantalla completa</button>
+</header>
+
+<section class="toolbar" aria-label="Herramientas del visor">
+  <label class="search">
+    <span>Buscar</span>
+    <input id="searchInput" type="search" placeholder="Torre Cerredo, Urriellu…">
+    <div id="searchResults" class="results" hidden></div>
+  </label>
+
+  <div class="filters">
+    <label><input type="checkbox" data-type="cumbre" checked> Cumbres</label>
+    <label><input type="checkbox" data-type="refugio" checked> Refugios</label>
+    <label><input type="checkbox" data-type="pueblo" checked> Pueblos</label>
+    <label><input type="checkbox" data-type="lago" checked> Lagos</label>
+  </div>
+
+  <label class="switch"><input id="dimToggle" type="checkbox" checked><span></span> Atenuar texto del fondo</label>
+</section>
+
+<main class="layout">
+  <section class="viewer-shell">
+    <div id="viewer" class="viewer" tabindex="0" aria-label="Panorama interactivo">
+      <div id="stage" class="stage">
+        <img src="assets/panorama-base.jpg" alt="Panorama provisional de los Picos de Europa">
+        <div id="dimLayer" class="dim-layer"></div>
+        <div id="labels" class="labels"></div>
+      </div>
     </div>
-    <nav>
-      <button data-tab="panorama" class="active">Panorama</button>
-      <button data-tab="buscador">Buscador</button>
-      <button data-tab="info">Cómo usar</button>
-    </nav>
-  </header>
 
-  <main>
-    <section id="panorama" class="panel active">
-      <div class="toolbar">
-        <button id="zoomIn">+</button>
-        <button id="zoomOut">−</button>
-        <button id="resetView">Restablecer</button>
-        <button id="toggleLabels">Etiquetas</button>
-        <a href="assets/img/picos-panorama.png" download>Descargar imagen</a>
-      </div>
-      <div id="viewer" class="viewer" aria-label="Visor interactivo del panorama de los Picos de Europa">
-        <div id="stage" class="stage">
-          <img id="mapImage" src="assets/img/picos-panorama.png" alt="Panorama orográfico de los Picos de Europa" draggable="false" />
-          <div id="hotspots"></div>
-        </div>
-      </div>
-      <p class="hint">Arrastra para moverte. Usa la rueda del ratón, pellizca en móvil o pulsa +/− para ampliar.</p>
-    </section>
+    <div class="zoom-controls" aria-label="Controles de zoom">
+      <button id="zoomIn" title="Acercar">+</button>
+      <button id="zoomOut" title="Alejar">−</button>
+      <button id="resetView" title="Restablecer">⌂</button>
+    </div>
 
-    <section id="buscador" class="panel">
-      <div class="searchBox">
-        <input id="searchInput" type="search" placeholder="Buscar cumbre, refugio, collado o macizo…" />
-        <button id="clearSearch">Limpiar</button>
-      </div>
-      <div id="results" class="cards"></div>
-    </section>
+    <div class="legend">
+      <span><i class="dot cumbre"></i>Cumbre</span>
+      <span><i class="dot refugio"></i>Refugio</span>
+      <span><i class="dot pueblo"></i>Pueblo</span>
+      <span><i class="dot lago"></i>Lago</span>
+    </div>
+  </section>
 
-    <section id="info" class="panel prose">
-      <h2>Cómo usar este visor</h2>
-      <p>Este HTML evita el problema de WhatsApp: en vez de enviar la imagen comprimida, comparte el enlace publicado en GitHub Pages. Quien lo abra podrá hacer zoom y moverse por el panorama sin que WhatsApp destruya los textos.</p>
-      <p>Los puntos interactivos son una primera capa orientativa. Se pueden ampliar con todos los nombres del póster original si vamos incorporando una lista completa de topónimos.</p>
-      <h3>Para publicarlo</h3>
-      <p>Sube esta carpeta completa a GitHub Pages manteniendo la estructura: <code>index.html</code>, <code>assets/img</code>, <code>assets/css</code> y <code>assets/js</code>.</p>
-    </section>
-  </main>
+  <aside id="infoPanel" class="panel">
+    <div class="panel-empty">
+      <strong>Explora el panorama</strong>
+      <p>Pulsa una etiqueta o utiliza el buscador. Las etiquetas son texto vectorial y permanecen nítidas al ampliar.</p>
+    </div>
+  </aside>
+</main>
 
-  <div id="tooltip" class="tooltip" hidden></div>
-  <script src="assets/js/app.js"></script>
+<footer>
+  <p><strong>Primera maqueta funcional.</strong> La imagen y la ubicación de las etiquetas son provisionales; el motor de zoom, búsqueda, filtros y fichas ya está preparado para incorporar cartografía definitiva.</p>
+</footer>
+
+<script src="js/app.js"></script>
 </body>
 </html>
