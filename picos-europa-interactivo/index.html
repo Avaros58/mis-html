@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Picos de Europa | Panorama orográfico interactivo</title>
+  <meta name="description" content="Panorama orográfico interactivo de los Picos de Europa con zoom, buscador y puntos de interés." />
+  <meta property="og:title" content="Picos de Europa | Panorama interactivo" />
+  <meta property="og:description" content="Explora los Picos de Europa con zoom, buscador y puntos de interés." />
+  <meta property="og:image" content="assets/img/picos-interface-preview.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">▲</div>
+      <div><h1>Picos de Europa</h1><p>Panorama orográfico interactivo</p></div>
+    </div>
+    <nav>
+      <button data-tab="panorama" class="active">Panorama</button>
+      <button data-tab="buscador">Buscador</button>
+      <button data-tab="info">Cómo usar</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="panorama" class="panel active">
+      <div class="toolbar">
+        <button id="zoomIn">+</button>
+        <button id="zoomOut">−</button>
+        <button id="resetView">Restablecer</button>
+        <button id="toggleLabels">Etiquetas</button>
+        <a href="assets/img/picos-panorama.png" download>Descargar imagen</a>
+      </div>
+      <div id="viewer" class="viewer" aria-label="Visor interactivo del panorama de los Picos de Europa">
+        <div id="stage" class="stage">
+          <img id="mapImage" src="assets/img/picos-panorama.png" alt="Panorama orográfico de los Picos de Europa" draggable="false" />
+          <div id="hotspots"></div>
+        </div>
+      </div>
+      <p class="hint">Arrastra para moverte. Usa la rueda del ratón, pellizca en móvil o pulsa +/− para ampliar.</p>
+    </section>
+
+    <section id="buscador" class="panel">
+      <div class="searchBox">
+        <input id="searchInput" type="search" placeholder="Buscar cumbre, refugio, collado o macizo…" />
+        <button id="clearSearch">Limpiar</button>
+      </div>
+      <div id="results" class="cards"></div>
+    </section>
+
+    <section id="info" class="panel prose">
+      <h2>Cómo usar este visor</h2>
+      <p>Este HTML evita el problema de WhatsApp: en vez de enviar la imagen comprimida, comparte el enlace publicado en GitHub Pages. Quien lo abra podrá hacer zoom y moverse por el panorama sin que WhatsApp destruya los textos.</p>
+      <p>Los puntos interactivos son una primera capa orientativa. Se pueden ampliar con todos los nombres del póster original si vamos incorporando una lista completa de topónimos.</p>
+      <h3>Para publicarlo</h3>
+      <p>Sube esta carpeta completa a GitHub Pages manteniendo la estructura: <code>index.html</code>, <code>assets/img</code>, <code>assets/css</code> y <code>assets/js</code>.</p>
+    </section>
+  </main>
+
+  <div id="tooltip" class="tooltip" hidden></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
