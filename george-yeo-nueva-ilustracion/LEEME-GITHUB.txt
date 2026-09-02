@@ -1,0 +1,22 @@
+GEORGE YEO — LA NUEVA ILUSTRACIÓN
+Paquete preparado para GitHub Pages
+
+CONTENIDO
+- index.html: página principal.
+- assets/: estilos y programación de pestañas y desplegables.
+- images/: ilustraciones del dossier.
+- recursos/: informe completo en PDF y Word.
+
+PUBLICACIÓN EN EL REPOSITORIO «mis-html»
+1. Copie esta carpeta completa dentro del repositorio local «mis-html».
+2. Mantenga el nombre: george-yeo-nueva-ilustracion
+3. En GitHub Desktop, confirme que se incorporan todos los archivos de la carpeta.
+4. Escriba un mensaje de commit, por ejemplo: «Dossier George Yeo».
+5. Pulse «Commit to main» y después «Push origin».
+
+La dirección resultante será:
+https://avaros58.github.io/mis-html/george-yeo-nueva-ilustracion/
+
+IMPORTANTE
+No suba únicamente index.html: las carpetas assets, images y recursos son necesarias
+para que funcionen el diseño, las pestañas, los desplegables y las descargas.
