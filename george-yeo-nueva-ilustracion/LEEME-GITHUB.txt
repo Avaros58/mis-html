@@ -1,22 +1,29 @@
-GEORGE YEO — LA NUEVA ILUSTRACIÓN
-Paquete preparado para GitHub Pages
+GEORGE YEO · NUEVA ILUSTRACIÓN
+================================
 
-CONTENIDO
-- index.html: página principal.
-- assets/: estilos y programación de pestañas y desplegables.
-- images/: ilustraciones del dossier.
-- recursos/: informe completo en PDF y Word.
+Carpeta preparada para GitHub Pages.
 
-PUBLICACIÓN EN EL REPOSITORIO «mis-html»
-1. Copie esta carpeta completa dentro del repositorio local «mis-html».
-2. Mantenga el nombre: george-yeo-nueva-ilustracion
-3. En GitHub Desktop, confirme que se incorporan todos los archivos de la carpeta.
-4. Escriba un mensaje de commit, por ejemplo: «Dossier George Yeo».
-5. Pulse «Commit to main» y después «Push origin».
+PUBLICACIÓN
+1. Sustituya en su repositorio la carpeta anterior
+   george-yeo-nueva-ilustracion por esta carpeta completa.
+2. Confirme que index.html queda directamente dentro de la carpeta,
+   junto a favicon.svg y las subcarpetas images y recursos.
+3. Realice el commit y el push a la rama main.
+4. La dirección pública conservará la forma:
+   https://SU-USUARIO.github.io/SU-REPOSITORIO/george-yeo-nueva-ilustracion/
 
-La dirección resultante será:
-https://avaros58.github.io/mis-html/george-yeo-nueva-ilustracion/
+ESTRUCTURA NECESARIA
+- index.html
+- favicon.svg
+- images/hero.png
+- images/bird.png
+- recursos/Informe_George_Yeo_Nueva_Ilustracion.pdf
+- recursos/Informe_George_Yeo_Nueva_Ilustracion.docx
 
-IMPORTANTE
-No suba únicamente index.html: las carpetas assets, images y recursos son necesarias
-para que funcionen el diseño, las pestañas, los desplegables y las descargas.
+No se necesitan Node, npm, carpetas de compilación ni archivos JavaScript
+externos. Los estilos y la interacción de pestañas están integrados en
+index.html; las imágenes y documentos permanecen separados para que las
+rutas relativas funcionen en local y en GitHub Pages.
+
+Si el navegador muestra durante unos minutos la versión antigua después
+del push, recargue la página con Ctrl+F5.
