@@ -5,16 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Michael Hudson: dominio geoeconómico de Estados Unidos</title>
 <meta name="description" content="Informe interactivo y estructurado sobre la entrevista a Michael Hudson acerca del plan estadounidense para recuperar su dominio geoeconómico.">
-<link rel="canonical" href="https://avaros58.github.io/mis-html/michael-hudson-dominio-geoeconomico/">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Michael Hudson: el plan de EE. UU. para recuperar su dominio geoeconómico">
 <meta property="og:description" content="Energía, tecnología, transporte y dólar como puntos de estrangulamiento de la economía mundial, según Michael Hudson.">
-<meta property="og:url" content="https://avaros58.github.io/mis-html/michael-hudson-dominio-geoeconomico/">
-<meta property="og:image" content="https://avaros58.github.io/mis-html/michael-hudson-dominio-geoeconomico/social-card.jpg">
+<meta property="og:image" content="social-card.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Michael Hudson: dominio geoeconómico de EE. UU.">
 <meta name="twitter:description" content="Informe interactivo sobre energía, tecnología, transporte y dólar bajo la visión de Michael Hudson.">
-<meta name="twitter:image" content="https://avaros58.github.io/mis-html/michael-hudson-dominio-geoeconomico/social-card.jpg">
+<meta name="twitter:image" content="social-card.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 <style>
 :root{--bg:#071521;--panel:#0d2030;--panel2:#112a3c;--text:#edf5f2;--muted:#a8c0c0;--line:#264555;--accent:#f0c44f;--teal:#4fc4b7;--danger:#f08080;--shadow:0 18px 50px rgba(0,0,0,.27);--radius:18px;--max:1180px}
@@ -49,14 +47,30 @@ a{color:#8ce0d7} a:hover{color:#fff} button,input{font:inherit}
 @media(max-width:900px){.hero{grid-template-columns:1fr} .grid-4,.grid-3{grid-template-columns:repeat(2,1fr)} .flow{grid-template-columns:1fr} .flow-step:not(:last-child)::after{content:'↓';right:50%;top:auto;bottom:-20px;transform:translateX(50%)}}
 @media(max-width:620px){.topbar-inner{padding:8px 12px} .brand{font-size:.9rem} .hero{padding-top:30px} .grid-2,.grid-3,.grid-4{grid-template-columns:1fr} .section-head{align-items:start;flex-direction:column} .timeline:before{left:30px} .timeline-item{grid-template-columns:66px 1fr} .tablist{top:52px}}
 @media print{.topbar,.tablist,.hero-actions,.sharebar,.searchbox{display:none!important} body{background:white;color:#111} .tabpanel{display:block!important} .card,.monopoly-card,table,.quote,details{background:white;color:#111;box-shadow:none;border-color:#bbb} .card p,.monopoly-card p,.timeline-item p,.details-body,.transcript-row p{color:#333} a{color:#111;text-decoration:none}}
+
+/* Materiales complementarios */
+.action{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.download-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.download-card{display:flex;flex-direction:column}
+.download-card p{flex:1}
+.download-card .file-info{flex:0;color:var(--muted);font-size:.85rem;margin:0 0 16px}
+.download-links{display:flex;flex-wrap:wrap;gap:9px}
+.artwork-preview{margin:26px auto 0;max-width:820px}
+.artwork-preview img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+.artwork-preview figcaption{color:var(--muted);font-size:.88rem;padding:12px 0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media(max-width:760px){.download-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.topbar-inner{flex-wrap:wrap;gap:6px}.topbar .brand{flex-basis:100%}.topbar .action{font-size:.8rem;padding:5px 10px}.tablist{top:91px}}
+@media print{.download-links{display:none!important}.artwork-preview{max-width:600px}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
-<header class="topbar"><div class="topbar-inner"><div class="brand">HUDSON <span>· GEOECONOMÍA</span></div><button class="action" onclick="window.print()">Imprimir / PDF</button><button class="action" id="themeBtn" aria-label="Cambiar contraste">Contraste</button></div></header>
+<header class="topbar"><div class="topbar-inner"><div class="brand">HUDSON <span>· GEOECONOMÍA</span></div><a class="action" href="documentos/informe-hudson.pdf" target="_blank" rel="noopener">Leer PDF</a><button class="action" onclick="window.print()">Imprimir web</button><button class="action" id="themeBtn" aria-label="Cambiar contraste">Contraste</button></div></header>
 <main id="contenido">
 <section class="hero">
-<div><span class="kicker">Informe interactivo · entrevista de julio de 2026</span><h1>El plan de EE. UU. para recuperar su dominio geoeconómico</h1><p class="lead">Una reconstrucción editorial de la visión expuesta por Michael Hudson, en conversación con Glenn Diesen, sobre la transición desde una hegemonía industrial y financiera hacia una estrategia de rentas, monopolios y puntos de estrangulamiento.</p><div class="hero-meta"><span class="pill">Michael Hudson</span><span class="pill">Glenn Diesen</span><span class="pill">≈ 52 minutos</span><span class="pill">Fuente audiovisual en inglés</span></div><div class="hero-actions"><a class="action primary" href="https://www.youtube.com/watch?v=hK2na94XILQ" target="_blank" rel="noopener">▶ Ver entrevista</a><button class="action" onclick="selectTab('timeline')">Explorar cronología</button><button class="action" onclick="selectTab('fuentes')">Cautelas y fuentes</button></div></div>
+<div><span class="kicker">Informe interactivo · entrevista de julio de 2026</span><h1>El plan de EE. UU. para recuperar su dominio geoeconómico</h1><p class="lead">Una reconstrucción editorial de la visión expuesta por Michael Hudson, en conversación con Glenn Diesen, sobre la transición desde una hegemonía industrial y financiera hacia una estrategia de rentas, monopolios y puntos de estrangulamiento.</p><div class="hero-meta"><span class="pill">Michael Hudson</span><span class="pill">Glenn Diesen</span><span class="pill">≈ 52 minutos</span><span class="pill">Fuente audiovisual en inglés</span></div><div class="hero-actions"><a class="action primary" href="https://youtu.be/hK2na94XILQ?si=3tC39vy7tejmiGig" target="_blank" rel="noopener">▶ Ver entrevista</a><button class="action primary" onclick="selectTab('documentos')">Documentos e infografía</button><button class="action" onclick="selectTab('timeline')">Explorar cronología</button><button class="action" onclick="selectTab('fuentes')">Cautelas y fuentes</button></div></div>
 <img class="hero-image" src="social-card.jpg" alt="Portada: Michael Hudson y los cuatro ejes del dominio geoeconómico: energía, tecnología, transporte y dólar">
 </section>
 <div class="notice"><div class="notice-inner"><strong>Cautela editorial.</strong> Este documento reconstruye la argumentación de Hudson y Diesen. No presenta como demostrados los planes, hechos coyunturales, cifras ni relaciones causales atribuidos a gobiernos, empresas o ejércitos. La transcripción española es automática y debe cotejarse con el audio original para citas y conceptos decisivos.</div></div>
@@ -69,6 +83,7 @@ a{color:#8ce0d7} a:hover{color:#fff} button,input{font:inherit}
 <button class="tab" role="tab" aria-selected="false" data-tab="timeline">Cronología</button>
 <button class="tab" role="tab" aria-selected="false" data-tab="evaluacion">Lectura crítica</button>
 <button class="tab" role="tab" aria-selected="false" data-tab="transcripcion">Transcripción</button>
+<button class="tab" role="tab" aria-selected="false" id="tab-documentos" data-tab="documentos">Documentos e infografía</button>
 <button class="tab" role="tab" aria-selected="false" data-tab="fuentes">Fuentes y compartir</button>
 </div>
 
@@ -246,25 +261,37 @@ a{color:#8ce0d7} a:hover{color:#fff} button,input{font:inherit}
 <div class="transcript-row"><a class="timecode" href="https://www.youtube.com/watch?v=hK2na94XILQ&t=2903s" target="_blank" rel="noopener">48:23</a><p>Sí, iba a decirlo, tiempos interesantes. Bueno, aunque todas estas guerras terminaran ahora, cuesta imaginar que no haya una crisis alimentaria este otoño.</p></div>
 <div class="transcript-row"><a class="timecode" href="https://www.youtube.com/watch?v=hK2na94XILQ&t=2913s" target="_blank" rel="noopener">48:33</a><p>En fin, como decía, siempre me siento un poco más sabio después de hablar contigo, así que muchísimas gracias por tu tiempo. Bueno, gracias por invitarme, Glennon.</p></div></div></details></div></section>
 
+
+<section id="documentos" class="tabpanel" role="tabpanel" aria-labelledby="tab-documentos">
+<div class="section-head"><div><span class="kicker">Biblioteca de la entrevista</span><h2>El informe y su infografía</h2></div><p>La reconstrucción de la tesis de Hudson, disponible para leer, guardar y consultar junto al vídeo.</p></div>
+<div class="download-grid">
+<article class="card download-card"><span class="range">PDF · EDICIÓN A COLOR</span><h3>Leer el informe</h3><p>Diseño editorial, índice navegable e infografía integrada. Las marcas temporales enlazan con el momento correspondiente del vídeo.</p><p class="file-info">15 páginas · 4,9 MB</p><div class="download-links"><a class="action primary" href="documentos/informe-hudson.pdf" target="_blank" rel="noopener">Abrir PDF</a><a class="action" href="documentos/informe-hudson.pdf" download>Descargar PDF</a></div></article>
+<article class="card download-card"><span class="range">DOCX · TEXTO EDITABLE</span><h3>Lectura y anotaciones</h3><p>La misma reconstrucción en un documento editable, con formato sencillo para lectura y preparación para Kindle. Incluye la infografía y acceso al vídeo.</p><p class="file-info">Word / DOCX · 3,0 MB</p><div class="download-links"><a class="action primary" href="documentos/informe-hudson.docx" download>Descargar DOCX</a></div></article>
+<article class="card download-card"><span class="range">PNG · INFOGRAFÍA ILUSTRADA</span><h3>Los cuatro mecanismos</h3><p>Energía y Ormuz, tecnología e IA, transporte y dólar. Una representación visual del reciclaje de excedentes y las alternativas euroasiáticas.</p><p class="file-info">Imagen PNG · 2,8 MB</p><div class="download-links"><a class="action primary" href="documentos/infografia-hudson.png" target="_blank" rel="noopener">Ampliar imagen</a><a class="action" href="documentos/infografia-hudson.png" download>Descargar PNG</a></div></article>
+</div>
+<figure class="artwork-preview"><a href="documentos/infografia-hudson.png" target="_blank" rel="noopener" aria-label="Abrir la infografía a tamaño completo"><img src="documentos/infografia-hudson.png" width="1122" height="1402" loading="lazy" alt="Infografía de la tesis de Hudson: Estados Unidos conectado con energía, tecnología e IA, transporte y finanzas; retorno de excedentes y alternativas euroasiáticas."></a><figcaption>Ilustración conceptual generada con IA: las escenas no representan episodios documentados. Pulsa la imagen para verla a tamaño completo.</figcaption></figure>
+<p class="sources-note">Los documentos distinguen las intervenciones de Hudson de las del entrevistador. <a href="https://youtu.be/hK2na94XILQ?si=3tC39vy7tejmiGig" target="_blank" rel="noopener">Ver la entrevista completa en YouTube</a>.</p>
+</section>
+
 <section id="fuentes" class="tabpanel" role="tabpanel"><div class="section-head"><div><span class="kicker">Trazabilidad</span><h2>Fuentes, método y publicación</h2></div><p>El vídeo controla el sentido; los materiales automatizados orientan la estructura.</p></div><div class="table-wrap"><table><thead><tr><th>Material</th><th>Descripción</th><th>Acceso</th><th>Uso en este informe</th></tr></thead><tbody>
-<tr><td>Vídeo original</td><td>Entrevista de Glenn Diesen a Michael Hudson</td><td><a href="https://www.youtube.com/watch?v=hK2na94XILQ" target="_blank" rel="noopener">Abrir en YouTube</a></td><td>Fuente audiovisual principal</td></tr>
+<tr><td>Vídeo original</td><td>Entrevista de Glenn Diesen a Michael Hudson</td><td><a href="https://youtu.be/hK2na94XILQ?si=3tC39vy7tejmiGig" target="_blank" rel="noopener">Abrir en YouTube</a></td><td>Fuente audiovisual principal</td></tr>
 <tr><td>Transcripción</td><td>Video Highlight, versión automatizada en español</td><td>Material facilitado por el usuario</td><td>Base textual; requiere cotejo con el audio</td></tr>
 <tr><td>Resumen</td><td>Video Highlight</td><td>Material facilitado por el usuario</td><td>Orientación temática, no cita</td></tr>
 <tr><td>Puntos clave</td><td>Video Highlight</td><td>Material facilitado por el usuario</td><td>Índice automatizado y parcialmente redundante</td></tr>
-</tbody></table></div><div class="grid grid-2" style="margin-top:18px"><article class="card"><h3>Método editorial</h3><p>Se reorganizó la entrevista por problemas, mecanismos y frentes geográficos. Las frases entrecomilladas que aparecen como síntesis están identificadas como formulaciones editoriales y no como citas literales.</p></article><article class="card"><h3>Publicación en GitHub Pages</h3><p>La versión pública está disponible en <a href="https://avaros58.github.io/mis-html/michael-hudson-dominio-geoeconomico/" target="_blank" rel="noopener">GitHub Pages</a>. La copia local documenta la publicación, pero sus cambios posteriores no se sincronizan automáticamente.</p></article></div><div class="section-head"><div><span class="kicker">Difusión</span><h2>Compartir el informe</h2></div></div><div class="sharebar"><button data-share="x">Compartir en X</button><button data-share="facebook">Facebook</button><button data-share="linkedin">LinkedIn</button><button data-share="whatsapp">WhatsApp</button><button data-share="copy">Copiar enlace</button></div><p class="sources-note">La imagen <strong>social-card.jpg</strong> tiene 1200 × 630 píxeles, proporción adecuada para Facebook, X y LinkedIn.</p></section>
+</tbody></table></div><div class="grid grid-2" style="margin-top:18px"><article class="card"><h3>Método editorial</h3><p>Se reorganizó la entrevista por problemas, mecanismos y frentes geográficos. Las frases entrecomilladas que aparecen como síntesis están identificadas como formulaciones editoriales y no como citas literales.</p></article><article class="card"><h3>Documentos para consultar</h3><p>Accede al informe en PDF o DOCX y a la infografía ilustrada desde la nueva sección.</p><button class="action" onclick="selectTab('documentos')">Abrir documentos e infografía</button></article></div><div class="section-head"><div><span class="kicker">Difusión</span><h2>Compartir el informe</h2></div></div><div class="sharebar"><button data-share="x">Compartir en X</button><button data-share="facebook">Facebook</button><button data-share="linkedin">LinkedIn</button><button data-share="whatsapp">WhatsApp</button><button data-share="copy">Copiar enlace</button></div><p class="sources-note">La imagen <strong>social-card.jpg</strong> tiene 1200 × 630 píxeles, proporción adecuada para Facebook, X y LinkedIn.</p></section>
 </section>
 </main>
 <footer class="footer">Documento de análisis y orientación. Las afirmaciones corresponden a la visión expresada en la entrevista y requieren contraste independiente.</footer>
 <script>
 const tabs=[...document.querySelectorAll('.tab')];
-function selectTab(id){tabs.forEach(t=>t.setAttribute('aria-selected',String(t.dataset.tab===id)));document.querySelectorAll('.tabpanel').forEach(p=>p.classList.toggle('active',p.id===id));history.replaceState(null,'','#'+id);window.scrollTo({top:document.querySelector('.tabs-wrap').offsetTop-54,behavior:'smooth'})}
+function selectTab(id){if(!tabs.some(t=>t.dataset.tab===id))return;tabs.forEach(t=>t.setAttribute('aria-selected',String(t.dataset.tab===id)));document.querySelectorAll('.tabpanel').forEach(p=>p.classList.toggle('active',p.id===id));history.replaceState(null,'','#'+id);window.scrollTo({top:document.querySelector('.tabs-wrap').offsetTop-54,behavior:'smooth'})}
 tabs.forEach(t=>t.addEventListener('click',()=>selectTab(t.dataset.tab)));
-if(location.hash && document.querySelector(location.hash)) selectTab(location.hash.slice(1));
+if(location.hash) selectTab(location.hash.slice(1));
+window.addEventListener('hashchange',()=>selectTab(location.hash.slice(1)));
 document.getElementById('searchTranscript').addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();document.querySelectorAll('.transcript-row').forEach(r=>r.classList.toggle('hidden-by-search',q&&!r.textContent.toLowerCase().includes(q)));document.querySelectorAll('.transcript-group').forEach(g=>{const any=[...g.querySelectorAll('.transcript-row')].some(r=>!r.classList.contains('hidden-by-search'));g.classList.toggle('hidden-by-search',q&&!any);if(q&&any)g.open=true})});
 document.getElementById('themeBtn').addEventListener('click',()=>document.body.classList.toggle('high-contrast'));
 const title='Michael Hudson: el plan de EE. UU. para recuperar su dominio geoeconómico';
-const PUBLIC_URL='https://avaros58.github.io/mis-html/michael-hudson-dominio-geoeconomico/';
-document.querySelectorAll('[data-share]').forEach(btn=>btn.addEventListener('click',()=>{const u=encodeURIComponent(PUBLIC_URL),t=encodeURIComponent(title);let target='';switch(btn.dataset.share){case'x':target=`https://twitter.com/intent/tweet?text=${t}&url=${u}`;break;case'facebook':target=`https://www.facebook.com/sharer/sharer.php?u=${u}`;break;case'linkedin':target=`https://www.linkedin.com/sharing/share-offsite/?url=${u}`;break;case'whatsapp':target=`https://wa.me/?text=${t}%20${u}`;break;case'copy':navigator.clipboard.writeText(PUBLIC_URL).then(()=>{btn.textContent='Enlace copiado';setTimeout(()=>btn.textContent='Copiar enlace',1600)});return}window.open(target,'_blank','noopener,noreferrer')}));
+document.querySelectorAll('[data-share]').forEach(btn=>btn.addEventListener('click',()=>{const u=encodeURIComponent(location.href),t=encodeURIComponent(title);let target='';switch(btn.dataset.share){case'x':target=`https://twitter.com/intent/tweet?text=${t}&url=${u}`;break;case'facebook':target=`https://www.facebook.com/sharer/sharer.php?u=${u}`;break;case'linkedin':target=`https://www.linkedin.com/sharing/share-offsite/?url=${u}`;break;case'whatsapp':target=`https://wa.me/?text=${t}%20${u}`;break;case'copy':navigator.clipboard.writeText(location.href).then(()=>{btn.textContent='Enlace copiado';setTimeout(()=>btn.textContent='Copiar enlace',1600)});return}window.open(target,'_blank','noopener,noreferrer')}));
 </script>
 <style>body.high-contrast{--bg:#000;--panel:#000;--panel2:#050505;--text:#fff;--muted:#eee;--line:#aaa;--accent:#ffda45;--teal:#6affee} body.high-contrast .card,body.high-contrast .monopoly-card,body.high-contrast details,body.high-contrast table{background:#050505}</style>
 </body></html>
