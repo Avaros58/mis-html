@@ -1,0 +1,9 @@
+MANUAL ICT · BLOQUE 1 · CAPÍTULOS 1 A 5
+
+Extrae el ZIP y abre index.html. Conserva fvg-esquema.svg junto al HTML.
+El diseño y los controles A−/A+ están dentro del HTML. El tamaño se recuerda cuando el navegador permite almacenamiento local.
+Las dos figuras ATAS se cargan desde su servidor y necesitan conexión. Si no cargan, se ofrece un enlace. No están incluidas ni se afirma una licencia de redistribución.
+manual.md contiene el texto editable y sus enlaces.
+Esta entrega integra el capítulo 1 aprobado y los capítulos 2 a 5 en un único bloque. No se ha publicado en GitHub.
+
+Verificación: capítulo piloto íntegro con títulos adaptados; capítulos 2–5 sin cambios de contenido. Índice interno y seis tamaños de texto comprobados en pantallas de 390, 768 y 1440 píxeles, sin desbordamiento general ni errores de JavaScript. Las figuras externas de ATAS no se cargaron en esta prueba; se mantienen los enlaces alternativos.
