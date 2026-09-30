@@ -1,0 +1,12 @@
+MANUAL ICT · BLOQUE 2 · EPISODIOS 6 A 10
+
+1. Extrae el ZIP completo.
+2. Abre index.html con tu navegador.
+3. Usa A− y A+ para ajustar el texto entre 100 y 200 %.
+4. Conserva los tres SVG junto al HTML. manual.md contiene el texto editable.
+
+El contenido, diseño, controles y esquemas funcionan sin conexión. Los enlaces a YouTube, CME y ATAS requieren Internet. El tamaño se recuerda si el navegador permite almacenamiento local. Imprimir abre todos los ejercicios temporalmente.
+
+Para GitHub Pages: copia el contenido completo a Trading/manual_ict/bloque_2/ dentro de tu repositorio mis-html y publica los cambios como hiciste con el bloque 1. Esta entrega no modifica ni publica tu repositorio.
+
+Las transcripciones son la fuente principal. Las marcas temporales no se han verificado fotograma a fotograma. Los gráficos son esquemas propios, no capturas del vídeo ni imágenes de ATAS. El tutorial visual de ATAS se consulta mediante un enlace.
