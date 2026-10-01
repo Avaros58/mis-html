@@ -1,0 +1,22 @@
+MANUAL ICT · BLOQUE 4 · EPISODIOS 16–20
+Edición de estudio: 1 de octubre de 2026
+
+Extrae todo el ZIP y abre index.html en el navegador. Mantén junto al HTML manual.md y los cinco SVG: precios, temporalidades, orden, aperturas y mercados.
+
+CONTENIDO
+Cinco capítulos desarrollados, fundamentos, ejercicios con respuestas desplegables, taller, glosario bilingüe y fuentes con enlaces temporales. Los esquemas son propios, con datos ficticios, y no reproducen capturas de los vídeos.
+
+LECTURA
+A− / A+ ajustan el texto entre 100 y 200 %. Restablecer vuelve al tamaño inicial. El navegador recuerda el tamaño si permite almacenamiento local. El índice principal y los índices de apartados permiten navegar. En móvil, desplaza horizontalmente tablas y esquemas si lo requieren; pulsa un esquema para verlo por separado. Imprimir abre temporalmente las soluciones y restaura después su estado.
+
+SIN CONEXIÓN
+Texto, diseño, esquemas y controles funcionan sin Internet. Vídeos y fuentes externas requieren conexión. ATAS se ofrece mediante enlaces atribuidos a sus tutoriales; no hay imágenes externas incrustadas. No es necesario instalar paquetes para leer el HTML.
+
+EDICIÓN
+manual.md contiene el texto editable en Markdown con fragmentos HTML para figuras y respuestas; usa un visor compatible. El HTML es una versión autónoma para lectura, salvo las imágenes SVG locales que deben acompañarlo. Editar Markdown no actualiza automáticamente el HTML.
+
+FIDELIDAD
+Fuentes: SRT de episodios 16, 17 y 18 y textos con tiempos de 19 y 20 aportados por el usuario. Se distinguen instructor, ampliaciones y ejemplos propios. Tiempos orientativos sin revisión fotograma a fotograma. Se señalan la inconsistencia de cifras del 16, las alternativas de cálculo del 17 y los decimales sin confirmar del 20. Londres es una ampliación separada del modelo de Nueva York. No se acreditan ejecuciones reales ni rentabilidad a partir de las explicaciones.
+
+CONTINUIDAD Y PUBLICACIÓN
+Conserva el diseño de los bloques anteriores. Si deseas publicarlo siguiendo tu estructura previa, copia estos archivos juntos a Trading/manual_ict/bloque_4/ del repositorio mis-html. Esta entrega no publica ni modifica el repositorio.

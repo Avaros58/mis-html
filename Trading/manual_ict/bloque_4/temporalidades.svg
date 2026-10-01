@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Zona principal y zona de precisión"><title>Zona principal y zona de precisión</title><rect width="900" height="560" fill="#fff"/><g font-family="Segoe UI, sans-serif" fill="#173d48" font-size="23"><text x="35" y="48" font-size="28" font-weight="bold">Zona principal y zona de precisión</text>
+<line x1="80" y1="130" x2="710" y2="130" stroke="#9b4e32" stroke-width="3" stroke-dasharray="10 8"/><text x="740" y="138">116</text><text x="90" y="111" fill="#9b4e32">Stop ilustrativo fijo</text>
+<rect x="80" y="200" width="630" height="180" fill="#e9dcc2"/><text x="740" y="208">114</text><text x="740" y="388">110</text>
+<rect x="260" y="245" width="450" height="45" fill="#56747b"/><text x="740" y="252">113</text><text x="740" y="295">112</text>
+<text x="95" y="230" font-size="21">Zona principal</text><text x="280" y="275" fill="white" font-size="21">Zona de precisión</text>
+<text x="95" y="350" font-size="21">Contexto: 110–114 · precisión: 112–113</text>
+<text x="55" y="443">Más precisión puede reducir la distancia al stop.</text><text x="55" y="478">También puede dejar la orden sin ejecutar.</text><text x="55" y="526" fill="#9b4e32" font-size="19">Precios ficticios · ambas zonas deben conocerse a tiempo</text></g></svg>

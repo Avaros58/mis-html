@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="Dos aperturas · una hipótesis alcista"><title>Dos aperturas · una hipótesis alcista</title><rect width="900" height="620" fill="#fff"/><g font-family="Segoe UI, sans-serif" fill="#173d48" font-size="23"><text x="35" y="48" font-size="28" font-weight="bold">Dos aperturas · una hipótesis alcista</text>
+<line x1="60" y1="210" x2="830" y2="210" stroke="#56747b" stroke-width="2" stroke-dasharray="8 7"/><text x="60" y="189" font-size="21">Apertura de medianoche</text>
+<line x1="290" y1="300" x2="830" y2="300" stroke="#af762b" stroke-width="2" stroke-dasharray="8 7"/><text x="540" y="329" font-size="21">Apertura de las 08:30</text>
+<polyline points="70,210 155,256 225,248 310,300 380,370 440,327 480,344 560,254 605,274 690,173 750,192 820,100" fill="none" stroke="#173d48" stroke-width="5"/>
+<circle cx="380" cy="370" r="8" fill="#9b4e32"/><text x="240" y="409" font-size="21">Excursión bajo ambas aperturas</text>
+<text x="645" y="93" font-size="21">Hacia el objetivo</text>
+<rect x="40" y="450" width="820" height="100" rx="8" fill="#eff2ee"/><text x="60" y="490">La compra requiere la confirmación del plan.</text><text x="60" y="526">Estar por debajo de las aperturas no basta.</text>
+<text x="40" y="593" fill="#9b4e32" font-size="19">Recorrido ficticio · no representa una sesión real</text></g></svg>

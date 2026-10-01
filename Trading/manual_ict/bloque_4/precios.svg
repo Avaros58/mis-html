@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Bid y ask · dos cotizaciones del mismo instante"><title>Bid y ask · dos cotizaciones del mismo instante</title><rect width="900" height="560" fill="#fff"/><g font-family="Segoe UI, sans-serif" fill="#173d48" font-size="23"><text x="35" y="48" font-size="28" font-weight="bold">Bid y ask · dos cotizaciones del mismo instante</text>
+<rect x="55" y="110" width="360" height="180" rx="10" fill="#eff2ee"/><rect x="485" y="110" width="360" height="180" rx="10" fill="#f4e5d6"/>
+<text x="85" y="156">BID · se vende</text><text x="85" y="220" font-size="44">1.09000</text><text x="85" y="260" font-size="20">Apertura de un corto</text>
+<text x="515" y="156">ASK · se compra</text><text x="515" y="220" font-size="44">1.09012</text><text x="515" y="260" font-size="20">Cierre de un corto</text>
+<line x1="235" y1="315" x2="665" y2="315" stroke="#9b4e32" stroke-width="3"/><path d="M235 304v22 M665 304v22" stroke="#9b4e32" stroke-width="3"/>
+<text x="160" y="368">Diferencial: 0.00012 = 1,2 pips en EUR/USD</text>
+<text x="55" y="435">Tocar un nivel en el gráfico de bid no acredita</text><text x="55" y="470">una ejecución de compra en ese mismo precio.</text><text x="55" y="520" fill="#9b4e32" font-size="19">Ejemplo ficticio · sin datos de mercado</text></g></svg>
