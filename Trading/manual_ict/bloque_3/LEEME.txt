@@ -1,0 +1,16 @@
+MANUAL ICT · BLOQUE 3 · EPISODIOS 11–15
+Edición de estudio: 1 de octubre de 2026
+
+1. Extrae el ZIP completo y abre index.html en un navegador.
+2. Mantén los cuatro SVG y manual.md junto al HTML.
+3. Usa A− / A+ (100–200 %), Restablecer e Imprimir.
+4. Los enunciados están visibles; solo las soluciones se despliegan.
+5. Las figuras se pueden desplazar horizontalmente en móvil y pulsar para ampliar.
+
+Texto, figuras, diseño e interacción funcionan sin Internet. Los enlaces a vídeos, ATAS y CME requieren conexión. ATAS se ofrece mediante enlaces a tutoriales; no contiene imágenes externas. El tamaño de letra se recuerda si el navegador permite almacenamiento local. Al imprimir se abren temporalmente las respuestas.
+
+manual.md es la versión editable: usa Markdown con fragmentos HTML para figuras y soluciones. Debe abrirse en un visor compatible con ese HTML. No se requiere instalación de paquetes para leer index.html.
+
+Fuentes principales: transcripciones facilitadas por el usuario. El episodio 12 estaba duplicado; se usa una sola pasada. El 14 tiene título editorial en español y conserva su atribución original a The Inner Circle Trader. Los demás corresponden a TRAVIS FOREX. Los tiempos no se han verificado fotograma a fotograma. Las ambigüedades y los datos ausentes están identificados en el manual.
+
+Continuidad: bloque 1 (1–5), bloque 2 (6–10), bloque 3 (11–15). Para publicación manual siguiendo la organización previa, copiar este contenido a Trading/manual_ict/bloque_3/ del repositorio mis-html. Esta entrega no publica ni modifica el repositorio.

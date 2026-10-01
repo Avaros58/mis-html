@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Jerarquía geométrica · máximos de giro"><title>Jerarquía geométrica · máximos de giro</title><rect width="900" height="560" fill="#fff"/><g font-family="Segoe UI, sans-serif" fill="#173d48" font-size="23"><text x="35" y="48" font-size="29" font-weight="bold">Jerarquía geométrica · máximos de giro</text>
+<polyline points="65,370 190,245 280,365 435,135 545,345 685,220 825,345" fill="none" stroke="#173d48" stroke-width="5"/>
+<g fill="#9b4e32"><circle cx="190" cy="245" r="8"/><circle cx="435" cy="135" r="8"/><circle cx="685" cy="220" r="8"/></g>
+<text x="150" y="215">108</text><text x="400" y="105">114</text><text x="650" y="190">110</text>
+<text x="115" y="410">Giro local A</text><text x="355" y="410">Giro local B</text><text x="645" y="410">Giro local C</text>
+<rect x="35" y="445" width="830" height="90" rx="8" fill="#eff2ee"/><text x="55" y="477">B es intermedio: supera a los giros A y C.</text><text x="55" y="513">Solo se confirma al conocer el giro de la derecha.</text></g></svg>

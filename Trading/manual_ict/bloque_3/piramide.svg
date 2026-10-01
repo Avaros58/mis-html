@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-label="Piramidación · cantidades decrecientes"><title>Piramidación · cantidades decrecientes</title><rect width="900" height="500" fill="#fff"/><g font-family="Segoe UI, sans-serif" fill="#173d48" font-size="23"><text x="35" y="48" font-size="29" font-weight="bold">Piramidación · cantidades decrecientes</text>
+<rect x="345" y="105" width="210" height="78" rx="5" fill="#9b4e32"/><text x="376" y="155" fill="white">1 contrato</text>
+<rect x="240" y="198" width="420" height="78" rx="5" fill="#56747b"/><text x="375" y="248" fill="white">2 contratos</text>
+<rect x="135" y="291" width="630" height="78" rx="5" fill="#173d48"/><text x="375" y="341" fill="white">3 contratos</text>
+<text x="50" y="425">Primero la base; después, nuevas señales y menos cantidad.</text><text x="50" y="466">Cada adición exige recalcular el riesgo de toda la posición.</text></g></svg>
