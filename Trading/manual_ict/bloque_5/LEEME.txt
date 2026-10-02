@@ -1,0 +1,19 @@
+MANUAL ICT · BLOQUE 5 · EPISODIOS 21–25
+Edición de estudio: 3 de octubre de 2026
+
+Extrae todo el ZIP y abre index.html. Mantén junto al HTML manual.md y los cinco SVG: secuencia, smt, dos-zonas, prima y stop.
+
+CONTENIDO
+Mapa, fundamentos desarrollados, cinco capítulos, cinco ejercicios con respuestas desplegables, taller integrado con solución, glosario bilingüe, fuentes y registro de ambigüedades. Las polémicas personales se reducen, conservando las enseñanzas sobre confirmación, riesgo y ausencia de operación.
+
+LECTURA
+A− / A+ permiten ampliar entre 100 y 200 %. Restablecer vuelve al tamaño inicial. La preferencia se guarda cuando el navegador permite almacenamiento local. Hay índice general y de apartados. En móvil, tablas y esquemas admiten desplazamiento horizontal; pulsa un esquema para abrirlo por separado. Imprimir abre temporalmente las respuestas y luego restaura su estado.
+
+SIN CONEXIÓN
+Texto, estilos, esquemas y controles funcionan sin Internet. Los vídeos y fuentes requieren conexión. ATAS se incluye mediante enlaces atribuidos: no hay capturas ni imágenes externas incrustadas.
+
+FUENTES Y LÍMITES
+Transcripciones 21–24 aportadas inicialmente y transcripción 25 añadida después. El duplicado del 24 se excluye. Tiempos orientativos, no revisados fotograma a fotograma. Los esquemas y ejemplos son propios y están identificados; no son precios ni capturas reconstruidas de los vídeos. Se distinguen explicaciones del instructor, ampliaciones y límites de evidencia. No se auditan cuentas ni se demuestra rentabilidad mediante estos ejemplos.
+
+EDICIÓN Y PUBLICACIÓN
+manual.md es la versión editable; contiene HTML para figuras y respuestas. Su edición no actualiza automáticamente index.html. Para mantener la estructura del repositorio anterior, copia todos estos archivos a Trading/manual_ict/bloque_5/. Esta entrega no modifica ni publica el repositorio de GitHub.
