@@ -1,0 +1,10 @@
+ICT Mentorship 2022 En Español · Bloque 7 · Episodios 31–35
+Edición de estudio v1.0 · 04/10/2026 · Referencia
+
+Versión maestra: E:/Documentos/Trading_Estudio_Operativa/02_Biblioteca/manual_ict/bloque_7/manual.md.
+index.html es el derivado de lectura; abrirlo en el navegador. Mantener juntos los siete archivos: HTML, Markdown, LEEME y cuatro SVG.
+El índice navega por secciones; A−/A+ amplían de 100 a 200 %. Las soluciones se despliegan y se abren al imprimir, restaurando después su estado.
+Texto y esquemas funcionan sin conexión. Los vídeos requieren Internet. Los enlaces a bloques previos y auditoría funcionan dentro de la arquitectura del proyecto; el ZIP se prepara con esa misma arquitectura.
+Las fuentes originales 31–35 se conservan sin editar en 01_Fuentes/ICT. El 35 utiliza qi6UKQ8N6a4; no duplica el 34.
+Cotejo audiovisual completo no realizado; dudas de precios y anclajes enumeradas al final del manual y en la auditoría.
+Bloques 1–7 completados; episodios cubiertos 1–35; próximo bloque 8, episodios 36–41.
