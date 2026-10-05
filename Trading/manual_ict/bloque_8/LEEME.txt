@@ -1,0 +1,14 @@
+ICT Mentorship 2022 en Español · Bloque 8 · Episodios 36–41
+Edición v1.0 · 05/10/2026 · Referencia
+
+Texto maestro: E:/Documentos/Trading_Estudio_Operativa/02_Biblioteca/manual_ict/bloque_8/manual.md
+Lectura: index.html; conservar con manual.md, este LEEME y cuatro SVG (decisiones, almuerzo, riesgo, stop).
+A−/A+: 100–200 %. Restablecer: 100 %. Índice con altura dinámica de barra.
+Las diez soluciones se despliegan y se abren al imprimir; después recuperan su estado.
+Texto y esquemas funcionan sin conexión; vídeos y fuentes externas requieren Internet.
+Los enlaces a Bloques 1–7 necesitan esas carpetas hermanas; el paquete de colección las incluye como copias idénticas de consulta.
+Seis transcripciones incorporadas e intactas en 01_Fuentes/ICT. 36–37 tienen marcas; 38–41, no.
+Cotejo audiovisual completo no realizado; correspondencia y dudas delimitadas en manual y auditoría.
+La aritmética del 41 contiene inconsistencias: se ofrecen cálculos coherentes condicionados, no una corrección del original.
+Ocho bloques elaborados, cobertura documental 1–41 con fuente visual y límites propios del 28. No hay volumen único fusionado.
+Sin publicación remota en esta entrega. El informe de cierre indica incorporación y comprobaciones reales.
