@@ -1,0 +1,36 @@
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.4rem;
+}
+
+.hero-actions .watch,
+.hero-actions .download {
+  display: inline-block;
+  padding: .65rem .9rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.hero-actions .download {
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #fff;
+}
+
+.hero-actions .download:hover {
+  background: #f2b7b1;
+  border-color: #f2b7b1;
+}
+
+footer a {
+  color: #e5edf1;
+  text-underline-offset: .2em;
+}
+
+@media print {
+  .hero-actions {
+    display: none;
+  }
+}
