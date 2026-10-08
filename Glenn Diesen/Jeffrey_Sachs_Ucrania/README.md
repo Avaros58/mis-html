@@ -4,9 +4,9 @@ Paquete independiente para GitHub Pages. Contenido atribuido a Sachs y Diesen, c
 
 ## Publicación
 
-Copiar index.html, .nojekyll, assets y documentos a la carpeta `Jeffrey_Sachs_Ucrania` de la raíz del repositorio `mis-html`. Ruta prevista:
+Copiar index.html, .nojekyll, assets y documentos a la carpeta `Jeffrey_Sachs_Ucrania` dentro de `Glenn Diesen` en el repositorio `mis-html`. Ruta prevista:
 
-https://avaros58.github.io/mis-html/Jeffrey_Sachs_Ucrania/
+https://avaros58.github.io/mis-html/Glenn%20Diesen/Jeffrey_Sachs_Ucrania/
 
 Esta ruta está configurada en canonical, og:url, og:image y twitter:image. Si cambias la carpeta, modifica esas cuatro direcciones antes de subir. Las rutas de lectura y descarga son relativas; funcionan también en local. La documentación aparece como descarga visible en la cabecera.
 
@@ -20,3 +20,5 @@ Para X: pegar la URL completa en el texto del post. Una imagen subida manualment
 - assets/estilo.css y assets/lectura.js: recursos locales sin servicios remotos.
 
 La fuente íntegra se conserva solo en el espacio de trabajo, fuera de este paquete público. Las citas son breves, la exposición es una elaboración editorial. No hay cotejo de audio ni verificación exhaustiva de todas las alegaciones. No se ha realizado publicación externa.
+
+Actualización: enlaces a la Carta de la OSCE sustituidos por el PDF oficial en español. Metadatos sociales ajustados a la ubicación confirmada en Glenn Diesen/Jeffrey_Sachs_Ucrania.
