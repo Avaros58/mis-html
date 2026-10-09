@@ -1,0 +1,134 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>4. El market maker: el jugador más predecible del mercado · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 04</p><h1>4. El market maker: el jugador más predecible del mercado</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/04-market-maker">Ver fuente en línea</a><a href="../PDF_Originales/4.%20El%20market%20maker_%20el%20jugador%20m%C3%A1s%20predecible%20del%20mercado%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 8 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">La profesión: estar al otro lado</a></li><li><a href="#seccion-2">Cobertura delta, paso a paso</a></li><li><a href="#seccion-3">Dos regímenes: gamma gobierna el flujo</a></li><li><a href="#seccion-4">El libro del MM: de las posiciones al mapa</a></li><li><a href="#seccion-5">Por qué esto es oro</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">4. El market maker: el jugador más predecible del mercado</p>
+<p>Abres tu terminal y compras quinientos puts del SPX con un solo clic. La operación
+se ejecuta en una fracción de segundo. Ahora, una pregunta que casi nadie se
+detiene a hacer: ¿quién te los vendió? Quinientos contratos de seguro contra un
+crash — en el momento exacto en que los quisiste. No había ninguna cola de
+vendedores entusiastas. Al otro lado de tu operación — como en casi toda operación
+con opciones del mundo — había un participante sin el menor deseo de discutir
+contigo sobre el futuro. Simplemente estaba obligado a responder.</p>
+<h2 id="seccion-1">La profesión: estar al otro lado</h2>
+<p>Un <strong>market maker</strong> (de aquí en adelante, MM; la literatura también llama dealer a
+la misma firma) es una empresa cuyo trabajo es cotizar continuamente ambos lados
+del mercado — una compra y una venta — en miles de opciones a la vez. ¿Quieres
+comprar? Él vende. ¿Quieres vender? Él compra. La bolsa le concede privilegios por
+ello, y él pretende ganar el spread — la diferencia de céntimos entre su precio de
+compra y el de venta, repetida millones de veces.</p>
+<p>Para que esto no quede en abstracción: los market makers no son «funciones de la
+bolsa» y mucho menos particulares, sino las mayores firmas de trading del mundo —
+Citadel Securities, Jane Street, IMC Trading y sus pares. Máquinas industriales con
+miles de empleados, para las que cotizar opciones SPX es un negocio de cadena de
+montaje.</p>
+<p>Fíjate en lo que este modelo de negocio no contiene: una opinión sobre el mercado.
+El MM no apuesta a la subida ni a la caída — vende liquidez. Pero tras un día de
+ese trabajo, la posición se acumula sola: todo lo que los clientes compraron, él lo
+ha vendido; todo lo que los clientes soltaron, él lo ha recogido. Su libro es la
+imagen especular de los deseos de todo el mercado. Los clientes eligieron sus
+operaciones. El MM no eligió su posición.</p>
+<p><img src="recursos/255b4939ce6167.png" alt="Where option risk goes" loading="lazy"></p>
+<p>Recuerda ahora el payoff del vendedor de opciones de la lección 1: ganancia
+limitada, pérdida ilimitada. El MM que te vendió quinientos puts perderá una
+fortuna en un crash — si deja las cosas como están. No las dejará. Y lo que hace en
+su lugar es el mecanismo central de todo este curso.</p>
+<h2 id="seccion-2">Cobertura delta, paso a paso</h2>
+<p>La tarea del MM es ganar el spread sin cargar riesgo de mercado. Así que el riesgo
+hay que extinguirlo. Las instrucciones ya las escribimos en la lección 3, al
+desmontar la delta: una posición en opciones equivale a una posición en el
+subyacente.</p>
+<p>Mira los números. Los clientes le compraron al MM 1.000 calls con delta 0,40. El
+libro del MM: menos 1.000 calls — el equivalente de una posición corta de 400
+unidades del índice. El mercado sube un punto, el libro pierde 400. La cura es
+obvia: comprar futuros por esas mismas 400 unidades. Ahora un índice al alza gana
+en los futuros exactamente lo que devoran los calls vendidos. La delta del libro es
+cero; el MM es <strong>delta-neutral</strong> y gana tranquilamente su spread. (Simplificamos a
+propósito los multiplicadores de contrato — la aritmética de los factores de
+conversión no aporta nada al asunto.)</p>
+<p>Ahí acabaría la historia si la delta se quedara quieta. Pero la lección 3 nos
+enseñó: la delta está viva. El índice sube diez puntos — la delta de los calls
+vendidos repta de 0,40 a 0,55. El libro del MM equivale ahora a un corto de 550
+unidades, y solo hay compradas 400 unidades de futuros. Para volver a cero debe
+<strong>comprar otras 150 — en un mercado que ya ha subido</strong>. ¿El índice retrocede? La
+delta resbala hacia 0,40, los futuros sobrantes pesan sobre el libro — <strong>vender
+150, en un mercado que ha caído</strong>.</p>
+<p>Ahí está — el ajetreo prometido en la conversación sobre gamma. El MM no quiere
+operar futuros — está obligado: cada movimiento del mercado rompe su neutralidad,
+y persigue su propia delta todo el día. Ese ajetreo no es ruido de fondo. Por
+volumen es una de las mayores fuerzas del mercado de futuros, y es enteramente
+mecánico.</p>
+<h2 id="seccion-3">Dos regímenes: gamma gobierna el flujo</h2>
+<p>La dirección del ajetreo depende de un único signo — el signo de la gamma del
+libro del MM. Y ese signo tiene dos regímenes, con efectos opuestos sobre el
+mercado.</p>
+<p><img src="recursos/b9fb8e0ee25cab.png" alt="The same hedging rule, two opposite effects" loading="lazy"></p>
+<p>Los gráficos muestran la cantidad de futuros que el MM está obligado a mantener en
+función del precio del índice. La regla de cobertura es una y la misma; observa
+qué distinto se despliega.</p>
+<p><strong>El MM está largo de gamma</strong> (gráfico izquierdo) — en saldo, los clientes le han
+<em>vendido</em> más opciones de las que le compraron: su libro está repleto de calls y
+puts comprados. Entonces la posición de futuros requerida cae cuando el precio
+sube: el mercado sube — el MM vende futuros; el mercado baja — los recompra. Vender
+arriba y comprar abajo — el MM opera mecánicamente <em>contra</em> el movimiento. Miles de
+esas operaciones amortiguan los vaivenes: el mercado se vuelve viscoso, los
+movimientos se apagan y el precio parece atraído hacia los grandes strikes de
+opciones. Ese efecto de atracción al strike se llama <strong>pin</strong> (pinning) — lo
+encontraremos en los datos más de una vez.</p>
+<p><strong>El MM está corto de gamma</strong> (gráfico derecho) — los clientes le han <em>comprado</em>
+sus opciones: pólizas de seguro, boletos de lotería, todo lo de la lección 1. La
+curva se invierte: ahora, cuanto más alto el precio, más futuros debe mantener el
+MM. El mercado sube — el MM compra detrás; el mercado cae — vende en su estela.
+Cada movimiento se ve obligado a <em>amplificarlo</em>. Una caída engendra ventas del MM,
+que profundizan la caída, que exige ventas nuevas. En un día tranquilo esto es un
+traqueteo ligero; en uno malo, una espiral que se alimenta sola — y es en este
+régimen donde ocurren los crashes más rápidos y los rebotes verticales más
+feroces.</p>
+<p>Asimila la asimetría de la culpa: en ambos regímenes el MM hace exactamente lo
+mismo — mantiene el cero. Que estabilice el mercado o lo azote no lo decide él,
+sino la posición agregada de sus clientes.</p>
+<h2 id="seccion-4">El libro del MM: de las posiciones al mapa</h2>
+<p>Un MM real no tiene mil calls, sino cientos de miles de posiciones en todos los
+strikes y todos los vencimientos a la vez, y los largos y cortos dentro del libro
+se cancelan parcialmente. Pero cualquier libro, por complicado que sea, tiene en
+cada momento una línea de fondo: una delta total (que el MM mantiene en cero), una
+gamma total y su signo.</p>
+<p>Más aún — la contribución del libro puede descomponerse de vuelta por strikes:
+aquí están los niveles donde se concentra la gamma, aquí es positiva, allá
+negativa, y aquí está el precio en el que el signo de todo el libro se da la
+vuelta. Lo que se obtiene es un mapa: <strong>dónde</strong> en la escala de precios están las
+fuerzas que harán comprar al MM, y dónde las que lo harán vender. Ese mapa — la
+exposición del MM — es exactamente lo que miden nuestros indicadores GEX. Cómo
+calcularlo es lo que enseñarán las próximas lecciones.</p>
+<p>Una advertencia honesta, sobre la que se sostiene toda la industria de la
+analítica de opciones: nadie publica el libro del MM. Solo puede <em>estimarse</em> — a
+partir de datos indirectos, con supuestos sobre en qué lado de las operaciones
+estaban los clientes. Qué datos existen para ello, cuán frescos son y qué revelan
+exactamente — de eso trata todo el resto del curso.</p>
+<h2 id="seccion-5">Por qué esto es oro</h2>
+<p>Detengámonos un segundo a apreciar lo que hemos ganado. Todo lo demás en el
+mercado es opinión: un analista puede cambiar de idea, un fondo puede cancelar una
+orden, la masa puede asustarse. El flujo de cobertura del MM es la única gran
+fuerza <em>obligada</em> a presentarse: es mecánica, su dirección es calculable a partir
+del libro y está anclada a niveles de precio concretos. Pronosticar los deseos
+ajenos es difícil; las obligaciones ajenas se pueden calcular.</p>
+<p>Dos advertencias para cerrar, para que el mapa no se endurezca en mito. El signo
+de la gamma no dice nada sobre la dirección: gamma corta no es un pronóstico de
+crash sino un amplificador de cualquier movimiento, arriba o abajo; gamma larga es
+un freno, no una garantía de rally. Y el flujo de cobertura es una fuerza entre
+muchas: un titular, el flujo de órdenes de un gran fondo o un dato macro pueden
+arrollar cualquier gamma del libro del MM. El libro te da el mapa del terreno —
+dónde el mercado es viscoso y dónde resbaladizo — pero no la ruta.</p>
+<hr>
+<p>Así que el mercado tiene un jugador cuyas operaciones son predecibles porque son
+obligatorias — solo falta conseguir datos que revelen su libro. La industria
+empezó por lo que estaba en la superficie: los informes diarios de open interest.
+De ellos creció toda una generación de analítica — niveles de opciones, muros,
+imanes — y nuestro primer paquete de indicadores. Ahí empieza la siguiente parte:
+qué podían hacer los datos clásicos y dónde estaba su techo.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>El market maker debe cotizar ambos lados: su libro es el espejo de las operaciones de los clientes — él nunca eligió su posición.</li>
+<li>Cobertura delta: el MM extingue el riesgo del libro con futuros y mantiene la delta total en cero — y cada movimiento del mercado lo obliga a reequilibrar una y otra vez.</li>
+<li>Gamma larga: la cobertura opera contra el movimiento y amortigua el mercado (pinning a los strikes). Gamma corta: con el movimiento — y lo amplifica.</li>
+<li>Los flujos de cobertura son obligatorios y calculables, pero el libro del MM no se publica: solo puede estimarse a partir de datos.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. El market maker no apuesta a la dirección del mercado. ¿De dónde sale entonces su posición?</h3><ol type="A"><li>La bolsa le asigna una posición en la apertura</li><li>Sí que pronostica el mercado — solo que no lo admite</li><li>No tiene posiciones: solo empareja compradores con vendedores</li><li>Su posición es el espejo de las operaciones de los clientes: todo lo que el mercado compró, él lo vendió, y viceversa</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> Su posición es el espejo de las operaciones de los clientes: todo lo que el mercado compró, él lo vendió, y viceversa</p><p>El MM está obligado a responder a cualquier demanda y cualquier oferta. Los clientes eligieron sus operaciones — su libro se ensambló con los deseos de otros.</p></div></details></article><article class="question"><h3>2. Un MM vendió 2.000 puts con delta −0,30. ¿Qué hará inmediatamente después de la operación?</h3><ol type="A"><li>Comprar futuros por 600 unidades</li><li>Vender futuros por 600 unidades — el libro equivale a un largo de 600</li><li>Nada: los puts vendidos no crean riesgo</li><li>Comprar 2.000 calls para compensar</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Vender futuros por 600 unidades — el libro equivale a un largo de 600</p><p>Menos 2.000 puts x (−0,30) = +600 unidades del índice: el libro tira hacia arriba. Para seguir neutral, el MM vende futuros por esas mismas 600.</p></div></details></article><article class="question"><h3>3. El índice empieza a caer, y el MM vende futuros en plena caída. ¿En qué régimen está su libro?</h3><ol type="A"><li>Gamma larga: en una caída él siempre vende</li><li>Delta-neutral: las ventas no tienen nada que ver con la cobertura</li><li>Gamma corta: la posición requerida cae junto con el precio, y la cobertura amplifica el movimiento</li><li>Es imposible: los MM siempre compran camino abajo</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> Gamma corta: la posición requerida cae junto con el precio, y la cobertura amplifica el movimiento</p><p>En gamma corta la posición de futuros requerida crece con el precio — así que cuando el precio cae, la posición se recorta vendiendo en un mercado que se hunde. La caída se alimenta sola.</p></div></details></article><article class="question"><h3>4. ¿Por qué la gamma larga del MM «clava» el precio a los grandes strikes?</h3><ol type="A"><li>Cerca de un gran strike la gamma del libro llega a su pico: el MM vende en los repuntes y compra en los recortes — operando contra cada desviación</li><li>Los MM mantienen el precio abajo a propósito para que las opciones venzan sin valor</li><li>Los grandes strikes atraen el precio con un campo magnético de órdenes de compra en reposo</li><li>La bolsa restringe el movimiento del precio cerca de los strikes populares</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> Cerca de un gran strike la gamma del libro llega a su pico: el MM vende en los repuntes y compra en los recortes — operando contra cada desviación</p><p>Ninguna conspiración — solo la aritmética de la cobertura: cerca del strike el ajetreo forzoso del MM es más denso, y el precio se atasca como en miel. Eso es el pin.</p></div></details></article><article class="question"><h3>5. ¿Qué hace únicos a los flujos de cobertura del MM como señal de mercado — y cuál es la limitación principal?</h3><ol type="A"><li>Siempre empujan el mercado hacia arriba; la limitación — solo funcionan por la mañana</li><li>Se ven directamente en la cinta; la limitación — solo en acciones</li><li>Predicen la dirección del mercado con un día de antelación, sin limitaciones</li><li>No son una opinión sino una obligación — el flujo es calculable y debe ocurrir; pero el libro en sí no se publica y hay que estimarlo a partir de datos</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> No son una opinión sino una obligación — el flujo es calculable y debe ocurrir; pero el libro en sí no se publica y hay que estimarlo a partir de datos</p><p>Pronosticar los deseos ajenos es difícil; las obligaciones ajenas se pueden calcular. Todo el resto del curso trata de los datos que revelan el libro.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_03.html">← Lección anterior</a><a href="leccion_05.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

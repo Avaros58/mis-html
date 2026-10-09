@@ -1,0 +1,91 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>7. 0DTE: el mercado que rompió el calendario · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 07</p><h1>7. 0DTE: el mercado que rompió el calendario</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/07-0dte-market">Ver fuente en línea</a><a href="../PDF_Originales/7.%200DTE_%20el%20mercado%20que%20rompi%C3%B3%20el%20calendario%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 7 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">Cómo se cerró el calendario</a></li><li><a href="#seccion-2">Quién opera esto y por qué</a></li><li><a href="#seccion-3">La física de la opción de un día: todo lo que sabemos, pero en horas</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">7. 0DTE: el mercado que rompió el calendario</p>
+<p>En la lección 3 estudiamos la curva roja — la delta de una opción en las últimas
+horas de su vida, saltando de cero a uno en un par de puntos — y prometimos volver
+a ella. Hora de cumplir. Porque en pocos años esa curva pasó de curiosidad exótica
+a trama principal del mayor mercado de opciones del planeta: hoy, aproximadamente
+uno de cada dos contratos SPX vive menos de un día de negociación.</p>
+<p>Esas opciones se llaman <strong>0DTE</strong> — zero days to expiration: compradas por la
+mañana, vencidas para la tarde. No es un tipo nuevo de contrato — son las mismas
+opciones SPX de la lección 2, solo que tomadas con la fecha más cercana: la de
+hoy. Lo nuevo era otra cosa: para que exista una fecha «hoy» todos los días, la
+bolsa tuvo que cerrar el ciclo del calendario.</p>
+<h2 id="seccion-1">Cómo se cerró el calendario</h2>
+<p>El camino llevó diecisiete años. Hasta 2005, las opciones SPX vivían a ritmo
+mensual — un vencimiento, el tercer viernes. Luego la Cboe añadió series
+semanales, y los vencimientos se volvieron asunto de viernes. En 2016, los lunes y
+miércoles se sumaron a los viernes. Y en la primavera de 2022 — los martes y
+jueves, y el calendario quedó sellado: desde ese momento, cada día de negociación
+vence alguna serie del SPX. Cada día el mercado tiene una opción viviendo sus
+últimas horas — y el vencimiento de «hoy» siempre se puede operar.</p>
+<p>La respuesta del mercado superó todas las expectativas de la bolsa.</p>
+<p><img src="recursos/0e69ca9bab2b3c.png" alt="Zero days to expiration share" loading="lazy"></p>
+<p>La cuota de las opciones del mismo día en el volumen del SPX llevaba años
+creciendo, pero tras cerrarse el calendario en 2022 saltó a una nueva meseta — y
+siguió escalando hasta chocar con una marca psicológica: <strong>cerca de la mitad de
+todo el volumen de opciones del SPX vive hoy menos de un día</strong>. Fíjate de qué es
+cuota: del mayor mercado de opciones del mundo, aquel cuyos billones de nominal
+medimos en la lección 1. La mitad de eso son ahora opciones del mismo día.</p>
+<h2 id="seccion-2">Quién opera esto y por qué</h2>
+<p>Medio día de vida — ¿qué se puede hacer con eso? En la práctica, el 0DTE encontró
+compradores y vendedores para todos los gustos, y vale la pena conocer sus
+motivos: son los futuros «personajes» de nuestros datos.</p>
+<p><strong>Seguro de precisión.</strong> El gestor de carteras de la lección 1 ya no tiene que
+pagar un mes de protección cuando lo único que le asusta es la reunión de la Fed
+de hoy. Compra puts para el día — un seguro contra exactamente el evento que teme.
+Y barato: la theta se ha comido todo menos el último día, y no se paga por tiempo
+que no se necesita.</p>
+<p><strong>Apuestas a eventos.</strong> El dato de inflación a las 8:30, la decisión de tipos a
+las 14:00 — una opción del mismo día permite jugar el desenlace de un evento
+concreto con el apalancamiento que calculamos en la lección 1, solo que más
+afilado: las primas son centavos, los strikes están cerca.</p>
+<p><strong>Cosechar theta a todo gas.</strong> Los vendedores de prima recuerdan de la lección 3:
+los últimos días arden más rápido. Una opción del mismo día no es más que el
+último día — decaimiento destilado. La venta sistemática de 0DTE se convirtió en
+una industria — con todos los riesgos de una aseguradora comprimidos en seis horas
+y media.</p>
+<p><strong>La lotería.</strong> Un call comprado por un dólar que para la tarde vale cero o diez
+es el boleto de lotería más accesible de los mercados financieros. El retail se
+enamoró primero.</p>
+<h2 id="seccion-3">La física de la opción de un día: todo lo que sabemos, pero en horas</h2>
+<p>Conectemos esto con la mecánica de la primera parte del curso. Toda la vida de una
+opción — el nacimiento del valor temporal, su decaimiento, el afilado de la gamma,
+la deriva de la delta — que un contrato mensual estira a lo largo de semanas, una
+0DTE la comprime en un solo día de negociación. Cada efecto que antes dibujábamos
+«por días» ahora ocurre «por horas».</p>
+<p><img src="recursos/041e2367da6501.png" alt="Intraday gamma of a 0DTE option" loading="lazy"></p>
+<p>Aquí está la gamma de una opción cercana al dinero a lo largo de su único día.
+Para mediodía es el doble que por la mañana. En la última hora — varias veces
+mayor. La curva roja de delta de la lección 3 — «de cero a uno en un par de
+puntos» — es el retrato de toda opción 0DTE después de comer. Y ahora recuerda de
+quién depende la vida con la gamma: el MM, obligado a mantener el cero, cubre esta
+avalancha continuamente, y su ajetreo de la lección 4 queda igualmente comprimido
+en horas y acelera hacia el cierre.</p>
+<p>De ahí la nueva entonación del mercado. El clima de gamma, que antes cambiaba de
+semana en semana, ahora cambia varias veces <em>al día</em>: una marea matinal de compras
+de puts 0DTE puede volcar a los MM a gamma corta para el mediodía, y la toma de
+beneficios de la tarde puede devolverlos para la noche. Los pins a los strikes
+grandes se han vuelto un fenómeno intradía: un nivel al que el mercado se «pega»
+desde las 14:00 quizá no existía a las 10:00 — lo crearon posiciones abiertas a
+mediodía. El signo y la fuerza del libro del MM corren con el horario de un solo
+día.</p>
+<p>Y un último trazo: esta máquina rota su capital a velocidad inaudita. Los mismos
+mil dólares pueden participar en cinco «mercados» distintos en una semana — uno
+por día. La rotación crece, las posiciones se multiplican, y para la tarde de cada
+día todo se evapora sin dejar rastro: el vencimiento limpia la mesa a cero, y
+mañana el juego se arma de nuevo.</p>
+<hr>
+<p>Detente un segundo en las palabras «sin dejar rastro» — en ellas vive toda la
+intriga. La mitad del mercado nace y muere dentro de un solo día. Y nuestra fuente
+principal de datos — recuerda la lección 5 — fotografía las posiciones una vez al
+día, por la tarde. ¿Qué quedará en esa fotografía? La próxima lección es corta y
+desagradable: haremos la cuenta de exactamente lo que no podemos ver.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>0DTE es una opción SPX corriente que vence hoy: toda la vida de una opción comprimida en un día de negociación.</li>
+<li>En la primavera de 2022 la bolsa cerró el calendario (un vencimiento cada día) - y la cuota 0DTE creció hasta cerca de la mitad del volumen del SPX.</li>
+<li>Los participantes: seguro de precisión, apuestas a eventos, venta de la theta más rápida y compras de lotería.</li>
+<li>La gamma de una opción de un día crece varias veces hacia el cierre - el clima de gamma del mercado cambia ahora varias veces al día.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. ¿Qué es una opción 0DTE?</h3><ol type="A"><li>Un tipo especial de contrato con prima cero</li><li>Una opción sin strike, liquidada al precio de cierre</li><li>Una opción SPX corriente tomada con la fecha de vencimiento de hoy</li><li>Un futuro con entrega el mismo día</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> Una opción SPX corriente tomada con la fecha de vencimiento de hoy</p><p>En el contrato en sí no hay nada nuevo - lo nuevo fue que una fecha «hoy» pasó a existir cada día de negociación.</p></div></details></article><article class="question"><h3>2. ¿Qué evento abrió la puerta al 0DTE diario?</h3><ol type="A"><li>El lanzamiento de las opciones semanales en 2005</li><li>La bolsa añadió los vencimientos de martes y jueves en la primavera de 2022 - el calendario se cerró</li><li>Comisiones más bajas en los brokers minoristas</li><li>El lanzamiento del índice VIX</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> La bolsa añadió los vencimientos de martes y jueves en la primavera de 2022 - el calendario se cerró</p><p>Antes, los vencimientos diarios caían en lunes, miércoles y viernes. Desde la primavera de 2022, cada día de negociación vence alguna serie del SPX.</p></div></details></article><article class="question"><h3>3. ¿Quién opera 0DTE? Elige el conjunto de motivos más completo.</h3><ol type="A"><li>Solo jugadores de lotería minoristas</li><li>Solo los market makers entre sí</li><li>Solo fondos algorítmicos</li><li>Hedgers (seguro contra un evento concreto), especuladores de eventos, vendedores de prima y compradores de lotería</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> Hedgers (seguro contra un evento concreto), especuladores de eventos, vendedores de prima y compradores de lotería</p><p>Las opciones del mismo día encontraron participantes para todos los gustos: asegurar barata la reunión de la Fed de hoy, jugar un dato con apalancamiento, cosechar la theta más rápida o comprar un boleto de centavos.</p></div></details></article><article class="question"><h3>4. ¿Qué pasa con la gamma de una opción 0DTE cercana al dinero a lo largo del día?</h3><ol type="A"><li>Crece: para mediodía es el doble que por la mañana; en la última hora, varias veces mayor</li><li>Cae junto con el valor temporal</li><li>No cambia: la gamma se fija por la mañana</li><li>Se va a cero después del mediodía</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> Crece: para mediodía es el doble que por la mañana; en la última hora, varias veces mayor</p><p>Cuanto menos tiempo queda, más bruscamente cada punto de precio decide el destino de la opción. Para los MM significa que la cobertura forzosa se concentra hacia el cierre.</p></div></details></article><article class="question"><h3>5. ¿Qué significa la frase «el clima de gamma ahora cambia varias veces al día»?</h3><ol type="A"><li>La volatilidad del mercado se ha vuelto más alta en todas las sesiones</li><li>La bolsa publica el OI varias veces al día</li><li>El signo y la fuerza del libro del MM corren con el horario de un solo día: la mitad de las posiciones se abren y cierran dentro del día</li><li>Los niveles de opciones han dejado de funcionar por completo</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> El signo y la fuerza del libro del MM corren con el horario de un solo día: la mitad de las posiciones se abren y cierran dentro del día</p><p>Una marea matinal de compras de puts puede volcar a los MM a gamma corta para mediodía, y la toma de beneficios vespertina puede devolverlos para la noche. El régimen del mercado se ha vuelto una variable intradía.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_06.html">← Lección anterior</a><a href="leccion_08.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

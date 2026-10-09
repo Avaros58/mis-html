@@ -1,0 +1,100 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>11. Tres fuerzas: gamma, vanna, charm · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 11</p><h1>11. Tres fuerzas: gamma, vanna, charm</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/11-gamma-vanna-charm">Ver fuente en línea</a><a href="../PDF_Originales/11.%20Tres%20fuerzas_%20gamma%2C%20vanna%2C%20charm%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 6 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">Una obligación, tres causas</a></li><li><a href="#seccion-2">Vanna: la fuerza del miedo</a></li><li><a href="#seccion-3">Charm: la fuerza del tiempo</a></li><li><a href="#seccion-4">Cómo leer las tres fuerzas juntas</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">11. Tres fuerzas: gamma, vanna, charm</p>
+<p>El mercado del SPX tiene costumbres que desconcertaron a los observadores durante
+años. Una tarde tranquila de viernes — sin noticias, volumen fino — y el índice
+repta obstinadamente hacia arriba. La volatilidad se drena tras pasar un evento —
+y el mercado sube solo, como si alguien comprara metódicamente cada recorte.
+¿Quién compra? Mira la cinta — nadie especial. La respuesta no se esconde en la
+cinta sino en el horario: compra el MM, y no compra porque quiera — sino porque
+debe.</p>
+<p>Desde la lección 4 conocíamos una causa de sus obligaciones — el movimiento del
+precio. Hora de completar el cuadro: son tres.</p>
+<h2 id="seccion-1">Una obligación, tres causas</h2>
+<p>La regla del MM no ha cambiado desde la lección 4: mantener la delta del libro en
+cero. Pero la delta del libro es una magnitud viva, y el precio no es lo único que
+puede sacarla del cero.</p>
+<p><img src="recursos/279202cabf4674.png" alt="What forces the MM to trade" loading="lazy"></p>
+<p>El precio se mueve — la delta del libro la desplaza la fuerza de la <strong>gamma</strong>. La
+volatilidad se mueve — la fuerza de la <strong>vanna</strong>. No se mueve nada en absoluto,
+simplemente corre el reloj — la delta deriva por el <strong>charm</strong>. Tres causas
+distintas, una consecuencia: el libro se ha deslizado del cero, y el MM debe
+operar futuros. La gamma ya la desmontamos por dentro y por fuera — su mapa GEX
+muestra dónde la cobertura frena el precio y dónde lo acelera. Quedan por conocer
+las dos fuerzas silenciosas. Ambas trabajan por el mismo mecanismo, así que
+desmontémoslo una vez, sobre un libro concreto.</p>
+<p>Toma el libro más típico del mercado: los clientes compraron puts en strikes por
+debajo del mercado — el seguro de la lección 1 — y el MM, en consecuencia, vendió
+esos puts. La delta de un put es negativa, así que la posición corta del MM carga
+delta positiva: su libro tira hacia arriba, y para seguir neutral mantiene
+<strong>futuros cortos</strong>. Recuerda esta disposición inicial — ambas fuerzas se
+desplegarán sobre ella.</p>
+<h2 id="seccion-2">Vanna: la fuerza del miedo</h2>
+<p>Vanna responde a la pregunta: qué pasa con la delta si la volatilidad se desplaza.</p>
+<p>Supón que el evento aterrador pasó y la IV baja — la campana de expectativas de la
+lección 2 se contrae. Los puts fuera del dinero que bajo la campana ancha tenían
+posibilidades reales ahora están casi sin esperanza: su delta se derrite a ojos
+vista. Y con ella se derrite la delta positiva del libro del MM — el corto de
+futuros que la equilibraba se ha vuelto excesivo. El MM debe recortarlo: <strong>comprar
+futuros</strong>. En todo el mercado, en cada MM, al mismo tiempo.</p>
+<p>Ahí está la respuesta al rally «sin causa» tras amainar el miedo: la caída de la
+volatilidad genera por sí sola compras de los MM. El mercado llama a este
+mecanismo vanna rally. También funciona al revés, y con más saña: un pico de IV
+infla las deltas de los puts, a los MM de pronto les falta corto, y venden futuros
+en un mercado que cae — encima de todas las demás ventas.</p>
+<p>El mapa VEX de la lección anterior muestra esta fuerza por strike: exactamente
+dónde el libro del MM es más sensible a un movimiento de la volatilidad — y, por
+tanto, qué niveles «despertarán» cuando el VIX se desplace.</p>
+<h2 id="seccion-3">Charm: la fuerza del tiempo</h2>
+<p>Charm responde a una pregunta aún más extraña: qué pasa con la delta si no pasa
+nada en absoluto.</p>
+<p>Volvamos al mismo libro. El mercado está congelado, la IV quieta — pero el reloj
+corre, y los puts fuera del dinero envejecen. Cada hora acerca el vencimiento, en
+el que una opción fuera del dinero vale cero — y su delta ya está derivando hacia
+cero (mira otra vez el gráfico de gamma de la lección 3: la curva de delta se
+aprieta contra el escalón con cada día que pasa). La melodía ya la conoces: la
+delta del libro se derrite — el corto de futuros sobra — el MM <strong>compra</strong>. Solo
+por el paso del tiempo.</p>
+<p>De ahí la segunda respuesta: la deriva del viernes por la tarde. Hacia el final de
+la semana vencen series grandes, el decaimiento de la delta se acelera — recuerda
+la theta de la lección 3, los últimos días arden más rápido — y la recompra de
+coberturas por los MM se convierte en un viento de cola constante. El efecto es
+tan regular que tiene nombre — charm flow. Pero no lo archives como «la fuerza que
+tira hacia arriba»: la dirección la fija el libro. En el libro típico, donde los
+clientes están sentados en puts de protección, el decaimiento tira del mercado
+hacia arriba — de ahí la reputación de los días tranquilos previos al vencimiento
+con su «extraña» inclinación. Pero si el sobrepeso de los clientes está en calls,
+la misma mecánica corre en espejo: las deltas de los calls se derriten, los MM
+venden su cobertura larga, y la deriva apunta hacia abajo.</p>
+<p>Ahora superpón el mundo 0DTE de la lección 7. El charm antes juntaba fuerzas una
+vez al mes, hacia el gran vencimiento del viernes. Ahora cada día vence alguna
+serie — y el mismo cuadro se repite a diario: después de comer, las deltas de las
+opciones que vencen hoy se derriten cada vez más rápido, el flujo forzoso de los
+MM crece y llega a su pico justo en el cierre. El mapa CEX lo muestra por strike:
+exactamente dónde el paso del tiempo hará operar a los MM, y en qué dirección.</p>
+<h2 id="seccion-4">Cómo leer las tres fuerzas juntas</h2>
+<p>Los tres mapas responden en registros distintos, y vale la pena decirlo en voz
+alta. GEX describe el <em>carácter</em> del mercado: viscoso aquí o resbaladizo allá —
+sin dirección; lo discutimos en la lección 4. Vanna y charm están construidos de
+otro modo: son flujos <em>direccionales condicionales</em>. La fórmula de lectura dice:
+«si la IV baja, los MM comprarán tanto en estos niveles»; «si el día pasa
+tranquilo, para la tarde los MM habrán recomprado tanto». La condición es
+obligatoria: si el escenario se invierte, el flujo también. El charm es en este
+sentido el más honesto del trío: su condición — el paso del tiempo — se cumple
+siempre.</p>
+<p>Y la propiedad compartida para la que era todo el ejercicio: ninguna de las tres
+fuerzas le pregunta su opinión al MM. Dado el libro, las tres se pueden calcular —
+y el libro, minuto a minuto y sin adivinanzas, nos lo dio el feed de la lección 9.</p>
+<hr>
+<p>Ahora tenemos tanto los datos como el idioma de las fuerzas. Queda ver cómo se ve
+en un gráfico. La próxima lección cubre los indicadores de strikes del nuevo
+paquete: un perfil de posicionamiento que hojea la historia como un libro, y un
+mapa de calor donde cada strike vive su propia vida en el tiempo.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>La regla del MM es una — mantener la delta del libro en cero; tres fuerzas pueden sacarla: gamma (precio), vanna (volatilidad), charm (tiempo).</li>
+<li>Vanna: la caída de la IV seca la delta de los puts que compraron los clientes — los MM recompran la cobertura sobrante; así nace un vanna rally.</li>
+<li>Charm: el paso del tiempo crea por sí solo un flujo obligatorio; su dirección la fija el libro — en el típico libro cargado de puts la deriva es alcista; con sobrepeso en calls, bajista.</li>
+<li>GEX describe el carácter del mercado sin dirección; VEX y CEX son flujos direccionales condicionales — y la condición del charm se cumple siempre.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. Nombra las tres causas que sacan del cero la delta del libro del MM.</h3><ol type="A"><li>Volumen, open interest, vencimiento</li><li>Noticias, resultados, reuniones de la Fed</li><li>Movimiento del precio (gamma), movimiento de la volatilidad (vanna), paso del tiempo (charm)</li><li>Comisiones, deslizamiento, el spread</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> Movimiento del precio (gamma), movimiento de la volatilidad (vanna), paso del tiempo (charm)</p><p>Tres causas distintas — una consecuencia: el libro se deslizó del cero, y el MM debe operar futuros.</p></div></details></article><article class="question"><h3>2. Los clientes se cargaron de puts; los MM cubren con futuros cortos. La IV cae bruscamente. ¿Qué deben hacer los MM?</h3><ol type="A"><li>Vender más futuros: el riesgo ha crecido</li><li>Comprar futuros: las deltas de los puts se derriten junto con la IV, y parte del corto de cobertura se volvió excesivo</li><li>Nada: la IV no afecta a la cobertura</li><li>Recomprar los puts a los clientes</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Comprar futuros: las deltas de los puts se derriten junto con la IV, y parte del corto de cobertura se volvió excesivo</p><p>Esta es la mecánica de un vanna rally: la caída de la volatilidad genera por sí sola compras de los MM — en todo el mercado a la vez.</p></div></details></article><article class="question"><h3>3. ¿Qué es el charm flow?</h3><ol type="A"><li>El flujo de compras de los clientes en las últimas horas de la sesión</li><li>Una ola de volatilidad antes del vencimiento</li><li>Volumen creciente en strikes redondos</li><li>El flujo sistemático de los MM por la delta que decae con el tiempo: las opciones fuera del dinero envejecen y hay que ajustar la cobertura</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> El flujo sistemático de los MM por la delta que decae con el tiempo: las opciones fuera del dinero envejecen y hay que ajustar la cobertura</p><p>El decaimiento se acelera hacia los vencimientos, y el flujo se vuelve un viento de cola constante. La dirección la fija el libro: en el típico libro de puts — hacia arriba; con sobrepeso de calls — hacia abajo.</p></div></details></article><article class="question"><h3>4. ¿Qué cambió el mundo 0DTE en el funcionamiento del charm?</h3><ol type="A"><li>El charm dejó de funcionar: las opciones de un día no tienen decaimiento</li><li>El charm ahora funciona solo los viernes</li><li>Antes el charm se concentraba en los vencimientos semanales y mensuales — ahora el decaimiento de delta, creciendo hacia el cierre, se repite cada día</li><li>El charm invirtió su signo</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> Antes el charm se concentraba en los vencimientos semanales y mensuales — ahora el decaimiento de delta, creciendo hacia el cierre, se repite cada día</p><p>Cada día vence alguna serie — y cada tarde las deltas de las opciones que vencen se derriten cada vez más rápido, mientras el flujo forzoso de los MM crece hacia el cierre.</p></div></details></article><article class="question"><h3>5. ¿En qué se diferencia leer los mapas VEX y CEX de leer el GEX?</h3><ol type="A"><li>GEX describe el carácter del mercado (movimientos amortiguados o amplificados) sin dirección; VEX y CEX dan flujos direccionales pero condicionales</li><li>VEX y CEX son más precisos que GEX por definición</li><li>GEX se actualiza más a menudo que los otros mapas</li><li>En nada: los tres mapas muestran lo mismo</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> GEX describe el carácter del mercado (movimientos amortiguados o amplificados) sin dirección; VEX y CEX dan flujos direccionales pero condicionales</p><p>La fórmula de lectura de VEX/CEX: «si la IV baja, los MM comprarán tanto en estos niveles». La condición es obligatoria; la del charm — el paso del tiempo — se cumple siempre.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_10.html">← Lección anterior</a><a href="leccion_12.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

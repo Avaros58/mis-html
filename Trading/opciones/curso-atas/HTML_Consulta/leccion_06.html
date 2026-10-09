@@ -1,0 +1,91 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>6. Options Chain: la primera era en el gráfico del usuario · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 06</p><h1>6. Options Chain: la primera era en el gráfico del usuario</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/06-optionssuite-charts">Ver fuente en línea</a><a href="../PDF_Originales/6.%20Options%20Chain_%20la%20primera%20era%20en%20el%20gr%C3%A1fico%20del%20usuario%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 8 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">De dónde vienen los datos</a></li><li><a href="#seccion-2">Options Chain: OI Profile</a></li><li><a href="#seccion-3">Options Chain: Key Levels</a></li><li><a href="#seccion-4">Options Chain: Expected Move</a></li><li><a href="#seccion-5">Options Chain: GEX Profile</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">6. Options Chain: la primera era en el gráfico del usuario</p>
+<p>Todo lo que desmontamos en la lección anterior, los traders de ATAS lo ven
+directamente en su propio gráfico — sin tablero de opciones, sin tablas, sin
+servicios de terceros. El paquete Options Chain son cuatro indicadores en la
+categoría Options: el perfil de open interest, los niveles clave, el expected move
+y el perfil GEX. Se colocan sobre un gráfico de futuros corriente — ES, NQ, CL, GC
+y otros contratos de CME — y dibujan el cuadro de opciones directamente encima del
+precio que el usuario ya opera.</p>
+<p>Esta lección es un recorrido por el paquete — y un compendio de las preguntas más
+frecuentes sobre los productos de opciones de la primera era.</p>
+<h2 id="seccion-1">De dónde vienen los datos</h2>
+<p>Antes de mirar las imágenes — tres hechos sobre la fuente, de los que brota la
+mitad de las preguntas frecuentes.</p>
+<p>Primero: los datos de opciones los entregan solo dos proveedores de conexión —
+<strong>Interactive Brokers y Rithmic</strong>.</p>
+<p>Segundo: los datos llegan <strong>en tiempo real, sin historia</strong>. Con el indicador en el
+gráfico, el usuario ve la foto actual del mercado de opciones. Las cosas
+acumulativas, como el volumen del día, se cuentan desde el momento de la
+suscripción: un indicador encendido a mediodía solo conoce el volumen desde
+mediodía.</p>
+<p>Tercero: el propio open interest lo sigue publicando la bolsa una vez al día — lo
+vivo aquí son las cotizaciones, el volumen y todo lo que se calcula de las
+cotizaciones: IV, griegas, GEX. La primera era, con todos sus indicadores, sigue
+apoyada en el OI diario.</p>
+<h2 id="seccion-2">Options Chain: OI Profile</h2>
+<p>El perfil de open interest de la lección anterior, en carne y hueso: por el borde
+derecho del gráfico, barras al nivel de cada strike, calls turquesa y puts coral,
+los nudos más grandes etiquetados con números. Al pasar el ratón por una barra, el
+strike se despliega en detalle: OI, volumen, volatilidad, delta.</p>
+<p><img src="recursos/a7d18eae07cf85.png" alt="pasted image" loading="lazy"></p>
+<p>El perfil tiene tres modos, y conviene distinguirlos. <em>Open Interest</em> — posiciones
+acumuladas, la vista principal. <em>Day Volume</em> — dónde se está negociando hoy: la
+batalla fresca en vez de los arsenales viejos. <em>Net OI</em> — el exceso de calls o
+puts en cada strike, mostrado como una sola barra. En el panel de estado el perfil
+muestra el PCR — la ratio put/call: por encima de uno, los puts son el lado más
+activo; por debajo, los calls.</p>
+<h2 id="seccion-3">Options Chain: Key Levels</h2>
+<p>Los mismos datos, pero en vez del perfil completo — solo las conclusiones: unas
+pocas líneas horizontales cruzando todo el gráfico. MAX PAIN, CALL WALL, PUT
+WALL — el trío conocido de la lección 5; opcionalmente, los strikes con mayor
+volumen del día, mostrando dónde se libra la batalla de hoy. Es el indicador más
+listo-para-usar del paquete: niveles de soporte y resistencia del mercado de
+opciones sin necesidad de descifrar perfiles.</p>
+<p><img src="recursos/06c0c090d68aef.png" alt="pasted image" loading="lazy"></p>
+<p>Recuerda de la lección 5: estos niveles trabajan con más fuerza los días de
+vencimiento y la víspera — su fuerza nace de la gamma.</p>
+<h2 id="seccion-4">Options Chain: Expected Move</h2>
+<p>El expected move, dibujado como un pasillo que corre hacia la derecha desde la
+vela actual: los bordes interiores son ±1σ (el movimiento en el que el mercado de
+opciones cree con un 68% de probabilidad aproximada), los exteriores discontinuos
+son ±2σ (un 95% aproximado). Una etiqueta como <code>EM ±42.50 · 0.74%</code> se lee como «el
+mercado cotiza un movimiento de cuarenta y dos puntos y medio hacia cualquier
+lado».</p>
+<p><img src="recursos/fe850dfd35717e.png" alt="pasted image" loading="lazy"></p>
+<p>El pasillo se lee así: los bordes son objetivos naturales y zonas de toma de
+beneficios; un movimiento más allá de ±1σ ya hace un día fuerte; más allá de ±2σ,
+uno extremo, a menudo seguido de un retroceso. El ajuste Anchor cambia el punto de
+referencia: <em>Current Price</em> — el pasillo respira junto con el precio; <em>Attachment
+Price</em> — fijado desde el momento de colocarlo, útil para ponerlo por la mañana y
+medir el día contra las expectativas matinales. Y un detalle que los usuarios
+suelen confundir con un bug: en un vencimiento corto, el pasillo se estrecha a lo
+largo del día. Así debe ser — queda cada vez menos tiempo hasta el vencimiento, y
+el resto esperado del movimiento se derrite con él, como la theta en la lección 3.</p>
+<h2 id="seccion-5">Options Chain: GEX Profile</h2>
+<p>La exposición gamma por strike — el perfil GEX de la lección 5, por el borde
+derecho del gráfico. Barras turquesa a la derecha — gamma positiva (la cobertura
+frena el precio); barras coral a la izquierda — negativa (acelera el movimiento).
+La línea ámbar ZERO GAMMA es la divisoria entre regímenes; GEX WALL marca los
+nudos más grandes. En el panel de estado — la exposición total del libro en la
+forma <code>Σ +2.4B</code>: el más significa mercado en régimen tranquilo; el menos, en el
+nervioso.</p>
+<p><img src="recursos/7ff4aa33332eaf.png" alt="pasted image" loading="lazy"></p>
+<hr>
+<p>La primera era, montada al completo: OI diario, cotizaciones en vivo, cuatro
+indicadores — y un mapa de niveles perfectamente utilizable para cada día. Todo
+este arsenal se construyó para un mundo donde una opción vivía semanas y meses, y
+las posiciones de ayer describían honestamente el mercado de hoy. Pero alrededor
+de 2022 el propio mercado empezó a vivir de otra manera: las semanas cedieron el
+paso a opciones que nacen por la mañana y mueren la tarde del mismo día. Qué le
+hicieron al mercado — y por qué el mapa diario dejó de seguirle el ritmo — es la
+siguiente parte del curso.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>Options Chain - cuatro indicadores de la primera era sobre futuros de CME (ES, NQ, CL, GC): OI Profile, Key Levels, Expected Move, GEX Profile.</li>
+<li>Los datos vienen solo de IB o Rithmic, en tiempo real y sin historia; el OI en sí sigue siendo diario.</li>
+<li>El panel de estado en la esquina del gráfico es el primer paso para desmenuzar cualquier «no muestra nada».</li>
+<li>Los números difieren legítimamente de los servicios de terceros: otra fuente, otro momento de medición, otra cobertura de strikes.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. Has añadido OI Profile - y el gráfico está vacío. ¿Qué revisar primero?</h3><ol type="A"><li>La versión del sistema operativo</li><li>Si hay suficiente historia cargada en el gráfico</li><li>El panel de estado del indicador: si hay conexión IB/Rithmic y si el calentamiento de datos sigue en curso</li><li>Si el timeframe es de al menos una hora</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> El panel de estado del indicador: si hay conexión IB/Rithmic y si el calentamiento de datos sigue en curso</p><p>Los datos de opciones solo los entregan IB y Rithmic; tras conectar, el indicador necesita 10-30 segundos de calentamiento. Ambos estados los reporta honestamente en su panel de estado.</p></div></details></article><article class="question"><h3>2. ¿En qué se diferencia el modo Day Volume de Open Interest?</h3><ol type="A"><li>Day Volume son las operaciones de hoy; OI son las posiciones abiertas acumuladas</li><li>En nada: son sinónimos</li><li>Day Volume muestra solo compras; OI, solo ventas</li><li>El OI se actualiza cada minuto; Day Volume, una vez al día</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> Day Volume son las operaciones de hoy; OI son las posiciones abiertas acumuladas</p><p>Y una sutileza: el volumen del día se acumula desde que arranca la suscripción a cotizaciones - un indicador encendido a mediodía solo conoce el volumen desde mediodía.</p></div></details></article><article class="question"><h3>3. El pasillo del Expected Move se estrecha hacia el final del día en un vencimiento corto. ¿Es un bug?</h3><ol type="A"><li>Sí, hay que avisar a los desarrolladores</li><li>No: el expected move es proporcional a la raíz del tiempo restante - cuanto más cerca el vencimiento, menos distancia le queda al mercado por «recorrer»</li><li>Sí, el pasillo debería ensancharse hacia la tarde</li><li>Depende de los ajustes del esquema de color</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> No: el expected move es proporcional a la raíz del tiempo restante - cuanto más cerca el vencimiento, menos distancia le queda al mercado por «recorrer»</p><p>El resto esperado del movimiento se derrite junto con el tiempo - igual que el valor temporal de una opción. El pasillo lo refleja honestamente.</p></div></details></article><article class="question"><h3>4. El panel del GEX Profile dice «×? - set Multiplier». ¿Qué significa?</h3><ol type="A"><li>El indicador no pudo conectarse a los datos</li><li>Hay muy pocos strikes en la ventana de cálculo</li><li>Hay que actualizar la plataforma a la última versión</li><li>La plataforma no pudo determinar el valor del punto del contrato: la forma del perfil es correcta, pero los importes absolutos no; para ES el multiplicador es 50</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> La plataforma no pudo determinar el valor del punto del contrato: la forma del perfil es correcta, pero los importes absolutos no; para ES el multiplicador es 50</p><p>La forma del perfil y las proporciones relativas de los strikes son correctas - pero las etiquetas en divisa y la exposición total requieren el multiplicador del contrato, que hay que fijar en los ajustes.</p></div></details></article><article class="question"><h3>5. ¿Por qué la línea Zero Gamma se apaga al agregar varios vencimientos?</h3><ol type="A"><li>Cada vencimiento tiene su propio punto donde el signo del libro se da la vuelta; su mezcla no tiene un único punto honesto</li><li>Por limitaciones de rendimiento</li><li>La línea solo está disponible por suscripción</li><li>Al agregar, la gamma siempre es positiva</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> Cada vencimiento tiene su propio punto donde el signo del libro se da la vuelta; su mezcla no tiene un único punto honesto</p><p>Dibujar una línea «promedio» entre puntos de giro distintos sería mentir: el indicador la quita honestamente.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_05.html">← Lección anterior</a><a href="leccion_07.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

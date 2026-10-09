@@ -1,0 +1,104 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5. La primera era: niveles del open interest · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 05</p><h1>5. La primera era: niveles del open interest</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/05-open-interest-levels">Ver fuente en línea</a><a href="../PDF_Originales/5.%20La%20primera%20era_%20niveles%20del%20open%20interest%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 7 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">La materia prima: la foto diaria</a></li><li><a href="#seccion-2">El perfil de OI: dónde está sentado el dinero</a></li><li><a href="#seccion-3">Los muros y el imán</a></li><li><a href="#seccion-4">El perfil GEX: de las posiciones a las fuerzas</a></li><li><a href="#seccion-5">Expected move: un pasillo hecho de IV</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">5. La primera era: niveles del open interest</p>
+<p>Cada mañana, antes de que abra la negociación, las bolsas publican un resumen del
+día anterior: cuántos contratos de opciones quedan abiertos en cada strike. Una
+tabla de números. Alrededor del hábito de leerla correctamente ha crecido toda una
+industria — servicios de analítica de opciones, boletines matinales con «niveles
+para hoy», términos que ya se sabe de memoria uno de cada dos traders: muros,
+imanes, el gamma flip. Vamos a entender cómo una tabla de posiciones se convierte
+en líneas sobre un gráfico — y por qué funciona.</p>
+<h2 id="seccion-1">La materia prima: la foto diaria</h2>
+<p>El analista de esta era dispone de dos ingredientes. El primero es el <strong>open
+interest en cada strike</strong>: aquellas posiciones acumuladas de la lección 2,
+publicadas por la bolsa una vez al día, con el cierre de ayer. El segundo son las
+cotizaciones de opciones en vivo, de las que, como sabemos, se extrae la IV y se
+calculan las griegas.</p>
+<p>Mezcla ambos y obtienes un mapa: qué strikes concentran el dinero gordo y qué
+griegas cargan esas posiciones. Todo lo que sigue es interpretación de ese mapa.</p>
+<h2 id="seccion-2">El perfil de OI: dónde está sentado el dinero</h2>
+<p>La forma más directa de mirar la tabla es desplegarla a lo largo del eje de
+precios.</p>
+<p><img src="recursos/d0c29632845240.png" alt="Open interest by strike" loading="lazy"></p>
+<p>Cada fila es un strike. Las barras verdes a la derecha son open interest en calls;
+las rojas a la izquierda, en puts. La línea discontinua es el precio actual.
+Incluso sin teoría alguna, el mapa se lee solo: los puts se apiñan por debajo del
+mercado (seguro contra la caída — recuerda al gestor de carteras de la lección 1),
+los calls se sientan por encima (apuestas a un rally). Y lo más revelador: las
+posiciones no están repartidas de manera uniforme — el dinero se agrupa en nudos en
+los strikes redondos.</p>
+<p>¿Por qué un nudo de OI es un nivel en el gráfico de precios? Dos razones tiran en
+la misma dirección. Primera: a un strike grande está atado mucho dinero, y cuando
+el precio se acerca, sus dueños y vendedores empiezan a actuar — la negociación se
+espesa alrededor del nudo. Segunda — y este es el mecanismo principal — en el
+strike grande se concentra la gamma, lo que significa que el ajetreo forzoso de los
+MM de la lección 4 llega a su pico justo al lado: en modo gamma larga su cobertura
+opera contra cada desviación, y el precio se atasca cerca del strike como en miel.</p>
+<h2 id="seccion-3">Los muros y el imán</h2>
+<p>Tres niveles de este mapa se volvieron clásicos; encontrarás sus nombres en
+cualquier servicio de opciones — y en nuestro paquete de indicadores.</p>
+<p><strong>Call wall</strong> — el strike con mayor OI de calls, 6100 en la imagen. Resistencia
+clásica: al acercarse desde abajo, el mercado suele frenarse — la cobertura se
+espesa, los vendedores de calls defienden el nivel.</p>
+<p><strong>Put wall</strong> — el strike especular en puts, aquí 5800. Soporte clásico.</p>
+<p><strong>Max pain</strong> — el strike en el que un cierre infligiría las mayores pérdidas
+combinadas a los <em>compradores</em> de opciones (y, en consecuencia, las mayores
+ganancias a los vendedores). Aquí ronda el 6000. La observación que dio nombre al
+nivel: al vencimiento, el precio acaba sospechosamente a menudo por los
+alrededores. No hay misticismo: es el mismo pin de la lección 4 — la cobertura de
+las grandes posiciones vendidas arrastra por sí misma el precio hacia los strikes
+donde esas posiciones son más gruesas.</p>
+<p>Los tres niveles comparten una propiedad que conviene decir en voz alta: trabajan
+con más fuerza cuanto más cerca está el vencimiento — porque su fuerza nace de la
+gamma, y la gamma, como vimos en la lección 3, se afila hacia el final de la vida
+de la opción.</p>
+<h2 id="seccion-4">El perfil GEX: de las posiciones a las fuerzas</h2>
+<p>El perfil de OI responde a la pregunta «dónde está el dinero». El siguiente paso de
+la era fue la pregunta «qué fuerzas crea ese dinero». Para responderla, cada
+posición de la tabla se multiplica por su gamma y se suma strike a strike — el
+resultado es la <strong>exposición gamma</strong> (GEX): la contribución de cada strike a aquel
+libro del MM de la lección 4.</p>
+<p><img src="recursos/dc4f8132ae0344.png" alt="MM gamma exposure by strike" loading="lazy"></p>
+<p>Ahora las barras tienen signo, y el mapa se ha convertido en un pronóstico de
+comportamiento. Los nudos verdes son strikes donde la cobertura de los MM frenará
+el precio; el mayor de ellos (la GEX wall, aquí 6100) es freno e imán a la vez. Los
+nudos violetas de abajo son zonas donde la cobertura, en cambio, empuja el
+movimiento: deja que el precio caiga ahí dentro, y las ventas de los MM empezarán a
+acelerarlo. Y la línea amarilla es el <strong>zero gamma</strong> — el precio en el que el signo
+de todo el libro se da la vuelta: por encima el mercado vive en el régimen
+tranquilo de gamma larga; por debajo, en el nervioso de gamma corta. Un vistazo al
+perfil y ya sabes dónde el mercado estará pegajoso y dónde resbaladizo.</p>
+<p>Aquí vale la pena pararse a ser honestos sobre en qué descansa este cuadro. El OI
+informa de <em>cuántos</em> contratos están abiertos, pero no de quién está en qué lado —
+de esa ceguera avisamos ya en la lección 2. Para calcular el libro del MM, el
+analista se ve obligado a <em>suponer</em>: normalmente, que los MM están enfrente de los
+clientes en cada posición, y que los clientes se comportan de forma típica
+(comprando puts como protección, vendiendo calls contra carteras). En un mercado
+tranquilo esos supuestos andan cerca de la verdad, y el perfil funciona. Pero es
+una estimación construida sobre una conjetura — recuerda esa holgura; jugará su
+papel más adelante en nuestra historia.</p>
+<h2 id="seccion-5">Expected move: un pasillo hecho de IV</h2>
+<p>La última pieza de la era es la más simple de todas. De la volatilidad implícita
+(lección 2) se sigue directamente qué movimiento considera normal el mercado hasta
+el vencimiento: la IV es el ancho de la campana, reformulado como porcentaje
+anualizado, y puede proyectarse a cualquier horizonte. El resultado es el
+<strong>expected move</strong>: «hasta el viernes el mercado cotiza más-menos cuarenta puntos».
+En el gráfico se dibuja como un pasillo alrededor del precio: los bordes interiores
+marcan el movimiento en el que el mercado cree con una probabilidad de unos dos
+tercios (una sigma); los exteriores — casi certeza (dos sigmas). Que el precio
+salga del pasillo es un acontecimiento: el mercado se mueve más fuerte de lo que
+esperaba de sí mismo.</p>
+<hr>
+<p>Y ese es todo el arsenal de la primera era: el perfil de OI, los muros, el max
+pain, el perfil GEX con el zero gamma, el expected move. Lo empaquetamos en cuatro
+indicadores — ya funcionan para los usuarios de ATAS en futuros de CME — y la
+próxima lección está dedicada exactamente a eso: qué muestra cada uno, cómo se lee
+y qué preguntas surgen sobre él con más frecuencia.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>La materia prima de la primera era: open interest diario por strike más cotizaciones en vivo, de las que se calculan la IV y las griegas.</li>
+<li>Un gran nudo de OI es un nivel en el gráfico: ahí se concentra la gamma, y la cobertura de los MM vuelve el precio pegajoso a su alrededor.</li>
+<li>El trío clásico: call wall (resistencia), put wall (soporte), max pain (imán hacia el vencimiento) - los tres nacen de la mecánica del pin.</li>
+<li>El perfil GEX convierte posiciones en fuerzas, pero descansa sobre un supuesto de quién está en qué lado - el OI no dice nada de eso.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. ¿A qué dos ingredientes se reducía toda la analítica clásica de opciones?</h3><ol type="A"><li>La cinta de operaciones y el libro de órdenes</li><li>El OI diario por strike y las cotizaciones de opciones en vivo</li><li>Las posiciones de los market makers publicadas por la bolsa</li><li>El flujo de noticias y el calendario de vencimientos</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> El OI diario por strike y las cotizaciones de opciones en vivo</p><p>El OI se publica una vez al día, con datos de ayer; las cotizaciones aportan la IV y las griegas. Todo lo demás es interpretación de ese par.</p></div></details></article><article class="question"><h3>2. ¿Por qué un gran nudo de OI actúa como nivel en el gráfico de precios?</h3><ol type="A"><li>Los traders lo ven en los informes y creen en el nivel - una profecía autocumplida, nada más</li><li>La bolsa ralentiza la negociación cerca de los strikes grandes</li><li>En el strike grande se concentra la gamma: la cobertura de los MM opera contra cada desviación, y el precio se atasca</li><li>Un nudo de OI muestra el precio justo del activo</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> En el strike grande se concentra la gamma: la cobertura de los MM opera contra cada desviación, y el precio se atasca</p><p>El mecanismo principal es el ajetreo forzoso de los MM: en modo gamma larga amortigua cada desviación del strike. La psicología del nivel es solo el segundo escalón.</p></div></details></article><article class="question"><h3>3. ¿Qué es el max pain?</h3><ol type="A"><li>El strike en el que un cierre inflige las mayores pérdidas a los compradores de opciones; el precio gravita hacia él por el pinning</li><li>El nivel de pérdidas máximas para los market makers</li><li>El strike con mayor volumen negociado del día</li><li>El precio en el que la volatilidad está en su máximo</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> El strike en el que un cierre inflige las mayores pérdidas a los compradores de opciones; el precio gravita hacia él por el pinning</p><p>Sin misticismo: la cobertura de las grandes posiciones vendidas presiona mecánicamente el mercado hacia los strikes con mayor OI - que suele ser también donde el «dolor» de los compradores llega a su pico.</p></div></details></article><article class="question"><h3>4. ¿En qué se diferencia el perfil GEX del perfil de OI, y qué supuesto lleva horneado?</h3><ol type="A"><li>GEX muestra el volumen negociado; el supuesto es que el volumen es igual al OI</li><li>En nada: es el mismo perfil con dos nombres</li><li>GEX se calcula solo al vencimiento; el supuesto es que el precio no cambiará</li><li>El OI muestra dónde están las posiciones; el GEX, qué fuerzas crean; para eso hay que suponer en qué lado están los MM</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> El OI muestra dónde están las posiciones; el GEX, qué fuerzas crean; para eso hay que suponer en qué lado están los MM</p><p>Cada posición se pondera por su gamma y se anota en el libro del MM - pero el OI nunca dice quién compró y quién vendió. La estimación se construye sobre la conjetura de que «los clientes se comportan de forma típica».</p></div></details></article><article class="question"><h3>5. El precio ha roto a la baja el nivel de zero gamma. ¿Qué significa?</h3><ol type="A"><li>El mercado ha alcanzado su valor justo</li><li>El libro del MM ha cambiado de signo: el mercado pasó de un régimen que amortigua los movimientos a uno que los amplifica</li><li>Los MM han cerrado todas sus posiciones</li><li>Las opciones de ese nivel han vencido</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> El libro del MM ha cambiado de signo: el mercado pasó de un régimen que amortigua los movimientos a uno que los amplifica</p><p>Por encima del zero gamma la cobertura frena el mercado; por debajo, lo acelera. Romper esa marca suele cambiar el carácter de todo el día: la volatilidad sube.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_04.html">← Lección anterior</a><a href="leccion_06.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

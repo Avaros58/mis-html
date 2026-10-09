@@ -1,0 +1,105 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>9. El feed por minutos: los datos que no existían · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 09</p><h1>9. El feed por minutos: los datos que no existían</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/09-minute-level-feed-data">Ver fuente en línea</a><a href="../PDF_Originales/9.%20El%20feed%20por%20minutos_%20los%20datos%20que%20no%20exist%C3%ADan%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 8 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">Qué hay dentro de un minuto</a></li><li><a href="#seccion-2">El quinto participante</a></li><li><a href="#seccion-3">De posiciones a fuerzas: cuatro exposiciones</a></li><li><a href="#seccion-4">Lo que el feed no ve</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">9. El feed por minutos: los datos que no existían</p>
+<p>Al final de la lección 8 escribimos un pliego de condiciones en tres puntos:
+frecuencia de minutos, lados de la operación conocidos, desglose por
+participante. Ahora preguntemos: ¿quién podría siquiera recopilar datos así?</p>
+<p>Solo hay una respuesta. Toda operación con opciones SPX pasa por un único punto —
+la bolsa CBOE, donde se negocia este mercado. Solo la bolsa ve ambos lados de cada
+operación, sabe de qué tipo de cuenta vino cada orden y si abre una posición o la
+cierra. Los analistas pasaron años reconstruyendo este cuadro con pruebas
+indirectas — la bolsa simplemente lo tiene, completo. Sobre esos datos de bolsa se
+levanta un feed de posicionamiento minuto a minuto para las opciones SPX,
+desglosado por tipo de participante y lado de la operación; lo recibimos a través
+de un proveedor de datos licenciado, y en el resto del curso lo llamaremos
+simplemente el feed por minutos. Este feed es el cimiento de cada indicador que
+discutiremos hasta el final del curso.</p>
+<p><img src="recursos/eebee535beef9a.png" alt="The three blind spots, closed" loading="lazy"></p>
+<h2 id="seccion-1">Qué hay dentro de un minuto</h2>
+<p>El feed está construido de forma simple — y esa simplicidad es su fuerza. Cada
+minuto, para cada strike y cada serie, informa cuántos contratos se compraron y
+vendieron, abriendo y cerrando posiciones, por participantes de cada uno de los
+cuatro tipos:</p>
+<p><strong>Retail</strong> — clientes minoristas: cuentas individuales, aquellos compradores de
+boletos de lotería y seguros de un día.</p>
+<p><strong>Pros</strong> — clientes profesionales: traders activos y fondos pequeños que operan lo
+bastante como para que la bolsa deje de contarlos como minoristas. El retail y los
+pros acaban regularmente en lados opuestos — observaremos su tira y afloja en los
+indicadores.</p>
+<p><strong>Firms</strong> — los libros propios de las casas de bolsa y las instituciones que
+enrutan a través de ellas.</p>
+<p><strong>Brokers</strong> — broker-dealers que ejecutan flujo de clientes.</p>
+<p>Suma las compras y ventas minuto a minuto y la bolsa obtiene la <strong>posición neta</strong>
+de cada cohorte en cada strike — no una conjetura, sino un hecho contable: tanto
+comprado, tanto vendido, este es el saldo.</p>
+<p>Una advertencia sobre las unidades, ya mismo, porque moldea todo lo que sigue. Los
+datos no exponen los recuentos brutos de contratos — de la bolsa solo sale riesgo
+derivado. Las posiciones llegan a los indicadores ya convertidas en <strong>exposición
+delta en equivalente ES</strong> — riesgo en vez de unidades — y eso no es una pérdida
+sino una ganancia: las unidades son incomparables entre strikes; el riesgo es
+comparable. Desempaquetaremos esta unidad en detalle en la próxima lección.</p>
+<h2 id="seccion-2">El quinto participante</h2>
+<p>El lector atento notará: los market makers no están en la lista. No hace falta — y
+esta es la parte más bella de toda la construcción. Recuerda la lección 4: el MM
+está al otro lado de casi toda operación de cliente. Si las cuatro cohortes de
+clientes compraron juntas mil contratos en un strike, alguien vendió esos mil. La
+posición del MM es la suma de las posiciones de los clientes con el signo
+invertido — en cada strike, cada minuto.</p>
+<p>Hagamos una pausa para apreciar qué significa esto para nuestra historia. En la
+lección 5, toda la analítica GEX descansaba en el supuesto «supongamos que los
+clientes se comportaron de forma típica» — esa misma holgura que te pedimos
+recordar. El feed por minutos elimina el supuesto por completo: el libro del MM no
+se adivina por costumbres — se <em>calcula</em> a partir de lados de operación
+conocidos. Ese mismo libro que «nadie publica» se ha vuelto observable. Minuto a
+minuto.</p>
+<h2 id="seccion-3">De posiciones a fuerzas: cuatro exposiciones</h2>
+<p>A partir de aquí arranca la tubería que montamos en la primera parte del curso.
+Conoce el libro y conocerás sus griegas. Multiplica las posiciones del MM por las
+griegas de cada opción y suma por strikes — y obtienes cuatro mapas de fuerzas del
+MM, minuto a minuto:</p>
+<p><strong>GEX</strong> (gamma exposure) — el mapa de gamma conocido de la lección 5: dónde la
+cobertura frena el precio, dónde lo acelera. Solo que ahora no es una estimación
+diaria sino un hecho minuto a minuto.</p>
+<p><strong>DEX</strong> (delta exposure) — el mapa de delta: cuánto equivalente de futuros
+mantienen los MM contra cada strike.</p>
+<p><strong>VEX</strong> (vanna exposure) — el mapa de vanna: cómo reaccionará el libro del MM a un
+desplazamiento de la volatilidad. Aquella vanna presentada por su nombre en la
+lección 3 — su hora en escena se acerca.</p>
+<p><strong>CEX</strong> (charm exposure) — el mapa de charm: qué flujo generará el mero paso del
+tiempo.</p>
+<p>GEX y DEX ya puedes leerlos; a vanna y charm los tomaremos en serio en la lección
+11 — primero mostremos lo más simple en los gráficos.</p>
+<h2 id="seccion-4">Lo que el feed no ve</h2>
+<p>En la tradición de este curso — un párrafo honesto sobre los límites, antes de
+permitirnos admirar.</p>
+<p><strong>Posiciones, no la cinta.</strong> El feed muestra el <em>cambio de posiciones</em> en un
+minuto, no cada operación. Una posición abierta y cerrada dentro del mismo minuto
+se desvanece sin dejar rastro — así que cualquier actividad calculada del feed
+(repositioned en los indicadores de flujo, lección 10) es una cota inferior de lo
+real: todo lo que vemos ocurrió con certeza, pero algo más ocurrió encima.</p>
+<p><strong>Hechos, no intenciones.</strong> Sabemos que el retail compró mil puts en un strike. No
+sabemos por qué: seguro, apuesta o una pata de una estructura compleja. Los datos
+muestran posiciones — la interpretación sigue siendo trabajo del analista.</p>
+<p><strong>SPX, no todo lo habido y por haber.</strong> No existen datos así para el petróleo, el
+oro o las acciones individuales — y no solo porque la bolsa no los venda. Una
+profundidad como esta tiene sentido donde la cola de las opciones mueve de verdad
+al perro, y eso es el complejo del índice, con sus billones de nominal y la mitad
+de su volumen en 0DTE. Por qué una señal de las opciones SPX puede leerse
+legítimamente en el gráfico del futuro ES lo cubrimos ya en la lección 2 — el
+encadenamiento por arbitraje del complejo; diremos más sobre los límites de
+aplicación en la lección 15.</p>
+<hr>
+<p>Así que aquí está el juego completo de insumos: posiciones minuto a minuto de
+cuatro cohortes de clientes, el libro del MM derivado de ellas y cuatro mapas de
+fuerzas encima. Empecemos a desempaquetar estas riquezas con la pregunta más
+simple con la que empieza cualquier mercado: ¿quién opera y cuánto? Incluso esa
+pregunta — ya verás — suena completamente distinta con los datos nuevos.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>Solo la bolsa ve ambos lados de cada operación, el tipo de cuenta y la marca de apertura/cierre — el feed de posicionamiento por minutos se construye sobre esos datos.</li>
+<li>El feed entrega posiciones minuto a minuto de cuatro cohortes: Retail, Pros, Firms, Brokers; los MM se derivan como su suma con el signo invertido.</li>
+<li>Las posiciones llegan a los indicadores no como unidades de contratos sino como exposición delta en equivalente ES — el riesgo que los MM tendrán que cubrir.</li>
+<li>El libro del MM pasó de hipótesis a hecho calculable — minuto a minuto; sobre él calculamos los mapas GEX, DEX, VEX y CEX.</li>
+<li>Los límites son honestos: el feed ve cambios de posiciones una vez por minuto (la actividad es una cota inferior), muestra hechos y no intenciones, y existe solo para SPX.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. ¿Por qué solo la bolsa es capaz de recopilar datos así?</h3><ol type="A"><li>Tiene los servidores más potentes</li><li>Toda operación pasa por su motor de emparejamiento: solo la bolsa ve ambos lados, el tipo de cuenta y la marca de apertura/cierre</li><li>Compra los datos a los brokers</li><li>El regulador la obliga a publicar posiciones</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Toda operación pasa por su motor de emparejamiento: solo la bolsa ve ambos lados, el tipo de cuenta y la marca de apertura/cierre</p><p>Los analistas pasaron años reconstruyendo el cuadro con pruebas indirectas — la bolsa simplemente lo tiene, completo.</p></div></details></article><article class="question"><h3>2. Los market makers no están entre las cohortes del feed. ¿Cómo se obtiene su posición?</h3><ol type="A"><li>Se les solicita a los propios MM una vez al día</li><li>Se estima con un modelo, como en la primera era</li><li>El MM está al otro lado de las operaciones de los clientes: su posición es la suma de las cuatro cohortes de clientes con el signo invertido</li><li>No se puede obtener</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> El MM está al otro lado de las operaciones de los clientes: su posición es la suma de las cuatro cohortes de clientes con el signo invertido</p><p>Si los clientes compraron juntos mil contratos en un strike, alguien vendió esos mil. En cada strike, cada minuto.</p></div></details></article><article class="question"><h3>3. ¿Qué hace este cálculo fundamentalmente mejor que las estimaciones GEX de la primera era?</h3><ol type="A"><li>Calcula más rápido</li><li>Produce gráficos más bonitos</li><li>Cubre más strikes</li><li>La primera era suponía en qué lado estaban los MM; el feed da los lados de la operación como hecho — el libro se calcula sin supuestos</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> La primera era suponía en qué lado estaban los MM; el feed da los lados de la operación como hecho — el libro se calcula sin supuestos</p><p>El supuesto de que «los clientes se comportan de forma típica» — esa misma holgura de la analítica clásica — se elimina por completo.</p></div></details></article><article class="question"><h3>4. ¿En qué unidad llegan las posiciones a nuestros indicadores?</h3><ol type="A"><li>En número de contratos de opciones, como en la cinta</li><li>En dólares de nominal</li><li>En exposición delta en equivalente ES: los datos no exponen los recuentos brutos de contratos</li><li>En porcentaje del open interest</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> En exposición delta en equivalente ES: los datos no exponen los recuentos brutos de contratos</p><p>Y eso no es una pérdida: las unidades son incomparables entre strikes, mientras que el riesgo es comparable y se traduce directamente en la cobertura que les espera a los MM.</p></div></details></article><article class="question"><h3>5. ¿Por qué cualquier actividad calculada del feed es una cota inferior de la real?</h3><ol type="A"><li>El feed registra cambios de posiciones una vez por minuto: lo abierto y cerrado dentro del mismo minuto nunca aparece</li><li>El feed divide los números a la mitad por anonimato</li><li>Los valores se redondean a centenas</li><li>El feed muestra solo la actividad del retail</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> El feed registra cambios de posiciones una vez por minuto: lo abierto y cerrado dentro del mismo minuto nunca aparece</p><p>La actividad visible ocurrió con certeza - pero la real solo pudo ser mayor. Una propiedad honesta de cualquier dato posicional.</p></div></details></article><article class="question"><h3>6. ¿Qué muestra el mapa CEX?</h3><ol type="A"><li>Cuántos contratos expirarán al vencimiento</li><li>Qué flujo de los MM generará el mero paso del tiempo — la exposición charm del libro, desplegada por strikes</li><li>El volumen negociado en cada strike</li><li>La correlación del SPX con otros índices</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Qué flujo de los MM generará el mero paso del tiempo — la exposición charm del libro, desplegada por strikes</p><p>Los cuatro mapas: GEX — reacción al movimiento del precio; DEX — el equivalente en futuros del libro; VEX — reacción a un desplazamiento de la volatilidad; CEX — flujo por el paso del tiempo.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_08.html">← Lección anterior</a><a href="leccion_10.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

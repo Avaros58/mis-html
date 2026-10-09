@@ -1,0 +1,171 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2. Mecánica: de qué está hecho el precio de una opción · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 02</p><h1>2. Mecánica: de qué está hecho el precio de una opción</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/02-option-pricing-mechanics">Ver fuente en línea</a><a href="../PDF_Originales/2.%20Mec%C3%A1nica_%20de%20qu%C3%A9%20est%C3%A1%20hecho%20el%20precio%20de%20una%20opci%C3%B3n%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 10 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">Las dos partes de la prima</a></li><li><a href="#seccion-2">Volatilidad: el precio de la incertidumbre</a></li><li><a href="#seccion-3">La cadena: cientos de instrumentos sobre un solo activo</a></li><li><a href="#seccion-4">Vencimientos: el calendario por el que vive el mercado</a></li><li><a href="#seccion-5">El complejo SPX: un solo ecosistema</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">2. Mecánica: de qué está hecho el precio de una opción</p>
+<p>Lunes, y el mercado cerró justo donde abrió: el índice no se movió ni medio por
+ciento en todo el día. Sin embargo, el call que llevabas vigilando desde la mañana
+pierde siete. El activo está quieto — la opción sangra dinero. ¿Hacia dónde se
+escurre?</p>
+<p>La respuesta está escondida en la anatomía de la prima. En la lección anterior
+pagamos un precio por el derecho y nunca preguntamos de dónde salía. Ahora sí lo
+preguntamos: de la composición del precio nacen las griegas, la volatilidad y todo
+lo que medirán nuestros indicadores.</p>
+<h2 id="seccion-1">Las dos partes de la prima</h2>
+<p>Toma un call en el strike 100 con el activo en 104. El derecho a comprar a 100 algo
+que vale 104 tiene un valor evidente: cuatro puntos que podrías embolsarte ahora
+mismo. Esos cuatro puntos se llaman <strong>valor intrínseco</strong> — lo que vale el derecho
+si se ejerce de inmediato.</p>
+<p>Pero en el mercado ese call no cotiza a cuatro puntos, sino a, digamos, seis y
+medio. ¿De dónde salen los otros dos y medio? Eso es el <strong>valor temporal</strong> — el
+precio de lo que todavía puede pasar antes del vencimiento. Al activo le queda
+tiempo para subir más, y el mercado cobra dinero por esa posibilidad.</p>
+<p><img src="recursos/a52584114ea425.png" alt="What a call premium is made of" loading="lazy"></p>
+<p>El gráfico muestra ambas partes a la vez. La línea blanca discontinua es el valor
+intrínseco: cero a la izquierda del strike, una recta a la derecha — el conocido
+quiebre del diagrama de payoff de la lección 1. La curva verde es la prima de
+mercado un mes antes del vencimiento. La capa amarilla entre ambas es ese mismo
+valor temporal. Fíjate dónde es más gruesa: justo en el strike. Ahí es donde la
+incertidumbre llega a su máximo — el destino de la opción puede decidirse hacia
+cualquiera de los dos lados.</p>
+<p>Según dónde esté el precio respecto al strike, las opciones caen en tres clases, y
+estas palabras estarán por todas partes: <strong>in the money (ITM)</strong> — ya existe valor
+intrínseco; <strong>at the money (ATM)</strong> — el precio está justo en el strike; <strong>out of
+the money (OTM)</strong> — sin valor intrínseco, toda la prima es valor temporal. Las
+opciones OTM baratas son esos «boletos de lotería» de la lección 1: un derecho al
+que aún le falta cobrar sentido.</p>
+<p>Ahora el acertijo del lunes se resuelve solo. El call del comienzo de esta lección
+no tenía valor intrínseco — solo temporal. Pasó un día, no ocurrió nada, las
+posibilidades de «llegar a tiempo» menguaron — y el valor temporal se marchitó.
+Nadie robó el dinero: se escurrió hacia el mismo lugar al que se escurre un seguro
+prepagado por un año — hacia el pasado, un día cada vez.</p>
+<h2 id="seccion-2">Volatilidad: el precio de la incertidumbre</h2>
+<p>Que el valor temporal depende del tiempo hasta el vencimiento es intuitivo. El
+segundo factor es menos obvio y mucho más importante para todo lo que viene:
+depende de cuán ancho ve el mercado el abanico de desenlaces futuros.</p>
+<p><img src="recursos/dd4ab5a27ac639.png" alt="Implied volatility is the width of the expected range" loading="lazy"></p>
+<p>Las dos curvas del gráfico son la imagen que tiene el mercado de dónde acabará el
+activo al vencimiento. La azul es un mercado tranquilo: casi todos los escenarios
+se apiñan alrededor del precio actual, la cola más allá del strike 105 es flaca, y
+el call de ese strike cotiza por centavos. La roja es un mercado nervioso: la
+campana se ha ensanchado, los escenarios lejanos se han vuelto genuinamente
+posibles, y ese mismo strike pasó de «improbable» a «perfectamente alcanzable». El
+contrato en sí no cambió — mismo strike, mismo vencimiento. Solo cambiaron las
+expectativas del mercado, y el precio de la opción es ahora varias veces mayor.</p>
+<p>El ancho de esa campana es la <strong>volatilidad</strong>. Y ahora el truco principal. Nadie le
+dice al mercado el ancho correcto — nadie lo conoce. La lógica corre al revés:
+vemos a cuánto se negocian realmente las opciones y calculamos qué ancho de
+campana implican esos precios. De ahí el nombre — <strong>volatilidad implícita (IV)</strong>.
+La IV no es el pronóstico de un analista. Es el consenso de todos los que arriesgan
+dinero real sobre el tamaño de la incertidumbre que viene.</p>
+<p>Una sutileza con la que la gente tropieza constantemente: la campana se ensancha en
+ambas direcciones a la vez. La IV mide el alcance de las expectativas, no su
+dirección — antes de una noticia importante sube sea cual sea el ánimo del mercado,
+porque el mercado sabe que viene un movimiento, pero no hacia dónde.</p>
+<p>Exactamente por eso los precios de las opciones son una fuente de información
+única: llevan horneada la expectativa colectiva sobre la magnitud del movimiento.
+El famoso VIX — el «índice del miedo» de las noticias — se calcula precisamente
+así: de los precios de las opciones del S&amp;P 500 se extrae el ancho implícito de la
+campana a un mes vista.</p>
+<h2 id="seccion-3">La cadena: cientos de instrumentos sobre un solo activo</h2>
+<p><img src="recursos/f8fc23c9e6f676.png" alt="pasted image" loading="lazy"></p>
+<p>Una acción tiene un precio. Las opciones sobre esa misma acción vienen como una
+tabla entera: se llama cadena de opciones (o board). Las filas son strikes,
+espaciados cinco puntos en los índices; cada strike recibe un call y un put; y toda
+la tabla se repite para cada fecha de vencimiento. Multiplica: docenas de strikes
+por docenas de fechas por dos tipos — un solo subyacente carga miles de
+instrumentos separados, cada uno con su precio, su volumen y su propia vida.</p>
+<p>En cada celda de la cadena, además de las cotizaciones, viven dos números que nos
+importan críticamente. Distinguirlos es una habilidad obligatoria para todo este
+curso.</p>
+<p><strong>Volumen</strong> — cuántos contratos se negociaron hoy. El contador se pone a cero cada
+mañana. Es una medida de actividad: dónde estuvo hoy la pelea.</p>
+<p><strong>Open interest (OI)</strong> — cuántos contratos existen ahora mismo: abiertos y aún no
+cerrados. Es una medida de posiciones acumuladas: dónde está parado el dinero.</p>
+<p>La mecánica que los une es más sutil de lo que parece. Una operación cambia el OI
+solo cuando ambas partes abren posiciones nuevas: el comprador A y el vendedor B
+crearon un contrato — el OI subió en uno. Si en cambio A compra para cerrar su
+viejo corto mientras B vende para cerrar su viejo largo, el contrato se extingue —
+el OI bajó. Y si un lado abre mientras el otro cierra, el contrato simplemente
+cambió de manos — el OI ni se movió. El volumen, mientras tanto, sube en los tres
+casos. Cien mil contratos de volumen pueden significar cualquier cosa: dinero
+fresco entrando, dinero viejo huyendo, o un simple pásalo-al-siguiente. E incluso
+una subida del OI no dice por sí sola quién llegó: todo contrato tiene dos lados, y
+a cada nuevo largo le corresponde un nuevo corto. Quién exactamente estuvo detrás
+de la operación es precisamente lo que los datos clásicos no contienen en absoluto.
+Recuerda esta ambigüedad: la mitad de la conversación sobre datos descansará en
+ella.</p>
+<h2 id="seccion-4">Vencimientos: el calendario por el que vive el mercado</h2>
+<p>El ritmo clásico del mercado de opciones es mensual: las series principales vencen
+el <strong>tercer viernes del mes</strong>. El mercado llama a ese día <strong>OPEX</strong> (option
+expiration) — una palabra que volverás a encontrar tanto en este curso como en
+nuestros indicadores. Las series mensuales son las más antiguas y las más pesadas:
+en ellas viven durante meses las coberturas institucionales y los productos
+estructurados, acumulando los mayores arsenales de posiciones, así que su
+vencimiento trae las mayores reorganizaciones mecánicas del mes. Luego las bolsas
+añadieron series semanales, y en el índice S&amp;P 500 las opciones ya vencen <strong>cada
+día de negociación</strong> — cómo eso cambió el mercado merece una lección propia, y ahí
+es donde empieza nuestra historia principal.</p>
+<p>En el SPX las dos familias de series difieren hasta en el ticker, y la diferencia
+nos importará más adelante:</p>
+<p><strong>SPX</strong> — las series mensuales. Se liquidan <strong>por la mañana</strong>: el precio final lo
+fija la apertura del mercado del tercer viernes, y formalmente la serie vence a
+las 09:15 hora de Nueva York — antes incluso de que abra la sesión regular. Así
+que ese mismo viernes la serie mensual ya no se negocia: su destino se decidió en
+la apertura.</p>
+<p><strong>SPXW</strong> — las series semanales (y diarias). Se liquidan <strong>por la tarde</strong>, a las
+16:00 con el cierre del mercado; en los días recortados previos a festivos, a las
+13:00.</p>
+<p>De aquí sale un detalle que confunde incluso a los profesionales: en la fecha del
+tercer viernes viven <strong>dos series con la misma fecha de vencimiento</strong> — la mensual
+matinal SPX y la semanal vespertina SPXW. La matinal muere a las 09:15; la
+vespertina se negocia todo el día. Quien diga «el vencimiento del viernes» tiene
+que precisar cuál — y nuestros indicadores, como veremos, las mantienen
+estrictamente separadas, hasta la hora exacta de vencimiento.</p>
+<p>Dos distinciones técnicas para terminar — aburridas justo hasta el momento en que
+el cuadro deja de cuadrar sin ellas.</p>
+<p><strong>Estilo de ejercicio.</strong> Una opción americana puede ejercerse cualquier día hasta
+el vencimiento; una europea — solo en la fecha de vencimiento. Los nombres no
+reflejan geografía alguna: ambas se negocian en Chicago. Las opciones SPX son
+europeas.</p>
+<p><strong>Forma de liquidación.</strong> Las opciones sobre acciones terminan en entrega al
+ejercerse: el comprador del call recibe las acciones de verdad. Un índice no se
+puede entregar — nadie va a acarrear un saco con quinientas acciones en las
+proporciones correctas —, así que las opciones sobre índices se liquidan en
+efectivo: el lado perdedor simplemente paga la diferencia.</p>
+<h2 id="seccion-5">El complejo SPX: un solo ecosistema</h2>
+<p>Armemos ahora la familia de instrumentos alrededor de la cual está construido todo
+este curso.</p>
+<p><strong>SPX</strong> — el propio índice S&amp;P 500. Es un número, no una mercancía: no puedes
+comprar «un SPX». Pero sobre ese número existen opciones — de estilo europeo,
+liquidadas en efectivo, con un multiplicador de cien dólares por punto. Es el mayor
+mercado de opciones sobre acciones del mundo, y se negocia en la CBOE.</p>
+<p><strong>ES</strong> — el futuro del S&amp;P 500 en la CME. Es lo que operan los traders de futuros,
+y es el gráfico donde viven los indicadores.</p>
+<p><strong>SPY</strong> — el fondo cotizado que replica el índice; la versión minorista de lo
+mismo, diez veces menor en nominal.</p>
+<p><strong>VIX</strong> — no es un instrumento sino un termómetro: la volatilidad implícita
+extraída de los precios de las opciones SPX.</p>
+<p>La propiedad clave de la familia: todos sus miembros están encadenados por
+arbitraje. Deja que el precio del ES se aleje del nivel del SPX — y los
+arbitrajistas se comerán la diferencia en segundos. Por eso los sucesos en un
+mercado de la familia resuenan al instante en el resto — y las operaciones de
+cobertura de los market makers de opciones SPX aterrizan directamente en el futuro
+ES, en el mismo libro de órdenes que miran nuestros traders. Más adelante en el
+curso saltaremos libremente entre «el índice», «SPX» y «ES» — ahora ya sabes por
+qué es legítimo.</p>
+<hr>
+<p>La prima, como ahora vemos, depende de tres cosas a la vez: dónde está el precio
+respecto al strike, cuánto tiempo queda y cuán ancha es la campana de
+expectativas. Cambia cualquiera de ellas — y la prima cambia. Los profesionales
+dejaron hace mucho de discutir el precio de una opción como un solo número:
+desarmaron su sensibilidad en componentes y dieron a cada uno el nombre de una
+letra griega. Ese idioma — delta, gamma, theta, vega — es la próxima lección. Y
+también el último paso antes de conocer al protagonista del curso.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>Prima = valor intrínseco (lo que vale el derecho ahora mismo) + valor temporal (el precio de lo que aún puede pasar).</li>
+<li>La IV es la volatilidad implícita: el ancho de las expectativas del mercado, calculado hacia atrás a partir de los precios reales de las opciones.</li>
+<li>El volumen es la actividad del día; el OI, las posiciones acumuladas; ninguno dice quién está en qué lado.</li>
+<li>OPEX es el tercer viernes, el vencimiento de las series mensuales: las mensuales SPX liquidan por la mañana (vencen a las 09:15), las semanales SPXW por la tarde (16:00); ese día conviven dos series con la misma fecha.</li>
+<li>SPX, ES, SPY y VIX están encadenados por arbitraje en un solo complejo: lo que pasa en un mercado golpea a los demás al instante.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. Un put en el strike 110, con el activo en 100, cotiza a 12. ¿De qué está hecha su prima?</h3><ol type="A"><li>12 de valor intrínseco: el put está completamente dentro del dinero</li><li>10 de valor intrínseco y 2 de valor temporal</li><li>0 de intrínseco y 12 de temporal: el put está fuera del dinero</li><li>2 de valor intrínseco y 10 de valor temporal</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> 10 de valor intrínseco y 2 de valor temporal</p><p>El derecho a vender a 110 con el mercado en 100 entrega 10 puntos en un ejercicio inmediato — ese es el valor intrínseco. Los 2 restantes son valor temporal, el precio de la posibilidad de ganar más.</p></div></details></article><article class="question"><h3>2. ¿Por qué el valor temporal es más grueso en el strike donde está el precio ahora mismo?</h3><ol type="A"><li>Porque ese strike siempre acumula más posiciones abiertas</li><li>Porque la bolsa añade un recargo en los strikes populares</li><li>Porque ahí el desenlace es lo más incierto: el destino de la opción puede decidirse hacia cualquier lado</li><li>Porque ese strike tiene la delta más alta</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> Porque ahí el desenlace es lo más incierto: el destino de la opción puede decidirse hacia cualquier lado</p><p>Un poco más arriba — la opción está dentro del dinero; un poco más abajo — vence sin valor. Por la mayor incertidumbre, el mercado cobra el mayor precio por la posibilidad.</p></div></details></article><article class="question"><h3>3. Durante el día pasaron 40.000 contratos de volumen por un strike, pero el OI subió solo 2.000. ¿Qué puede significar?</h3><ol type="A"><li>Los datos están mal: el OI debe subir por todo el volumen</li><li>38.000 contratos expiraron al vencimiento durante el día</li><li>La bolsa registró la mayoría de las operaciones como transferencias internas</li><li>La mayoría fueron contratos cambiando de manos o cierres mutuos; se crearon pocas posiciones nuevas</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> La mayoría fueron contratos cambiando de manos o cierres mutuos; se crearon pocas posiciones nuevas</p><p>El volumen sube con cualquier operación; el OI, solo cuando ambas partes abren posiciones nuevas. El volumen habla de actividad, pero no de si las posiciones se acumulan o se deshacen.</p></div></details></article><article class="question"><h3>4. ¿En qué se diferencian técnicamente las opciones SPX de las opciones sobre acciones?</h3><ol type="A"><li>Estilo de ejercicio europeo y liquidación en efectivo en vez de entrega</li><li>Estilo americano y entrega física de una cesta de acciones</li><li>La ausencia de prima: la liquidación ocurre solo al vencimiento</li><li>Que solo se negocian en la fecha de vencimiento</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> Estilo de ejercicio europeo y liquidación en efectivo en vez de entrega</p><p>Una opción SPX solo puede ejercerse al vencimiento, y se liquida en efectivo: el índice es un número — no se puede entregar.</p></div></details></article><article class="question"><h3>5. ¿Por qué la volatilidad extraída de los precios de las opciones se llama «implícita»?</h3><ol type="A"><li>La bolsa la publica una vez al día junto con el OI</li><li>Se calcula hacia atrás a partir de los precios reales: los precios «implican» ese ancho de expectativas</li><li>Es un pronóstico de los analistas de los mayores bancos</li><li>Está fijada como constante en el modelo de valoración</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Se calcula hacia atrás a partir de los precios reales: los precios «implican» ese ancho de expectativas</p><p>Nadie le dice al mercado el ancho correcto de la campana — se extrae de aquello a lo que realmente se negocian las opciones. Es el consenso de todos los que arriesgan dinero, no la opinión de alguien.</p></div></details></article><article class="question"><h3>6. ¿Qué es el OPEX y por qué «el vencimiento del viernes» es ambiguo en un tercer viernes?</h3><ol type="A"><li>OPEX es el mercado extrabursátil de opciones</li><li>OPEX es el tercer viernes, el vencimiento de las series mensuales; ese día conviven dos series con la misma fecha: la mensual SPX vence a las 09:15 de la mañana y la semanal SPXW a las 16:00</li><li>OPEX es el día en que se publica el open interest</li><li>La frase no es ambigua: un viernes vence exactamente una serie</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> OPEX es el tercer viernes, el vencimiento de las series mensuales; ese día conviven dos series con la misma fecha: la mensual SPX vence a las 09:15 de la mañana y la semanal SPXW a las 16:00</p><p>Las series mensuales cargan las posiciones acumuladas más pesadas, liquidan al precio de apertura y ese mismo viernes ya no se negocian.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_01.html">← Lección anterior</a><a href="leccion_03.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

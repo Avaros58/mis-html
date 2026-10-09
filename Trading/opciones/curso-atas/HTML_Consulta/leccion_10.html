@@ -1,0 +1,164 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>10. Indicadores de flujo: quién mueve el riesgo y cómo · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 10</p><h1>10. Indicadores de flujo: quién mueve el riesgo y cómo</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/10-flow-indicators-risk">Ver fuente en línea</a><a href="../PDF_Originales/10.%20Indicadores%20de%20flujo_%20qui%C3%A9n%20mueve%20el%20riesgo%20y%20c%C3%B3mo%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 11 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">La unidad en que contamos: exposición delta</a></li><li><a href="#seccion-2">Dos números en vez de uno: net y repositioned</a></li><li><a href="#seccion-3">Options X-Ray: Flow: cuánto y quién</a></li><li><a href="#seccion-4">Options X-Ray: Flow Delta: hacia dónde se inclina la presión</a></li><li><a href="#seccion-5">La semana por días: comparar vencimientos en una ventana</a></li><li><a href="#seccion-6">Options X-Ray: Big Trades: las huellas grandes</a></li><li><a href="#seccion-7">Tres miradas — una sola cinta</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">10. Indicadores de flujo: quién mueve el riesgo y cómo</p>
+<p>¿Qué es lo primero que mira un trader en cualquier mercado? El volumen: cuánto se
+negocia. Lo segundo es la delta: quién presiona — compradores o vendedores.
+Nuestros usuarios lo hacen cada día con el futuro ES. Ahora hay una mirada
+parecida para el mercado de opciones que mueve esos futuros — y no sin rostro,
+sino con los nombres de las cohortes de la lección anterior.</p>
+<p>Antes de abrir los indicadores, eso sí, tenemos que acordar dos cosas que los
+distinguen de la cinta habitual. Ambas son simples, y toda la lectura descansa en
+ellas.</p>
+<h2 id="seccion-1">La unidad en que contamos: exposición delta</h2>
+<p>El feed no nos revela recuentos de contratos — y francamente, los recuentos
+tampoco servirían: cien contratos de un ala lejana y cien contratos en el dinero
+son cosas incomparables. En su lugar, todo en los indicadores de flujo se mide en
+<strong>exposición delta en equivalente ES</strong>: cuánto riesgo direccional, expresado en
+contratos de futuros, hay detrás de una posición en opciones.</p>
+<p>La regla de conversión es una sola y viene horneada en los datos: una delta de una
+opción SPX controla cien «acciones» del índice, y un ES paga 50 dólares por
+punto — así que <strong>una delta = dos contratos ES</strong>. Cuando un indicador dice
+«Retail added 115 ES», significa: la suma de las operaciones del retail en este
+strike alargó su posición en el equivalente de 115 futuros. No «compraron 115
+futuros» — sino «ahora cargan ese riesgo direccional de más».</p>
+<p>Por qué este número importa más que los recuentos: toda operación de cliente tiene
+a un MM como contraparte, y el MM no sostiene riesgo direccional — lo cubre, con
+futuros reales. «Retail added 115 ES» se lee casi literalmente como «el MM tendrá
+que COMPRAR ~115 ES»: el MM que vendió ese riesgo carga el espejo de −115 y lo
+nivela comprando futuros — el clásico «vendí calls, compro el subyacente». Las
+burbujas y barras de estos indicadores son los heraldos del flujo real en el libro
+de órdenes.</p>
+<h2 id="seccion-2">Dos números en vez de uno: net y repositioned</h2>
+<p>El segundo acuerdo es sobre el tiempo. Los datos llegan como fotos por minuto de
+las posiciones; el cambio en un minuto es la «operación» elemental de estos
+indicadores, como un tick en la cinta. Una vela de tu timeframe suma los cambios
+por minuto — y sumar se puede de dos maneras:</p>
+<ul>
+<li><strong>con signos</strong> — obtienes <strong>net</strong>: dónde acabó la vela, el desplazamiento final
+de la posición;</li>
+<li><strong>por valor absoluto</strong> — obtienes <strong>repositioned</strong>: cuánto riesgo se empujó por
+el strike en total, contando movimientos en ambas direcciones.</li>
+</ul>
+<p>Es exactamente el par que forman el volumen y la delta en una vela corriente:
+volumen ≥ |delta|, y el volumen no se recupera de la apertura y el cierre — es una
+propiedad del camino, no de los extremos. Un ejemplo vivo de nuestras pruebas: una
+vela con patas «calls +13, puts +28» — la suma de valores absolutos es 41 — y
+repositioned <strong>151</strong>. Dentro de la vela se empujaron ~67 ES de ida y vuelta por
+los calls y ~84 por los puts, y como resultado solo quedó calderilla. Tres cuartas
+partes del trabajo colapsaron a cero — y solo repositioned lo vio.</p>
+<p>Lo que se lee es su <strong>proporción</strong>: net ≈ repositioned — flujo unilateral,
+convencido; net ≪ repositioned — una gran reorganización de doble vía sin
+dirección elegida: el nivel está «caliente», pero la batalla no está decidida.</p>
+<p>Y una advertencia honesta, compartida por los tres indicadores: repositioned es
+una <strong>cota inferior</strong> de la actividad. Una posición abierta y cerrada dentro de un
+solo minuto es invisible incluso para él.</p>
+<h2 id="seccion-3">Options X-Ray: Flow: cuánto y quién</h2>
+<p>La primera pregunta, la más simple: ¿cuánta exposición delta se movió durante esta
+vela — y con las manos de quién?</p>
+<p>El indicador dibuja en un panel aparte una barra por cada vela: la altura es el
+repositioned total en su lapso; los segmentos de color, la contribución de cada
+cohorte. Turquesa es el retail, naranja los pros, azul las firms, violeta los
+brokers. Pasa el ratón y obtienes una tarjeta de desglose: cada cohorte es una
+pequeña «vela de posición» tumbada de lado — el cuerpo va de cero a net, la mecha
+fina llega a los extremos que visitó la posición dentro de la vela — con los
+números net y repositioned al lado.</p>
+<p><img src="recursos/cf5759c783e88e.png" alt="pasted image" loading="lazy"></p>
+<p>Un ajuste por el que preguntará uno de cada dos usuarios: los market makers están
+apagados en la pila por defecto. No porque no importen, sino porque son el otro
+lado de todos los demás: sumar los MM a los clientes contaría cada movimiento dos
+veces. La barra construida con las cuatro cohortes de clientes ya es todo el
+mercado, visto desde el lado de la demanda.</p>
+<p>Incluso esta vista, la más simple, responde preguntas que antes no tenían
+respuesta. ¿De quién fue el pico matinal — del retail o de las instituciones?
+¿Quién revivió tras la noticia? ¿El dinero de quién entró en opciones en la última
+hora?</p>
+<h2 id="seccion-4">Options X-Ray: Flow Delta: hacia dónde se inclina la presión</h2>
+<p>La segunda pregunta: no «cuánto se movió» sino «hacia dónde se desplazó». El
+indicador calcula la <strong>delta del flujo</strong>: el net de las cohortes seleccionadas en
+la vela. Barras hacia arriba — se construyó exposición; hacia abajo — se recortó.
+Y cada barra tiene una <strong>mecha</strong>, como una vela de verdad: por dónde viajó la
+delta corriente dentro de la vela antes de llegar a su cierre. Una mecha larga
+contra un cuerpo corto significa que la posición fue lejos y volvió — visible sin
+un solo clic.</p>
+<p><img src="recursos/e9ef59b50427fa.png" alt="pasted image" loading="lazy"></p>
+<p>Por defecto el indicador suma el retail y los pros — los dos personajes más
+característicos del feed. Estas cohortes tiran regularmente de la cuerda en
+direcciones opuestas: el retail compra seguros y boletos de lotería, los pros los
+venden — y su inclinación combinada muestra hacia dónde se ladea toda la demanda
+de los clientes, la que los MM tendrán que absorber. La composición es
+configurable: puedes mirar solo el retail, solo los pros, las firms — cada
+elección le hace a los datos su propia pregunta.</p>
+<p>El segundo modo es la acumulación desde la apertura de la sesión: la misma delta
+como total corrido, dibujada como línea escalonada, con mechas mostrando las
+excursiones intravelas del camino. Responde a la pregunta del día — «quién, en
+neto, va ganando hasta ahora» — y atrapa bien el giro, cuando la presión matinal
+empieza a deshacerse hacia mediodía.</p>
+<h3 id="seccion-5">La semana por días: comparar vencimientos en una ventana</h3>
+<p>El selector de vencimientos de este indicador funciona un poco distinto al de los
+indicadores de strikes: junto a las cestas individuales de la lección 12, en la
+misma lista viven tres entradas con el prefijo <strong>Split</strong>, y cambian el indicador
+de «una cesta» a «varias cestas lado a lado con su total».</p>
+<p>«Split · 0DTE + next expiration» pone la serie de hoy junto a la siguiente más
+cercana. «Split · 0DTE + rest of week» — hoy contra todo lo que queda de semana. Y
+«Split · week by day» despliega la semana entera: cinco carriles — 0DTE, E+1,
+E+2, E+3, E+4 — más la línea de su suma.</p>
+<p>El color aquí codifica el <strong>carril</strong>, no el signo: menta es 0DTE, azul E+1,
+violeta E+2, ámbar E+3, gris E+4, y la línea blanca es el total. El signo se lee
+por el lado del cero en que está la barra, como en cualquier histograma. En modo
+por barra los carriles se apilan: positivos arriba, negativos abajo, con el total
+dibujado como una marca por encima. En modo acumulativo cada carril se vuelve su
+propia línea escalonada.</p>
+<p>Se lee por pendientes y divergencias. Una línea menta empinada con las demás
+planas significa pura especulación intradía: hoy se opera lo de hoy, nadie
+construye para la semana. El cuadro opuesto — el 0DTE quieto mientras E+2 y E+3
+trepan — es exactamente para lo que se hizo el modo: el lunes se arman posiciones
+para el miércoles y el jueves, y verlo antes de que se vuelvan «hoy» solo se puede
+así.</p>
+<p>La distancia entre la línea blanca y la menta es todo lo que no es 0DTE. Cuando es
+casi cero, toda la historia del día la escribió una sola serie.</p>
+<p>Un detalle de corrección: una sesión se dibuja solo cuando <strong>todas</strong> las cestas
+participantes cubren ese día. De otro modo un carril ausente se leería como cero y
+el total mentiría — mejor un vacío honesto. Un carril lejano vacío sí es legítimo:
+si la cuarta fecha futura simplemente no existe ese día, su franja queda plana y
+el modo sigue funcionando.</p>
+<h2 id="seccion-6">Options X-Ray: Big Trades: las huellas grandes</h2>
+<p>La tercera pregunta, la más certera: ¿por dónde cruzaron el mercado las
+reorganizaciones de verdad grandes? Lo pequeño interesa en conjunto; lo grande,
+por su nombre.</p>
+<p>Este indicador no vive en un panel aparte sino directamente sobre el gráfico de
+precio. Cada gran movimiento es una burbuja en la intersección de la vela donde
+ocurrió y el strike donde está: <strong>el área es proporcional a repositioned</strong> —
+cuánta exposición se movió —, el color nombra la cohorte, y el relleno dice la
+dirección del net: burbuja rellena — se construyó exposición; con contorno — se
+recortó. Por defecto se muestra el dos por ciento más grande de la <strong>sesión</strong> — el
+umbral se calcula sobre todo el día, así que el zoom no cambia qué burbujas ves;
+el filtro se ajusta de 0,01% (solo ballenas) a 20%.</p>
+<p><img src="recursos/defa0fd7a12f75.png" alt="pasted image" loading="lazy"></p>
+<p>La tarjeta de la burbuja despliega todo el strike: una cabecera con el nivel en
+términos de ES, una línea de quién añadió o recortó cuánto con el net repartido
+vía calls/puts, y una tabla de todas las cohortes — cada una con su propia vela de
+posición tumbada con mecha y los números net y repositioned. Aquí se ven las
+tramas que antes había que inventar: el retail construyendo exposición con calls
+en un strike redondo mientras las firms, en ese mismo momento y ese mismo strike,
+recortan la suya; un gran bloque de puts aparcado justo debajo del mercado una
+hora antes de la reunión.</p>
+<h2 id="seccion-7">Tres miradas — una sola cinta</h2>
+<p>Fíjate cómo los tres indicadores se pliegan en un solo movimiento de trabajo: Flow
+dice «está pasando algo inusualmente grande», Flow Delta — «y hacia aquí
+presiona», Big Trades — «y aquí está exactamente quién, y en qué strike». De lo
+general a lo nominal, en tres clics.</p>
+<hr>
+<p>Todo esto es aritmética de primer piso: sumar, restar, filtrar. Aún no le hemos
+hecho a los datos la pregunta principal — qué <em>obligarán</em> a hacer todas estas
+posiciones a los MM del otro lado. Para plantearla bien, es hora de traer de
+vuelta a los personajes que apartamos en la lección 3: vanna y charm. La próxima
+lección trata de las tres fuerzas que mueven el libro del MM — y de por qué la
+tarde del viernes en el mercado SPX no se parece a ninguna otra.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>La unidad de todos los valores es la exposición delta en equivalente ES: una delta de una opción SPX = dos contratos ES; en los datos no hay recuentos de contratos - solo riesgo derivado.</li>
+<li>Los cambios de posición por minuto se suman en una vela de dos maneras: con signos — net (el resultado); por valor absoluto — repositioned (la reorganización total; cota inferior de la actividad).</li>
+<li>Options X-Ray: Flow — «cuánto y quién»: la pila de repositioned por cohortes; Options X-Ray: Flow Delta — «hacia dónde presiona el net», con mechas trazando el camino intravela; Options X-Ray: Big Trades — «quién exactamente y en qué strike»: el área de la burbuja es repositioned, el relleno es el signo del net.</li>
+<li>Los market makers están apagados en la pila por una razón: son el otro lado de todos los demás - incluirlos contaría cada movimiento dos veces.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. ¿Qué operación sobre los datos del feed produce los tres indicadores de flujo?</h3><ol type="A"><li>Promediar las cotizaciones del día</li><li>Contar las operaciones de la cinta</li><li>Diferenciar las posiciones por minuto: la posición del minuto actual menos la del anterior</li><li>Sumar el OI entre vencimientos</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> Diferenciar las posiciones por minuto: la posición del minuto actual menos la del anterior</p><p>La diferencia de minutos contiguos dice quién hizo qué dentro del minuto; los cambios se reparten entre las velas del gráfico.</p></div></details></article><article class="question"><h3>2. ¿En qué unidad se miden todos los valores de los indicadores de flujo?</h3><ol type="A"><li>En número de contratos de opciones</li><li>En dólares de prima pagada</li><li>En puntos del índice SPX</li><li>En exposición delta en equivalente ES: una delta de una opción SPX = dos contratos ES</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> En exposición delta en equivalente ES: una delta de una opción SPX = dos contratos ES</p><p>Los recuentos de contratos nunca salen de la bolsa y son incomparables entre strikes. La exposición es exactamente el riesgo que los MM tendrán que cubrir con futuros reales.</p></div></details></article><article class="question"><h3>3. ¿En qué se diferencia net de repositioned?</h3><ol type="A"><li>Son sinónimos</li><li>Net es la suma con signos de los cambios por minuto (el resultado de la vela); repositioned, la suma de valores absolutos (la reorganización total en la vela, cota inferior de la actividad)</li><li>Net se calcula sobre calls; repositioned, sobre puts</li><li>Net es por día; repositioned, por minuto</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Net es la suma con signos de los cambios por minuto (el resultado de la vela); repositioned, la suma de valores absolutos (la reorganización total en la vela, cota inferior de la actividad)</p><p>El mismo par que delta y volumen en una vela corriente: una sierra dentro de la vela se cancela en net pero queda en repositioned - no se recupera de los extremos.</p></div></details></article><article class="question"><h3>4. ¿Por qué los market makers están apagados por defecto en la pila de Options X-Ray: Flow?</h3><ol type="A"><li>Su actividad es demasiado pequeña para verse</li><li>Son el otro lado de las operaciones de los clientes: sumarlos a los clientes contaría cada movimiento dos veces</li><li>Sus datos llegan con retraso</li><li>La licencia de datos lo exige</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Son el otro lado de las operaciones de los clientes: sumarlos a los clientes contaría cada movimiento dos veces</p><p>Las cuatro cohortes de clientes ya describen todo el mercado desde el lado de la demanda. Los MM reflejan su suma.</p></div></details></article><article class="question"><h3>5. ¿Por qué Options X-Ray: Flow Delta suma por defecto el retail y los pros?</h3><ol type="A"><li>Son las dos cohortes más contrastadas: regularmente están en lados opuestos, y su inclinación combinada muestra el sesgo de la demanda de los clientes</li><li>Son las que más datos tienen</li><li>Las otras cohortes no están disponibles en el feed</li><li>Su suma es siempre cero</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> Son las dos cohortes más contrastadas: regularmente están en lados opuestos, y su inclinación combinada muestra el sesgo de la demanda de los clientes</p><p>El retail compra seguros y boletos de lotería; los pros los venden. La suma muestra lo que los MM tendrán que absorber al final.</p></div></details></article><article class="question"><h3>6. ¿Qué codifican el tamaño, el color y el relleno de una burbuja de Options X-Ray: Big Trades?</h3><ol type="A"><li>Tamaño - la hora de la operación; color - el strike; relleno - el volumen</li><li>Tamaño (área) - repositioned, cuánta exposición se movió; color - la cohorte; relleno - el signo del net: rellena significa construida, con contorno, recortada</li><li>Tamaño - el precio de la opción; color - el tipo de opción; relleno - el vencimiento</li><li>Los tres codifican lo mismo, por claridad</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Tamaño (área) - repositioned, cuánta exposición se movió; color - la cohorte; relleno - el signo del net: rellena significa construida, con contorno, recortada</p><p>Por defecto se muestra el 2% más grande de los movimientos de la sesión - el umbral abarca todo el día, así que el zoom no cambia qué burbujas aparecen. La tarjeta de la burbuja despliega todo el strike por cohortes.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_09.html">← Lección anterior</a><a href="leccion_11.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

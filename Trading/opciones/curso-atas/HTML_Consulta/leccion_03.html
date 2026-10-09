@@ -1,0 +1,121 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3. Las griegas: el idioma de la sensibilidad · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 03</p><h1>3. Las griegas: el idioma de la sensibilidad</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/03-the-greeks-sensitivity">Ver fuente en línea</a><a href="../PDF_Originales/3.%20Las%20griegas_%20el%20idioma%20de%20la%20sensibilidad%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 8 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">Delta: la pendiente</a></li><li><a href="#seccion-2">Gamma: la curvatura</a></li><li><a href="#seccion-3">Theta: el reloj</a></li><li><a href="#seccion-4">Vega: sensibilidad al ánimo</a></li><li><a href="#seccion-5">La segunda fila: nombres para más tarde</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">3. Las griegas: el idioma de la sensibilidad</p>
+<p>Mira el salpicadero de un coche. Ni un solo indicador te muestra dónde estás — para
+eso está la ventanilla. Los indicadores muestran otra cosa: a qué velocidad cambia
+tu situación y qué le pasará dentro de un minuto si no tocas nada.</p>
+<p>Una mesa de opciones está construida igual. El precio de una opción es «dónde
+estamos ahora», y caduca cada segundo. Lo que les importa a los profesionales son
+los indicadores: cómo reaccionará la prima si el índice se mueve un punto, si pasa
+un día, si el mercado se pone nervioso. Esas sensibilidades se llaman las griegas —
+por las letras del alfabeto griego con que se etiquetan — y a lo largo del curso
+las llamaremos por sus nombres internacionales: delta, gamma, theta, vega. Para
+nuestro curso las griegas no son una abstracción: dentro de dos lecciones
+resultará que literalmente dictan las operaciones a los mayores participantes del
+mercado, y nuestros indicadores miden esas operaciones.</p>
+<p>Antes de las presentaciones, una propiedad compartida. Cada griega responde a la
+pregunta «qué cambia si cambia esta única cosa — todo lo demás igual». En la vida
+real todo lo demás nunca es igual: precio, tiempo y volatilidad se mueven a la
+vez, y la prima es la suma de todos los efectos juntos. Las griegas son la
+descomposición del movimiento en ejes.</p>
+<h2 id="seccion-1">Delta: la pendiente</h2>
+<p><strong>Delta</strong> responde a la primera pregunta: cuánto se moverá la prima si el
+subyacente se mueve un punto.</p>
+<p><img src="recursos/9518606d90cb0c.png" alt="Delta is the slope of the premium curve" loading="lazy"></p>
+<p>La curva del gráfico te resulta familiar de la lección anterior — la prima de un
+call contra el precio del activo. Delta es la pendiente de esa curva en el punto
+donde está el mercado ahora; tres tangentes discontinuas la muestran en tres
+regiones. Muy fuera del dinero (el punto azul) la pendiente es casi cero: delta
+0,10 — el activo se mueve, la opción apenas se inmuta; a un boleto de lotería le
+interesan poco las noticias. En el dinero (amarillo) la pendiente es 0,53: la
+prima captura aproximadamente la mitad del movimiento. Muy dentro del dinero
+(rojo) — 0,92: la opción ya casi no se distingue del propio activo.</p>
+<p>Delta tiene tres lecturas, y necesitaremos las tres.</p>
+<p><em>Sensibilidad:</em> delta 0,40 — la prima captura el cuarenta por ciento del
+movimiento del activo.</p>
+<p><em>Equivalente de posición:</em> un bloque de 1.000 calls con delta 0,40 reacciona al
+mercado como 400 unidades del propio activo. Esta aritmética parece un detalle
+contable — pero en realidad es la fórmula con la que se cubren los market makers,
+y volveremos a ella dentro de una lección como la ecuación maestra del curso.</p>
+<p><em>Probabilidad aproximada:</em> delta se acerca a las probabilidades de que la opción
+termine dentro del dinero. Delta 0,10 — el mercado le da más o menos una
+posibilidad entre diez. La aproximación es imprecisa, pero para una lectura rápida
+de la cadena cumple.</p>
+<p>Los calls tienen deltas de 0 a 1; los puts, de 0 a −1: un put gana valor cuando el
+activo cae.</p>
+<h2 id="seccion-2">Gamma: la curvatura</h2>
+<p>Vuelve a mirar el gráfico de delta. La pendiente no es constante: la curva de la
+prima está doblada, y a medida que el precio sube, una opción fuera del dinero se
+convierte gradualmente en una dentro del dinero, con su delta reptando de 0,10
+hacia 0,90. La velocidad de esa transformación es la segunda griega.</p>
+<p><strong>Gamma</strong> — cuánto cambia delta cuando el activo se mueve un punto. Si delta es la
+velocidad, gamma es la aceleración.</p>
+<p><img src="recursos/48105c16b2b6d3.png" alt="The closer the expiration, the more explosive the delta" loading="lazy"></p>
+<p>Aquí los ejes ya no muestran la prima sino la propia delta contra el precio del
+activo. La curva azul es un mes antes del vencimiento: delta fluye de 0 a 1
+suavemente, tomándose veinte puntos de camino. La amarilla es a cinco días: la
+transición se ha comprimido. La roja son las últimas horas de vida de la opción:
+delta salta de cero a uno en un par de puntos. Gamma es la inclinación de esa
+transición, y crece explosivamente hacia el vencimiento. La lógica es simple: a un
+mes del final, la pregunta «¿dentro del dinero o no?» se decidirá cien veces más —
+no hay prisa; en la última hora, cada punto de precio sella el destino de la
+opción para siempre — y delta se sacude junto con el precio.</p>
+<p>Recuerda la curva roja. Cuando lleguemos a las opciones que viven un solo día — y
+esas son hoy las opciones más negociadas del S&amp;P 500 — todo su drama resultará
+estar dibujado justo aquí: un mercado compuesto enteramente de «últimas horas».</p>
+<p>Para el comprador de la opción, gamma es un regalo: su delta crece sola cuando
+acierta y mengua sola cuando se equivoca. Pero para quien está obligado a mantener
+su riesgo total en cero, gamma es fuente de un ajetreo forzoso sin fin. Quién es
+ese desdichado y por qué su ajetreo aparece en el gráfico de futuros — lección 4.</p>
+<h2 id="seccion-3">Theta: el reloj</h2>
+<p><strong>Theta</strong> — cuánta prima pierde una opción por cada día que pasa con el mercado
+inmóvil. Esta es la griega que «robó» el dinero aquel lunes del comienzo de la
+lección anterior: el valor temporal es mercancía perecedera.</p>
+<p><img src="recursos/d5e8e8d7e9e19a.png" alt="Time decay of an at-the-money option" loading="lazy"></p>
+<p>Fíjate en que el decaimiento no es lineal. En la primera mitad de su vida, la
+opción entrega bastante menos de la mitad de su valor temporal, mientras que los
+últimos días arden a ritmo acelerado — cuanto más cerca el final, más cuesta cada
+día de espera. Para el comprador, theta es el alquiler que paga por una
+posibilidad. Para el vendedor, es ingreso: como una aseguradora, se embolsa un
+trozo de prima prepagada cada día tranquilo. Pero no confundas theta con una
+renta vitalicia: gotea mientras el mercado está en calma, y un movimiento brusco
+devuelve al comprador, vía delta y gamma, lo que theta llevaba semanas recaudando.</p>
+<h2 id="seccion-4">Vega: sensibilidad al ánimo</h2>
+<p><strong>Vega</strong> — cuánto cambia la prima cuando la volatilidad implícita se mueve un
+punto porcentual. Recuerda las campanas de la lección 2: la campana se ensancha —
+todas las posibilidades se encarecen a la vez. Vega mide cuán sensible es una
+opción concreta a eso.</p>
+<p>El guion clásico: la víspera de una publicación importante, el índice está quieto
+mientras las opciones se encarecen — el mercado infla la campana a la espera del
+veredicto. A la mañana siguiente sale la noticia, la incertidumbre colapsa, la IV
+cae — y las opciones se abaratan aunque el mercado se haya movido en la dirección
+«correcta». El comprador acertó la dirección y aun así perdió: vega se comió más
+de lo que delta ganó. En el mercado de opciones puedes tener razón sobre el precio
+y equivocarte sobre la incertidumbre.</p>
+<h2 id="seccion-5">La segunda fila: nombres para más tarde</h2>
+<p>Delta, como vimos, cambia cuando el precio se mueve — eso es gamma. Pero delta
+tiene dos enemigos silenciosos más. Cambia cuando la volatilidad se desplaza — ese
+efecto se llama <strong>vanna</strong>. Y cambia por el mero paso del tiempo — eso es
+<strong>charm</strong>: mira otra vez el gráfico de gamma — con cada día que pasa, la curva de
+delta se vuelve más empinada, lo que significa que la delta de cada opción está
+derivando hacia algún lado incluso con el mercado congelado.</p>
+<p>Por ahora son solo dos nombres, y es pronto para conocerlos de verdad: su poder no
+se muestra en una opción suelta, sino en manos de quien las sostiene por cientos
+de miles. Dos de nuestros indicadores llevan sus nombres, y en la lección 11
+quedará claro por qué.</p>
+<hr>
+<p>Para la mayoría de los participantes, las griegas son información de consulta:
+revisar, sopesar el riesgo, decidir. Pero hay un jugador en el mercado para quien
+las griegas no son una consulta sino una orden. Él no elige sus posiciones — se
+las traen las operaciones de otros. Está obligado a mantener su riesgo en cero — y
+las griegas le dicen cuántos futuros comprar o vender ahora mismo, le guste o no.
+Conócelo en la próxima lección: el market maker — el gran jugador más predecible
+de los mercados financieros y el protagonista de todo nuestro curso.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>Las griegas son las sensibilidades del precio de la opción: delta al precio del activo, gamma a la velocidad de cambio de delta, theta al tiempo, vega a la volatilidad.</li>
+<li>Delta es también un equivalente de posición: 1.000 calls con delta 0,40 se comportan como 400 unidades del activo — la fórmula con la que se cubren los market makers.</li>
+<li>Gamma crece explosivamente hacia el vencimiento: en las últimas horas delta salta de 0 a 1 en un par de puntos.</li>
+<li>Vanna y charm mueven la delta sin que el precio se mueva — por un desplazamiento de la volatilidad y por el mero paso del tiempo.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. Un call tiene delta 0,25. El índice sube 4 puntos. ¿Qué pasa con el precio del call?</h3><ol type="A"><li>Sube exactamente 4 puntos — la opción replica al activo</li><li>Sube alrededor de 1 punto, y un poco más — por el camino, la propia delta crece gracias a gamma</li><li>No cambia: el precio de una opción está congelado hasta el vencimiento</li><li>Sube 25 puntos</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Sube alrededor de 1 punto, y un poco más — por el camino, la propia delta crece gracias a gamma</p><p>4 x 0,25 = 1 punto — pero esa es una estimación instantánea: mientras el precio subía, delta también crecía (gamma), así que el resultado real es algo mayor.</p></div></details></article><article class="question"><h3>2. ¿Por qué gamma es máxima en el dinero, y por qué crece hacia el vencimiento?</h3><ol type="A"><li>Porque en el dinero ocurre el mayor volumen de negociación</li><li>Porque la bolsa sube los requisitos de margen cerca del strike</li><li>Gamma es igual en todos los strikes; la diferencia es una ilusión de escala</li><li>En el dinero el destino de la opción está máximamente indeciso, y cuanto menos tiempo queda, más bruscamente cada punto de precio desplaza las probabilidades del desenlace</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> En el dinero el destino de la opción está máximamente indeciso, y cuanto menos tiempo queda, más bruscamente cada punto de precio desplaza las probabilidades del desenlace</p><p>Delta fluye más rápido entre 0 y 1 donde la pregunta «¿dentro del dinero o no?» sigue abierta — y cuanto más cerca el final, más abruptamente. La curva de delta se convierte en un escalón.</p></div></details></article><article class="question"><h3>3. Una cartera de 2.000 calls con delta 0,35 reacciona al mercado como una posición de:</h3><ol type="A"><li>700 unidades del subyacente</li><li>2.000 unidades del subyacente</li><li>70 unidades del subyacente</li><li>35 unidades del subyacente</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> 700 unidades del subyacente</p><p>2.000 x 0,35 = 700. Esta aritmética del equivalente de posición es la ecuación maestra del curso: es exactamente la fórmula con la que se cubren los market makers.</p></div></details></article><article class="question"><h3>4. Un trader compró calls antes de una gran noticia, acertó la dirección — y aun así perdió. ¿Cómo es posible?</h3><ol type="A"><li>La bolsa canceló su operación por la noticia</li><li>Con calls no se puede ganar con noticias</li><li>Tras la noticia la IV colapsó: la pérdida por vega superó la ganancia por delta, más la theta de los días de espera</li><li>Confundió un call con un put</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> Tras la noticia la IV colapsó: la pérdida por vega superó la ganancia por delta, más la theta de los días de espera</p><p>Antes de la publicación el mercado infla la campana de expectativas; después la desinfla. En el mercado de opciones puedes tener razón sobre el precio y equivocarte sobre la incertidumbre.</p></div></details></article><article class="question"><h3>5. ¿Qué mueven vanna y charm?</h3><ol type="A"><li>La prima de la opción directamente, como theta</li><li>La delta de la opción: vanna — cuando cambia la volatilidad; charm — por el puro paso del tiempo</li><li>La volatilidad de la opción cuando el precio se mueve</li><li>El open interest del strike</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> La delta de la opción: vanna — cuando cambia la volatilidad; charm — por el puro paso del tiempo</p><p>Ambos son los «enemigos silenciosos» de delta: deriva incluso con el precio quieto. Por qué eso importa queda claro cuando hay que mantener la delta en cero continuamente — como debe hacerlo un market maker.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_02.html">← Lección anterior</a><a href="leccion_04.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

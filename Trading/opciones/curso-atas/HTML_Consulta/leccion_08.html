@@ -1,0 +1,65 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>8. La fotografía de un mercado que ya no existe · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 08</p><h1>8. La fotografía de un mercado que ya no existe</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/08-market-photo-legacy">Ver fuente en línea</a><a href="../PDF_Originales/8.%20La%20fotograf%C3%ADa%20de%20un%20mercado%20que%20ya%20no%20existe%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 5 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">La mitad invisible</a></li><li><a href="#seccion-2">¿Y qué pasa con la otra mitad?</a></li><li><a href="#seccion-3">Pliego de condiciones para los datos nuevos</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">8. La fotografía de un mercado que ya no existe</p>
+<p>Volvamos a la tabla matinal con la que abría la lección 5 — el informe diario de
+open interest, el cimiento de toda la analítica clásica. Ya sabemos cómo se hacen
+con ella los muros, los imanes y los perfiles GEX. Ahora, tras conocer el 0DTE,
+hagámosle a la tabla una pregunta simple: ¿qué es lo que realmente ve?</p>
+<h2 id="seccion-1">La mitad invisible</h2>
+<p>El open interest se registra una vez al día, tras el cierre. Sigamos una posición
+0DTE típica a través de ese calendario.</p>
+<p><img src="recursos/8833eb81776853.png" alt="Why daily open interest misses 0DTE" loading="lazy"></p>
+<p>La foto de ayer por la tarde no la captó — aún no existía. La de hoy tampoco la
+captará — se cerró a las 15:50, y lo que sobrevivió hasta el final del día venció
+y se fue a cero. El contrato vivió seis horas, su cobertura persiguió a los
+futuros todo el día — y en la fuente principal de datos no dejó ni un solo
+registro. No un registro <em>tardío</em> — ninguno en absoluto.</p>
+<p>Para ser justos: el vencimiento de hoy sí tiene pasado. La serie que vence hoy se
+listó con antelación y se negoció ayer y antes — y las posiciones abiertas en ella
+por adelantado, el OI matinal las muestra honestamente. Pero esa parte visible es
+una capa fina: el grueso del volumen 0DTE se abre el mismo día del vencimiento,
+vive horas y se desvanece, como la posición del diagrama. Y por la tarde el
+vencimiento pone a cero toda la serie — así que incluso su «pasado» desaparecerá
+del informe de mañana.</p>
+<p>Ahora multiplica por la escala de la lección anterior: cerca de la mitad del
+volumen del mayor mercado de opciones del mundo fluye por series del mismo día — y
+la parte del león de esas operaciones nace después de la foto matinal. El OI
+diario no llega tarde al informarlas — es por principio incapaz de ver lo que se
+abrió y cerró entre sus fotogramas. El instrumento no se rompió; se rompió el
+mundo para el que fue diseñado.</p>
+<h2 id="seccion-2">¿Y qué pasa con la otra mitad?</h2>
+<p>Las posiciones de más de un día sí llegan al OI — pero también aquí el calendario
+estropea el cuadro. La foto se tomó ayer por la tarde. Un muro calculado con ella
+es un muro del mercado de ayer; para mediodía, los flujos de hoy pueden haber
+levantado un nudo en otro strike o desmantelado el de ayer. Los niveles que se
+mueven dentro del día, una fotografía diaria los muestra, por definición, con un
+día de retraso.</p>
+<p>Peor aún: el punto débil de la analítica GEX de la lección 5 — el supuesto sobre
+quién está en qué lado de la operación — se volvió todavía más vulnerable en el
+mundo nuevo. Cuando las posiciones se acumulaban durante semanas, un error en la
+conjetura sobre una operación se ahogaba en la masa. Cuando el libro se
+reconstruye en horas, los lados hay que adivinarlos de nuevo cada día — y los
+datos para ello siguen tan ausentes del OI como siempre.</p>
+<h2 id="seccion-3">Pliego de condiciones para los datos nuevos</h2>
+<p>Escribamos qué haría falta para ver de verdad el mercado 0DTE. La lista es corta,
+y cada punto golpea una ceguera concreta del OI diario.</p>
+<p><strong>Frecuencia: minutos, no días.</strong> El libro del MM vive dentro del día — así que
+los datos de posiciones también tienen que actualizarse dentro del día.</p>
+<p><strong>Lados, no conjeturas.</strong> Para calcular el libro del MM sin supuestos, hay que
+saber si cada operación fue compra o venta — exactamente aquello sobre lo que el
+OI calla desde la lección 2.</p>
+<p><strong>Participantes, no volumen sin rostro.</strong> El retail comprando puts de lotería y
+las instituciones vendiendo prima crean libros de MM opuestos. Distinguirlos
+significa conocer por primera vez el signo del libro en lugar de suponerlo.</p>
+<p>Durante mucho tiempo esa lista parecía fantasía: las bolsas no publicaban nada
+parecido. Y entonces la bolsa donde se negocia todo el complejo SPX empezó a
+vender exactamente eso — datos de posicionamiento minuto a minuto con desglose por
+tipo de participante y lado de la operación. Ese feed — y lo que construimos
+encima — es de lo que trata todo el resto del curso.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>Una posición abierta y cerrada el día del vencimiento no llega a ningún informe de OI - no tarde: nunca.</li>
+<li>Solo es visible la capa nocturna de una serie - fina al lado del volumen del propio día de vencimiento.</li>
+<li>El pliego de condiciones de los datos nuevos: frecuencia de minutos, lados de la operación conocidos, desglose por tipo de participante.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. ¿Por qué una posición 0DTE abierta la mañana del día de vencimiento no aparecerá nunca en ningún informe de OI?</h3><ol type="A"><li>La bolsa excluye deliberadamente las opciones del mismo día de los informes</li><li>Para la foto de la tarde ya está cerrada o vencida - en el momento de tomar la fotografía ya no existe</li><li>Aparecerá en el informe una semana después</li><li>El OI del 0DTE se publica en un informe aparte de acceso restringido</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Para la foto de la tarde ya está cerrada o vencida - en el momento de tomar la fotografía ya no existe</p><p>El OI se registra una vez al día, tras el cierre. Lo que vivió entre dos fotos no deja rastro en ellas. Solo es visible la capa abierta en días anteriores.</p></div></details></article><article class="question"><h3>2. ¿Qué falla en el OI diario incluso para las posiciones que sí entran?</h3><ol type="A"><li>Se publica con errores de redondeo</li><li>No contiene strikes</li><li>Solo está disponible para instituciones</li><li>La foto de ayer por la tarde describe la alineación de ayer: los cambios intradía en nudos y muros solo se verán mañana</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> La foto de ayer por la tarde describe la alineación de ayer: los cambios intradía en nudos y muros solo se verán mañana</p><p>Los niveles se calculan de un mercado que ya no existe: el muro puede haber crecido en otro strike esta misma mañana.</p></div></details></article><article class="question"><h3>3. Enuncia los tres requisitos de unos datos capaces de mostrar el mercado de la era 0DTE.</h3><ol type="A"><li>Frecuencia de minutos, lados de la operación conocidos, desglose por tipo de participante</li><li>Más strikes, más vencimientos, más historia</li><li>Datos de todas las bolsas, todos los activos y todas las divisas</li><li>Acceso a las posiciones de cada cuenta individual</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> Frecuencia de minutos, lados de la operación conocidos, desglose por tipo de participante</p><p>Cada punto cierra una ceguera concreta: el libro vive dentro del día; el OI calla sobre los lados; participantes distintos crean libros de MM opuestos.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_07.html">← Lección anterior</a><a href="leccion_09.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

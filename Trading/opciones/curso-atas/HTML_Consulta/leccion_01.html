@@ -1,0 +1,192 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1. Qué es una opción y por qué existe · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 01</p><h1>1. Qué es una opción y por qué existe</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/01-what-is-an-option">Ver fuente en línea</a><a href="../PDF_Originales/1.%20Qu%C3%A9%20es%20una%20opci%C3%B3n%20y%20por%20qu%C3%A9%20existe%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 10 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">Un derecho, no una obligación</a></li><li><a href="#seccion-2">Las cuatro posiciones básicas</a></li><li><a href="#seccion-3">Para qué existen las opciones</a></li><li><a href="#seccion-4">Seguro</a></li><li><a href="#seccion-5">Apalancamiento</a></li><li><a href="#seccion-6">Ingresos</a></li><li><a href="#seccion-7">Derivado significa atado</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">1. Qué es una opción y por qué existe</p>
+<p>Imagina que has asegurado tu piso. Pagaste 300 dólares a la aseguradora — y durante
+un año duermes tranquilo: si hay un incendio, la compañía está obligada a cubrir el
+daño. Lo más probable es que no haya incendio y los 300 dólares simplemente se
+esfumen. Y te parece bien: no compraste un pago, compraste el derecho a un pago.
+Dormir tranquilo vale ese dinero.</p>
+<p>Ahora traslada esa construcción a la bolsa — y obtienes una opción. Uno de los
+instrumentos financieros más antiguos que existen: el derecho a hacer una operación
+en el futuro a un precio acordado hoy.</p>
+<h2 id="seccion-1">Un derecho, no una obligación</h2>
+<p>Una opción es un contrato que siempre tiene cuatro elementos:</p>
+<ul>
+<li><strong>el subyacente</strong> — aquello a lo que está ligado el contrato: una acción, un índice, un futuro;</li>
+<li><strong>el strike</strong> — el precio de la operación, fijado de antemano;</li>
+<li><strong>el vencimiento</strong> — la fecha en la que el derecho se extingue;</li>
+<li><strong>la prima</strong> — el precio del propio derecho, que el comprador paga al vendedor.</li>
+</ul>
+<p>Los cuatro elementos ya te resultan familiares por la póliza de seguros — allí
+simplemente llevan otros nombres. Emparejémoslos directamente:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Tabla de la lección; desplazamiento horizontal disponible"><table>
+<thead>
+<tr>
+<th>En el seguro</th>
+<th>En la opción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El piso</td>
+<td>El subyacente</td>
+</tr>
+<tr>
+<td>La póliza de seguros</td>
+<td>El contrato de opción</td>
+</tr>
+<tr>
+<td>La suma asegurada y las condiciones de pago</td>
+<td>El strike</td>
+</tr>
+<tr>
+<td>El plazo de la póliza</td>
+<td>El vencimiento</td>
+</tr>
+<tr>
+<td>El coste de la póliza (esos 300 dólares)</td>
+<td>La prima</td>
+</tr>
+<tr>
+<td>Tú, el asegurado</td>
+<td>El comprador de la opción</td>
+</tr>
+<tr>
+<td>La compañía de seguros</td>
+<td>El vendedor de la opción</td>
+</tr>
+</tbody>
+</table>
+</div><p>Probemos la correspondencia a lo largo de todo el ciclo de vida. Pagaste 300
+dólares: la prima fue al vendedor de inmediato y para siempre; no puedes
+recuperarla, ocurra o no el siniestro. El año es el plazo de la póliza: un incendio
+dentro de trece meses ya no es asunto del asegurador — el derecho ha expirado. El
+incendio es exactamente el movimiento de precio contra el que te asegurabas.
+Presentar el parte es ejercer la opción: muestras tu derecho y la compañía está
+obligada a pagar. Y si el año pasó en calma, la póliza vence sin pago — como una
+opción que nunca llegó a su strike: la prima está gastada, el derecho ya no existe.</p>
+<p>La palabra clave de toda la construcción es <em>derecho</em>. El comprador puede usarlo o
+no: nadie te obligará a reclamar un pago. El vendedor no tiene esa libertad: si el
+comprador presenta su derecho, el vendedor está obligado a completar la operación —
+igual que un asegurador no puede «arrepentirse de pagar» una vez ocurrido el
+siniestro. Precisamente por esa asimetría el vendedor cobra la prima — por
+adelantado y sin devolución.</p>
+<p>Hay dos tipos de opciones, y conviene memorizar ambos nombres ya — a partir de aquí
+aparecen en cada página:</p>
+<ul>
+<li>un <strong>call</strong> — el derecho a <em>comprar</em> el activo al strike. Gana valor cuando el activo sube.</li>
+<li>un <strong>put</strong> — el derecho a <em>vender</em> el activo al strike. Gana valor cuando el activo baja.</li>
+</ul>
+<p>La frase «compré un put en el strike 95» se despliega así: pagué una prima por el
+derecho a vender el activo a 95, por mucho que haya caído para entonces. ¿Te suena?
+Es exactamente una póliza de seguros donde 95 es el importe del pago.</p>
+<h2 id="seccion-2">Las cuatro posiciones básicas</h2>
+<p>En toda operación con opciones hay un comprador de un derecho y un vendedor de una
+obligación, así que existen cuatro posiciones básicas: comprar un call, comprar un
+put, vender un call, vender un put. Sus perfiles de ganancias y pérdidas merecen
+una mirada atenta: son el alfabeto en el que está escrito el resto de este curso.</p>
+<p>Primero aprendamos a leer los propios gráficos — este tipo de diagrama se llama
+diagrama de payoff y volverá una y otra vez. El eje horizontal (Asset price at
+expiration) recorre el precio del subyacente el día del vencimiento: cada punto del
+eje es un escenario posible de «dónde acaba el precio». El eje vertical (Profit /
+loss) muestra tu resultado final en ese escenario, con la prima pagada o cobrada ya
+descontada. La línea que une los escenarios responde a una única pregunta: «¿cómo
+termina esta operación para mí si el precio aterriza justo aquí?». Por encima de
+cero — ganaste (relleno verde); por debajo — perdiste (rojo). La línea amarilla
+discontinua marca el strike: justo ahí se dobla la línea, porque ahí es donde el
+derecho empieza — o deja — de tener sentido.</p>
+<p><img src="recursos/88dc0fed05fd1e.png" alt="The four basic positions at expiration" loading="lazy"></p>
+<p>Recorramos paso a paso el gráfico superior izquierdo — Bought a call, un call en el
+strike 100 por una prima de 5. Supón que el precio al vencimiento resulta ser 90.
+El derecho a comprar a 100 algo que el mercado vende a 90 no vale nada para nadie:
+la opción venció vacía, la prima se perdió — resultado −5. La misma historia en 95,
+en 99 y en cualquier precio a la izquierda del strike: la línea yace plana en −5. Y
+esa es la propiedad definitoria del comprador: nunca va a peor que «menos la
+prima». A la derecha de 100 el cuadro cambia: con el precio en 110, el derecho a
+comprar a 100 entrega 10 puntos de ganancia, menos la prima — neto +5. Cada punto
+adicional de precio añade un punto de beneficio; la línea sube sin techo. El cruce
+por cero está en 105: breakeven, la ganancia acaba de devolver exactamente la prima.</p>
+<p>Los otros tres gráficos se leen igual. Bought a put — el put comprado, imagen
+especular: el tramo plano de «menos la prima» a la derecha, donde el mercado subió
+y el seguro nunca hizo falta, y la ganancia creciente a la izquierda, donde el
+mercado cayó. La fila inferior muestra las posiciones de los vendedores (Sold a
+call, Sold a put) — y mírala con atención: cada gráfico es el reflejo exacto de su
+vecino de arriba respecto a la línea de cero. Una opción es una operación de dos
+lados, y cada dólar que gana el comprador es un dólar que pierde el vendedor, con
+el signo invertido.</p>
+<p>Dentro de esta simetría se esconde una asimetría que explica la mitad del mercado
+de opciones. La pérdida del comprador del call está limitada a la prima — cinco
+puntos, cueste lo que cueste el activo al final. Su ganancia no está limitada por
+nada. Para el vendedor todo es espejo: su ganancia máxima son esos mismos cinco
+puntos de prima, mientras su pérdida crece con el mercado sin límite alguno.</p>
+<p>¿Parecería que solo un loco aceptaría vender opciones? Adelantemos la respuesta:
+los vendedores son los participantes más ricos y mejor equipados tecnológicamente
+de este mercado, y ganan con más regularidad que los compradores. Cómo lo
+consiguen es el tema de la lección 4 — y el núcleo de todo el curso. Por ahora
+basta con recordar: en cada operación, alguien ha asumido un riesgo ilimitado y
+tiene intención de gestionarlo.</p>
+<h2 id="seccion-3">Para qué existen las opciones</h2>
+<p>El mercado de opciones funciona con tres motores. Los tres trabajan a la vez, y
+cada uno tiene su propio tipo de participante.</p>
+<h3 id="seccion-4">Seguro</h3>
+<p>Un gestor de carteras tiene diez millones de dólares en acciones y ninguna gana de
+vivir una caída del mercado del veinte por ciento. Vender la cartera es caro y
+absurdo: lo más probable es que el mercado suba. En su lugar, compra puts.</p>
+<p><img src="recursos/6242b57b5fb097.png" alt="A portfolio with and without insurance" loading="lazy"></p>
+<p>Por debajo del strike, la pérdida de la cartera queda congelada: cada punto que cae
+el activo se compensa con un punto de ganancia en el put. El precio de esto es la
+prima, que empeora el resultado en cualquier rally. El seguro no es gratis, y eso
+es normal: la póliza de tu piso tampoco se paga sola en los años sin incendios.</p>
+<p>Los hedgers son la columna vertebral institucional del mercado de opciones. Fondos
+de pensiones, aseguradoras, gestoras de activos: necesitan las opciones no para
+ganar dinero, sino para poner un tope a un riesgo que ya cargan.</p>
+<h3 id="seccion-5">Apalancamiento</h3>
+<p>La segunda razón es la opuesta a la primera. Una opción permite controlar una
+posición grande con poco dinero — y eso es lo que atrae a los especuladores.</p>
+<p><img src="recursos/689fe68a66aad9.png" alt="Leverage: stock versus calls" loading="lazy"></p>
+<p>Mil dólares puestos en el activo a 100 devuelven 150 dólares si sube a 115. Esos
+mismos mil, gastados en calls del strike 105 — cuatro mil. Y si el activo nunca
+llega a 105, se queman por completo, hasta el último céntimo, mientras el
+accionista apenas ha perdido nada. Una opción convierte un movimiento de precio
+modesto en una ganancia multiplicada o en un cero absoluto.</p>
+<h3 id="seccion-6">Ingresos</h3>
+<p>El tercer motor es el espejo de los dos primeros: alguien tiene que vender todas
+esas pólizas de seguros y boletos de lotería. El vendedor cobra primas en un gran
+número de contratos, sabiendo que la mayoría vencerán sin valor — exactamente el
+modelo de negocio de una aseguradora. Miles de pólizas, pagos raros, la estadística
+del lado del vendedor. Hasta que llega el «incendio» — un movimiento brusco del
+mercado — y entonces los pagos de las opciones vendidas devoran meses de primas
+acumuladas. Así que vender opciones no es una máquina de imprimir dinero, sino un
+negocio de gestión de riesgos: sobreviven los que saben cubrirse, y en la lección 4
+veremos quiénes son esas personas y cómo lo hacen exactamente.</p>
+<h2 id="seccion-7">Derivado significa atado</h2>
+<p>A la opción se la llama instrumento derivado: su precio <em>deriva</em> del precio del
+subyacente. El índice subió — los calls se encarecieron, los puts se abarataron.
+Una opción no tiene vida propia: es la sombra del activo al que está atada.</p>
+<div class="l-md-callout l-md-callout--important" data-directive="callout"><div class="l-md-callout__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><div class="l-md-callout__content"><div class="l-md-callout__label">Important</div><div class="l-md-callout__body">
+<p>Eso dice el manual. Y ahora la frase para la que se escribió todo este curso: <strong>el
+vínculo también funciona en sentido contrario.</strong> El mercado de opciones sobre el
+S&amp;P 500 ha crecido tanto que ahora es el subyacente el que va adonde lo empujan
+las posiciones en opciones. La cola ha aprendido a mover al perro — no por magia,
+sino por una mecánica perfectamente medible que desmontaremos en la lección 4.</p>
+</div></div></div>
+<p>Un poco de escala, para que entiendas de qué cola estamos hablando. Un solo
+contrato de opción sobre el índice S&amp;P 500 (ticker SPX) controla un valor nominal
+de cientos de miles de dólares — cien dólares por punto de índice. En días activos
+se negocian millones de esos contratos. Billones de dólares de nominal cada día:
+esto no es un mercado de nicho para amantes de lo exótico; es una de las fuerzas
+dominantes del mercado de acciones estadounidense.</p>
+<hr>
+<p>Hemos definido la opción en una sola frase: el derecho a una operación a un precio
+conocido de antemano. Pero la prima — el precio de ese derecho — vive su propia
+vida: cambia cada segundo, incluso cuando el subyacente no se mueve. De qué está
+hecho el precio de una opción, qué es la volatilidad implícita y por qué la cadena
+de opciones cotiza un precio justo por el miedo — esa es la próxima lección.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>Una opción es el derecho (no la obligación) de comprar o vender un activo a un precio fijado; el vendedor carga con la obligación y cobra una prima por ella.</li>
+<li>La pérdida del comprador está limitada a la prima; la del vendedor no está limitada por nada — todo el mercado se sostiene sobre esta asimetría.</li>
+<li>El mercado funciona con tres motores: seguro de carteras, apalancamiento para especular y venta de prima como negocio asegurador.</li>
+<li>Una opción es un derivado, pero en el mercado del S&amp;P 500 el vínculo también funciona al revés: las posiciones en opciones mueven el subyacente.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. ¿Cuál es la diferencia fundamental entre la posición del comprador de una opción y la del vendedor?</h3><ol type="A"><li>El comprador paga una prima y recibe un derecho que puede no usar; el vendedor recibe la prima y carga con la obligación de completar la operación</li><li>El comprador asume un riesgo ilimitado, mientras el vendedor solo arriesga la prima</li><li>Ninguna: cualquiera de las dos partes puede retirarse de la operación en cualquier momento antes del vencimiento</li><li>El comprador está obligado a ejercer el contrato al vencimiento, mientras el vendedor puede arrepentirse</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> El comprador paga una prima y recibe un derecho que puede no usar; el vendedor recibe la prima y carga con la obligación de completar la operación</p><p>El derecho queda en manos del comprador: su pérdida está limitada a la prima. El vendedor no tiene esa libertad — presentado el derecho, debe completar la operación, y su pérdida puede ser ilimitada. Exactamente por esa asimetría cobra la prima.</p></div></details></article><article class="question"><h3>2. El activo cotiza a 100. Compraste un put en el strike 90 por una prima de 3. Al vencimiento el activo cotiza a 70. ¿Tu resultado?</h3><ol type="A"><li>+17: el derecho a vender a 90 con el mercado en 70 entrega 20 puntos, menos la prima de 3</li><li>+20: la ganancia del put no tiene nada que ver con la prima</li><li>−3: el put fuera del dinero venció sin valor</li><li>+30: toda la distancia de la caída de 100 a 70</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> +17: el derecho a vender a 90 con el mercado en 70 entrega 20 puntos, menos la prima de 3</p><p>El put da derecho a vender a 90 algo que vale 70: una ganancia de 20 puntos, menos los 3 pagados de prima — neto +17. Si el activo hubiera subido, el derecho a vender a 90 sería inútil: el resultado habría sido −3, la prima perdida.</p></div></details></article><article class="question"><h3>3. ¿Por qué un gestor de carteras compra puts en vez de, simplemente, vender sus acciones?</h3><ol type="A"><li>El put conserva la participación en las subidas y limita la caída; vender las acciones cierra la posición por completo</li><li>Vender acciones lleva varios días, mientras que un put se compra al instante</li><li>Los puts cuestan menos que las comisiones de bolsa por vender la cartera</li><li>Los puts generan ingresos extra mientras el mercado no va a ninguna parte</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> El put conserva la participación en las subidas y limita la caída; vender las acciones cierra la posición por completo</p><p>Al vender las acciones, el gestor sale de la posición — desaparecen el riesgo y también el potencial alcista. Al comprar un put se queda dentro: conserva íntegra la subida, la caída queda limitada en el strike, y el precio de la decisión es la prima.</p></div></details></article><article class="question"><h3>4. Tu vecino dice: «Vendo puts cada mes, la prima va goteando, es un sistema sin riesgo». ¿Qué se le escapa?</h3><ol type="A"><li>El perfil del vendedor: una ganancia pequeña y limitada contra una pérdida grande e ilimitada — el «sistema» funciona hasta el primer crash</li><li>La prima de los puts vendidos no puede cobrarse antes del vencimiento</li><li>Los puts vendidos se ejercen automáticamente al final de cada mes</li><li>Nada: vender puts sistemáticamente es realmente libre de riesgo</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> El perfil del vendedor: una ganancia pequeña y limitada contra una pérdida grande e ilimitada — el «sistema» funciona hasta el primer crash</p><p>El vendedor acumula ganancias pequeñas y encaja pérdidas grandes y raras — es un negocio de seguros, no una máquina de imprimir dinero. Un movimiento brusco del mercado devora meses de primas acumuladas; sobreviven los que se cubren.</p></div></details></article><article class="question"><h3>5. ¿Qué significa «instrumento derivado» aplicado a una opción — y por qué esa descripción ya se queda corta para el mercado del S&amp;P 500?</h3><ol type="A"><li>El precio de la opción deriva del precio del activo; se queda corta porque las posiciones en opciones, a través de la cobertura de los market makers, ya mueven por sí mismas el subyacente</li><li>La opción la «produce» un market maker; se queda corta porque las opciones SPX las emite la bolsa</li><li>El precio de la opción sigue al del activo con un día de retraso; se queda corta por los datos por minutos</li><li>Derivado significa secundario; se queda corta porque las opciones importan más que las acciones</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> El precio de la opción deriva del precio del activo; se queda corta porque las posiciones en opciones, a través de la cobertura de los market makers, ya mueven por sí mismas el subyacente</p><p>La definición clásica: la opción es la sombra de su subyacente. Pero el mercado de opciones sobre el S&amp;P 500 ha crecido tanto que el subyacente va adonde lo empuja la cobertura obligatoria de las posiciones en opciones: la cola ha aprendido a mover al perro.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_00.html">← Lección anterior</a><a href="leccion_02.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>

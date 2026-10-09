@@ -1,0 +1,166 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>13. Superficies: el MM no tiene niveles · Archivo ATAS</title><link rel="stylesheet" href="recursos/lectura.css"><script src="recursos/lectura.js" defer></script></head><body><a class="skip" href="#contenido">Ir al contenido</a><header class="site"><a class="brand" href="../index.html">ATAS · Opciones · Archivo de consulta</a><div class="controls"><label for="font-size">Tamaño de letra</label><select id="font-size" aria-label="Tamaño de letra"><option value="100">100%</option><option value="125">125%</option><option value="150">150%</option><option value="175">175%</option><option value="200">200%</option></select></div></header><main id="contenido"><p class="eyebrow">Fuente ATAS · Lección 13</p><h1>13. Superficies: el MM no tiene niveles</h1><aside class="source"><p>Contenido original de ATAS. Copia de lectura capturada el 09/10/2026.</p><div class="source-links"><a href="https://learn.atas.net/es/volume-basics/options-basics-minute-feed/13-dealer-surfaces">Ver fuente en línea</a><a href="../PDF_Originales/13.%20Superficies_%20el%20MM%20no%20tiene%20niveles%20%E2%80%94%20ATAS%20Learn.pdf">PDF aportado · 10 páginas</a><a href="../index.html">Índice del curso</a></div></aside><details class="toc"><summary>En esta lección</summary><ol><li><a href="#seccion-1">De las líneas al terreno</a></li><li><a href="#seccion-2">Options X-Ray: GEX Heatmap — el terreno de la fuerza gamma</a></li><li><a href="#seccion-3">Options X-Ray: Charm Heatmap — el horario de la fuerza del tiempo</a></li><li><a href="#seccion-4">Options X-Ray: Surface Profile — una regla para el mapa de calor</a></li><li><a href="#seccion-5">Dos maneras de leer un mismo corte</a></li><li><a href="#seccion-6">Cómo encaja esto en el flujo de trabajo</a></li></ol></details><div class="lesson-body"><div class="l-lesson-content__html"><p class="l-lesson-content__source-title" aria-hidden="true">13. Superficies: el MM no tiene niveles</p>
+<p>Enséñale a un MM de opciones un gráfico con líneas horizontales — muros, imanes,
+fronteras — y pregúntale dónde están sus niveles. Se encogerá de hombros. En su
+libro no hay niveles. Hay posiciones; las posiciones tienen griegas; y las griegas
+tienen la propiedad incómoda que venimos observando desde la lección 3: cambian
+con el precio y con el tiempo. La fuerza con la que el libro responderá a un
+movimiento del mercado depende de <strong>dónde</strong> llega el precio y de <strong>cuándo</strong> llega.
+El mismo strike a las diez de la mañana y a las cuatro menos cuarto son dos
+strikes distintos.</p>
+<p>Todo lo que hemos dibujado hasta ahora respondía a la pregunta «qué está pasando
+ahora». El grupo final de indicadores del curso responde a una pregunta más
+adulta: «qué pasa si».</p>
+<h2 id="seccion-1">De las líneas al terreno</h2>
+<p>Toma el libro del MM del minuto actual — el feed nos lo da con exactitud — y hazle
+una pregunta: ¿cuál será tu exposición gamma en cada nivel de precio, en cada
+momento de lo que queda de sesión? El libro se conoce, las griegas se pueden
+calcular — la respuesta es computable. Lo que sale no es ni un perfil ni una
+línea, sino una <strong>superficie</strong>: un mapa de fuerzas sobre el plano precio × tiempo.</p>
+<p><img src="recursos/6068dd14e1036a.png" alt="MM exposure as a surface" loading="lazy"></p>
+<p>Mira en qué se han convertido dos héroes de las lecciones anteriores. El muro —
+hasta ahora una línea horizontal — resulta ser una cresta que deriva a lo largo
+del día: un nivel que por la mañana estaba en una marca espera al precio en otra
+por la tarde. Y el punto de gamma cero de la lección 5 se ha estirado en una
+frontera sinuosa: por encima de ella la cobertura frena el mercado; por debajo, lo
+acelera — y la propia frontera se desplaza a lo largo de la sesión. Una línea
+horizontal es lo que queda del terreno cuando lo miras desde un único punto en el
+tiempo. La superficie muestra el terreno entero.</p>
+<p>Una advertencia honesta antes de pasar a los indicadores — y está integrada en la
+propia imagen. El campo <strong>detrás de las velas</strong> es realidad observada: cada minuto
+de la historia está dibujado con el libro de ese mismo minuto; ningún pronóstico
+rancio se queda en pantalla después de los hechos. Y a la derecha de la última
+vela el indicador continúa la superficie en una <strong>zona de proyección</strong> — hasta el
+final de la sesión actual y, tras el cierre, hacia la apertura de la siguiente. Es
+un pronóstico hecho con el libro más fresco: «así será la exposición <em>si</em> el libro
+no cambia». El libro cambiará — el mundo 0DTE, lección 7 —, así que la proyección
+se recalcula con cada minuto nuevo, y los tooltips dentro de ella lo dicen sin
+rodeos: <code>FORECAST from the book … earlier · not observed</code>, o, para la mirada
+vespertina hacia delante, <code>OUTLOOK for the … open · projection, not observed</code>.
+Confundir lo observado con lo esperado no es una opción.</p>
+<h2 id="seccion-2">Options X-Ray: GEX Heatmap — el terreno de la fuerza gamma</h2>
+<p>El primero de los dos mapas de calor dibuja la superficie gamma justo detrás de
+las velas del gráfico: un campo de color donde un extremo de la escala es frenado
+(los MM cubren contra el movimiento), el otro es aceleración (con el movimiento),
+y la saturación es la fuerza del efecto. Las velas corren por encima del campo:
+puedes ver al precio literalmente cabalgar el terreno — atascándose al entrar en
+una zona densa de frenado y deslizándose por los parches vacíos.</p>
+<p>Sobre el campo, el indicador traza dos líneas de nuestro glosario. La frontera de
+régimen discontinua — esa misma línea sinuosa donde el signo se invierte:
+cruzarla significa que el mercado cambia de carácter, y ahora puedes ver no solo
+dónde está sino hacia dónde va. Y las crestas de los muros — cordilleras de
+exposición máxima trazadas a través del tiempo: línea continua donde la cobertura
+sostiene el precio, quebrada donde lo deja pasar. Todas, junto con el propio
+campo, continúan en la zona de proyección: puedes ver dónde llegarán el muro y la
+frontera para el cierre — o dónde estarán esperando al precio en la apertura de
+mañana.</p>
+<p>Pasar el cursor abre una tarjeta en la gramática común del paquete: un titular de
+veredicto en color — <code>DAMPING</code>, <code>AMPLIFYING</code>, <code>REGIME BOUNDARY</code> o el nombre del
+muro — y una línea principal brillante: <strong>aproximadamente cuántos contratos ES
+tendrán que empujar los MM por el mercado por cada punto de movimiento</strong> en este
+nivel. El valor bruto de gamma y la mecánica ("MM hedge with price — expect
+follow-through") quedan debajo en una línea atenuada: primero la consecuencia para
+el trader, luego la cocina de las griegas.</p>
+<p><img src="recursos/741bf265847544.png" alt="pasted image" loading="lazy"></p>
+<h2 id="seccion-3">Options X-Ray: Charm Heatmap — el horario de la fuerza del tiempo</h2>
+<p>La segunda superficie pertenece al charm — la fuerza cuyo gatillo, como vimos en
+la lección 11, siempre se dispara: el tiempo pasa en cualquier escenario. Eso hace
+de su mapa el más directivo de todos: las zonas rojas son niveles donde el paso
+del tiempo obligará a los MM a <strong>vender</strong> futuros; las verdes — a <strong>comprar</strong>. La
+tarjeta de hover lo dice con todas las letras: un titular <code>SELL PRESSURE AHEAD</code> o
+<code>BUY PRESSURE AHEAD</code> y una línea brillante "MM must SELL ≈ N ES contracts here" —
+con el charm bruto atenuado debajo. La zona de proyección también está aquí: el
+horario de los flujos obligatorios continúa hasta el final de la sesión.</p>
+<p>Recuerda de la lección 7: en un mercado de un día, todo efecto se acumula hacia el
+cierre. En la superficie del charm lo ves literalmente — el campo se enciende
+hacia la tarde, y la última hora es la más brillante. El mapa de charm de la
+mañana es un fondo tenue; el de la tarde, un horario de flujos obligatorios para
+el resto del día.</p>
+<p><img src="recursos/5623aeeaae50f2.png" alt="pasted image" loading="lazy"></p>
+<h2 id="seccion-4">Options X-Ray: Surface Profile — una regla para el mapa de calor</h2>
+<p>Un campo de color tiene una debilidad: la saturación no se puede medir a ojo. El
+tercer indicador de la lección resuelve exactamente eso — toma una columna de la
+superficie, el corte en el momento de una vela, y lo despliega como un histograma
+horizontal en el borde del gráfico: barras por nivel de precio, la longitud es
+fuerza, el color es signo. El mismo material que el mapa de calor, pero con
+números: las etiquetas de los picos convierten la gamma en «±N ES por punto de
+movimiento» y el charm en «sell/buy N ES», y las tarjetas de hover hablan la misma
+gramática — DAMPING/AMPLIFYING, SELL/BUY PRESSURE AHEAD.</p>
+<p>La superficie se elige — gamma, vanna o charm. Aquí no hay cestas de vencimientos,
+y es deliberado: el proveedor calcula la superficie sobre el libro completo. Y el
+corte puede asomarse a la zona de proyección: apunta más allá del último minuto
+observado, las barras se atenúan y la tarjeta dice honestamente "FORECAST … not
+observed".</p>
+<p>El control del tiempo se comparte con el Strike Profile: tres modos en ambos
+perfiles. Por defecto el corte vive en el <strong>momento actual</strong> — el minuto más
+fresco del libro — y no cambia al desplazar el gráfico. Un clic en el chip de la
+franja enciende el <strong>scrub</strong>: el perfil salta con el cursor. Y el <strong>pin</strong> —
+Ctrl+clic en cualquier vela fija el perfil a ella: una marca discontinua cae sobre
+la vela, el chip se convierte en "Pinned · 13:35 ×" (hora del gráfico, la misma
+que muestra el eje), otro Ctrl+clic mueve el pin, un clic en el chip lo suelta. La
+pista vive en el propio chip — pasa el cursor por encima.</p>
+<p>Ambos perfiles viven por defecto en un <strong>panel vertical propio</strong> junto a las
+velas: la escala de precios sigue compartida, así que los niveles siguen
+alineándose con el gráfico. Así es como, por ejemplo, el libro de strikes y el
+corte de fuerzas quedan lado a lado: las posiciones y su consecuencia, una junto a
+otra. El perfil puede volver al gráfico como overlay si lo deseas, y el layout del
+Strike Profile es aún más rico — la vista multisesión de la lección 12.</p>
+<h3 id="seccion-5">Dos maneras de leer un mismo corte</h3>
+<p>El perfil tiene una segunda lectura, más adulta, y se elige de la misma lista que
+la propia griega: junto a "Gamma", "Vanna" y "Charm" está <strong>"Gamma · hedge
+response to a move"</strong>.</p>
+<p>La diferencia está en la pregunta que responde una barra. La lectura simple
+muestra la fuerza <strong>en un punto</strong>: cuántos contratos ES de cobertura genera un
+punto de movimiento exactamente en ese precio. La lectura de respuesta muestra la
+fuerza <strong>a lo largo de un camino</strong>: si el precio se aleja de ese nivel la ventana
+elegida — diez puntos por defecto —, cuánta cobertura se acumula por el camino. Lo
+primero es una propiedad del nivel; lo segundo, una propiedad de la ruta.</p>
+<p>Por eso en el modo de respuesta cada fila de precio se divide en dos: la mitad
+superior responde por un movimiento <strong>hacia arriba</strong> desde ella, la inferior por
+un movimiento <strong>hacia abajo</strong>. El color sigue significando el régimen: una
+respuesta amortiguadora dice que los MM operan contra el movimiento (vendiendo en
+el rally, comprando la caída); una amplificadora, que operan con él. La asimetría
+entre esas mitades es todo el sentido del modo: una mitad amortiguadora larga
+arriba y una corta abajo significa que el precio se atasca subiendo y viaja libre
+bajando.</p>
+<p>El vínculo entre las dos lecturas es fácil de comprobar con aritmética. En un
+tramo suave del perfil, la respuesta sobre una ventana de diez puntos es
+aproximadamente diez veces la densidad puntual — porque es la integral de la misma
+magnitud. En un pico único y afilado la proporción sale menor: la ventana recoge
+también a los vecinos más débiles, así que la densidad media a lo largo del camino
+queda por debajo del pico.</p>
+<p>La ventana es un ajuste aparte, desde cuatro puntos en adelante. Ese suelo no es
+arbitrario: la rejilla de precios del proveedor avanza en pasos de 2,5 puntos, y
+una ventana más estrecha que un paso sumaría un rango vacío.</p>
+<p>El modo existe solo para la gamma, y no es una simplificación. La gamma responde
+al movimiento del precio, así que sumarla a lo largo de un camino de precios tiene
+sentido. La vanna responde a los desplazamientos de la volatilidad y el charm al
+paso del tiempo; una ventana de precios no significa nada para ninguno de los dos.</p>
+<p>Por último, los mismos números están disponibles sin cambiar de modo: en la
+lectura simple la tarjeta de hover muestra primero la fuerza en el nivel y su
+veredicto, y debajo — como bloque aparte — la respuesta hacia arriba y hacia
+abajo. Así que cambia de modo cuando necesites la asimetría en <strong>todos los niveles
+a la vez</strong>, y no solo en el que está bajo el cursor.</p>
+<h2 id="seccion-6">Cómo encaja esto en el flujo de trabajo</h2>
+<p>Apilemos juntos los pisos del paquete — ahora se ven todos a la vez. Los
+indicadores de flujo (lección 10) te dicen <em>quién está haciendo qué ahora mismo</em>.
+Los mapas de strikes (lección 12) — <em>dónde están las fuerzas en este momento</em>. Las
+superficies responden a la tercera pregunta: <em>con qué se topará el precio a
+continuación — en todos los escenarios a la vez</em>. Son tres horizontes temporales
+de una misma mecánica, y juntos cierran el ciclo completo: ves el flujo —
+entiendes cómo cambió el mapa — juzgas qué promete el mapa a continuación.</p>
+<hr>
+<p>Los pisos del paquete están construidos, desde el volumen simple hasta las
+superficies. La próxima lección les pone encima un panel de control: un indicador
+que pliega las conclusiones de todos los anteriores en cuatro veredictos y dos
+cintas — y sirve a la vez de repaso de todo el curso en una sola pantalla.</p>
+<div class="l-md-takeaway" data-directive="key-takeaway"><div class="l-md-takeaway__head"><div class="l-md-takeaway__icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></div><span class="l-md-takeaway__label">Key takeaway</span></div><div class="l-md-takeaway__body">
+<ul>
+<li>El MM no tiene niveles: la fuerza de su libro depende de dónde llega el precio y de cuándo — una superficie sobre el plano precio × tiempo.</li>
+<li>El muro se convierte en una cresta que deriva; el punto de gamma cero, en una frontera de régimen móvil.</li>
+<li>Detrás de las velas está la realidad observada (cada minuto dibujado con el libro de ese minuto); a la derecha de la última vela, la zona de proyección desde el libro más fresco, con tooltips etiquetados "not observed".</li>
+<li>GEX Heatmap es el terreno de frenado y aceleración detrás de las velas; Charm Heatmap, el horario de los flujos forzosos del tiempo, que se enciende hacia el cierre.</li>
+<li>Options X-Ray: Surface Profile es el mismo corte de la superficie como histograma medible: una regla para los mapas de calor, con scrub, pin (Ctrl+clic) y panel vertical propio.</li>
+</ul>
+</div></div>
+
+</div></div><section class="quiz" aria-labelledby="autoevaluacion"><h2 id="autoevaluacion">Autoevaluación de ATAS</h2><p class="intro">Preguntas, opciones y explicaciones originales. Respuestas desplegables para consulta sin conexión.</p><article class="question"><h3>1. ¿Por qué «el MM no tiene niveles»?</h3><ol type="A"><li>Los MM no miran gráficos</li><li>El regulador prohíbe los niveles</li><li>La fuerza del libro no depende solo del precio sino del tiempo: el mismo strike lleva una fuerza distinta por la mañana que por la tarde</li><li>Los MM tienen demasiadas posiciones para contarlas</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta C.</strong> La fuerza del libro no depende solo del precio sino del tiempo: el mismo strike lleva una fuerza distinta por la mañana que por la tarde</p><p>Una línea horizontal congela el tiempo. La superficie muestra el terreno entero: tanto el dónde como el cuándo.</p></div></details></article><article class="question"><h3>2. ¿A qué pregunta responde la superficie de exposición?</h3><ol type="A"><li>«Cuál fue el precio ayer»</li><li>«Qué tan fuerte será la cobertura de los MM si el precio llega a tal nivel a tal hora»</li><li>«Cuántos contratos se negocian ahora mismo»</li><li>«Adónde irá el mercado mañana»</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> «Qué tan fuerte será la cobertura de los MM si el precio llega a tal nivel a tal hora»</p><p>El libro se conoce por el feed, las griegas se pueden calcular — la respuesta es computable para cada par precio-tiempo de lo que queda de sesión.</p></div></details></article><article class="question"><h3>3. ¿En qué se convierten el muro y el punto de gamma cero al pasar del perfil a la superficie?</h3><ol type="A"><li>Desaparecen: en la superficie no hay ni uno ni otro</li><li>Siguen siendo líneas horizontales</li><li>Se funden en una sola diagonal</li><li>El muro se convierte en una cresta que deriva; el punto de gamma cero, en una frontera de régimen sinuosa que se desplaza a lo largo de la sesión</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta D.</strong> El muro se convierte en una cresta que deriva; el punto de gamma cero, en una frontera de régimen sinuosa que se desplaza a lo largo de la sesión</p><p>Un nivel que por la mañana estaba en una marca espera al precio en otra por la tarde. Se ve no solo dónde está la frontera sino hacia dónde va.</p></div></details></article><article class="question"><h3>4. ¿En qué se diferencia el campo detrás de las velas de la zona de proyección a la derecha de la última vela?</h3><ol type="A"><li>Detrás de las velas está la realidad observada (cada minuto dibujado con el libro de ese minuto); a la derecha, un pronóstico desde el libro más fresco bajo el supuesto de que el libro no cambia</li><li>En nada: toda la superficie es un mismo pronóstico</li><li>Detrás de las velas está el pronóstico; a la derecha, la realidad</li><li>La zona de proyección muestra el día de ayer</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta A.</strong> Detrás de las velas está la realidad observada (cada minuto dibujado con el libro de ese minuto); a la derecha, un pronóstico desde el libro más fresco bajo el supuesto de que el libro no cambia</p><p>En el mundo 0DTE el libro cambia en cuestión de horas, así que la proyección se recalcula cada minuto, y sus tooltips llevan «FORECAST … not observed» / «OUTLOOK for the … open».</p></div></details></article><article class="question"><h3>5. ¿Por qué el mapa del charm es el más «directivo» de las superficies?</h3><ol type="A"><li>Se actualiza más a menudo que los demás</li><li>Los flujos de gamma y vanna son condicionales (necesitan un movimiento del precio o de la IV), mientras que el gatillo del charm — el paso del tiempo — siempre se dispara</li><li>Muestra los datos de todas las cohortes a la vez</li><li>Es el único que usa rojo y verde</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Los flujos de gamma y vanna son condicionales (necesitan un movimiento del precio o de la IV), mientras que el gatillo del charm — el paso del tiempo — siempre se dispara</p><p>Las zonas rojas son donde los MM tendrán que vender; las verdes — comprar. Hacia el cierre el campo se enciende: el decaimiento de delta de las opciones de un día se acelera.</p></div></details></article><article class="question"><h3>6. ¿En qué se diferencia Options X-Ray: Surface Profile de los mapas de calor y del Strike Profile?</h3><ol type="A"><li>En nada, es la misma imagen</li><li>Del mapa de calor — en que es medible: la misma columna de la superficie, pero como histograma con números; del Strike Profile — en el objeto: aquel muestra el libro en los strikes, este la fuerza en los niveles de precio</li><li>Muestra solo la parte pronosticada de la superficie</li><li>Funciona solo en gráficos diarios</li></ol><details><summary>Ver respuesta y explicación de ATAS</summary><div class="answer"><p><strong>Respuesta B.</strong> Del mapa de calor — en que es medible: la misma columna de la superficie, pero como histograma con números; del Strike Profile — en el objeto: aquel muestra el libro en los strikes, este la fuerza en los niveles de precio</p><p>Las filas del Strike Profile son donde están las posiciones; las del Surface Profile, lo que los MM tendrán que hacer si el precio alcanza ese nivel en ese momento.</p></div></details></article></section><nav class="lesson-nav" aria-label="Navegación de lecciones"><a href="leccion_12.html">← Lección anterior</a><a href="leccion_14.html">Siguiente lección →</a></nav></main><footer>Contenido del curso: © ATAS LLC. Archivo de consulta interna · 9 de octubre de 2026. Presentación y navegación: Trading · Estudio y operativa.</footer></body></html>
