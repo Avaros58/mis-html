@@ -1,0 +1,93 @@
+{
+  "fecha": "2026-10-16",
+  "estado": "Referencia; estrategia propia 0.1 En prueba",
+  "fuentes": [
+    {
+      "volumen": 0,
+      "titulo": "Zonas extremas",
+      "maestro_sha256": "bb208a11f27e4e2ba928bee41f79ce0af38dfa2e9b16e220053b5d18ec51249e",
+      "video": "https://www.youtube.com/watch?v=HO9lf6bwtNs"
+    },
+    {
+      "volumen": 1,
+      "titulo": "Movimiento esperado",
+      "maestro_sha256": "8ab30f5fe1d699938785573ec5fa06834ed825a0b9b46a02570dfa9509931c11",
+      "video": "https://www.youtube.com/watch?v=b6jkSYlfsMg"
+    },
+    {
+      "volumen": 2,
+      "titulo": "Creadores de mercado",
+      "maestro_sha256": "b069f2cb907e5cc91421fbc7569bd42f3e100f150c394a95f5df1336842593e8",
+      "video": "https://www.youtube.com/watch?v=KtVn-275Drg"
+    },
+    {
+      "volumen": 3,
+      "titulo": "Interés abierto",
+      "maestro_sha256": "9afa7deadfa57cee5b4ae792277e5f80beaf2378e69db7b5937c94c62fb15f6f",
+      "video": "https://www.youtube.com/watch?v=TAaDGBbKRoE"
+    },
+    {
+      "volumen": 4,
+      "titulo": "Market Profile",
+      "maestro_sha256": "6f622da1e3b2fc4befae457fc036fd0cc5061a187fc82001c928650ad20c5e5c",
+      "video": "https://www.youtube.com/watch?v=0jlBXRqDeeQ"
+    },
+    {
+      "volumen": 5,
+      "titulo": "Zero DTE",
+      "maestro_sha256": "caa95d1af774b3eb56461882d908a9da2ebe76e7f5a3c1b4ce77dc202380f6e1",
+      "video": "https://www.youtube.com/watch?v=V5vcAvKNkRA"
+    },
+    {
+      "volumen": 6,
+      "titulo": "Sistema integrado",
+      "maestro_sha256": "abaeaa74d35921de0a3ff1ae13400b1bd3222d32b7901dda65b0cfd0df5aa378",
+      "video": "https://www.youtube.com/watch?v=xrm-5Mwdz78"
+    }
+  ],
+  "figuras": [
+    {
+      "id": "C-01",
+      "archivo": "tres-rutas.svg",
+      "origen": "Elaboración editorial propia; datos ficticios o concepto"
+    },
+    {
+      "id": "C-02",
+      "archivo": "anclaje.svg",
+      "origen": "Elaboración editorial propia; datos ficticios o concepto"
+    },
+    {
+      "id": "C-03",
+      "archivo": "cobertura.svg",
+      "origen": "Elaboración editorial propia; datos ficticios o concepto"
+    },
+    {
+      "id": "C-04",
+      "archivo": "inventario.svg",
+      "origen": "Elaboración editorial propia; datos ficticios o concepto"
+    },
+    {
+      "id": "C-05",
+      "archivo": "perfil.svg",
+      "origen": "Elaboración editorial propia; datos ficticios o concepto"
+    },
+    {
+      "id": "C-06",
+      "archivo": "spread.svg",
+      "origen": "Elaboración editorial propia; datos ficticios o concepto"
+    },
+    {
+      "id": "C-07",
+      "archivo": "proceso.svg",
+      "origen": "Elaboración editorial propia; datos ficticios o concepto"
+    },
+    {
+      "id": "C-08",
+      "archivo": "casos.svg",
+      "origen": "Elaboración editorial propia; datos ficticios o concepto"
+    }
+  ],
+  "portada": "Elaboración gráfica propia, sin cotizaciones",
+  "capturas_externas": "No redistribuidas; originales internos íntegros",
+  "publicacion": "No realizada; URL final pendiente"
+}
