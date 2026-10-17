@@ -1,0 +1,55 @@
+﻿== validar-informe.py ==
+
+== C:\Users\PC\Documents\deepseek-harness\default-workspace\informes\jeffrey-sachs-europa-multipolar\index.html ==
+Título: Jeffrey Sachs: ¿Europa como frente en un mundo multipolar? · Informe Analítico
+  · Identificadores únicos: 58
+  · Anclas internas correctas: 50
+  · Recursos locales comprobados: 7
+
+  Resultado: sin errores, 0 aviso(s)
+
+== comprobar-contenido.py ==
+Marcas temporales en el informe: 70
+Marcas distintas: 43
+Tiempos de la transcripción: 63
+
+Capítulo                                   marcas  palabras
+------------------------------------------------------------------
+ 1. Un mundo que se aleja de Europa             3     356
+ 2. El error transatlántico                     2     328
+ 3. La brújula euroasiática                     4     428
+ 4. África: demografía, desarrollo y cegue      4     407
+ 5. La mirada larga: planificar a 2050          4     355
+ 6. El pronóstico de 1997                       4     356
+ 7. Europa al 4 %                               4     369
+ 8. Rusia elige Eurasia                         4     452
+ 9. La ocasión perdida de 2010                  4     445
+10. El coste de disentir                        4     346
+11. «Más Europa» frente a «menos Europa»        4     383
+12. Qué Europa hace falta                       4     334
+------------------------------------------------------------------
+Palabras de los 12 capítulos: 4559
+Palabras de todo el contenido: 7656
+
+Cifras exigidas por el encargo:
+  OK   1.500 millones
+  OK   2.500 millones
+  OK   3.500 millones
+  OK   9 %
+  OK   18 %
+  OK   25 %
+  OK   un tercio
+  OK   450 millones
+  OK   5 %
+  OK   menos del 4 %
+  OK   50 %
+  OK   15 %
+  OK   veinte puntos porcentuales
+  OK   27 países
+
+Sin errores de contenido.
+
+== probar-reproductor.mjs ==
+file:// → enlace directo: OK
+https:// → iframe con origin: OK
+Sin errores en la lógica del reproductor.

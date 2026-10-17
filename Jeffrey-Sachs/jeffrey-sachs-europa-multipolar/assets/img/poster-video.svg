@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720"
+     role="img" aria-labelledby="poster-titulo poster-desc">
+  <title id="poster-titulo">Cartel del vídeo «Jeffrey Sachs: ¿Europa como frente en un mundo multipolar?»</title>
+  <desc id="poster-desc">Composición abstracta en azul petróleo, ocre y terracota: arcos concéntricos que se abren hacia el este y el sur, con el título de la entrevista, el canal y la referencia temporal.</desc>
+
+  <defs>
+    <pattern id="trama" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#E9EFF2" opacity="0.14"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="720" fill="#142B3A"/>
+  <rect width="1280" height="720" fill="url(#trama)"/>
+
+  <!-- Arcos: el mundo que se abre lejos del Atlántico -->
+  <g fill="none" stroke="#C49A52" stroke-linecap="round">
+    <path d="M1330 120 A 470 470 0 0 0 1330 700" stroke-width="2" opacity="0.55"/>
+    <path d="M1240 60 A 560 560 0 0 0 1240 760" stroke-width="1.5" opacity="0.40"/>
+    <path d="M1150 20 A 660 660 0 0 0 1150 800" stroke-width="1.5" opacity="0.28"/>
+    <path d="M1060 -20 A 760 760 0 0 0 1060 820" stroke-width="1.5" opacity="0.18"/>
+  </g>
+
+  <!-- Eje horizontal: la mirada que se desplaza -->
+  <g stroke="#C49A52" stroke-width="2" opacity="0.85">
+    <line x1="96" y1="524" x2="700" y2="524"/>
+  </g>
+  <circle cx="700" cy="524" r="7" fill="#A3483F"/>
+
+  <!-- Banda terracota: acento editorial -->
+  <rect x="96" y="96" width="9" height="132" fill="#A3483F"/>
+
+  <!-- Etiqueta de la casa editorial -->
+  <text x="126" y="124" fill="#C49A52" font-family="Montserrat, 'Segoe UI', Arial, sans-serif"
+        font-size="20" font-weight="700" letter-spacing="5">INFORME ANALÍTICO</text>
+
+  <!-- Título -->
+  <g fill="#FAFAF7" font-family="Montserrat, 'Segoe UI', Arial, sans-serif" font-weight="700">
+    <text x="96" y="262" font-size="58">Jeffrey Sachs:</text>
+    <text x="96" y="332" font-size="58">¿Europa como frente</text>
+    <text x="96" y="402" font-size="58">en un mundo multipolar?</text>
+  </g>
+
+  <!-- Ficha breve -->
+  <g fill="#E9EFF2" font-family="Montserrat, 'Segoe UI', Arial, sans-serif" font-size="25">
+    <text x="96" y="462">Entrevista · Glenn Diesen Español</text>
+    <text x="96" y="500" fill="#C49A52">16 de octubre de 2026 · ≈ 29 minutos</text>
+  </g>
+
+  <!-- Marco inferior -->
+  <line x1="96" y1="600" x2="1184" y2="600" stroke="#E9EFF2" stroke-width="1" opacity="0.22"/>
+</svg>

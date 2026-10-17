@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" width="640" height="800"
+     role="img" aria-labelledby="portada-titulo portada-desc">
+  <title id="portada-titulo">Ilustración de portada: Europa como península occidental de Eurasia</title>
+  <desc id="portada-desc">Composición abstracta en azul petróleo, ocre y terracota: un bloque pequeño y denso a la izquierda —Europa— del que salen tres trazos largos hacia el este y el sur, sobre una retícula tenue. No representa geografía real.</desc>
+
+  <defs>
+    <pattern id="reticula" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#E9EFF2" stroke-width="0.6" opacity="0.13"/>
+    </pattern>
+    <pattern id="puntos-portada" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="1.2" fill="#E9EFF2" opacity="0.10"/>
+    </pattern>
+  </defs>
+
+  <rect width="640" height="800" fill="#142B3A"/>
+  <rect width="640" height="800" fill="url(#puntos-portada)"/>
+  <rect x="0" y="0" width="640" height="800" fill="url(#reticula)"/>
+
+  <!-- Tres trazos: Eurasia, África y el eje atlántico que se abandona -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M188 300 C 300 250, 430 236, 596 258" stroke="#C49A52" stroke-width="3" opacity="0.9"/>
+    <path d="M188 340 C 320 372, 444 452, 560 620" stroke="#A3483F" stroke-width="3" opacity="0.85"/>
+    <path d="M188 360 C 130 420, 92 520, 84 664" stroke="#E9EFF2" stroke-width="1.6" opacity="0.35"
+          stroke-dasharray="7 7"/>
+  </g>
+
+  <!-- Europa: bloque pequeño y denso -->
+  <g>
+    <rect x="132" y="268" width="58" height="104" rx="4" fill="#E9EFF2" opacity="0.92"/>
+    <g fill="#142B3A">
+      <rect x="142" y="282" width="16" height="16"/>
+      <rect x="164" y="282" width="16" height="16"/>
+      <rect x="142" y="306" width="16" height="16"/>
+      <rect x="164" y="306" width="16" height="16"/>
+      <rect x="142" y="330" width="16" height="16"/>
+      <rect x="164" y="330" width="16" height="16"/>
+      <rect x="164" y="354" width="16" height="16"/>
+    </g>
+  </g>
+
+  <!-- África: masa que crece, insinuada como arco -->
+  <g fill="none">
+    <circle cx="470" cy="700" r="190" stroke="#A3483F" stroke-width="2" opacity="0.45"/>
+    <circle cx="470" cy="700" r="132" stroke="#A3483F" stroke-width="2" opacity="0.28"/>
+  </g>
+
+  <!-- Nodos de destino -->
+  <circle cx="596" cy="258" r="7" fill="#C49A52"/>
+  <circle cx="560" cy="620" r="7" fill="#A3483F"/>
+
+  <!-- Rótulo discreto -->
+  <text x="84" y="120" fill="#C49A52" font-family="Montserrat, 'Segoe UI', Arial, sans-serif"
+        font-size="14" font-weight="700" letter-spacing="4">EURASIA · ÁFRICA · OCCIDENTE</text>
+  <line x1="84" y1="140" x2="240" y2="140" stroke="#E9EFF2" stroke-width="1" opacity="0.3"/>
+</svg>

@@ -1,0 +1,180 @@
+/* =========================================================================
+   AMPLIACIONES PARA ESTE INFORME
+   Se cargan después de informe.css. Añaden solo lo que este encargo necesita:
+   el cartel del reproductor con carga bajo demanda, los distintivos de
+   atribución, el cuadro de alcance y ajustes de impresión.
+   ========================================================================= */
+
+/* --- 1. Reproductor con carga bajo demanda -------------------------------- */
+
+.reproductor { position: relative; }
+
+.reproductor__cargar {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: #0F2430;
+  cursor: pointer;
+}
+
+.reproductor__cargar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .94;
+  transition: opacity 160ms ease;
+}
+.reproductor__cargar:hover img { opacity: 1; }
+
+.reproductor__cargar span {
+  position: absolute;
+  z-index: 1;
+  bottom: 1.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .45rem .95rem;
+  border-radius: 999px;
+  background: rgba(250, 250, 247, .95);
+  color: var(--petroleo);
+  font-family: var(--fuente-titulo);
+  font-size: .82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.reproductor__cargar:focus-visible { outline-offset: -4px; }
+
+.reproductor iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* Salida alternativa cuando el navegador no permite incrustar o no hay red.
+   Se mantiene siempre visible junto al reproductor. */
+.fuente-audiovisual__salida {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem .9rem;
+  margin-top: 1rem;
+}
+.fuente-audiovisual__salida .boton--contorno { margin-top: 0; }
+.fuente-audiovisual__salida-nota {
+  margin: 0;
+  font-size: calc(.8rem * var(--escala-lectura, 1));
+  color: var(--gris-azulado);
+}
+
+/* --- 2. Distintivos de atribución y de naturaleza del dato ---------------- */
+
+.sello {
+  display: inline-block;
+  margin-left: .4rem;
+  padding: .1rem .45rem;
+  border-radius: 999px;
+  background: var(--terracota-claro);
+  color: #8F3C35;
+  font-family: var(--fuente-titulo);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  vertical-align: .1em;
+  white-space: nowrap;
+}
+.sello--proyeccion {
+  background: var(--ocre-claro);
+  color: #7A5C26;
+}
+.sello--dato {
+  background: var(--gris-azulado);
+  color: var(--petroleo-tenue);
+}
+
+/* --- 3. Cuadro de alcance y método --------------------------------------- */
+
+.alcance {
+  margin: 2rem 0;
+  padding: 1.15rem 1.4rem;
+  background: var(--gris-azulado);
+  border: 1px solid var(--linea);
+  border-left: 4px solid var(--petroleo-tenue);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  font-size: calc(.95rem * var(--escala-lectura, 1));
+  line-height: 1.6;
+}
+.alcance p:last-child { margin-bottom: 0; }
+
+/* --- 4. Tabla de cifras citadas ------------------------------------------ */
+
+.tabla--cifras th[scope="row"] { min-width: 12rem; }
+.tabla--cifras td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tabla--cifras td .sello { margin-left: 0; }
+
+/* --- 5. Detalles de lectura ---------------------------------------------- */
+
+/* La entradilla no se separa de su título si el capítulo se parte */
+.capitulo__cabecera { break-after: avoid; }
+.capitulo__entradilla { margin-bottom: 1.5rem; }
+
+/* Las marcas temporales de la tabla de capítulos no rompen la línea */
+.tabla .marca-tiempo { vertical-align: .05em; }
+
+/* --- 6. Esquema conceptual ----------------------------------------------- */
+
+figure.diagrama svg { display: block; width: 100%; height: auto; }
+
+/* --- 7. Impresión -------------------------------------------------------- */
+
+@media print {
+  .contenido p,
+  .contenido li,
+  .contenido .capitulo__entradilla { max-width: 158mm; }
+
+  .marca-tiempo {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #7A5C26;
+    font-family: var(--fuente-mono);
+    font-size: 8pt;
+  }
+
+  .fuente-audiovisual__salida { display: none; }
+  .reproductor__cargar { display: none; }
+  .sello { border: .5pt solid #999; background: none; color: #333; }
+  .fuente-audiovisual__titulo a::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    word-break: break-all;
+    color: #444;
+  }
+}
+
+/* --- 8. Pantallas estrechas ---------------------------------------------- */
+
+@media (max-width: 480px) {
+  .reproductor__cargar span { bottom: .7rem; font-size: .74rem; }
+  .fuente-audiovisual__salida { display: block; }
+  .fuente-audiovisual__salida .boton--contorno { display: inline-flex; margin-bottom: .5rem; }
+}
+
+
+/* Ilustración de portada a todo el ancho del bloque de portada */
+.portada__figura--ancha {
+  grid-column: 1 / -1;
+  max-width: none;
+  width: 100%;
+  margin: 2.25rem 0 0;
+}
+.portada__figura--ancha img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.portada__figura--ancha figcaption {
+  padding: .85rem 1.1rem;
+  font-size: .82rem;
+}
