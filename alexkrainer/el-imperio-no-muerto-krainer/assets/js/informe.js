@@ -349,23 +349,27 @@
     if (siguiente) siguiente.addEventListener("click", function () { mover(1); });
   })();
 
-  /* ----------------------------------------------------------------------
-     6. TAMAÑO DE LETRA
-     ---------------------------------------------------------------------- */
+  /* 6. TAMAÑO DE LECTURA: porcentaje, independiente de la interfaz. */
   (function tamanoLetra() {
-    var boton = document.getElementById("btn-tamano");
-    if (!boton) return;
-    var pasos = ["compacto", "normal", "grande"];
-    var guardado = almacen.leer("ia-tamano");
-    if (pasos.indexOf(guardado) !== -1) html.setAttribute("data-tamano", guardado);
-
-    boton.addEventListener("click", function () {
-      var actual = html.getAttribute("data-tamano") || "normal";
-      var siguiente = pasos[(pasos.indexOf(actual) + 1) % pasos.length];
-      html.setAttribute("data-tamano", siguiente);
-      almacen.escribir("ia-tamano", siguiente);
-      var nombres = { compacto: "compacto", normal: "normal", grande: "grande" };
-      boton.setAttribute("aria-label", "Tamaño del texto: " + nombres[siguiente] + ". Pulsa para cambiar.");
+    var selector = document.getElementById("tamano-lectura");
+    if (!selector) return;
+    var pasos = ["100", "125", "150", "175", "200"];
+    var guardado = almacen.leer("ia-lectura-porcentaje");
+    // Migración aproximada de la preferencia antigua sin ampliar la interfaz.
+    if (pasos.indexOf(guardado) === -1) {
+      guardado = almacen.leer("ia-tamano") === "muy-grande" ? "125" : "100";
+    }
+    function aplicar(valor) {
+      html.setAttribute("data-tamano", valor);
+      selector.value = valor;
+      window.dispatchEvent(new Event("resize"));
+    }
+    aplicar(guardado);
+    selector.disabled = false;
+    selector.addEventListener("change", function () {
+      if (pasos.indexOf(selector.value) === -1) return;
+      aplicar(selector.value);
+      almacen.escribir("ia-lectura-porcentaje", selector.value);
     });
   })();
 

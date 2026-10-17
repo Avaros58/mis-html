@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-modo="estudio" data-tamano="normal" data-plantilla="no">
+<html lang="es" data-modo="estudio" data-tamano="100" data-plantilla="no">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,16 @@
   <meta property="og:locale" content="es_ES">
   <meta property="og:title" content="El imperio que no murió · Entrevista a Alex Krainer">
   <meta property="og:description" content="Informe analítico sobre el imperio británico, la City de Londres y el mecanismo de deuda descrito por Alex Krainer.">
-  <meta property="og:image" content="assets/img/portada.svg">
+  <meta property="og:image" content="https://avaros58.github.io/mis-html/assets/img/imperio-city-og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ilustración editorial de la City de Londres, el Banco de Inglaterra y una red financiera sobre un mapa antiguo.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="El imperio que no murió · Alex Krainer">
+  <meta name="twitter:description" content="La City de Londres y el imperio financiero en la tesis de Alex Krainer. Informe analítico de su entrevista.">
+  <meta name="twitter:image" content="https://avaros58.github.io/mis-html/assets/img/imperio-city-og.jpg">
+  <meta name="twitter:image:alt" content="Ilustración editorial de la City de Londres y una red financiera global.">
 
   <script src="assets/js/informe.js" defer></script>
   <script src="assets/js/ampliaciones.js" defer></script>
@@ -28,7 +37,7 @@
         width: auto; max-height: none; border-right: 0; padding-inline: 0;
       }
       .indice__cabecera, .velo, .barra-progreso, .volver-arriba,
-      #btn-indice, #btn-buscar, #btn-tamano, #btn-modo, .panel-buscar,
+      #btn-indice, #btn-buscar, .selector-lectura, #btn-modo, .panel-buscar,
       .pestanas__lista, .ancla { display: none !important; }
       .pestanas__panel[hidden] { display: block !important; }
       .pestanas__panel { border-bottom: 1px solid #D7E1E6; }
@@ -64,11 +73,16 @@
       <span class="boton__texto">Buscar</span>
     </button>
 
-    <button type="button" class="boton boton--texto" id="btn-tamano"
-            title="Tamaño del texto: normal (2 de 4). Pulsa para cambiar."
-            aria-label="Tamaño del texto: normal (2 de 4). Pulsa para cambiar.">
-      <span aria-hidden="true">Aa</span><span class="boton__nivel" id="nivel-tamano" aria-hidden="true">2</span>
-    </button>
+    <div class="selector-lectura">
+      <label for="tamano-lectura"><span aria-hidden="true">Aa</span><span class="solo-lectores">Tamaño del texto de lectura</span></label>
+      <select id="tamano-lectura" aria-controls="contenido" disabled>
+        <option value="100">100%</option>
+        <option value="125">125%</option>
+        <option value="150">150%</option>
+        <option value="175">175%</option>
+        <option value="200">200%</option>
+      </select>
+    </div>
 
     <button type="button" class="boton" id="btn-imprimir" aria-label="Imprimir o guardar en PDF">
       <svg class="boton__icono" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -141,9 +155,9 @@
     </div>
 
     <figure class="portada__figura">
-      <img src="assets/img/portada.svg" width="640" height="800"
-           alt="Composición abstracta: hilos dorados que unen varios nodos y confluyen en un círculo terracota.">
-      <figcaption>Ilustración editorial propia. No representa datos ni geografía real.</figcaption>
+      <img src="assets/img/imperio-city-og.jpg" width="1200" height="630" fetchpriority="high" decoding="async"
+           alt="Ilustración editorial del Banco de Inglaterra ante el perfil de la City de Londres, con conexiones doradas sobre un mapa antiguo.">
+      <figcaption>Ilustración editorial generada con IA · La City como símbolo del poder financiero.</figcaption>
     </figure>
   </div>
 </header>

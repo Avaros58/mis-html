@@ -54,10 +54,8 @@
   --fuente-mono: "Cascadia Mono", "Consolas", "SFMono-Regular", ui-monospace, monospace;
 }
 
-/* Control de tamaño de letra (JS cambia data-tamano en <html>) */
+/* El selector amplía solo la lectura; la raíz conserva el tamaño del navegador. */
 html { font-size: 100%; }
-html[data-tamano="compacto"] { font-size: 93.75%; }
-html[data-tamano="grande"] { font-size: 112.5%; }
 
 /* ============================ 2. BASE Y TIPOGRAFÍA ======================== */
 *,
@@ -75,7 +73,7 @@ body {
   background: var(--blanco-roto);
   color: var(--texto);
   font-family: var(--fuente-texto);
-  font-size: 1.125rem;
+  font-size: calc(1.125rem * var(--escala-lectura, 1));
   line-height: 1.65;
   font-synthesis-weight: none;
   text-rendering: optimizeLegibility;
@@ -100,7 +98,7 @@ a:hover { color: var(--petroleo); }
 
 strong { font-weight: 700; color: var(--petroleo); }
 em { font-style: italic; }
-small { font-size: .875rem; }
+small { font-size: calc(.875rem * var(--escala-lectura, 1)); }
 
 ul, ol { margin: 0 0 1.15em; padding-left: 1.35em; }
 li + li { margin-top: .4em; }
@@ -181,7 +179,7 @@ hr {
   min-width: 0;
   margin: 0;
   font-family: var(--fuente-titulo);
-  font-size: .95rem;
+  font-size: calc(.95rem * var(--escala-lectura, 1));
   font-weight: 600;
   color: var(--petroleo);
   white-space: nowrap;
@@ -206,7 +204,7 @@ hr {
   background: #fff;
   color: var(--petroleo);
   font-family: var(--fuente-texto);
-  font-size: .9rem;
+  font-size: calc(.9rem * var(--escala-lectura, 1));
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
@@ -252,7 +250,7 @@ hr {
   max-width: 60rem;
   margin: 0 auto;
 }
-.panel-buscar__etiqueta { font-size: .85rem; font-weight: 600; color: var(--petroleo); }
+.panel-buscar__etiqueta { font-size: calc(.85rem * var(--escala-lectura, 1)); font-weight: 600; color: var(--petroleo); }
 .panel-buscar__entrada {
   flex: 1 1 14rem;
   min-height: 2.5rem;
@@ -262,12 +260,12 @@ hr {
   background: #fff;
   color: var(--texto);
   font-family: inherit;
-  font-size: 1rem;
+  font-size: calc(1rem * var(--escala-lectura, 1));
 }
 .panel-buscar__estado {
   margin: 0;
   min-width: 6.5rem;
-  font-size: .85rem;
+  font-size: calc(.85rem * var(--escala-lectura, 1));
   color: var(--petroleo-tenue);
   font-variant-numeric: tabular-nums;
 }
@@ -328,7 +326,7 @@ mark.resaltado--actual {
 .indice__titulo {
   margin: 0;
   font-family: var(--fuente-titulo);
-  font-size: .78rem;
+  font-size: calc(.78rem * var(--escala-lectura, 1));
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--petroleo-tenue);
@@ -343,7 +341,7 @@ mark.resaltado--actual {
   border-left: 3px solid transparent;
   border-radius: 0 var(--radio-pequeno) var(--radio-pequeno) 0;
   color: var(--petroleo);
-  font-size: .93rem;
+  font-size: calc(.93rem * var(--escala-lectura, 1));
   line-height: 1.35;
   text-decoration: none;
   transition: background var(--transicion), border-color var(--transicion);
@@ -359,7 +357,7 @@ mark.resaltado--actual {
   min-width: 1.4em;
   color: var(--terracota);
   font-family: var(--fuente-titulo);
-  font-size: .8rem;
+  font-size: calc(.8rem * var(--escala-lectura, 1));
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
@@ -369,7 +367,7 @@ mark.resaltado--actual {
   margin: 1.5rem 0 0;
   padding-top: 1rem;
   border-top: 1px solid var(--linea);
-  font-size: .8rem;
+  font-size: calc(.8rem * var(--escala-lectura, 1));
   color: var(--petroleo-tenue);
 }
 
@@ -445,7 +443,7 @@ mark.resaltado--actual {
   border: 1px solid rgba(233, 239, 242, .35);
   border-radius: 999px;
   font-family: var(--fuente-titulo);
-  font-size: .72rem;
+  font-size: calc(.72rem * var(--escala-lectura, 1));
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--gris-azulado);
@@ -453,7 +451,7 @@ mark.resaltado--actual {
 
 .portada__titulo {
   margin: 0 0 1rem;
-  font-size: clamp(2rem, 1.4rem + 2.6vw, 3.3rem);
+  font-size: clamp(calc(2rem * var(--escala-lectura, 1)), calc(1.4rem * var(--escala-lectura, 1)) + calc(2.6vw * var(--escala-lectura, 1)), calc(3.3rem * var(--escala-lectura, 1)));
   font-weight: 800;
   letter-spacing: -.015em;
   color: #fff;
@@ -463,7 +461,7 @@ mark.resaltado--actual {
 .portada__subtitulo {
   margin: 0 0 2rem;
   max-width: 46ch;
-  font-size: clamp(1.05rem, 1rem + .4vw, 1.25rem);
+  font-size: clamp(calc(1.05rem * var(--escala-lectura, 1)), calc(1rem * var(--escala-lectura, 1)) + calc(.4vw * var(--escala-lectura, 1)), calc(1.25rem * var(--escala-lectura, 1)));
   line-height: 1.55;
   color: var(--gris-azulado);
 }
@@ -481,12 +479,12 @@ mark.resaltado--actual {
   display: block;
   margin-bottom: .15rem;
   font-family: var(--fuente-titulo);
-  font-size: .7rem;
+  font-size: calc(.7rem * var(--escala-lectura, 1));
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ocre);
 }
-.portada__valor { margin: 0; font-size: .98rem; color: #fff; }
+.portada__valor { margin: 0; font-size: calc(.98rem * var(--escala-lectura, 1)); color: #fff; }
 .portada__valor a { color: #fff; text-decoration-color: var(--ocre); }
 
 .portada__acciones { display: flex; flex-wrap: wrap; gap: .6rem; }
@@ -517,7 +515,7 @@ mark.resaltado--actual {
 .portada__figura svg { display: block; width: 100%; height: auto; }
 .portada__figura figcaption {
   padding: .6rem .8rem;
-  font-size: .78rem;
+  font-size: calc(.78rem * var(--escala-lectura, 1));
   line-height: 1.4;
   color: var(--gris-azulado);
   background: rgba(0, 0, 0, .18);
@@ -555,19 +553,19 @@ mark.resaltado--actual {
   display: block;
   margin-bottom: .5rem;
   font-family: var(--fuente-titulo);
-  font-size: .78rem;
+  font-size: calc(.78rem * var(--escala-lectura, 1));
   font-weight: 700;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--terracota);
 }
 .capitulo__titulo {
-  font-size: clamp(1.6rem, 1.25rem + 1.3vw, 2.15rem);
+  font-size: clamp(calc(1.6rem * var(--escala-lectura, 1)), calc(1.25rem * var(--escala-lectura, 1)) + calc(1.3vw * var(--escala-lectura, 1)), calc(2.15rem * var(--escala-lectura, 1)));
   letter-spacing: -.01em;
 }
 .capitulo__entradilla {
   margin: 1rem 0 0;
-  font-size: 1.15rem;
+  font-size: calc(1.15rem * var(--escala-lectura, 1));
   line-height: 1.6;
   color: var(--petroleo);
 }
@@ -575,11 +573,11 @@ mark.resaltado--actual {
 .seccion { margin-top: 2.75rem; }
 .seccion__titulo {
   margin-bottom: .9rem;
-  font-size: clamp(1.2rem, 1.1rem + .4vw, 1.4rem);
+  font-size: clamp(calc(1.2rem * var(--escala-lectura, 1)), calc(1.1rem * var(--escala-lectura, 1)) + calc(.4vw * var(--escala-lectura, 1)), calc(1.4rem * var(--escala-lectura, 1)));
 }
 .subseccion__titulo {
   margin: 2rem 0 .6rem;
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--escala-lectura, 1));
   letter-spacing: .01em;
   color: var(--petroleo-medio);
 }
@@ -612,7 +610,7 @@ mark.resaltado--actual {
 .destacado__titulo {
   margin: 0 0 .5rem;
   font-family: var(--fuente-titulo);
-  font-size: .78rem;
+  font-size: calc(.78rem * var(--escala-lectura, 1));
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--terracota);
@@ -628,13 +626,13 @@ mark.resaltado--actual {
 }
 .cita p {
   margin: 0 0 .8rem;
-  font-size: 1.12rem;
+  font-size: calc(1.12rem * var(--escala-lectura, 1));
   line-height: 1.6;
   color: var(--petroleo);
 }
 .cita cite {
   display: block;
-  font-size: .88rem;
+  font-size: calc(.88rem * var(--escala-lectura, 1));
   font-style: normal;
   color: var(--petroleo-tenue);
 }
@@ -646,14 +644,14 @@ mark.resaltado--actual {
   background: var(--gris-claro);
   border-top: 2px solid var(--ocre);
   border-radius: 0 0 var(--radio-pequeno) var(--radio-pequeno);
-  font-size: .92rem;
+  font-size: calc(.92rem * var(--escala-lectura, 1));
   line-height: 1.55;
   color: var(--petroleo-medio);
 }
 .nota__titulo {
   margin: 0 0 .35rem;
   font-family: var(--fuente-titulo);
-  font-size: .72rem;
+  font-size: calc(.72rem * var(--escala-lectura, 1));
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--petroleo-tenue);
@@ -690,17 +688,17 @@ mark.resaltado--actual {
   display: block;
   margin-bottom: .45rem;
   font-family: var(--fuente-titulo);
-  font-size: .7rem;
+  font-size: calc(.7rem * var(--escala-lectura, 1));
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--terracota);
 }
 .tarjeta__titulo {
   margin: 0 0 .5rem;
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--escala-lectura, 1));
   line-height: 1.3;
 }
-.tarjeta p { margin: 0; font-size: .95rem; line-height: 1.55; }
+.tarjeta p { margin: 0; font-size: calc(.95rem * var(--escala-lectura, 1)); line-height: 1.55; }
 
 /* --- 7.3 Pestañas --- */
 .pestanas {
@@ -731,7 +729,7 @@ mark.resaltado--actual {
   background: transparent;
   color: var(--petroleo-tenue);
   font-family: var(--fuente-titulo);
-  font-size: .88rem;
+  font-size: calc(.88rem * var(--escala-lectura, 1));
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
@@ -773,7 +771,7 @@ mark.resaltado--actual {
   padding: .9rem 1.1rem;
   cursor: pointer;
   font-family: var(--fuente-titulo);
-  font-size: .98rem;
+  font-size: calc(.98rem * var(--escala-lectura, 1));
   font-weight: 600;
   color: var(--petroleo);
   list-style: none;
@@ -792,7 +790,7 @@ mark.resaltado--actual {
 .acordeon__contenido {
   padding: .25rem 1.1rem 1.1rem;
   border-top: 1px solid var(--linea);
-  font-size: .97rem;
+  font-size: calc(.97rem * var(--escala-lectura, 1));
 }
 .acordeon__contenido > * { max-width: var(--medida); }
 
@@ -828,13 +826,13 @@ mark.resaltado--actual {
 .cronologia__fecha {
   display: block;
   font-family: var(--fuente-titulo);
-  font-size: .82rem;
+  font-size: calc(.82rem * var(--escala-lectura, 1));
   font-weight: 700;
   letter-spacing: .04em;
   color: var(--terracota);
   font-variant-numeric: tabular-nums;
 }
-.cronologia__hecho { margin: .15rem 0 0; font-size: 1rem; }
+.cronologia__hecho { margin: .15rem 0 0; font-size: calc(1rem * var(--escala-lectura, 1)); }
 
 /* --- 7.6 Tablas --- */
 .tabla-envoltura {
@@ -849,13 +847,13 @@ mark.resaltado--actual {
 .tabla {
   width: 100%;
   border-collapse: collapse;
-  font-size: .95rem;
+  font-size: calc(.95rem * var(--escala-lectura, 1));
 }
 .tabla caption {
   padding: .8rem 1rem;
   text-align: left;
   font-family: var(--fuente-titulo);
-  font-size: .82rem;
+  font-size: calc(.82rem * var(--escala-lectura, 1));
   font-weight: 700;
   color: var(--petroleo-tenue);
   border-bottom: 1px solid var(--linea);
@@ -871,7 +869,7 @@ mark.resaltado--actual {
   background: var(--gris-azulado);
   color: var(--petroleo);
   font-family: var(--fuente-titulo);
-  font-size: .8rem;
+  font-size: calc(.8rem * var(--escala-lectura, 1));
   letter-spacing: .04em;
   text-transform: uppercase;
   border-bottom: 2px solid var(--petroleo-tenue);
@@ -887,11 +885,11 @@ mark.resaltado--actual {
 .figura svg { display: block; max-width: 100%; height: auto; border-radius: var(--radio-pequeno); }
 .figura figcaption {
   margin-top: .6rem;
-  font-size: .85rem;
+  font-size: calc(.85rem * var(--escala-lectura, 1));
   line-height: 1.5;
   color: var(--petroleo-tenue);
 }
-.figura__fuente { display: block; margin-top: .2rem; font-size: .8rem; color: var(--petroleo-tenue); }
+.figura__fuente { display: block; margin-top: .2rem; font-size: calc(.8rem * var(--escala-lectura, 1)); color: var(--petroleo-tenue); }
 
 /* --- 7.8 Diagramas conceptuales --- */
 .diagrama {
@@ -906,7 +904,7 @@ mark.resaltado--actual {
 .diagrama svg { display: block; width: 100%; min-width: 34rem; height: auto; }
 .diagrama figcaption {
   margin-top: .9rem;
-  font-size: .85rem;
+  font-size: calc(.85rem * var(--escala-lectura, 1));
   color: var(--petroleo-tenue);
 }
 
@@ -923,12 +921,12 @@ mark.resaltado--actual {
 .grafico__titulo {
   margin: 0 0 .25rem;
   font-family: var(--fuente-titulo);
-  font-size: 1rem;
+  font-size: calc(1rem * var(--escala-lectura, 1));
   color: var(--petroleo);
 }
 .grafico__subtitulo {
   margin: 0 0 1.25rem;
-  font-size: .84rem;
+  font-size: calc(.84rem * var(--escala-lectura, 1));
   color: var(--petroleo-tenue);
 }
 .grafico__filas { margin: 0; padding: 0; list-style: none; }
@@ -939,7 +937,7 @@ mark.resaltado--actual {
   gap: .75rem;
   margin: 0 0 .55rem;
 }
-.grafico__etiqueta { font-size: .88rem; color: var(--petroleo-medio); }
+.grafico__etiqueta { font-size: calc(.88rem * var(--escala-lectura, 1)); color: var(--petroleo-medio); }
 .grafico__pista {
   display: block;
   height: .85rem;
@@ -956,7 +954,7 @@ mark.resaltado--actual {
 }
 .grafico__fila--destacada .grafico__valor { background: var(--terracota); }
 .grafico__cifra {
-  font-size: .88rem;
+  font-size: calc(.88rem * var(--escala-lectura, 1));
   font-variant-numeric: tabular-nums;
   color: var(--petroleo);
   white-space: nowrap;
@@ -965,7 +963,7 @@ mark.resaltado--actual {
   margin: 1rem 0 0;
   padding-top: .75rem;
   border-top: 1px solid var(--linea);
-  font-size: .8rem;
+  font-size: calc(.8rem * var(--escala-lectura, 1));
   color: var(--petroleo-tenue);
 }
 .grafico__avisos { max-width: var(--medida); }
@@ -983,7 +981,7 @@ mark.resaltado--actual {
   display: block;
   margin-bottom: .75rem;
   font-family: var(--fuente-titulo);
-  font-size: .72rem;
+  font-size: calc(.72rem * var(--escala-lectura, 1));
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ocre);
@@ -1015,7 +1013,7 @@ mark.resaltado--actual {
   gap: .6rem;
   padding: 1rem;
   text-align: center;
-  font-size: .9rem;
+  font-size: calc(.9rem * var(--escala-lectura, 1));
 }
 .reproductor__alternativa img {
   position: absolute;
@@ -1026,12 +1024,12 @@ mark.resaltado--actual {
 }
 .fuente-audiovisual__titulo {
   margin: 0 0 .5rem;
-  font-size: 1.1rem;
+  font-size: calc(1.1rem * var(--escala-lectura, 1));
   color: #fff;
 }
 .fuente-audiovisual__titulo a { color: #fff; text-decoration-color: var(--ocre); }
-.fuente-audiovisual__descripcion { margin: 0 0 1rem; font-size: .92rem; line-height: 1.55; }
-.fuente-audiovisual__datos { margin: 0; font-size: .85rem; display: grid; gap: .35rem; }
+.fuente-audiovisual__descripcion { margin: 0 0 1rem; font-size: calc(.92rem * var(--escala-lectura, 1)); line-height: 1.55; }
+.fuente-audiovisual__datos { margin: 0; font-size: calc(.85rem * var(--escala-lectura, 1)); display: grid; gap: .35rem; }
 .fuente-audiovisual__datos div { display: flex; gap: .5rem; }
 .fuente-audiovisual__datos dt { min-width: 6.5rem; color: var(--ocre); }
 .fuente-audiovisual__datos dd { margin: 0; color: #fff; }
@@ -1067,14 +1065,14 @@ mark.resaltado--actual {
   border-bottom: 1px solid var(--linea);
 }
 .glosario dt { font-weight: 700; color: var(--petroleo); margin-bottom: .2rem; }
-.glosario dd { margin: 0; font-size: .95rem; line-height: 1.55; }
+.glosario dd { margin: 0; font-size: calc(.95rem * var(--escala-lectura, 1)); line-height: 1.55; }
 
 .fuentes { margin: 2rem 0; padding: 0; list-style: none; counter-reset: fuente; }
 .fuentes li {
   position: relative;
   margin: 0 0 1rem;
   padding-left: 2.2rem;
-  font-size: .93rem;
+  font-size: calc(.93rem * var(--escala-lectura, 1));
   line-height: 1.55;
   counter-increment: fuente;
 }
@@ -1088,13 +1086,13 @@ mark.resaltado--actual {
   color: var(--petroleo-tenue);
 }
 .fuentes a { word-break: break-word; }
-.fuentes__nota { font-size: .9rem; color: var(--petroleo-tenue); }
+.fuentes__nota { font-size: calc(.9rem * var(--escala-lectura, 1)); color: var(--petroleo-tenue); }
 
 .pie {
   margin-top: 3rem;
   padding-top: 1.75rem;
   border-top: 2px solid var(--petroleo);
-  font-size: .88rem;
+  font-size: calc(.88rem * var(--escala-lectura, 1));
   color: var(--petroleo-tenue);
 }
 .pie__rejilla {
@@ -1106,7 +1104,7 @@ mark.resaltado--actual {
 .pie__clave {
   display: block;
   font-family: var(--fuente-titulo);
-  font-size: .7rem;
+  font-size: calc(.7rem * var(--escala-lectura, 1));
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--petroleo);
@@ -1121,7 +1119,7 @@ mark.resaltado--actual {
   padding: .7rem clamp(1rem, 3vw, 2rem);
   background: var(--ocre-claro);
   border-bottom: 1px solid var(--ocre);
-  font-size: .85rem;
+  font-size: calc(.85rem * var(--escala-lectura, 1));
   color: var(--petroleo-medio);
 }
 html[data-plantilla="no"] .aviso-plantilla { display: none; }
@@ -1193,7 +1191,7 @@ html[data-modo="interactiva"] .portada__figura { max-width: 26rem; }
   border-radius: 999px;
   background: var(--gris-azulado);
   color: var(--petroleo-tenue);
-  font-size: .75rem;
+  font-size: calc(.75rem * var(--escala-lectura, 1));
   letter-spacing: .06em;
   text-transform: uppercase;
 }
@@ -1210,7 +1208,7 @@ html[data-modo="interactiva"] .portada__figura { max-width: 26rem; }
 }
 
 @media (max-width: 720px) {
-  body { font-size: 1.0625rem; }
+  body { font-size: calc(1.0625rem * var(--escala-lectura, 1)); }
   .barra-superior__titulo { display: none; }
   .barra-superior { gap: .4rem; }
   .barra-superior__acciones { margin-left: auto; }

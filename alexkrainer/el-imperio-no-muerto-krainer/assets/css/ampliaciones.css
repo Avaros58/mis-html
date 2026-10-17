@@ -15,7 +15,7 @@
   background: var(--terracota-claro);
   color: #8F3C35;
   font-family: var(--fuente-titulo);
-  font-size: .6rem;
+  font-size: calc(.6rem * var(--escala-lectura, 1));
   font-weight: 700;
   letter-spacing: .07em;
   text-transform: uppercase;
@@ -39,7 +39,7 @@
 .tabla--cifras td.num { font-variant-numeric: tabular-nums; }
 
 /* Cita con varias frases: el tamaño baja un punto para no dominar la página */
-.cita--larga p { font-size: 1.04rem; }
+.cita--larga p { font-size: calc(1.04rem * var(--escala-lectura, 1)); }
 
 /* Cuadro de alcance: mismo lenguaje que .destacado pero en gris azulado */
 .alcance {
@@ -49,7 +49,7 @@
   border: 1px solid var(--linea);
   border-left: 4px solid var(--petroleo-tenue);
   border-radius: 0 var(--radio) var(--radio) 0;
-  font-size: .95rem;
+  font-size: calc(.95rem * var(--escala-lectura, 1));
 }
 .alcance p:last-child { margin-bottom: 0; }
 
@@ -99,7 +99,7 @@
   background: rgba(250, 250, 247, .94);
   color: var(--petroleo);
   font-family: var(--fuente-titulo);
-  font-size: .8rem;
+  font-size: calc(.8rem * var(--escala-lectura, 1));
   font-weight: 700;
 }
 .reproductor__cargar:focus-visible { outline-offset: -4px; }
@@ -137,3 +137,24 @@ figure.diagrama img {
     font-size: 8pt;
   }
 }
+
+/* Selector nativo: teclado, táctil y tecnologías de asistencia. */
+.solo-lectores { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+.selector-lectura { display:flex; align-items:center; gap:.3rem; flex-shrink:0; color:var(--petroleo); }
+.selector-lectura label { font-weight:700; font-size:.95rem; }
+.selector-lectura select { min-height:2.75rem; max-width:6rem; padding:.35rem .3rem; font:600 .9rem var(--fuente-texto); color:var(--petroleo); background:var(--blanco-roto); border:1px solid var(--linea-fuerte); border-radius:var(--radio-pequeno); cursor:pointer; }
+.selector-lectura select:focus-visible { outline:3px solid var(--terracota); outline-offset:3px; }
+html[data-tamano="125"] { --escala-elegida:1.25; }
+html[data-tamano="150"] { --escala-elegida:1.5; }
+html[data-tamano="175"] { --escala-elegida:1.75; }
+html[data-tamano="200"] { --escala-elegida:2; }
+.contenido, .portada__subtitulo { --escala-lectura:var(--escala-elegida, 1); overflow-wrap:anywhere; }
+.contenido { font-size:calc(1.125rem * var(--escala-lectura)); }
+.contenido :is(.tarjeta, .pestanas__panel, .fuente-audiovisual, .glosario, .diagrama__paso) { min-width:0; }
+.contenido .pestanas__lista { flex-wrap:wrap; }
+.contenido :is(.pestanas__boton, .sello) { white-space:normal; }
+.portada__figura { max-width:40rem; width:100%; }
+@media (min-width:900px) { .portada__interior { grid-template-columns:minmax(0, 1.15fr) minmax(0, 1fr); } }
+@media (max-width:720px) { .contenido { font-size:calc(1.0625rem * var(--escala-lectura)); } }
+@media (max-width:360px) { .barra-superior { padding-inline:.5rem; gap:.2rem; } .barra-superior__acciones { gap:.2rem; } .selector-lectura { gap:.15rem; } }
+@media print { .contenido, .portada__subtitulo { --escala-lectura:1; } .contenido { font-size:11pt; } }
