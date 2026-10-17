@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 410" width="900" height="410"
+     role="img" aria-labelledby="titulo desc">
+  <title id="titulo">La cinta transportadora de riqueza</title>
+  <desc id="desc">Esquema en tres columnas: la nación cede la concesión de sus recursos; la corporación
+    invierte y extrae; el banco concede el préstamo respaldado por esa concesión y cobra intereses y
+    comisiones. El préstamo se anota como activo en el balance del banco.</desc>
+
+  <defs>
+    <marker id="flujo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#4A6472"/>
+    </marker>
+    <marker id="flujo-fuerte" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#A3483F"/>
+    </marker>
+    <marker id="flujo-tenue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#C49A52"/>
+    </marker>
+  </defs>
+
+  <!-- Columna 1 -->
+  <g>
+    <rect x="12" y="70" width="220" height="150" rx="8" fill="#E9EFF2" stroke="#B9C8D0"/>
+    <text x="122" y="100" text-anchor="middle" font-family="Montserrat, Segoe UI, sans-serif"
+          font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#A3483F">NACIÓN</text>
+    <text x="122" y="126" text-anchor="middle" font-size="14" font-weight="600" fill="#142B3A">Recursos</text>
+    <text x="122" y="146" text-anchor="middle" font-size="14" font-weight="600" fill="#142B3A">naturales</text>
+    <text x="122" y="170" text-anchor="middle" font-size="11" fill="#4A6472">petróleo, minería, tierra</text>
+    <text x="122" y="192" text-anchor="middle" font-size="11" fill="#4A6472">gobierno con control político</text>
+  </g>
+
+  <!-- Columna 2 -->
+  <g>
+    <rect x="340" y="62" width="220" height="166" rx="8" fill="#142B3A"/>
+    <text x="450" y="92" text-anchor="middle" font-family="Montserrat, Segoe UI, sans-serif"
+          font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#C49A52">CORPORACIÓN</text>
+    <text x="450" y="118" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Concesionaria</text>
+    <text x="450" y="138" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">de la explotación</text>
+    <text x="450" y="162" text-anchor="middle" font-size="11" fill="#E9EFF2">plataformas, puertos, oleoductos</text>
+    <text x="450" y="184" text-anchor="middle" font-size="11" fill="#E9EFF2">pide el préstamo</text>
+    <text x="450" y="206" text-anchor="middle" font-size="11" fill="#E9EFF2">y extrae la riqueza</text>
+  </g>
+
+  <!-- Columna 3 -->
+  <g>
+    <rect x="668" y="70" width="220" height="150" rx="8" fill="#F6EDD9" stroke="#C49A52"/>
+    <text x="778" y="100" text-anchor="middle" font-family="Montserrat, Segoe UI, sans-serif"
+          font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#A3483F">BANCO</text>
+    <text x="778" y="126" text-anchor="middle" font-size="14" font-weight="600" fill="#142B3A">City de Londres</text>
+    <text x="778" y="146" text-anchor="middle" font-size="14" font-weight="600" fill="#142B3A">Wall Street</text>
+    <text x="778" y="170" text-anchor="middle" font-size="11" fill="#4A6472">concede el préstamo</text>
+    <text x="778" y="192" text-anchor="middle" font-size="11" fill="#4A6472">y cobra intereses y comisiones</text>
+  </g>
+
+  <!-- Flujos superiores -->
+  <g fill="none" stroke="#4A6472" stroke-width="2" marker-end="url(#flujo)">
+    <path d="M234 128 H334"/>
+    <path d="M562 128 H662"/>
+  </g>
+  <text x="284" y="118" text-anchor="middle" font-size="10.5" fill="#4A6472">concesión</text>
+  <text x="612" y="118" text-anchor="middle" font-size="10.5" fill="#4A6472">préstamo</text>
+
+  <!-- Cobro: del flujo de caja al banco -->
+  <g fill="none" stroke="#A3483F" stroke-width="2.4" marker-end="url(#flujo-fuerte)">
+    <path d="M450 232 V286 H770 V224"/>
+  </g>
+  <text x="610" y="304" text-anchor="middle" font-size="11.5" fill="#A3483F">
+    intereses, comisiones, devolución
+  </text>
+
+  <!-- Retorno escaso a la nación -->
+  <g fill="none" stroke="#C49A52" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#flujo-tenue)">
+    <path d="M338 300 H124 V226"/>
+  </g>
+  <text x="230" y="322" text-anchor="middle" font-size="11" fill="#7a5c26">
+    salarios y cánones: la parte menor
+  </text>
+
+  <!-- Balance -->
+  <g>
+    <rect x="668" y="330" width="220" height="66" rx="7" fill="#FFFFFF" stroke="#B9C8D0"/>
+    <text x="778" y="354" text-anchor="middle" font-size="11.5" font-weight="600" fill="#142B3A">
+      El préstamo entra en el balance
+    </text>
+    <text x="778" y="374" text-anchor="middle" font-size="11" fill="#4A6472">
+      como activo rentable del banco
+    </text>
+  </g>
+
+</svg>

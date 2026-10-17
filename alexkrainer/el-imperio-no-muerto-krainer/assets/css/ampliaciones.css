@@ -1,0 +1,139 @@
+/* =========================================================================
+   AMPLIACIONES PARA ESTE INFORME
+   Se cargan después de informe.css. Solo añaden lo que la plantilla no
+   necesita: distintivos de atribución, variantes de cronología y ajustes
+   de las tablas comparativas.
+   ========================================================================= */
+
+/* Distintivo para marcar lo que es afirmación del entrevistado y lo que es
+   hecho comprobable. Se usa en cronologías, tablas y notas. */
+.sello {
+  display: inline-block;
+  margin-left: .4rem;
+  padding: .1rem .45rem;
+  border-radius: 999px;
+  background: var(--terracota-claro);
+  color: #8F3C35;
+  font-family: var(--fuente-titulo);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  vertical-align: .1em;
+  white-space: nowrap;
+}
+.sello--hecho {
+  background: var(--gris-azulado);
+  color: var(--petroleo-tenue);
+}
+.sello--contexto {
+  background: var(--ocre-claro);
+  color: #7A5C26;
+}
+
+/* Cronología: el hecho y su tipo en la misma línea de lectura */
+.cronologia__hecho .sello { margin-left: .45rem; }
+
+/* Tablas de comparación: primera columna algo más ancha y cifras a la derecha */
+.tabla--comparativa th[scope="row"] { min-width: 11rem; }
+.tabla--cifras td.num { font-variant-numeric: tabular-nums; }
+
+/* Cita con varias frases: el tamaño baja un punto para no dominar la página */
+.cita--larga p { font-size: 1.04rem; }
+
+/* Cuadro de alcance: mismo lenguaje que .destacado pero en gris azulado */
+.alcance {
+  margin: 2rem 0;
+  padding: 1.15rem 1.4rem;
+  background: var(--gris-azulado);
+  border: 1px solid var(--linea);
+  border-left: 4px solid var(--petroleo-tenue);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  font-size: .95rem;
+}
+.alcance p:last-child { margin-bottom: 0; }
+
+/* Portada: la composición vertical necesita algo más de aire */
+.portada__figura--vertical img { max-height: 24rem; width: auto; margin: 0 auto; }
+
+/* Reproductor con marco discreto cuando el iframe no carga */
+.reproductor--marco { border: 1px solid rgba(233, 239, 242, .3); }
+
+/* En pantallas muy estrechas, la cronología gana aire a la izquierda */
+@media (max-width: 480px) {
+  .cronologia { padding-left: 1.5rem; }
+  .cronologia__evento::before { left: -1.25rem; }
+}
+
+/* Reproductor con carga bajo demanda: cartel local mientras no se solicita */
+.reproductor { position: relative; }
+
+.reproductor__cargar {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: #0F2430;
+  cursor: pointer;
+}
+.reproductor__cargar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .92;
+  transition: opacity 160ms ease;
+}
+.reproductor__cargar:hover img { opacity: 1; }
+.reproductor__cargar span {
+  position: absolute;
+  z-index: 1;
+  bottom: 1.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  background: rgba(250, 250, 247, .94);
+  color: var(--petroleo);
+  font-family: var(--fuente-titulo);
+  font-size: .8rem;
+  font-weight: 700;
+}
+.reproductor__cargar:focus-visible { outline-offset: -4px; }
+
+/* Aire bajo la entradilla de cada capítulo */
+.capitulo__entradilla { margin-bottom: 1.5rem; }
+
+/* La entradilla no debe separarse de su título si el capítulo se parte */
+.capitulo__cabecera { break-after: avoid; }
+
+
+/* Los esquemas se ajustan a la columna y pueden abrirse a tamaño completo */
+figure.diagrama img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.diagrama__enlace { display: block; }
+.diagrama__enlace:hover img { outline: 2px solid var(--terracota); outline-offset: 2px; }
+
+
+/* Impresión: la línea de texto no debe superar los 85 caracteres */
+@media print {
+  .contenido p,
+  .contenido li,
+  .contenido .lead,
+  .contenido .capitulo__entradilla { max-width: 158mm; }
+  .marca-tiempo {
+    border: 0;
+    background: none;
+    color: #7A5C26;
+    padding: 0;
+    font-family: var(--fuente-mono);
+    font-size: 8pt;
+  }
+}

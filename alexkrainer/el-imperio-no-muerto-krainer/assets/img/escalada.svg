@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" width="920" height="300"
+     role="img" aria-labelledby="titulo desc">
+  <title id="titulo">Escalera de escalada descrita por el entrevistado</title>
+  <desc id="desc">Cuatro etapas encadenadas: conflicto interno en Bosnia y Hercegovina; Serbia y
+    Croacia arrastradas por los intereses de sus comunidades; Croacia miembro de la OTAN activa el
+    artículo 5; Rusia interviene. Una nota inferior recuerda el paralelismo con 1914.</desc>
+
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#4A6472"/>
+    </marker>
+  </defs>
+
+  <!-- Etapa 1 -->
+  <g>
+    <rect x="10" y="60" width="200" height="130" rx="8" fill="#E9EFF2" stroke="#B9C8D0"/>
+    <text x="110" y="92" text-anchor="middle" font-family="Montserrat, Segoe UI, sans-serif"
+          font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#A3483F">ETAPA 1</text>
+    <text x="110" y="120" text-anchor="middle" font-size="14.5" font-weight="600" fill="#142B3A">Conflicto interno</text>
+    <text x="110" y="140" text-anchor="middle" font-size="14.5" font-weight="600" fill="#142B3A">en Bosnia</text>
+    <text x="110" y="164" text-anchor="middle" font-size="11.5" fill="#4A6472">tres pueblos constituyentes</text>
+  </g>
+
+  <!-- Etapa 2 -->
+  <g>
+    <rect x="240" y="52" width="210" height="146" rx="8" fill="#142B3A"/>
+    <text x="345" y="84" text-anchor="middle" font-family="Montserrat, Segoe UI, sans-serif"
+          font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#C49A52">ETAPA 2</text>
+    <text x="345" y="112" text-anchor="middle" font-size="14.5" font-weight="600" fill="#FFFFFF">Serbia y Croacia</text>
+    <text x="345" y="132" text-anchor="middle" font-size="14.5" font-weight="600" fill="#FFFFFF">entran en el conflicto</text>
+    <text x="345" y="156" text-anchor="middle" font-size="11.5" fill="#E9EFF2">por sus comunidades</text>
+    <text x="345" y="176" text-anchor="middle" font-size="11.5" fill="#E9EFF2">en Bosnia</text>
+  </g>
+
+  <!-- Etapa 3 -->
+  <g>
+    <rect x="480" y="60" width="200" height="130" rx="8" fill="#F6EDD9" stroke="#C49A52"/>
+    <text x="580" y="92" text-anchor="middle" font-family="Montserrat, Segoe UI, sans-serif"
+          font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#A3483F">ETAPA 3</text>
+    <text x="580" y="120" text-anchor="middle" font-size="14.5" font-weight="600" fill="#142B3A">Croacia es miembro</text>
+    <text x="580" y="140" text-anchor="middle" font-size="14.5" font-weight="600" fill="#142B3A">de la OTAN</text>
+    <text x="580" y="164" text-anchor="middle" font-size="11.5" fill="#4A6472">artículo 5 · toda la alianza</text>
+  </g>
+
+  <!-- Etapa 4 -->
+  <g>
+    <rect x="710" y="60" width="200" height="130" rx="8" fill="#A3483F"/>
+    <text x="810" y="92" text-anchor="middle" font-family="Montserrat, Segoe UI, sans-serif"
+          font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#F6EDD9">ETAPA 4</text>
+    <text x="810" y="120" text-anchor="middle" font-size="14.5" font-weight="600" fill="#FFFFFF">Rusia no puede</text>
+    <text x="810" y="140" text-anchor="middle" font-size="14.5" font-weight="600" fill="#FFFFFF">quedarse al margen</text>
+    <text x="810" y="164" text-anchor="middle" font-size="11.5" fill="#F2E4E2">guerra en Europa</text>
+  </g>
+
+  <!-- Flechas -->
+  <g fill="none" stroke="#4A6472" stroke-width="2">
+    <path d="M212 125 H236" marker-end="url(#flecha)"/>
+    <path d="M452 125 H476" marker-end="url(#flecha)"/>
+    <path d="M682 125 H706" marker-end="url(#flecha)"/>
+  </g>
+
+  <!-- Retorno a 1914 -->
+  <g>
+    <path d="M810 196 V240 H345 V212" fill="none" stroke="#A3483F" stroke-width="2"
+          stroke-dasharray="6 5" marker-end="url(#flecha)"/>
+    <text x="578" y="262" text-anchor="middle" font-size="12" font-style="italic" fill="#A3483F">
+      el mismo escenario de 1914, en el mismo lugar
+    </text>
+  </g>
+
+</svg>

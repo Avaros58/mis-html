@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" width="640" height="800"
+     role="img" aria-labelledby="titulo desc">
+  <title id="titulo">Red de vínculos que converge en un centro financiero</title>
+  <desc id="desc">Composición abstracta sobre fondo azul petróleo: una retícula tenue y varios nodos
+    unidos por hilos que confluyen en un círculo ocre central, con bandas horizontales que sugieren
+    capas de un documento.</desc>
+
+  <rect width="640" height="800" fill="#142B3A"/>
+
+  <!-- Retícula -->
+  <g stroke="#E9EFF2" stroke-opacity="0.08" stroke-width="1">
+    <path d="M0 100 H640 M0 200 H640 M0 300 H640 M0 400 H640 M0 500 H640 M0 600 H640 M0 700 H640"/>
+    <path d="M80 0 V800 M160 0 V800 M240 0 V800 M320 0 V800 M400 0 V800 M480 0 V800 M560 0 V800"/>
+  </g>
+
+  <!-- Hilos que convergen -->
+  <g fill="none" stroke="#C49A52" stroke-opacity="0.55" stroke-width="1.4">
+    <path d="M110 250 C 220 300, 300 330, 400 372"/>
+    <path d="M90 520 C 220 470, 310 420, 400 372"/>
+    <path d="M540 210 C 500 270, 450 330, 400 372"/>
+    <path d="M560 560 C 490 500, 430 430, 400 372"/>
+    <path d="M320 660 C 350 560, 380 460, 400 372"/>
+  </g>
+
+  <!-- Nodos periféricos -->
+  <g fill="#E9EFF2" fill-opacity="0.9">
+    <circle cx="110" cy="250" r="5"/>
+    <circle cx="90" cy="520" r="5"/>
+    <circle cx="540" cy="210" r="5"/>
+    <circle cx="560" cy="560" r="5"/>
+    <circle cx="320" cy="660" r="5"/>
+  </g>
+
+  <!-- Centro -->
+  <circle cx="400" cy="372" r="54" fill="#A3483F"/>
+  <circle cx="400" cy="372" r="76" fill="none" stroke="#C49A52" stroke-width="1.5" stroke-opacity="0.8"/>
+  <circle cx="400" cy="372" r="100" fill="none" stroke="#E9EFF2" stroke-width="1" stroke-opacity="0.25"/>
+
+  <!-- Bandas editoriales -->
+  <g>
+    <rect x="60" y="712" width="230" height="10" rx="2" fill="#E9EFF2" fill-opacity="0.55"/>
+    <rect x="60" y="734" width="150" height="10" rx="2" fill="#E9EFF2" fill-opacity="0.3"/>
+    <text x="60" y="676" font-family="Montserrat, Segoe UI, Arial, sans-serif" font-size="13"
+          font-weight="700" letter-spacing="3.5" fill="#C49A52">INFORME ANALÍTICO</text>
+  </g>
+</svg>

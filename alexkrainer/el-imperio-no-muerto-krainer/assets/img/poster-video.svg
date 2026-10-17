@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720"
+     role="img" aria-label="Cartel del vídeo: El imperio no muerto contraataca, entrevista a Alex Krainer">
+  <rect width="1280" height="720" fill="#0F2430"/>
+
+  <g stroke="#E9EFF2" stroke-opacity="0.07" stroke-width="1">
+    <path d="M0 180 H1280 M0 360 H1280 M0 540 H1280"/>
+    <path d="M320 0 V720 M640 0 V720 M960 0 V720"/>
+  </g>
+
+  <circle cx="640" cy="330" r="64" fill="#A3483F"/>
+  <path d="M622 300 L676 330 L622 360 Z" fill="#FAFAF7"/>
+
+
+  <rect x="0" y="712" width="1280" height="8" fill="#C49A52"/>
+</svg>

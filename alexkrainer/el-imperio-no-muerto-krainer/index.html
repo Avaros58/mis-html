@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="es" data-modo="estudio" data-tamano="normal" data-plantilla="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El imperio que no murió · Informe sobre la entrevista a Alex Krainer</title>
+  <meta name="description" content="Reconstrucción editorial de la entrevista de Neutrality Studies a Alex Krainer sobre el imperio británico, la City de Londres, la guerra de Yugoslavia y el mecanismo financiero que, según el entrevistado, sigue gobernando Occidente.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#142B3A">
+
+  <link rel="stylesheet" href="assets/css/informe.css">
+  <link rel="stylesheet" href="assets/css/ampliaciones.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="El imperio que no murió · Entrevista a Alex Krainer">
+  <meta property="og:description" content="Informe analítico sobre el imperio británico, la City de Londres y el mecanismo de deuda descrito por Alex Krainer.">
+  <meta property="og:image" content="assets/img/portada.svg">
+
+  <script src="assets/js/informe.js" defer></script>
+  <script src="assets/js/ampliaciones.js" defer></script>
+
+  <noscript>
+    <style>
+      .indice {
+        position: static; transform: none; visibility: visible;
+        width: auto; max-height: none; border-right: 0; padding-inline: 0;
+      }
+      .indice__cabecera, .velo, .barra-progreso, .volver-arriba,
+      #btn-indice, #btn-buscar, #btn-tamano, #btn-modo, .panel-buscar,
+      .pestanas__lista, .ancla { display: none !important; }
+      .pestanas__panel[hidden] { display: block !important; }
+      .pestanas__panel { border-bottom: 1px solid #D7E1E6; }
+      .contenido > * { max-width: 44rem; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+<a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+<div class="barra-progreso" aria-hidden="true"><div class="barra-progreso__valor" id="progreso"></div></div>
+
+<!-- ===================== BARRA SUPERIOR ===================== -->
+<header class="barra-superior">
+  <button type="button" class="boton boton--texto" id="btn-indice"
+          aria-controls="indice" aria-expanded="false" aria-label="Índice del informe">
+    <svg class="boton__icono" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+      <path d="M3 5h14M3 10h14M3 15h9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span class="boton__texto">Índice</span>
+  </button>
+
+  <p class="barra-superior__titulo">El imperio que no murió</p>
+
+  <div class="barra-superior__acciones">
+    <button type="button" class="boton boton--texto" id="btn-buscar"
+            aria-controls="panel-buscar" aria-expanded="false" aria-label="Buscar en el documento">
+      <svg class="boton__icono" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+        <circle cx="9" cy="9" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M13.5 13.5 17 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="boton__texto">Buscar</span>
+    </button>
+
+    <button type="button" class="boton boton--texto" id="btn-tamano"
+            title="Cambiar el tamaño del texto" aria-label="Cambiar el tamaño del texto">
+      <span aria-hidden="true">Aa</span>
+    </button>
+
+    <button type="button" class="boton" id="btn-imprimir" aria-label="Imprimir o guardar en PDF">
+      <svg class="boton__icono" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+        <path d="M6 3h8v3H6zM4 9h12v6h-3v2H7v-2H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="14.5" cy="11.5" r=".9" fill="currentColor"/>
+      </svg>
+      <span class="boton__texto">Imprimir</span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== BUSCADOR INTERNO ===================== -->
+<div class="panel-buscar" id="panel-buscar" hidden>
+  <form class="panel-buscar__formulario" role="search" id="form-buscar">
+    <label class="panel-buscar__etiqueta" for="entrada-busqueda">Buscar en el documento</label>
+    <input class="panel-buscar__entrada" type="search" id="entrada-busqueda"
+           placeholder="Escribe una palabra o una frase" autocomplete="off">
+    <button type="submit" class="boton">Buscar</button>
+    <button type="button" class="boton" id="btn-anterior" title="Coincidencia anterior">↑</button>
+    <button type="button" class="boton" id="btn-siguiente" title="Coincidencia siguiente">↓</button>
+    <p class="panel-buscar__estado" id="estado-busqueda" role="status" aria-live="polite"></p>
+    <button type="button" class="boton boton--texto" id="btn-cerrar-buscar" aria-label="Cerrar el buscador">Cerrar</button>
+  </form>
+</div>
+
+<!-- ===================== PORTADA ===================== -->
+<header class="portada" id="portada">
+  <div class="portada__interior">
+    <div>
+      <p class="portada__etiqueta">Entrevista · Neutrality Studies</p>
+      <h1 class="portada__titulo">El imperio que no murió</h1>
+      <p class="portada__subtitulo">
+        Alex Krainer sostiene que el imperio británico nunca se disolvió: se transformó en una red
+        financiera con centro en la City de Londres y en Wall Street. Este informe reconstruye su
+        argumento, del estallido yugoslavo al mecanismo de deuda que lo sostiene.
+      </p>
+
+      <dl class="portada__meta">
+        <div class="portada__dato">
+          <dt class="portada__clave">Autoría del material</dt>
+          <dd class="portada__valor">Alex Krainer, entrevistado</dd>
+        </div>
+        <div class="portada__dato">
+          <dt class="portada__clave">Entrevistador</dt>
+          <dd class="portada__valor">Pascal · Neutrality Studies</dd>
+        </div>
+        <div class="portada__dato">
+          <dt class="portada__clave">Naturaleza de la fuente</dt>
+          <dd class="portada__valor">Entrevista en vídeo (YouTube)</dd>
+        </div>
+        <div class="portada__dato">
+          <dt class="portada__clave">Duración</dt>
+          <dd class="portada__valor">1 h 12 min 24 s</dd>
+        </div>
+        <div class="portada__dato">
+          <dt class="portada__clave">Fecha del material</dt>
+          <dd class="portada__valor">No verificada</dd>
+        </div>
+        <div class="portada__dato">
+          <dt class="portada__clave">Edición del informe</dt>
+          <dd class="portada__valor">17 de octubre de 2026</dd>
+        </div>
+      </dl>
+
+      <div class="portada__acciones">
+        <a class="boton boton--principal" href="#sintesis">Comenzar la lectura</a>
+        <a class="boton boton--contorno" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw"
+           target="_blank" rel="noopener">Ver el vídeo original</a>
+      </div>
+    </div>
+
+    <figure class="portada__figura">
+      <img src="assets/img/portada.svg" width="640" height="800"
+           alt="Composición abstracta: hilos dorados que unen varios nodos y confluyen en un círculo terracota.">
+      <figcaption>Ilustración editorial propia. No representa datos ni geografía real.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<!-- ===================== CUERPO ===================== -->
+<div class="disposicion">
+
+  <!-- ---------- ÍNDICE ---------- -->
+  <nav class="indice" id="indice" aria-label="Índice del informe">
+    <div class="indice__cabecera">
+      <p class="indice__titulo">Contenido</p>
+      <button type="button" class="boton boton--texto" id="btn-cerrar-indice" aria-label="Cerrar el índice">✕</button>
+    </div>
+
+    <ol class="indice__lista">
+      <li><a class="indice__enlace" href="#sintesis"><span class="indice__numero">—</span> Síntesis ejecutiva</a></li>
+      <li><a class="indice__enlace" href="#fuente-audiovisual"><span class="indice__numero">▶</span> Fuente audiovisual</a></li>
+      <li><a class="indice__enlace" href="#cap-1"><span class="indice__numero">01</span> La hipótesis</a></li>
+      <li><a class="indice__enlace" href="#cap-2"><span class="indice__numero">02</span> Alguien agitó nuestro tarro</a></li>
+      <li><a class="indice__enlace" href="#cap-3"><span class="indice__numero">03</span> 1991: el visto bueno y el embargo</a></li>
+      <li><a class="indice__enlace" href="#cap-4"><span class="indice__numero">04</span> Los Balcanes como segundo frente</a></li>
+      <li><a class="indice__enlace" href="#cap-5"><span class="indice__numero">05</span> Cómo se desactivó el frente</a></li>
+      <li><a class="indice__enlace" href="#cap-6"><span class="indice__numero">06</span> El mecanismo de escalada</a></li>
+      <li><a class="indice__enlace" href="#cap-7"><span class="indice__numero">07</span> El arco de crisis</a></li>
+      <li><a class="indice__enlace" href="#cap-8"><span class="indice__numero">08</span> Londres y Washington</a></li>
+      <li><a class="indice__enlace" href="#cap-9"><span class="indice__numero">09</span> El modelo de negocio</a></li>
+      <li><a class="indice__enlace" href="#cap-10"><span class="indice__numero">10</span> La economía real y los bancos</a></li>
+      <li><a class="indice__enlace" href="#cap-11"><span class="indice__numero">11</span> Enrico Mattei</a></li>
+      <li><a class="indice__enlace" href="#cap-12"><span class="indice__numero">12</span> La red, la distopía y la grieta</a></li>
+      <li><a class="indice__enlace" href="#cap-13"><span class="indice__numero">13</span> La guerra de la percepción</a></li>
+      <li><a class="indice__enlace" href="#conclusiones"><span class="indice__numero">14</span> Conclusiones del entrevistado</a></li>
+      <li><a class="indice__enlace" href="#cronologia"><span class="indice__numero">15</span> Cronología</a></li>
+      <li><a class="indice__enlace" href="#glosario"><span class="indice__numero">16</span> Glosario</a></li>
+      <li><a class="indice__enlace" href="#fuentes"><span class="indice__numero">17</span> Fuentes y método</a></li>
+    </ol>
+
+    <p class="indice__pie">
+      Informe de estudio · 13 capítulos · 17 de octubre de 2026
+    </p>
+  </nav>
+
+  <!-- ---------- CONTENIDO ---------- -->
+  <main class="contenido" id="contenido">
+
+    <!-- ============ SÍNTESIS EJECUTIVA ============ -->
+    <section class="capitulo" id="sintesis" aria-labelledby="titulo-sintesis">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Síntesis ejecutiva</span>
+        <h2 class="capitulo__titulo" id="titulo-sintesis">
+          La tesis: un imperio que se reencarnó en la City
+          <a class="ancla" href="#sintesis" aria-label="Enlace a la síntesis ejecutiva">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        Alex Krainer sostiene que el imperio británico no terminó con la descolonización, sino que se
+        convirtió en una red financiera transnacional. La entrevista reconstruye primero un caso
+        concreto —la guerra de Yugoslavia— y después el mecanismo general que, según él, produce esos
+        conflictos y extrae riqueza de la periferia.
+      </p>
+
+      <p>
+        El punto de partida es personal. Krainer, croata de origen, se ofreció voluntario
+        para el servicio militar con poco más de veinte años y participó en la guerra sin resultar herido.
+        De allí salió con una pregunta que ha guiado buena parte de su investigación durante tres décadas:
+        cómo fue posible una guerra que, una semana antes de empezar, casi todo el mundo habría considerado
+        imposible. Su respuesta es que <strong>alguien agitó el tarro</strong>: una estructura de poder
+        externa, que identifica con el imperio británico, azuzó una fractura que existía pero permanecía
+        inactiva.
+      </p>
+
+      <p>
+        La segunda parte del argumento es el mecanismo. Para Krainer, el imperio no se sostiene hoy por
+        conquista territorial, sino por <strong>deuda garantizada con recursos ajenos</strong>. Una nación
+        cede derechos de explotación; una corporación se endeuda con esos derechos como garantía; el banco
+        anota el préstamo como activo y cobra intereses y comisiones durante décadas. La corporación es,
+        en su imagen, la cinta transportadora; quien más gana es el banco, que nunca toca el petróleo.
+      </p>
+
+      <div class="destacado">
+        <p class="destacado__titulo">Tesis central</p>
+        <p>
+          «Es un imperio de banqueros, no cabe ninguna duda», afirma el entrevistado. La continuidad del
+          poder británico no se explica por el territorio, sino por el control del crédito, del derecho
+          que lo hace exigible y de las decisiones políticas que permiten firmarlo.
+          <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1718s"
+             target="_blank" rel="noopener">28:38</a>
+        </p>
+      </div>
+
+      <ul class="tarjetas">
+        <li class="tarjeta">
+          <span class="tarjeta__etiqueta">Continuidad</span>
+          <h3 class="tarjeta__titulo">El imperio no se disolvió</h3>
+          <p>Sobrevive como red de intereses bancarios que coopta a las naciones anfitrionas —Gran Bretaña,
+          Estados Unidos u otras— sin depender de ninguna en particular.</p>
+        </li>
+        <li class="tarjeta">
+          <span class="tarjeta__etiqueta">Caso</span>
+          <h3 class="tarjeta__titulo">Yugoslavia, 1991</h3>
+          <p>El entrevistado lee la guerra como un conflicto inducido desde fuera, con un papel británico
+          oculto tras una narrativa que atribuye la responsabilidad a Estados Unidos.</p>
+        </li>
+        <li class="tarjeta">
+          <span class="tarjeta__etiqueta">Método</span>
+          <h3 class="tarjeta__titulo">El banco en el centro</h3>
+          <p>El préstamo crea el activo, el activo exige garantía y la garantía exige control político.
+          La violencia aparece cuando ese control se resiste.</p>
+        </li>
+      </ul>
+
+      <div class="alcance">
+        <p>
+          <strong>Nota de alcance.</strong> Este informe reconstructivo expone las tesis de Alex Krainer
+          tal como él las formula, sin refutarlas ni completarlas con posiciones ajenas. Cuando el
+          entrevistado atribuye intenciones, autorías o causalidades —por ejemplo, sobre el papel británico
+          en la guerra de Yugoslavia o sobre la muerte de Enrico Mattei— el texto lo presenta como su
+          lectura, no como un hecho acreditado. Los datos que cita de terceros y no aporta con referencia
+          se señalan como no verificados.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ FUENTE AUDIOVISUAL ============ -->
+    <section class="capitulo" id="fuente-audiovisual" aria-labelledby="titulo-audiovisual">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Módulo audiovisual</span>
+        <h2 class="capitulo__titulo" id="titulo-audiovisual">
+          Fuente audiovisual
+          <a class="ancla" href="#fuente-audiovisual" aria-label="Enlace al módulo audiovisual">¶</a>
+        </h2>
+      </header>
+
+      <p>
+        La entrevista se publicó en el canal <em>Neutrality Studies Español</em> y se grabó en inglés; la
+        transcripción utilizada es su versión automática al español. El reproductor se incrusta en la
+        modalidad de privacidad mejorada de YouTube: solo carga si hay conexión. Todo el contenido del
+        informe es legible sin el vídeo.
+      </p>
+
+      <div class="fuente-audiovisual">
+        <span class="fuente-audiovisual__etiqueta">Fuente audiovisual</span>
+        <div class="fuente-audiovisual__rejilla">
+          <div class="reproductor reproductor--marco" data-reproductor="sZdBS9ZXgFw"
+               data-titulo="El imperio no muerto contraataca: cómo Reino Unido aún gobierna el mundo">
+            <button type="button" class="reproductor__cargar" aria-label="Cargar el reproductor de YouTube (el vídeo se solicita a YouTube)">
+              <img src="assets/img/poster-video.svg" width="1280" height="720" alt="Cartel del vídeo «El imperio no muerto contraataca», de Neutrality Studies Español.">
+              <span>Cargar el reproductor</span>
+            </button>
+          </div>
+
+          <div>
+            <h3 class="fuente-audiovisual__titulo">
+              <a href="https://www.youtube.com/watch?v=sZdBS9ZXgFw" target="_blank" rel="noopener">
+                El imperio no muerto contraataca: cómo Reino Unido aún gobierna el mundo
+              </a>
+            </h3>
+            <p class="fuente-audiovisual__descripcion">
+              Segunda conversación de Alex Krainer con Pascal en <em>Neutrality Studies</em>. Retoma la idea
+              del «imperio no muerto» y la extiende a los Balcanes, al mecanismo financiero del crédito y a
+              la disputa interna entre Londres y Washington.
+            </p>
+            <dl class="fuente-audiovisual__datos">
+              <div><dt>Canal</dt><dd>Neutrality Studies Español</dd></div>
+              <div><dt>Participantes</dt><dd>Alex Krainer (entrevistado) · Pascal (entrevistador)</dd></div>
+              <div><dt>Idioma</dt><dd>Inglés, con transcripción automática al español</dd></div>
+              <div><dt>Duración</dt><dd>1:12:24, según la transcripción</dd></div>
+              <div><dt>Publicación</dt><dd>No verificada</dd></div>
+            </dl>
+            <a class="boton boton--contorno" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw"
+               target="_blank" rel="noopener">Ver en YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subseccion__titulo">Capítulos y momentos del vídeo</h3>
+      <p>
+        Cada capítulo del informe remite al instante en que se trata el asunto. Las marcas proceden de la
+        transcripción automática: son fiables al minuto, no al segundo, y pueden desviarse unos segundos
+        respecto del audio original.
+      </p>
+
+      <div class="tabla-envoltura" tabindex="0" role="region" aria-label="Capítulos del vídeo, tabla desplazable">
+        <table class="tabla">
+          <caption>Correspondencia entre los capítulos del informe y el vídeo</caption>
+          <thead>
+            <tr><th scope="col">Inicio</th><th scope="col">Asunto</th><th scope="col">Apartado del informe</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1s" target="_blank" rel="noopener">00:01</a></td>
+              <td>Presentación y planteamiento de la hipótesis</td><td><a href="#cap-1">Capítulo 1</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=169s" target="_blank" rel="noopener">02:49</a></td>
+              <td>El tarro de las hormigas y la guerra yugoslava</td><td><a href="#cap-2">Capítulo 2</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=303s" target="_blank" rel="noopener">05:03</a></td>
+              <td>Belgrado, el embargo y las armas rusas a Croacia</td><td><a href="#cap-3">Capítulo 3</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=663s" target="_blank" rel="noopener">11:03</a></td>
+              <td>Geografía, Dayton y el segundo frente balcánico</td><td><a href="#cap-4">Capítulo 4</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1098s" target="_blank" rel="noopener">18:18</a></td>
+              <td>El referéndum de la República Srpska y la llegada de Trump</td><td><a href="#cap-5">Capítulo 5</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1293s" target="_blank" rel="noopener">21:33</a></td>
+              <td>El escenario de escalada hasta el artículo 5</td><td><a href="#cap-6">Capítulo 6</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1599s" target="_blank" rel="noopener">26:39</a></td>
+              <td>El arco de crisis y Halford Mackinder</td><td><a href="#cap-7">Capítulo 7</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1746s" target="_blank" rel="noopener">29:06</a></td>
+              <td>Londres y Washington: dos centros de poder</td><td><a href="#cap-8">Capítulo 8</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2090s" target="_blank" rel="noopener">34:50</a></td>
+              <td>El modelo de negocio del imperio</td><td><a href="#cap-9">Capítulo 9</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2618s" target="_blank" rel="noopener">43:38</a></td>
+              <td>Coste del capital, consejos y banca</td><td><a href="#cap-10">Capítulo 10</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3053s" target="_blank" rel="noopener">50:53</a></td>
+              <td>Enrico Mattei y el petróleo italiano</td><td><a href="#cap-11">Capítulo 11</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3298s" target="_blank" rel="noopener">54:58</a></td>
+              <td>La red, la distopía y el despertar</td><td><a href="#cap-12">Capítulo 12</a></td></tr>
+            <tr><td class="num"><a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3930s" target="_blank" rel="noopener">1:05:30</a></td>
+              <td>Percepción pública, sondeos y cierre</td><td><a href="#cap-13">Capítulo 13</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <details class="acordeon">
+        <summary class="acordeon__titulo">Transcripción utilizada y su estado</summary>
+        <div class="acordeon__contenido">
+          <p>
+            Se ha trabajado sobre una transcripción automática al español de 70.030 caracteres, con 126
+            marcas temporales, descargada como texto plano. El archivo se conserva sin editar en
+            <code>assets/data/transcripcion.md</code> y puede consultarse como material documental.
+          </p>
+          <p>
+            La transcripción contiene errores previsibles: nombres propios deformados («Alex Cranor»,
+            «Halford Mcinder», «Enrico Matei», «Petar e Ivan Stanolic»), cifras dictadas por el entrevistado
+            y frases cortadas. En este informe se han corregido las formas evidentes —Milošević, Mackinder,
+            Mattei, Stanić, Carrington, Hurd, Sakwa, Desai, Harari, Merz— y se han mantenido las dudas
+            cuando la corrección no era segura. Las citas entre comillas son literales respecto de esa
+            transcripción, no del audio en inglés.
+          </p>
+          <p class="sin-sangria">
+            <a class="boton boton--contorno" href="assets/data/transcripcion.md" download>Descargar transcripción (.md)</a>
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============ CAPÍTULO 1 ============ -->
+    <section class="capitulo" id="cap-1" aria-labelledby="titulo-cap-1">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 1</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-1">
+          La hipótesis: un imperio que no se disolvió
+          <a class="ancla" href="#cap-1" aria-label="Enlace al capítulo 1">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        La conversación retoma un hilo interrumpido: la idea de que el imperio británico nunca desapareció
+        del todo y de que su poder actual se concentra en el dinero más que en el territorio.
+      </p>
+
+      <p>
+        Pascal abre la entrevista recordando el final de la anterior: Krainer había llamado a los británicos
+        «el imperio no muerto» y había señalado que la Gran Bretaña financiera, la City de Londres, nunca
+        perdió realmente el poder. La pregunta de partida es cómo percibe el entrevistado el poder del dinero
+        en Occidente y cómo encajan en esa lectura unas élites transnacionales que, en su descripción, siguen
+        condicionando la vida de los demás.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=26s"
+           target="_blank" rel="noopener">00:26</a>
+      </p>
+
+      <p>
+        Krainer responde que la hipótesis no nació de una intuición súbita, sino de una investigación
+        prolongada durante la mayor parte de los últimos treinta años. El origen es una experiencia directa:
+        la guerra en la antigua Yugoslavia. Cuando era joven, con poco más de veinte años, se ofreció
+        voluntario para el servicio militar y participó en aquella guerra. Salió ileso y sin traumas —relata
+        que la única vez que se disparó fue fuego amigo y que ni él ni nadie disparó contra él—, pero quedó
+        profundamente desconcertado.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=85s"
+           target="_blank" rel="noopener">01:25</a>
+      </p>
+
+      <p>
+        La pregunta que se hizo es la que articula todo el informe: ¿cómo pudo ocurrir aquella guerra? Su
+        respuesta inmediata, y la que repite aquí, es que casi nadie la esperaba. Si se hubiera preguntado a
+        cualquier persona de la antigua Yugoslavia —en Croacia, en Serbia o en otra república— una semana
+        antes del estallido, sostiene que cerca del 99 % habría dicho que era imposible. Muchos eran hijos de
+        matrimonios mixtos; la identidad étnica no organizaba la vida cotidiana y, en su recuerdo, tampoco
+        existían el extremismo religioso ni el wahabismo que después se invocaron.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=119s"
+           target="_blank" rel="noopener">01:59</a>
+      </p>
+
+      <h3 class="subseccion__titulo">Una hipótesis que se fue formando en los márgenes</h3>
+      <p>
+        El entrevistado describe su investigación como un trabajo de tres décadas en el que la idea del
+        imperio permanente apareció «poco a poco». No la presenta como una teoría cerrada, sino como un
+        marco que fue ganando consistencia a medida que estudiaba episodios distintos y encontraba el mismo
+        patrón. En sus palabras, la imagen se vuelve más coherente cuanto más se atiende a lo que ocurre, y
+        las pruebas del mundo real la consolidan en lugar de desmontarla.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3364s"
+           target="_blank" rel="noopener">56:04</a>
+      </p>
+
+      <div class="cita">
+        <p>«La idea de que el imperio británico nunca llegó a desaparecer del todo fue surgiendo poco a poco
+          durante mi investigación.»</p>
+        <cite>Alex Krainer · <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=50s" target="_blank" rel="noopener">00:50</a></cite>
+      </div>
+
+      <p>
+        La entrevista no ofrece todavía una definición formal del imperio: eso llegará más adelante, cuando
+        distinga entre la nación que presta su nombre y la red de intereses que la utiliza. Lo que se
+        establece en este primer tramo es el método —observar patrones, políticas, justificaciones y
+        omisiones— y la sospecha que lo guía: que las decisiones que parecen nacionales responden a una
+        estructura que no coincide con los Estados que las ejecutan.
+      </p>
+    </section>
+
+    <!-- ============ CAPÍTULO 2 ============ -->
+    <section class="capitulo" id="cap-2" aria-labelledby="titulo-cap-2">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 2</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-2">
+          «Alguien agitó nuestro tarro»: el estallido yugoslavo
+          <a class="ancla" href="#cap-2" aria-label="Enlace al capítulo 2">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        Para explicar cómo una sociedad mezclada pudo entrar en guerra en pocas semanas, el entrevistado
+        recurre a un experimento con hormigas y a una idea sencilla: la fractura no se crea, se activa.
+      </p>
+
+      <p>
+        Krainer cuenta que unos investigadores metieron cien hormigas rojas y cien hormigas negras en un
+        tarro cerrado. En reposo, las hormigas no se peleaban: iban de un lado a otro, cada una a lo suyo.
+        Pero cuando se agitaba el tarro con violencia, empezaban a matarse entre ellas. Su interpretación es
+        que la agitación dispara las alarmas, la adrenalina o el equivalente que tengan, y entonces cada
+        grupo ve al otro como la amenaza.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=169s"
+           target="_blank" rel="noopener">02:49</a>
+      </p>
+
+      <p>
+        La analogía le sirve para explicar Yugoslavia. En Croacia, Bosnia y Serbia convivían tres pueblos
+        constituyentes —croatas católicos, musulmanes de Bosnia y serbios ortodoxos— en un territorio
+        diseñado, según su descripción, para que fuera fácil dividirlos. Basta con decir a un bando que el
+        otro va a por él, y repetirlo en el bando contrario, para que el miedo haga el resto. En aquella
+        época no había redes sociales ni pódcast: la información dependía de periódicos, radio y televisión,
+        de modo que quien controlaba esos medios controlaba el relato.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=225s"
+           target="_blank" rel="noopener">03:45</a>
+      </p>
+
+      <div class="cita cita--larga">
+        <p>«No sé cómo explicar mejor el estallido de la guerra en la antigua Yugoslavia que diciendo que
+          alguien agitó nuestro tarro. Y nosotros somos el tarro perfecto para agitar.»</p>
+        <cite>Alex Krainer · <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=225s" target="_blank" rel="noopener">03:45</a></cite>
+      </div>
+
+      <h3 class="subseccion__titulo">Quién agitó el tarro, según el entrevistado</h3>
+      <p>
+        Pascal plantea la explicación más extendida: el colapso interno, los desacuerdos dentro del Partido
+        Comunista y cierta injerencia estadounidense. Menciona a invitados anteriores de su programa —David
+        Gibbs, el coronel McGregor— que sitúan la responsabilidad principal en Washington. Krainer responde
+        que esa es, en efecto, la narrativa dominante, pero que si se rasca un poco la superficie aparece un
+        papel decisivo británico, mucho más hábil a la hora de ocultarse.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=303s"
+           target="_blank" rel="noopener">05:03</a>
+      </p>
+
+      <p>
+        El entrevistado afirma que los británicos son «muy buenos» asegurándose de que su intervención no
+        figure en el registro histórico y de que su papel aparezca como el de quienes intentaban reducir la
+        violencia y llevar la paz a la región. Esa es la pieza que, según él, explica por qué la
+        responsabilidad se atribuye habitualmente a Estados Unidos: porque la parte visible del mecanismo era
+        estadounidense y la invisible, británica.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=367s"
+           target="_blank" rel="noopener">06:07</a>
+      </p>
+
+      <div class="nota">
+        <p class="nota__titulo">Cómo leer las atribuciones de este capítulo</p>
+        <p>
+          La afirmación de que el imperio británico desempeñó «el papel clave» en el estallido de la guerra es
+          una tesis del entrevistado, sostenida en su investigación, no un hecho establecido en el propio
+          vídeo con documentación probatoria. Este informe la reproduce como tal y no la presenta como
+          conclusión verificada.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CAPÍTULO 3 ============ -->
+    <section class="capitulo" id="cap-3" aria-labelledby="titulo-cap-3">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 3</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-3">
+          1991: el visto bueno occidental y el embargo de armas
+          <a class="ancla" href="#cap-3" aria-label="Enlace al capítulo 3">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        El relato se detiene en el verano de 1991, cuando la federación todavía existía y el equilibrio
+        militar hacía prácticamente imposible una resistencia armada de las repúblicas que querían separarse.
+      </p>
+
+      <p>
+        Krainer describe la situación militar con precisión. Al comenzar la guerra, las estructuras militares
+        de la antigua Yugoslavia estaban bajo control serbio: el Ejército Popular Yugoslavo respondía a
+        Belgrado, y toda la jerarquía y la mayor parte del cuerpo de oficiales eran ciudadanos serbios o
+        montenegrinos. Las repúblicas que querían separarse solo disponían de unidades de defensa territorial
+        ligeramente armadas, incapaces de resistir. En ese contexto, el gobierno central de Slobodan Milošević
+        recibió la señal de que Occidente lo apoyaría para mantener la federación unida por la fuerza si era
+        necesario. Según el entrevistado, eso significaba que los movimientos independentistas debían ser
+        aplastados, y así empezó la guerra.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=367s"
+           target="_blank" rel="noopener">06:07</a>
+      </p>
+
+      <p>
+        Al mismo tiempo, sostiene, los británicos insistían en imponer un embargo de armas a la antigua
+        Yugoslavia para que ningún otro país pudiera conseguir medios con los que resistir. La combinación
+        —luz verde a Belgrado y embargo para los demás— es, en su lectura, la fórmula que convirtió un
+        conflicto político en una guerra.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=469s"
+           target="_blank" rel="noopener">07:49</a>
+      </p>
+
+      <div class="tabla-envoltura" tabindex="0" role="region" aria-label="Situación militar en 1991, tabla desplazable">
+        <table class="tabla tabla--comparativa">
+          <caption>El reparto de fuerzas en 1991, según la exposición del entrevistado</caption>
+          <thead>
+            <tr><th scope="col">Actor</th><th scope="col">Posición militar</th><th scope="col">Efecto político</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Belgrado</th>
+              <td>Control del Ejército Popular Yugoslavo y de la oficialidad</td>
+              <td>Capacidad de imponer la unidad de la federación por la fuerza</td>
+            </tr>
+            <tr>
+              <th scope="row">Repúblicas secesionistas</th>
+              <td>Defensa territorial ligeramente armada</td>
+              <td>Sin capacidad de resistir una ofensiva federal</td>
+            </tr>
+            <tr>
+              <th scope="row">Occidente</th>
+              <td>Embargo de armas impulsado por Londres</td>
+              <td>Cierra la vía legal de rearme a las repúblicas</td>
+            </tr>
+            <tr>
+              <th scope="row">Rusia</th>
+              <td>Venta de armas a Croacia pese al embargo</td>
+              <td>Permite organizar un ejército croata</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="subseccion__titulo">Quién armó al ejército croata</h3>
+      <p>
+        Pascal interrumpe para comprobar un dato que le parece contraintuitivo: si Rusia es tradicionalmente
+        próxima a Serbia, ¿quién armó a los croatas? Krainer responde sin vacilar: los rusos. No por la
+        supuesta simpatía entre pueblos eslavos —los describe como eslavos católicos frente a eslavos
+        ortodoxos—, sino porque, en su interpretación, los responsables de la política exterior rusa
+        entendieron que una nueva Yugoslavia unificada sería el instrumento de Londres en los Balcanes. De
+        ahí que estuvieran dispuestos a vender armas en condiciones muy favorables e ignorar el embargo
+        occidental.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=549s"
+           target="_blank" rel="noopener">09:09</a>
+      </p>
+
+      <p>
+        El entrevistado añade que esto no es un asunto controvertido en Croacia: cualquiera lo sabe, aunque
+        sea uno de esos hechos que quedan al margen de los grandes relatos sobre la historia de los Balcanes.
+        Menciona su amistad personal con un almirante que estuvo al frente del mando militar croata y organizó
+        el ejército. Y utiliza una expresión que reaparecerá varias veces en la entrevista: la operación
+        formaba parte de la creación de una entidad política bajo el control del «imperio anglosionista».
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=612s"
+           target="_blank" rel="noopener">10:12</a>
+      </p>
+
+      <h3 class="subseccion__titulo">Una precisión de vocabulario</h3>
+      <p>
+        En este punto Krainer introduce una distinción que considera importante y que aplica también a
+        Ucrania. Suele compararse el conflicto yugoslavo con una invasión rusa de Ucrania, pero él propone
+        una comparación distinta: Kiev lanzando una operación contra el Donbás para aplastar un movimiento
+        independentista. Recuerda que desde Kiev se habló de «operación antiterrorista» y que lo que Rusia
+        hizo en Ucrania fue una «operación militar especial», términos militares precisos que, en su opinión,
+        no deben confundirse: una invasión moviliza prácticamente todos los recursos contra una región para
+        someterla.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=469s"
+           target="_blank" rel="noopener">07:49</a>
+      </p>
+
+      <details class="acordeon">
+        <summary class="acordeon__titulo">Nombres propios y formas dudosas de la transcripción</summary>
+        <div class="acordeon__contenido">
+          <p>
+            La transcripción automática deforma varios nombres. En este informe se han normalizado las
+            formas inequívocas: <strong>Slobodan Milošević</strong>, <strong>Halford Mackinder</strong>,
+            <strong>Enrico Mattei</strong>, <strong>Lord Carrington</strong>, <strong>Douglas Hurd</strong>,
+            <strong>Richard Sakwa</strong>, <strong>Radhika Desai</strong>, <strong>Yuval Noah Harari</strong>
+            y <strong>Friedrich Merz</strong>.
+          </p>
+          <p>
+            Se mantienen con reserva: <strong>los hermanos Stanić</strong> («Petar e Ivan Stanolic» en la
+            transcripción), vinculados al banco central yugoslavo; el apellido del almirante croata que
+            organizó el ejército («Domaset»); y el usuario de X que el entrevistado dicta al final
+            («@nakedhegy»). Ninguno de los tres se ha podido verificar en esta edición.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============ CAPÍTULO 4 ============ -->
+    <section class="capitulo" id="cap-4" aria-labelledby="titulo-cap-4">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 4</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-4">
+          Los Balcanes como segundo frente
+          <a class="ancla" href="#cap-4" aria-label="Enlace al capítulo 4">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        La entrevista pasa de la crónica a la estrategia: por qué los Balcanes importan, qué se decidió allí
+        en 1995 y cómo se preparó, treinta años después, un nuevo escenario de guerra.
+      </p>
+
+      <p>
+        Pascal subraya la importancia de la cronología: se habla de 1991, el año en que la Unión Soviética
+        dejó de existir en diciembre. Krainer responde que en el verano de 1991 la URSS todavía existía y que
+        la intervención rusa en los Balcanes debe entenderse como un contramovimiento frente a una esfera
+        anglosajona que empezaba a ejercer control. Si eso es así, la consecuencia lógica es que Londres tenía
+        interés en que los serbios aplastaran la insurrección croata: el lobby serbio en Londres, afirma,
+        apoyó sistemáticamente la política de Milošević.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=663s"
+           target="_blank" rel="noopener">11:03</a>
+      </p>
+
+      <p>
+        Sobre Milošević, el entrevistado hace una precisión que considera decisiva: no debería verse en él a
+        un patriota nacionalista serbio, sino a un funcionario amorfo, un <em>apparatchik</em> sin escrúpulos
+        que no se preocupaba realmente por el pueblo serbio porque tenía órdenes. Lo compara con Zelenski —no
+        son iguales, dice, pero tienen mucho en común— y relata su versión del reclutamiento político de
+        Milošević: dos hermanos vinculados al banco central yugoslavo lo enviaron cuatro años a Nueva York
+        como representante de uno de los mayores bancos del país; a su regreso se convirtió en líder del
+        Partido Comunista Serbio y preparó una toma del poder que centralizara Yugoslavia bajo Belgrado, con
+        apoyo constante de las estructuras occidentales.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=736s"
+           target="_blank" rel="noopener">12:16</a>
+      </p>
+
+      <div class="cita cita--larga">
+        <p>«A Slobodan Milošević no se le debería ver como ese patriota nacionalista serbio, porque era uno
+          de esos apparatchiks muy amorales […] No se preocupaba realmente por el pueblo serbio: tenía
+          órdenes.»</p>
+        <cite>Alex Krainer · <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=695s" target="_blank" rel="noopener">11:35</a></cite>
+      </div>
+
+      <h3 class="subseccion__titulo">La dificultad de leer a Washington</h3>
+      <p>
+        Krainer distingue entre dos centros de decisión. De Washington dice que su política es difícil de
+        interpretar: va en una dirección, llega alguien del Reino Unido, conversa y Estados Unidos termina
+        respaldando la posición británica. La política británica, en cambio, le parece mucho más fácil de
+        explicar y más constante: reforzar a Belgrado para crear en los Balcanes una nación unitaria y
+        centralizada, bajo supervisión.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=794s"
+           target="_blank" rel="noopener">13:14</a>
+      </p>
+
+      <p>
+        La razón es geográfica y estratégica. Los Balcanes son, en su descripción, la zona donde estalló la
+        Primera Guerra Mundial, un lugar donde es relativamente fácil agitar las cosas: el Adriático es el
+        mar que más se adentra en el continente europeo y conecta con el valle del Po, una de las regiones
+        industriales más ricas de Europa. Controlar esa zona permite, además, provocar otro conflicto
+        europeo y arrastrar a Rusia. De ahí, sostiene, el pulso que persiste hoy entre británicos y
+        estadounidenses por el control de la Federación de Bosnia, un pulso difícil de interpretar si uno se
+        queda en los titulares.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=849s"
+           target="_blank" rel="noopener">14:09</a>
+      </p>
+
+      <h3 class="subseccion__titulo">Dayton y el país preparado para el siguiente conflicto</h3>
+      <p>
+        Pascal pide contexto sobre Bosnia y Hercegovina, una de las seis repúblicas constituyentes, formada
+        por tres pueblos y dividida en diez cantones, con una entidad —la República Srpska— y varios cantones
+        bosniacos y croatas. Krainer responde que ese diseño es el resultado de los acuerdos de Dayton, que
+        califica sin matices: «un desastre, un desastre total». Su juicio es que dejaron el país preparado
+        para un conflicto futuro.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=925s"
+           target="_blank" rel="noopener">15:25</a>
+      </p>
+
+      <p>
+        Añade una observación sobre la percepción local: en Bosnia se extiende la idea de que, en el fondo,
+        quien manda son los británicos; que Sarajevo está lleno de agentes de inteligencia británicos, en
+        connivencia con los servicios bosnios, y que dominan la educación del país. Según él, si se preguntara
+        hoy cuál es la mayor amenaza extranjera para Bosnia y Hercegovina, cerca del 70 % de la población
+        respondería que Rusia. Es un dato que presenta de memoria, sin encuesta identificada.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=957s"
+           target="_blank" rel="noopener">15:57</a>
+      </p>
+
+      <h3 class="subseccion__titulo">Otoño de 2024: la guerra que se daba por inevitable</h3>
+      <p>
+        El relato llega al presente inmediato. Según Krainer, hacia el otoño de 2024 se consideraba inevitable
+        una guerra entre la República Srpska y el resto de Bosnia. El gobierno federal, dominado por un
+        representante designado por la Unión Europea que puede anular decisiones y gobernar por decreto,
+        hostigaba a los dirigentes serbobosnios. La respuesta serbia era separarse y unirse a Serbia, con un
+        referéndum de secesión previsto para octubre de 2024. Los británicos, afirma, apoyaban esa política de
+        provocación porque la independencia desencadenaría la intervención federal y, con ella, la guerra.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1008s"
+           target="_blank" rel="noopener">16:48</a>
+      </p>
+
+      <p>
+        Menciona también el trato a Milorad Dodik: orden de detención, prohibición de presentarse a las
+        elecciones pese a ser el dirigente más popular. Y la razón de fondo, tal como la lee en un documento
+        de un centro de estudios británico: como el «proyecto Ucrania» se considera perdido, los Balcanes
+        están destinados a convertirse en el segundo frente de la confrontación de Occidente contra Rusia.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1098s"
+           target="_blank" rel="noopener">18:18</a>
+      </p>
+
+      <div class="nota">
+        <p class="nota__titulo">Sobre el centro de estudios citado</p>
+        <p>
+          El entrevistado duda del nombre y finalmente se refiere al «Real Instituto de Servicios Unidos»,
+          que corresponde al Royal United Services Institute (RUSI). No cita el documento, la fecha ni el
+          autor, y este informe no ha podido verificarlo: se recoge como referencia mencionada, no como
+          fuente comprobada.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CAPÍTULO 5 ============ -->
+    <section class="capitulo" id="cap-5" aria-labelledby="titulo-cap-5">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 5</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-5">
+          Cómo se desactivó el segundo frente
+          <a class="ancla" href="#cap-5" aria-label="Enlace al capítulo 5">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        Entre el otoño de 2024 y los primeros meses de 2025, el escenario cambió por completo según el
+        entrevistado. El factor que señala es la llegada de Donald Trump a la Casa Blanca.
+      </p>
+
+      <p>
+        Krainer retoma aquí la conversación que había mantenido en Estambul con un miembro del gobierno de
+        la República Srpska. Periodistas, analistas sobre el terreno y un político croata de Bosnia le habían
+        dicho que todo cambió de golpe cuando Trump llegó al poder. Fue a preguntárselo directamente y el
+        hombre, según su relato, reaccionó como si se le hubiera iluminado la cara: «Dios mío, es como de la
+        noche al día, es como un planeta distinto». Todas las presiones de guerra se disiparon de golpe.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1213s"
+           target="_blank" rel="noopener">20:13</a>
+      </p>
+
+      <p>
+        El mecanismo que describe es concreto: mediante su apoyo a Milorad Dodik, la administración Trump
+        coordinó con el Kremlin para convencer a los serbios de aplazar el referéndum. El detonante que se
+        percibía como inicio de una guerra quedó aplazado, primero un año y después indefinidamente. En
+        palabras del entrevistado, la administración estadounidense apartó a los británicos del camino y los
+        privó de sus derechos políticos en Bosnia y Hercegovina; las tensiones se disiparon y el segundo
+        frente nunca llegó a producirse.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1241s"
+           target="_blank" rel="noopener">20:41</a>
+      </p>
+
+      <div class="destacado">
+        <p class="destacado__titulo">El punto de inflexión</p>
+        <p>
+          Para el entrevistado, 2025 invierte el desenlace que consideraba casi inevitable: lo que la
+          prensa y los analistas locales daban por guerra segura se desactiva por una decisión política
+          externa, no por un cambio interno en Bosnia.
+          <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1263s"
+             target="_blank" rel="noopener">21:03</a>
+        </p>
+      </div>
+
+      <h3 class="subseccion__titulo">El testimonio del político croata</h3>
+      <p>
+        Pascal pregunta si ese cambio no revela una disputa interna dentro del «imperio». Krainer responde
+        con una anécdota que considera significativa. Un político croata de Bosnia viajó a Washington poco
+        después de la llegada de Trump convencido de que tendría que explicar dónde está Bosnia en el mapa,
+        quiénes son los croatas y quiénes los bosnios. Al sentarse con la gente del Departamento de Estado,
+        cuenta, se quedó asombrado: conocían la situación con todo detalle y la entendían perfectamente.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1431s"
+           target="_blank" rel="noopener">23:51</a>
+      </p>
+
+      <p>
+        La conclusión que extrae es doble. Primero, que en Bosnia nadie duda de quién presionaba para que
+        estallara la guerra ni de quién la descarriló: la administración estadounidense. Segundo, que los
+        intereses británicos operaban por otras vías —organizaciones no gubernamentales, diplomacia
+        discreta— y que su rastro es más difícil de seguir. Como ejemplo de esa preparación silenciosa cita
+        un acuerdo de cooperación militar entre Gran Bretaña y el gobierno de Sarajevo, que sitúa en febrero
+        de 2024 y que, según él, no se firmó a través de la OTAN sino directamente. «Siempre hacen esto
+        cuando están preparando un lugar para la guerra», afirma.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1487s"
+           target="_blank" rel="noopener">24:47</a>
+      </p>
+
+      <p>
+        Pascal observa que, si ese relato es correcto, hubo dos voluntades enfrentadas: una que intentaba
+        poner en marcha el conflicto y otra que lo desactivó. El entrevistado acepta la formulación y la
+        conecta con un precedente de los años noventa, que desarrolla en el capítulo siguiente.
+      </p>
+    </section>
+
+    <!-- ============ CAPÍTULO 6 ============ -->
+    <section class="capitulo" id="cap-6" aria-labelledby="titulo-cap-6">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 6</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-6">
+          El mecanismo de escalada
+          <a class="ancla" href="#cap-6" aria-label="Enlace al capítulo 6">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        Cómo una guerra civil en un país pequeño podía convertirse en una guerra europea: el entrevistado
+        describe una cadena de arrastres sucesivos que termina con Rusia y la OTAN frente a frente.
+      </p>
+
+      <p>
+        El razonamiento parte de la composición de Bosnia. Hay una minoría croata —calcula, sin precisión,
+        en torno al 20 % de la población— repartida en cantones mezclados, de modo que resulta fácil
+        enfrentar a unos con otros. Si estallaba una guerra dentro de Bosnia, Serbia se vería arrastrada para
+        proteger los intereses de los serbios de Bosnia; Croacia haría lo mismo con los croatas. Y Croacia es
+        miembro de la OTAN. Si Croacia entraba en guerra contra Serbia, un país no miembro, podía activarse
+        el artículo 5 y quedar implicada toda la alianza. En ese escenario, afirma, Rusia no podía quedarse
+        al margen.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1326s"
+           target="_blank" rel="noopener">22:06</a>
+      </p>
+
+      <figure class="diagrama">
+        <a class="diagrama__enlace" href="assets/img/escalada.svg" target="_blank" rel="noopener"
+                aria-label="Abrir el esquema a tamaño completo">
+              <img src="assets/img/escalada.svg" width="920" height="300"
+             alt="Escalera de escalada: conflicto en Bosnia, Serbia y Croacia arrastradas, artículo 5 de la OTAN, intervención rusa.">
+            </a>
+        <figcaption>
+          Reconstrucción del escenario que describe el entrevistado
+          (<a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1293s" target="_blank" rel="noopener">21:33</a>).
+          Es un esquema conceptual suyo, no un plan documentado.
+        </figcaption>
+      </figure>
+
+      <p>
+        Krainer califica el diseño de «plan muy inteligente» y subraya el paralelismo histórico: otra gran
+        guerra europea que estalla exactamente en el mismo lugar que la Primera Guerra Mundial y «empujada
+        por la misma estructura de poder de siempre, la City de Londres». Pascal pregunta si ese plan era
+        realmente una intención o una reconstrucción posterior. El entrevistado responde que las estrategias
+        de este tipo son secretas por definición y que los preparativos de 1914 tampoco fueron públicos hasta
+        mucho después: los británicos, dice, trabajaron casi veinte años antes de poner en marcha el
+        conflicto. De ahí su método: observar patrones, políticas y justificaciones, y unir los puntos con
+        imaginación porque nadie los explica de forma clara.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1403s"
+           target="_blank" rel="noopener">23:23</a>
+      </p>
+
+      <h3 class="subseccion__titulo">El precedente de 1993–1995</h3>
+      <p>
+        Para sostener que esa tensión entre dos voluntades no es nueva, el entrevistado vuelve a la guerra de
+        Bosnia. Entre 1993 y 1995, afirma, Estados Unidos intentaba que la parte serbia respetara la paz e
+        imponer un alto el fuego, mientras la presión británica empujaba a continuar la guerra. Cita a los
+        responsables de esa presión: Lord Carrington, Lord David Owen y Douglas Hurd. Y describe un patrón de
+        desgaste: los estadounidenses iban a bombardear posiciones serbias y, en el último momento, perdían
+        el impulso y retrocedían.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1521s"
+           target="_blank" rel="noopener">25:21</a>
+      </p>
+
+      <p>
+        El resultado fue Dayton, el acuerdo que puso fin a la guerra y que el entrevistado considera
+        desastroso. Su hipótesis es que también allí intervinieron los británicos en la redacción, aunque
+        reconoce que no lo sabe con certeza. El acuerdo, en su lectura, barrió el problema bajo la alfombra,
+        lo dejó enquistado y preparó la mecha para un conflicto posterior.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1568s"
+           target="_blank" rel="noopener">26:08</a>
+      </p>
+
+      <div class="cita">
+        <p>«Dayton fue en esencia un acuerdo desastroso que se limitó a barrer todo el problema bajo la
+          alfombra, dejando que se enquistara.»</p>
+        <cite>Alex Krainer · <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1568s" target="_blank" rel="noopener">26:08</a></cite>
+      </div>
+
+      <p>
+        Con esto cierra el caso y abre el marco general: los Balcanes son, dice, solo uno de los muchos focos
+        de un archipiélago de crisis que rodea a Rusia. El capítulo siguiente desarrolla esa idea.
+      </p>
+    </section>
+
+    <!-- ============ CAPÍTULO 7 ============ -->
+    <section class="capitulo" id="cap-7" aria-labelledby="titulo-cap-7">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 7</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-7">
+          El arco de crisis y la herencia de Mackinder
+          <a class="ancla" href="#cap-7" aria-label="Enlace al capítulo 7">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        Del caso balcánico al mapa general: el entrevistado describe un cinturón de conflictos que va del
+        Báltico al Mediterráneo oriental y llega hasta Corea, y lo atribuye a una doctrina formulada en 1904.
+      </p>
+
+      <p>
+        Krainer afirma que los Balcanes son un foco más del «arco de crisis» con el que el imperio británico
+        rodeó a Rusia: desde los países bálticos hasta los Balcanes, el Mediterráneo oriental y, cruzando el
+        continente, Corea. Es, dice, exactamente el mismo guion que Halford Mackinder redactó en 1904. En
+        aquella época no existían Yugoslavia, Israel ni Ucrania; Mackinder hablaba de rodear la zona pivote
+        con focos de crisis y mencionaba Francia, Italia, Egipto, India y Corea, que entonces era un solo
+        país. Hoy hay más Estados, lo que, en su opinión, hace aún más fácil crear esas guerras.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1599s"
+           target="_blank" rel="noopener">26:39</a>
+      </p>
+
+      <p>
+        Presenta a Mackinder como «una de las grandes mentes del imperio británico», miembro de la camarilla
+        imperial y teórico de su estrategia geopolítica. No inventó la doctrina, sostiene, sino que la
+        articuló en libros y documentos: rodear la zona pivote —Rusia— con focos de crisis donde las potencias
+        marítimas puedan abastecer a fuerzas subsidiarias con material, asesoramiento, tropas y munición. El
+        objetivo era imponer permanentemente la guerra a la potencia pivote y mantenerla desangrándose para
+        que nunca pudiera alzarse como rival del imperio británico.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1649s"
+           target="_blank" rel="noopener">27:29</a>
+      </p>
+
+      <figure class="diagrama">
+        <a class="diagrama__enlace" href="assets/img/arco-crisis.svg" target="_blank" rel="noopener"
+                aria-label="Abrir el esquema a tamaño completo">
+              <img src="assets/img/arco-crisis.svg" width="900" height="410"
+             alt="Esquema: centros de crisis en los Bálticos, los Balcanes, el Mediterráneo oriental y Corea alrededor de Rusia.">
+            </a>
+        <figcaption>
+          El arco de crisis que describe el entrevistado
+          (<a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1599s" target="_blank" rel="noopener">26:39</a>):
+          las potencias marítimas suministran a focos de conflicto que presionan sobre Rusia. Esquema
+          conceptual propio; las posiciones no representan geografía real.
+        </figcaption>
+      </figure>
+
+      <h3 class="subseccion__titulo">La reencarnación del imperio</h3>
+      <p>
+        La consecuencia que extrae es que la doctrina sigue viva aunque el imperio parezca desaparecido. «Se
+        ha reencarnado, por así decirlo, en ese eje de Londres y Wall Street», afirma. La fórmula que emplea
+        es que los banqueros compran a los políticos y que el resultado es un imperio de banqueros que ha
+        pasado desapercibido precisamente porque no se presenta como tal.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1718s"
+           target="_blank" rel="noopener">28:38</a>
+      </p>
+
+      <p>
+        Aquí Pascal introduce la objeción conceptual que reaparecerá en el capítulo siguiente: pensar en
+        «Occidente» como un bloque único oculta luchas internas. ¿No podría explicarse Bosnia por una disputa
+        dentro del imperio sobre qué hacer? Krainer concede que puede haber desacuerdos tácticos, pero insiste
+        en que la política británica ha sido constante: reforzar Belgrado, crear una nación centralizada y
+        mantener la zona bajo supervisión. Y advierte de que estas estrategias son secretas, de modo que su
+        reconstrucción exige leer el patrón y no solo los documentos.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1746s"
+           target="_blank" rel="noopener">29:06</a>
+      </p>
+    </section>
+
+    <!-- ============ CAPÍTULO 8 ============ -->
+    <section class="capitulo" id="cap-8" aria-labelledby="titulo-cap-8">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 8</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-8">
+          Dos centros de poder: Londres y Washington
+          <a class="ancla" href="#cap-8" aria-label="Enlace al capítulo 8">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        El entrevistado sostiene que el conflicto decisivo no está entre países, sino dentro de Estados
+        Unidos: entre una estructura cooptada por la red imperial y una tradición política que se resiste.
+      </p>
+
+      <p>
+        Krainer describe el imperio como una red que coopta a las naciones anfitrionas. Los países que
+        colonizaron el mundo no actuaban, en su lectura, por una esencia nacional, sino porque una oligarquía
+        de intereses bancarios utilizaba sus recursos —riqueza, poder militar, diplomacia, servicios de
+        inteligencia— para construir un sistema global de colonias. A esa red, afirma, no le importa si la
+        nación anfitriona es Holanda, Gran Bretaña, Estados Unidos o China, siempre que mantenga el control de
+        los activos clave. Con ese control puede imponer políticas exteriores, mantener a otros países en
+        posición subordinada y dictar las condiciones comerciales.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1873s"
+           target="_blank" rel="noopener">31:13</a>
+      </p>
+
+      <p>
+        Sobre Estados Unidos su tesis es más fuerte: durante más de cien años, dice, los británicos han
+        infiltrado y cooptado sus estructuras de poder, de modo que existe un «estado profundo» leal a la
+        camarilla imperial, al que describe como su guardia pretoriana. Pero Estados Unidos nació como
+        reacción al imperio británico y conserva una tradición patriota que se resiente de servir como brazo
+        ejecutor militar. En esa tensión sitúa el conflicto real: personas dentro del Pentágono, del
+        Departamento de Estado o del gobierno que, de vez en cuando, formulan políticas contrarias a los
+        intereses de la camarilla y son sometidas de nuevo.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1927s"
+           target="_blank" rel="noopener">32:07</a>
+      </p>
+
+      <div class="cita cita--larga">
+        <p>«Tenemos ese estado profundo que es leal a esta camarilla imperial. Básicamente ese es su
+          empleador. Son como la guardia pretoriana del imperio.»</p>
+        <cite>Alex Krainer · <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=1988s" target="_blank" rel="noopener">33:08</a></cite>
+      </div>
+
+      <p>
+        Con la administración Trump, añade, esa resistencia ha llegado a un momento de ruptura: ya no se finge
+        que la «relación especial» signifique algo y se desafía abiertamente a los británicos. El ejemplo más
+        reciente que cita es el acuerdo entre Estados Unidos y Rusia, que califica de histórico. La reacción
+        del establishment británico, dice, fue de furia e histeria, y esa reacción revela que la brecha entre
+        ambos centros vuelve a abrirse.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2030s"
+           target="_blank" rel="noopener">33:50</a>
+      </p>
+
+      <p>
+        Pascal traza entonces un paralelismo con la lectura marxista de Radhika Desai: también ella habla de
+        «estructura imperial», pero no para describir a un grupo que quiere gobernar territorios, sino para
+        señalar que las instituciones capitalistas, por su propia lógica de acumulación, necesitan expansionismo
+        y apropiación. La pregunta que traslada al entrevistado es si el sistema es intencionado o inherente, y
+        quién asumirá las pérdidas de cientos de miles de millones cuando las cosas salgan mal.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2090s"
+           target="_blank" rel="noopener">34:50</a>
+      </p>
+
+      <div class="pestanas" data-pestanas>
+        <div class="pestanas__lista" role="tablist" aria-label="¿Sistema inherente o acción intencionada?">
+          <button type="button" class="pestanas__boton" role="tab" id="pestana-sistema"
+                  aria-controls="panel-sistema" aria-selected="true">La objeción sistémica</button>
+          <button type="button" class="pestanas__boton" role="tab" id="pestana-intencion"
+                  aria-controls="panel-intencion" aria-selected="false" tabindex="-1">La respuesta del entrevistado</button>
+        </div>
+
+        <div class="pestanas__panel" role="tabpanel" id="panel-sistema"
+             aria-labelledby="pestana-sistema" data-etiqueta="La objeción sistémica" tabindex="0">
+          <p>
+            El entrevistador recoge la lectura de Radhika Desai: el capitalismo crea instituciones que, por su
+            lógica de maximizar beneficios y repatriarlos, necesitan expansionismo y apropiación. En esa
+            lectura, el imperio no requiere una conspiración: es la forma que adopta el sistema cuando no tiene
+            restricciones.
+          </p>
+          <p>
+            La pregunta que sigue es práctica: si el sistema produce pérdidas de doscientos, trescientos o
+            cuatrocientos mil millones, ¿quién las asume? Y si el resultado está determinado por la estructura,
+            ¿qué margen queda a la decisión política?
+          </p>
+        </div>
+
+        <div class="pestanas__panel" role="tabpanel" id="panel-intencion"
+             aria-labelledby="pestana-intencion" data-etiqueta="La respuesta del entrevistado" tabindex="0" hidden>
+          <p>
+            «Creo que es totalmente intencionado», responde Krainer. Su argumento es que el modelo de negocio
+            del imperio siempre se presenta al público como algo aceptable: primero la misión civilizadora y
+            «la carga del hombre blanco»; hoy, la libertad y la democracia. Esa fachada exige planificación,
+            financiación de laboratorios de ideas y una red cohesionada, no solo una tendencia económica.
+          </p>
+          <p>
+            Reconoce, sin embargo, que la lógica de acumulación importa: su descripción del mecanismo de deuda
+            es compatible con la objeción sistémica. Donde se separa es en la conclusión: para él hay
+            intención, coordinación y beneficiarios identificables.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        El entrevistado no resuelve la tensión entre ambas explicaciones, y la entrevista sigue sin cerrarla.
+        Lo que hace es desplazar la discusión al terreno operativo: si el sistema es intencionado, entonces
+        tiene un modelo de negocio concreto, y eso es lo que describe en el capítulo siguiente.
+      </p>
+    </section>
+
+    <!-- ============ CAPÍTULO 9 ============ -->
+    <section class="capitulo" id="cap-9" aria-labelledby="titulo-cap-9">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 9</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-9">
+          El modelo de negocio: deuda, garantías y la cinta transportadora
+          <a class="ancla" href="#cap-9" aria-label="Enlace al capítulo 9">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        Aquí el entrevistado abandona el análisis geopolítico y describe el mecanismo económico: cómo un
+        préstamo garantizado con recursos ajenos convierte la riqueza de un país en un activo bancario.
+      </p>
+
+      <p>
+        La premisa es que el imperio necesita presentar su modelo como algo aceptable. Antes era una misión
+        civilizadora —«la carga del hombre blanco», enseñar a los salvajes la dignidad del trabajo—; ahora es
+        la libertad y la democracia. Sobre esa fachada, el plan de negocio consiste en prestar dinero a las
+        naciones colonizadas y también a los propios clientes que acuden a desarrollarlas y a crear empleo.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2237s"
+           target="_blank" rel="noopener">37:17</a>
+      </p>
+
+      <p>
+        El ejemplo que desarrolla es el petróleo de Nigeria. Para extraerlo hacen falta plataformas, puertos,
+        oleoductos y redes de distribución, y eso exige miles de millones antes de que salga el primer barril.
+        Las compañías —BP, Shell, ExxonMobil— piden ese dinero a sus bancos: J.P. Morgan, RBS, UBS, Goldman
+        Sachs, Citigroup. Pero un préstamo de miles de millones requiere una garantía. Y la garantía aparece
+        cuando existe control político sobre el país: se firma un contrato que declara que el petróleo nigeriano
+        respalda la operación, y con ese respaldo el banco presta a la corporación.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2285s"
+           target="_blank" rel="noopener">38:05</a>
+      </p>
+
+      <figure class="diagrama">
+        <a class="diagrama__enlace" href="assets/img/cinta-transportadora.svg" target="_blank" rel="noopener"
+                aria-label="Abrir el esquema a tamaño completo">
+              <img src="assets/img/cinta-transportadora.svg" width="900" height="410"
+             alt="Esquema: nación, corporación y banco unidos por la concesión, el préstamo y el cobro de intereses.">
+            </a>
+        <figcaption>
+          El mecanismo tal como lo describe el entrevistado, con su propio ejemplo del petróleo
+          (<a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2285s" target="_blank" rel="noopener">38:05</a>).
+        </figcaption>
+      </figure>
+
+      <p>
+        A partir de ahí, describe dos efectos. El primero es contable: en el momento en que el banco concede
+        el préstamo, su balance crece con un activo de mil millones. El segundo es de flujo: ese préstamo se
+        devolverá como mínimo duplicado a lo largo de su vida, y con frecuencia mucho más, porque los banqueros
+        añaden comisiones y cláusulas. En muchos casos, afirma, el préstamo acaba devolviéndose diez veces: mil
+        millones prestados terminan extrayendo diez mil millones de riqueza del país.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2393s"
+           target="_blank" rel="noopener">39:53</a>
+      </p>
+
+      <div class="tabla-envoltura" tabindex="0" role="region" aria-label="Aritmética del préstamo, tabla desplazable">
+        <table class="tabla tabla--comparativa tabla--cifras">
+          <caption>La aritmética del ejemplo, con las cifras que da el entrevistado</caption>
+          <thead>
+            <tr><th scope="col">Concepto</th><th scope="col">Importe</th><th scope="col">Efecto que destaca</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Préstamo concedido</th>
+              <td class="num">1.000 millones</td>
+              <td>Entra como activo en el balance del banco</td>
+            </tr>
+            <tr>
+              <th scope="row">Devolución mínima estimada</th>
+              <td class="num">2.000 millones</td>
+              <td>El capital se duplica durante la vida del préstamo</td>
+            </tr>
+            <tr>
+              <th scope="row">Devolución «en muchos casos»</th>
+              <td class="num">10.000 millones</td>
+              <td>Comisiones y cláusulas multiplican el retorno</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="fuentes__nota">
+        Cifras hipotéticas empleadas por el entrevistado para explicar el mecanismo. No corresponden a una
+        operación identificada ni a un país concreto.
+      </p>
+
+      <h3 class="subseccion__titulo">La corporación como cinta, no como beneficiaria</h3>
+      <p>
+        Pascal reformula la imagen: Shell no es más que la cinta transportadora, y quien más se beneficia es el
+        banco del fondo, que nunca pone una mano sobre el petróleo y solo lo reclama como suyo mediante
+        estructuras legales que hacen exigible la garantía. Krainer lo confirma y añade la comparación que
+        considera decisiva: Suiza.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2443s"
+           target="_blank" rel="noopener">40:43</a>
+      </p>
+
+      <p>
+        Si el objetivo fuera garantizar el suministro, razona, bastaría con comprar el crudo en condiciones
+        equitativas, añadir un margen y revenderlo. No haría falta construir plataformas ni controlar
+        políticamente el país productor. Suiza —señala— no tiene ninguna base militar en el mundo y, sin
+        embargo, sus gasolineras siempre han tenido combustible, y sus tiendas café, cacao y azúcar. La idea de
+        que sin control territorial las gasolineras se quedarían secas le parece un mito: el comercio en
+        condiciones justas suele ser más barato que el despliegue.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2565s"
+           target="_blank" rel="noopener">42:45</a>
+      </p>
+
+      <div class="destacado">
+        <p class="destacado__titulo">La imagen que ordena el capítulo</p>
+        <p>
+          «El mecanismo, la relación, funciona como una cinta transportadora que extrae riqueza de la colonia
+          y la lleva hacia los banqueros.»
+          <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2443s"
+             target="_blank" rel="noopener">40:43</a>
+        </p>
+      </div>
+
+      <p>
+        El entrevistado cierra el capítulo con una digresión personal que sirve de puente: durante años leyó
+        <em>McKinsey Quarterly</em> porque le parecía investigación seria, hasta que el caso Enron lo hizo
+        desconfiar. Ese cambio de percepción lo lleva al dato que abre el capítulo siguiente.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2618s"
+           target="_blank" rel="noopener">43:38</a>
+      </p>
+    </section>
+
+    <!-- ============ CAPÍTULO 10 ============ -->
+    <section class="capitulo" id="cap-10" aria-labelledby="titulo-cap-10">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 10</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-10">
+          La economía real al servicio de la banca
+          <a class="ancla" href="#cap-10" aria-label="Enlace al capítulo 10">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        Un dato que el entrevistado atribuye a McKinsey le permite sostener que la industria petrolera trabajó
+        durante décadas para sus acreedores antes que para sus accionistas.
+      </p>
+
+      <p>
+        Krainer recuerda una serie de artículos sobre gestión de riesgos en la industria petrolera que McKinsey
+        publicó, según su memoria, hacia 2003 o 2004. La conclusión era que, durante la mayor parte de su
+        historia, la industria petrolera occidental apenas cubría el coste del capital. Su lectura es
+        directa: después de pagar los préstamos, las comisiones y los intereses, no quedaba gran cosa. La
+        industria, dice, trabajaba para los banqueros.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2655s"
+           target="_blank" rel="noopener">44:15</a>
+      </p>
+
+      <p>
+        Reconoce que hoy los precios son mucho más altos y que las corporaciones obtienen beneficios
+        sustanciales. Pero el dato antiguo le sirve para mostrar la estructura: cuando los precios eran
+        ajustados, el margen se iba íntegramente al servicio de la deuda. Y añade el incentivo que, en su
+        opinión, explica la persistencia del sistema: en el momento en que el banco concede el préstamo, su
+        balance crece con un activo rentable que conserva mientras mantenga el control político sobre el país
+        que lo respalda. Cada mes, afirma, miles de millones llegan desde todas partes del mundo a la City de
+        Londres y a Wall Street.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2766s"
+           target="_blank" rel="noopener">46:06</a>
+      </p>
+
+      <h3 class="subseccion__titulo">La objeción de la garantía</h3>
+      <p>
+        Pascal plantea la dificultad jurídica evidente: para pignorar una casa hay que ser su propietario.
+        ¿Cómo puede Shell ofrecer como garantía un petróleo que no es suyo? Krainer responde con la cadena de
+        contratos: el gobierno abre el país al capital extranjero, firma un contrato con la empresa y le
+        concede derechos de explotación —no necesariamente la propiedad, sino un arrendamiento de cincuenta o
+        cien años, o a perpetuidad—. Con ese derecho exclusivo, que parece legítimo porque procede de un
+        gobierno reconocido, la corporación acude al banco. Y el banco, señala, no saca el dinero de ningún
+        sitio: lo anota en su balance.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2830s"
+           target="_blank" rel="noopener">47:10</a>
+      </p>
+
+      <p>
+        La condición que subraya es política: sin control sobre el gobierno que firma la concesión, el
+        mecanismo no funciona. De ahí que el imperio necesite gobiernos dóciles y que el derecho —contratos,
+        concesiones, garantías exigibles— sea tan importante como la fuerza.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2929s"
+           target="_blank" rel="noopener">48:49</a>
+      </p>
+
+      <h3 class="subseccion__titulo">Por qué la corporación no crea su propio banco</h3>
+      <p>
+        La pregunta de Pascal es por qué Shell no monta su propio banco y se presta a sí misma. La respuesta
+        de Krainer tiene dos partes. La primera es que el origen del dinero es indiferente: mil millones son
+        mil millones vengan de un banco nigeriano, londinense, ruso o chino. La segunda es que, si es
+        indiferente, no hay razón para entregar el activo a J.P. Morgan... salvo que la decisión no la tome la
+        corporación.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=2990s"
+           target="_blank" rel="noopener">49:50</a>
+      </p>
+
+      <p>
+        Su explicación es que los consejos de administración de estas corporaciones incluyen siempre a personas
+        procedentes de Goldman Sachs, J.P. Morgan o Citigroup. Por esa vía, la estrategia empresarial queda
+        subordinada a los intereses de la banca. La imagen que usa es la de una relación entre iguales que en
+        realidad no lo es: la economía real produce, la banca cobra.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3053s"
+           target="_blank" rel="noopener">50:53</a>
+      </p>
+
+      <div class="nota">
+        <p class="nota__titulo">Sobre el dato de McKinsey</p>
+        <p>
+          El entrevistado cita de memoria una serie de <em>McKinsey Quarterly</em> de 2003 o 2004 y no aporta
+          referencia exacta. Este informe reproduce su recuerdo y su interpretación; no se ha verificado la
+          publicación ni la cifra.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CAPÍTULO 11 ============ -->
+    <section class="capitulo" id="cap-11" aria-labelledby="titulo-cap-11">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 11</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-11">
+          Enrico Mattei: el contraejemplo
+          <a class="ancla" href="#cap-11" aria-label="Enlace al capítulo 11">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        Si el mecanismo descrito es cierto, ¿qué ocurre cuando alguien intenta operar fuera de él? El
+        entrevistado responde con un caso: el hombre que construyó la energía italiana al servicio del país.
+      </p>
+
+      <p>
+        Pascal introduce el caso y Krainer lo desarrolla con entusiasmo. Enrico Mattei desarrolló el sector
+        energético italiano —refinerías, oleoductos, barcos— en nombre de Italia y del pueblo italiano.
+        Competía con las «siete hermanas», las grandes petroleras mundiales, y según el entrevistado las
+        superaba. Fue a Libia, Argelia y Egipto y cerró acuerdos para explotar recursos sobre una base
+        equitativa: vosotros vendéis vuestro petróleo, nosotros construimos una refinería en vuestro país,
+        creamos empleo y refinamos allí; después nos vendéis el producto refinado y lo llevamos a Italia.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3084s"
+           target="_blank" rel="noopener">51:24</a>
+      </p>
+
+      <p>
+        El ejemplo que más le interesa es el ruso. Mattei cerró un acuerdo por el que las acerías italianas
+        producían unos dos millones de toneladas de tubos de acero para venderlos a Rusia a cambio de crudo.
+        El resultado, dice, era una diferencia de precio enorme: el petróleo ruso llegaba al mercado italiano
+        mucho más barato que el de las grandes compañías. Sus cifras son 2,50 dólares frente a 0,50 por barril.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3135s"
+           target="_blank" rel="noopener">52:15</a>
+      </p>
+
+      <div class="tabla-envoltura" tabindex="0" role="region" aria-label="Dos formas de organizar el petróleo, tabla desplazable">
+        <table class="tabla tabla--comparativa">
+          <caption>Dos formas de organizar el negocio, según la exposición del entrevistado</caption>
+          <thead>
+            <tr><th scope="col">Dimensión</th><th scope="col">Modelo de Mattei</th><th scope="col">Modelo de las grandes petroleras</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Relación con el país productor</th>
+              <td>Contrato equitativo; refinería e industria en origen</td>
+              <td>Concesión de largo plazo y extracción</td>
+            </tr>
+            <tr>
+              <th scope="row">Beneficio</th>
+              <td>Queda en Italia: empresas, empleo y bancos italianos</td>
+              <td>Se traslada a los bancos de la City y de Wall Street</td>
+            </tr>
+            <tr>
+              <th scope="row">Precio del crudo en Italia</th>
+              <td>Más barato, según las cifras citadas</td>
+              <td>Más caro</td>
+            </tr>
+            <tr>
+              <th scope="row">Desenlace</th>
+              <td>Mattei muere en un accidente de aviación en los años sesenta</td>
+              <td>El sistema continúa</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="subseccion__titulo">La muerte y la interpretación</h3>
+      <p>
+        Según Krainer, el avión de Mattei se estrelló y lo mataron. Añade que es «casi seguro» que fue la CIA,
+        que la embajada estadounidense en Roma redactó informes sobre aquel empresario problemático que no
+        quería colaborar y que estaba tomando el control del mercado italiano. La lógica que reconstruye es
+        económica: lo siguiente que Mattei iba a hacer era financiarse con un banco italiano, y eso era
+        precisamente el problema. Su relato sitúa el siniestro a principios de los años sesenta y añade un
+        detalle: el jefe de estación de la CIA en Roma presentó un informe de más de veinte páginas y
+        desapareció de Italia para no volver.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3217s"
+           target="_blank" rel="noopener">53:37</a>
+      </p>
+
+      <div class="cita cita--larga">
+        <p>«En una ecuación, la riqueza italiana revierte en el pueblo italiano, en los bancos italianos, en
+          las empresas italianas. En la otra tienes una cinta transportadora que succiona la riqueza de Italia
+          hacia los bancos de Wall Street y de la City de Londres.»</p>
+        <cite>Alex Krainer · <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3275s" target="_blank" rel="noopener">54:35</a></cite>
+      </div>
+
+      <p>
+        Pascal cierra la sección con una advertencia que el entrevistado acepta: quien intenta luchar de
+        verdad contra ese sistema entra en aguas muy peligrosas. Y de ahí extrae una consecuencia incómoda
+        que también acepta: los actores que han prosperado dentro del sistema —menciona el caso suizo— forman
+        parte del oligopolio que lo hace funcionar.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3298s"
+           target="_blank" rel="noopener">54:58</a>
+      </p>
+
+      <div class="nota">
+        <p class="nota__titulo">Precisión sobre los datos del caso</p>
+        <p>
+          La transcripción automática deforma el nombre («Enrico Matei») y las cifras de precio («$250 a50»,
+          «con 50 el barril»). Se han normalizado el nombre y la lectura más plausible —2,50 frente a 0,50
+          dólares por barril—, que es la que se deduce del contexto. La atribución del derribo a la CIA es una
+          afirmación del entrevistado, no un hecho establecido en la conversación con documentación.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CAPÍTULO 12 ============ -->
+    <section class="capitulo" id="cap-12" aria-labelledby="titulo-cap-12">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 12</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-12">
+          La red, el horizonte distópico y la grieta
+          <a class="ancla" href="#cap-12" aria-label="Enlace al capítulo 12">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        El último tramo del argumento proyecta el mecanismo hacia el futuro: qué ocurre si nadie se resiste y
+        por qué el entrevistado, aun así, no es pesimista.
+      </p>
+
+      <p>
+        La primera pieza es la cohesión. Un sistema así, razona, necesita una red internacional muy unida que
+        mantenga el equilibrio y evite que los Estados se salgan del marco. Para describirla recurre a una
+        expresión que da por conocida por la audiencia: la «clase Epstein», una capa de intermediarios que
+        sostiene el conjunto sin necesidad de aparecer constantemente. Sin esa cohesión, muchos Estados
+        intentarían romperlo todo.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3338s"
+           target="_blank" rel="noopener">55:38</a>
+      </p>
+
+      <p>
+        Antes de proyectar, insiste en el estatus de su tesis: «quizá Alex tenga razón, quizá Alex se
+        equivoque». Lo que propone es tomar el marco y comprobar si el mundo real lo confirma. Su afirmación es
+        que, cuanto más se atiende a lo que ocurre, más coherente se vuelve la imagen. Y a partir de ahí aplica
+        la extrapolación: el sistema de incentivos elimina obstáculos uno tras otro —Bosnia, los Balcanes,
+        Mattei, quien sea—, de modo que quien no coopera acaba siendo un problema a resolver.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3364s"
+           target="_blank" rel="noopener">56:04</a>
+      </p>
+
+      <h3 class="subseccion__titulo">El horizonte que describe</h3>
+      <p>
+        El extremo de esa línea, según el entrevistado, es una humanidad convertida en fuerza de trabajo
+        cautiva. Para sostenerlo cita el lenguaje de la «cuarta revolución industrial» y del «gran reinicio», y
+        a Yuval Noah Harari: la idea de que el ser humano deja de ser un alma soberana para convertirse en un
+        animal hackeable. La consecuencia práctica, en su lectura, es que cada persona trabajaría para la red
+        hasta que dejara de ser útil; después, dice, el sistema podría proponer la asistencia médica para morir
+        como «el mejor tratamiento» para quien ya no produce.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3450s"
+           target="_blank" rel="noopener">57:30</a>
+      </p>
+
+      <p>
+        El inventario que enumera a continuación es una lista de condiciones tecnológicas y sanitarias que
+        atribuye al diseño del futuro: monedas digitales de bancos centrales, chips bajo la piel, vacunación
+        periódica, ciudades de quince minutos, restricción de la carne roja y sustitución por insectos. Lo
+        presenta como el paquete de control que haría innecesaria la coerción abierta.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3522s"
+           target="_blank" rel="noopener">58:42</a>
+      </p>
+
+      <details class="acordeon">
+        <summary class="acordeon__titulo">El inventario distópico que enumera el entrevistado</summary>
+        <div class="acordeon__contenido">
+          <ul>
+            <li><strong>Monedas digitales de bancos centrales</strong> como medio de pago controlable.</li>
+            <li><strong>Implantes bajo la piel</strong> para identificar y habilitar el acceso.</li>
+            <li><strong>Vacunación recurrente</strong> como condición periódica de normalidad.</li>
+            <li><strong>Ciudades de quince minutos</strong> como marco de vida restringido.</li>
+            <li><strong>Dieta administrada</strong>: retirada de la carne roja y sustitución por insectos.</li>
+          </ul>
+          <p>
+            Son elementos que el entrevistado agrupa como un programa coherente. En la conversación no se
+            documentan con planes oficiales ni con fuentes; se presentan como la dirección que deduce del
+            lenguaje de los foros económicos.
+          </p>
+        </div>
+      </details>
+
+      <p>
+        Pascal responde con una observación que cambia el tono: si eso es el futuro, la versión del
+        entrevistado es la optimista. Krainer acepta el giro y explica por qué, pese a todo, no se muestra
+        alarmado. Su primer argumento es económico: mientras la élite necesite trabajo humano, el resto está a
+        salvo. Nada de eso —yates, campos de golf, comodidades de miles de millones— funciona sin personas que
+        trabajen por cuarenta o cincuenta mil dólares al año.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3580s"
+           target="_blank" rel="noopener">59:40</a>
+      </p>
+
+      <p>
+        Su preocupación real es el momento en que eso deje de ser cierto: cuando coincidan la inteligencia
+        artificial y la robótica y el trabajo físico deje de ser necesario. Entonces, dice, la pregunta será
+        qué hacer con ocho mil millones de personas cuando quizá se prefiera una cifra más cercana a ocho
+        millones. Es la única parte de la conversación en la que el entrevistado se describe a sí mismo como
+        preocupado.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3662s"
+           target="_blank" rel="noopener">1:01:02</a>
+      </p>
+
+      <h3 class="subseccion__titulo">Por qué no se rinde</h3>
+      <p>
+        La razón del optimismo que declara es doble. Primero, porque solo ve dos formas de fracasar: rendirse
+        y aceptar la esclavitud, o dejarse llevar a un apocalipsis nuclear. Segundo, porque detecta un
+        fenómeno nuevo: un despertar de la población mundial sin precedentes, posible gracias a internet, las
+        redes sociales y los pódcast. Los poderes establecidos, argumenta, ya no pueden controlar el relato
+        controlando la televisión, los periódicos y la radio.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3721s"
+           target="_blank" rel="noopener">1:02:01</a>
+      </p>
+
+      <p>
+        La consecuencia que extrae es que los planes de la élite son antiguos: se formularon hace treinta,
+        cuarenta o cincuenta años y ninguno previó internet ni sus efectos imprevistos. Podían imaginar una red
+        de control más eficiente, pero no que permitiría conversaciones como esta. De ahí su lectura de la
+        explosión de mensajes «Rusia no es mi enemiga» tras el inicio de la guerra en Ucrania: la necesidad de
+        crear la impresión de unanimidad es, precisamente, la señal de que la unanimidad no existe.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3783s"
+           target="_blank" rel="noopener">1:03:03</a>
+      </p>
+
+      <div class="destacado">
+        <p class="destacado__titulo">La grieta</p>
+        <p>
+          «Se está produciendo un despertar entre la gente de todo el mundo, como nunca hemos visto en toda la
+          historia de la humanidad.»
+          <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3744s"
+             target="_blank" rel="noopener">1:02:24</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CAPÍTULO 13 ============ -->
+    <section class="capitulo" id="cap-13" aria-labelledby="titulo-cap-13">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Capítulo 13</span>
+        <h2 class="capitulo__titulo" id="titulo-cap-13">
+          La guerra de la percepción
+          <a class="ancla" href="#cap-13" aria-label="Enlace al capítulo 13">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        El cierre de la entrevista es una discusión sobre lo que la gente realmente piensa en Europa, con
+        datos que el entrevistado cita de memoria y un contraejemplo que Pascal pone sobre la mesa.
+      </p>
+
+      <p>
+        Krainer sostiene que la impresión de que Europa odia a Rusia y quiere la guerra procede de los medios
+        generalistas y de cuentas pagadas en redes sociales. Su evidencia es un amigo que trabaja para la OTAN
+        y que le contó que la alianza sigue de cerca el estado de ánimo de la opinión pública con encuestas
+        propias. En febrero de 2022, cuando el nivel de indignación estaba en su punto más alto, ese contacto
+        le dijo que en Francia, Italia y España —los miembros de Europa occidental que menciona— alrededor de
+        dos tercios de los encuestados simpatizaban con Rusia y no con Ucrania. En los antiguos países del
+        bloque soviético —Polonia, República Checa, Eslovaquia, Bulgaria, Rumanía— la proporción era de tres de
+        cada cuatro.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=4022s"
+           target="_blank" rel="noopener">1:07:02</a>
+      </p>
+
+      <p>
+        A esa observación añade su experiencia personal en Croacia, un país que describe con una cultura
+        levemente rusófoba. Creció percibiendo a Rusia como un lugar frío, oxidado y oscuro, y no tuvo interés
+        por ella hasta los treinta años. Sin embargo, cuando conversa con croatas y perciben de qué lado está,
+        dice que se abren: en tres de cada cuatro casos desconfían de Ucrania y no temen a Rusia. Su
+        conclusión es que existe una distancia entre lo que la gente piensa y lo que se le atribuye.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=4110s"
+           target="_blank" rel="noopener">1:08:30</a>
+      </p>
+
+      <div class="tabla-envoltura" tabindex="0" role="region" aria-label="Sondeos citados, tabla desplazable">
+        <table class="tabla tabla--comparativa tabla--cifras">
+          <caption>Cifras de opinión que cita el entrevistado, sin referencia documental</caption>
+          <thead>
+            <tr><th scope="col">Ámbito</th><th scope="col">Momento</th><th scope="col">Dato citado</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Francia, Italia, España</th>
+              <td>Febrero de 2022</td>
+              <td class="num">≈ 2 de cada 3 simpatizaban con Rusia</td>
+            </tr>
+            <tr>
+              <th scope="row">Antiguo bloque soviético</th>
+              <td>Febrero de 2022</td>
+              <td class="num">≈ 3 de cada 4</td>
+            </tr>
+            <tr>
+              <th scope="row">Suiza</th>
+              <td>Reciente, sin fecha</td>
+              <td class="num">70 % contrario a la neutralidad, 30 % a favor</td>
+            </tr>
+            <tr>
+              <th scope="row">Francia</th>
+              <td>Dos semanas tras el inicio</td>
+              <td class="num">56 % veía motivos legítimos de Rusia</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="fuentes__nota">
+        Ninguna de estas cifras se identifica con encuestadora, muestra ni fecha exacta en la conversación.
+        Se recogen como afirmaciones del entrevistado y no se han verificado.
+      </p>
+
+      <h3 class="subseccion__titulo">El contraejemplo suizo</h3>
+      <p>
+        Pascal responde con un caso distinto. En Suiza hubo un referéndum sobre la neutralidad, pero el bando
+        contrario consiguió convertirlo en una pregunta sobre Putin. Su lectura es que la proporción fue de
+        70 a 30: un 30 % diría que Rusia no es su enemiga; un 70 % querría perjudicar a Rusia todo lo posible
+        sin llegar a la guerra, con las sanciones como instrumento preferido. Es decir, existía rusofobia, pero
+        no disposición a combatir. Krainer reconoce el matiz y se apoya en él: el odio está instalado, la
+        guerra todavía no.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=4135s"
+           target="_blank" rel="noopener">1:08:55</a>
+      </p>
+
+      <p>
+        La conversación termina con una referencia a una encuesta francesa que, según Krainer, se hizo dos
+        semanas después del inicio de la operación militar y en la que el 56 % consideraba que Rusia tenía
+        motivos legítimos para intervenir. Añade la advertencia de que las encuestas también se manipulan,
+        porque quien necesita legitimidad necesita poder decir que la mayoría apoya su posición.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=4223s"
+           target="_blank" rel="noopener">1:10:23</a>
+      </p>
+
+      <p>
+        Pascal cierra el programa agradeciendo la conversación y anunciando una tercera entrega. Krainer
+        indica dónde encontrar su trabajo: su cuenta de X, una publicación personal en Substack con
+        aproximadamente un artículo semanal, un boletín diario de seguimiento de tendencias sobre diecinueve
+        mercados financieros y de materias primas, y un canal de YouTube relanzado ese año. Advierte de que
+        existe un canal falso creado con inteligencia artificial que se hace pasar por él; Pascal se
+        compromete a publicar el auténtico en la descripción del vídeo.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=4286s"
+           target="_blank" rel="noopener">1:11:26</a>
+      </p>
+    </section>
+
+    <!-- ============ CONCLUSIONES ============ -->
+    <section class="capitulo" id="conclusiones" aria-labelledby="titulo-conclusiones">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Conclusiones</span>
+        <h2 class="capitulo__titulo" id="titulo-conclusiones">
+          Lo que el entrevistado sostiene
+          <a class="ancla" href="#conclusiones" aria-label="Enlace a las conclusiones">¶</a>
+        </h2>
+      </header>
+
+      <p class="capitulo__entradilla">
+        Las siguientes proposiciones resumen la posición de Alex Krainer tal como la formula en la entrevista.
+        No son conclusiones de este informe ni han sido contrastadas con otras fuentes.
+      </p>
+
+      <ol class="objetivos">
+        <li>
+          <strong>El imperio no terminó, se transformó.</strong> El poder británico sobrevive como red
+          financiera transnacional con centro en la City de Londres y en Wall Street, y no depende del
+          territorio ni del Estado que le presta su nombre.
+        </li>
+        <li>
+          <strong>La guerra yugoslava fue inducida desde fuera.</strong> Existía una fractura latente, pero
+          necesitó una agitación externa —que atribuye al imperio británico— para convertirse en guerra, con
+          un papel visible estadounidense y otro decisivo y oculto británico.
+        </li>
+        <li>
+          <strong>Los Balcanes volvieron a prepararse como frente.</strong> Tras el «proyecto Ucrania», la
+          región fue diseñada como segundo frente; el referéndum serbobosnio de 2024 era el detonante previsto.
+        </li>
+        <li>
+          <strong>La política estadounidense desactivó el escenario.</strong> La administración Trump, mediante
+          su apoyo a Dodik y la coordinación con el Kremlin, apartó a los británicos y aplazó el referéndum.
+        </li>
+        <li>
+          <strong>El mecanismo del imperio es la deuda garantizada.</strong> El préstamo crea el activo, la
+          concesión aporta la garantía y el control político hace exigible el conjunto. La corporación es la
+          cinta; el banco, el beneficiario.
+        </li>
+        <li>
+          <strong>La economía real trabaja para la banca.</strong> Lo ilustra con el dato de McKinsey —la
+          industria petrolera apenas cubría el coste del capital— y con la presencia de banqueros en los
+          consejos de administración.
+        </li>
+        <li>
+          <strong>Quien sale del mecanismo, desaparece.</strong> Enrico Mattei construyó una energía italiana
+          que competía con las grandes petroleras y murió en un accidente de aviación que el entrevistado
+          atribuye a la CIA.
+        </li>
+        <li>
+          <strong>El sistema es intencionado y necesita cohesión.</strong> No lo explica solo la lógica del
+          capital: requiere planificación, propaganda presentable y una red internacional de intermediarios.
+        </li>
+        <li>
+          <strong>El futuro que deduce es distópico, pero no inevitable.</strong> La coincidencia de
+          inteligencia artificial y robótica podría hacer prescindible la mano de obra; frente a eso, el
+          entrevistado confía en un despertar favorecido por internet y en la resistencia de la opinión pública
+          europea.
+        </li>
+      </ol>
+
+      <h3 class="subseccion__titulo">Lo que el entrevistado no afirma</h3>
+      <p>
+        La conversación incluye también sus propios límites. Krainer reconoce que hay episodios que no puede
+        reconstruir con seguridad —«treinta años después todavía no estoy seguro de qué iba todo aquello»—,
+        que la autoría británica del acuerdo de Dayton es una sospecha y no un dato, y que su marco debe
+        tomarse como hipótesis: «quizá Alex tenga razón, quizá Alex se equivoque». No presenta su lectura como
+        una verdad establecida, sino como una interpretación que, según él, gana consistencia al contrastarla
+        con los acontecimientos.
+        <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=275s"
+           target="_blank" rel="noopener">04:35</a>
+      </p>
+
+      <div class="cita cita--larga">
+        <p>«Todo lo que he intentado explicar hoy, tómalo como un marco de análisis y di: quizá Alex tenga
+          razón, quizá se equivoque. Pero si lo tomas como un marco, te garantizo que cuanto más prestes
+          atención a lo que está ocurriendo, más coherente se vuelve la imagen.»</p>
+        <cite>Alex Krainer · <a class="marca-tiempo" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw&amp;t=3364s" target="_blank" rel="noopener">56:04</a></cite>
+      </div>
+    </section>
+
+    <!-- ============ CRONOLOGÍA ============ -->
+    <section class="capitulo" id="cronologia" aria-labelledby="titulo-cronologia">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Cronología</span>
+        <h2 class="capitulo__titulo" id="titulo-cronologia">
+          Fechas citadas en la entrevista
+          <a class="ancla" href="#cronologia" aria-label="Enlace a la cronología">¶</a>
+        </h2>
+      </header>
+
+      <p>
+        Solo se recogen las fechas que aparecen en la conversación. Cada entrada distingue el acontecimiento
+        —cuando es datable con independencia del relato— de la interpretación que el entrevistado hace de él.
+        Las fechas que él mismo presenta con reserva se marcan como tales.
+      </p>
+
+      <ol class="cronologia">
+        <li class="cronologia__evento">
+          <time class="cronologia__fecha" datetime="1904">1904</time>
+          <p class="cronologia__hecho">
+            Halford Mackinder formula la doctrina del pivote que, según el entrevistado, sigue guiando la
+            estrategia del imperio. <span class="sello sello--contexto">Contexto</span>
+          </p>
+        </li>
+        <li class="cronologia__evento">
+          <time class="cronologia__fecha" datetime="1914">1914</time>
+          <p class="cronologia__hecho">
+            Estalla la Primera Guerra Mundial en los Balcanes. El entrevistado lo usa como precedente del
+            escenario que describe. <span class="sello sello--hecho">Hecho</span>
+          </p>
+        </li>
+        <li class="cronologia__evento">
+          <time class="cronologia__fecha">Principios de los sesenta</time>
+          <p class="cronologia__hecho">
+            Muere Enrico Mattei en un accidente de aviación. El entrevistado lo atribuye a la CIA y sitúa el
+            hecho en esa década, sin fijar el año. <span class="sello">Lectura del entrevistado</span>
+          </p>
+        </li>
+        <li class="cronologia__evento cronologia__evento--clave">
+          <time class="cronologia__fecha" datetime="1991">1991</time>
+          <p class="cronologia__hecho">
+            Comienza la guerra en la antigua Yugoslavia. Según su relato, Belgrado recibe luz verde occidental
+            para mantener la federación por la fuerza y Londres impulsa el embargo de armas.
+            <span class="sello">Lectura del entrevistado</span>
+          </p>
+        </li>
+        <li class="cronologia__evento">
+          <time class="cronologia__fecha" datetime="1991-12">Diciembre de 1991</time>
+          <p class="cronologia__hecho">
+            Desaparece la Unión Soviética. El entrevistado subraya que la guerra empezó antes, cuando la URSS
+            todavía existía. <span class="sello sello--hecho">Hecho</span>
+          </p>
+        </li>
+        <li class="cronologia__evento">
+          <time class="cronologia__fecha">1993–1995</time>
+          <p class="cronologia__hecho">
+            Estados Unidos intenta imponer un alto el fuego mientras, según él, la presión británica empuja a
+            continuar la guerra. <span class="sello">Lectura del entrevistado</span>
+          </p>
+        </li>
+        <li class="cronologia__evento">
+          <time class="cronologia__fecha" datetime="1995">1995</time>
+          <p class="cronologia__hecho">
+            Acuerdos de Dayton. Los califica de «desastre total» y sospecha que hubo mano británica en su
+            redacción, sin afirmarlo. <span class="sello">Lectura del entrevistado</span>
+          </p>
+        </li>
+        <li class="cronologia__evento">
+          <time class="cronologia__fecha">2003–2004</time>
+          <p class="cronologia__hecho">
+            Serie de <em>McKinsey Quarterly</em> sobre gestión de riesgos en el petróleo: la industria apenas
+            cubría el coste del capital, según su recuerdo. <span class="sello">No verificado</span>
+          </p>
+        </li>
+        <li class="cronologia__evento">
+          <time class="cronologia__fecha" datetime="2022-02">Febrero de 2022</time>
+          <p class="cronologia__hecho">
+            Inicio de la operación militar rusa en Ucrania. Cita encuestas de esos días sobre simpatía hacia
+            Rusia en Europa. <span class="sello sello--hecho">Hecho</span> <span class="sello">Cifras no verificadas</span>
+          </p>
+        </li>
+        <li class="cronologia__evento">
+          <time class="cronologia__fecha" datetime="2024-02">Febrero de 2024</time>
+          <p class="cronologia__hecho">
+            Acuerdo de cooperación militar entre Reino Unido y el gobierno de Sarajevo. Él mismo lo introduce
+            con un «creo que fue». <span class="sello">No verificado</span>
+          </p>
+        </li>
+        <li class="cronologia__evento cronologia__evento--clave">
+          <time class="cronologia__fecha" datetime="2024-10">Octubre de 2024</time>
+          <p class="cronologia__hecho">
+            Referéndum de secesión previsto en la República Srpska, que él considera el detonante de una
+            guerra que se daba por inevitable. <span class="sello">Lectura del entrevistado</span>
+          </p>
+        </li>
+        <li class="cronologia__evento cronologia__evento--clave">
+          <time class="cronologia__fecha" datetime="2025-01">Principios de 2025</time>
+          <p class="cronologia__hecho">
+            Donald Trump llega a la Casa Blanca. Según el testimonio que recoge, las presiones de guerra se
+            disipan y el referéndum queda aplazado. <span class="sello">Lectura del entrevistado</span>
+          </p>
+        </li>
+        <li class="cronologia__evento">
+          <time class="cronologia__fecha">2025, sin fecha exacta</time>
+          <p class="cronologia__hecho">
+            Acuerdo entre Estados Unidos y Rusia que califica de histórico y que, según él, reabre la brecha
+            entre Washington y el establishment británico. <span class="sello">Lectura del entrevistado</span>
+          </p>
+        </li>
+      </ol>
+
+      <p class="fuentes__nota">
+        La cronología no incorpora fechas externas a la conversación salvo el año de 1904 y el de 1914, que el
+        propio entrevistado menciona. El año exacto de la muerte de Mattei no se fija porque él no lo fija.
+      </p>
+    </section>
+
+    <!-- ============ GLOSARIO ============ -->
+    <section class="capitulo" id="glosario" aria-labelledby="titulo-glosario">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Glosario</span>
+        <h2 class="capitulo__titulo" id="titulo-glosario">
+          Términos en el sentido en que los emplea el entrevistado
+          <a class="ancla" href="#glosario" aria-label="Enlace al glosario">¶</a>
+        </h2>
+      </header>
+
+      <dl class="glosario">
+        <div>
+          <dt>Imperio no muerto</dt>
+          <dd>Expresión con la que designa al imperio británico que, en su lectura, no se disolvió con la
+            descolonización sino que se transformó en una red financiera transnacional.</dd>
+        </div>
+        <div>
+          <dt>Camarilla imperial</dt>
+          <dd>Núcleo de intereses bancarios que coopta a los Estados anfitriones y utiliza sus recursos
+            —riqueza, ejército, diplomacia, inteligencia— para sostener el sistema.</dd>
+        </div>
+        <div>
+          <dt>Zona pivote</dt>
+          <dd>Término tomado de Mackinder para referirse al territorio euroasiático central, identificado aquí
+            con Rusia, cuyo control se disputa rodeándolo de focos de conflicto.</dd>
+        </div>
+        <div>
+          <dt>Arco de crisis</dt>
+          <dd>Cinturón de conflictos que, según su descripción, va del Báltico al Mediterráneo oriental y
+            llega hasta Corea, con el objetivo de desgastar a la potencia pivote.</dd>
+        </div>
+        <div>
+          <dt>Artículo 5</dt>
+          <dd>Cláusula de defensa colectiva de la OTAN. En su escenario, la entrada de Croacia —miembro de la
+            alianza— en una guerra contra Serbia habría implicado a toda la organización.</dd>
+        </div>
+        <div>
+          <dt>República Srpska</dt>
+          <dd>Entidad serbobosnia dentro de Bosnia y Hercegovina, creada por los acuerdos de Dayton. El
+            entrevistado la sitúa en el centro del escenario de 2024.</dd>
+        </div>
+        <div>
+          <dt>Cinta transportadora</dt>
+          <dd>Su imagen del papel de la corporación: extrae riqueza del país y la conduce hacia el banco, que
+            es quien realmente se beneficia.</dd>
+        </div>
+        <div>
+          <dt>Clase Epstein</dt>
+          <dd>Expresión que usa para nombrar a la capa de intermediarios que mantiene cohesionada la red de
+            poder y gestiona sus relaciones con el resto de la sociedad.</dd>
+        </div>
+        <div>
+          <dt>Operación militar especial</dt>
+          <dd>Categoría que distingue de «invasión»: en su definición, la invasión moviliza prácticamente
+            todos los recursos contra una región para someterla, mientras que la operación especial no.</dd>
+        </div>
+        <div>
+          <dt>Gran reinicio</dt>
+          <dd>Lema de los foros económicos que cita como prueba del proyecto de reorganización social que
+            atribuye a la élite: control digital, salud administrada y reducción de la población excedente.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ============ FUENTES Y MÉTODO ============ -->
+    <section class="capitulo" id="fuentes" aria-labelledby="titulo-fuentes">
+      <header class="capitulo__cabecera">
+        <span class="capitulo__numero">Fuentes y método</span>
+        <h2 class="capitulo__titulo" id="titulo-fuentes">
+          De dónde sale este informe
+          <a class="ancla" href="#fuentes" aria-label="Enlace a las fuentes">¶</a>
+        </h2>
+      </header>
+
+      <p>
+        El informe se ha elaborado exclusivamente a partir de la entrevista y de su transcripción. No se han
+        incorporado fuentes externas, ni se han añadido refutaciones o valoraciones ajenas a los
+        participantes.
+      </p>
+
+      <h3 class="subseccion__titulo">Fuente principal</h3>
+      <ol class="fuentes">
+        <li>
+          <strong>Alex Krainer, entrevistado; Pascal, entrevistador.</strong> «El imperio no muerto
+          contraataca: cómo Reino Unido aún gobierna el mundo». <em>Neutrality Studies Español</em>, YouTube.
+          Disponible en:
+          <a href="https://www.youtube.com/watch?v=sZdBS9ZXgFw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=sZdBS9ZXgFw</a>.
+          Duración: 1:12:24. Consulta: 17 de octubre de 2026. La fecha de publicación no se ha podido
+          verificar.
+        </li>
+        <li>
+          <strong>Transcripción automática al español.</strong> Archivo de 70.030 caracteres y 126 marcas
+          temporales, conservado sin editar en <code>assets/data/transcripcion.md</code>. Es la base de las
+          citas y de las marcas de tiempo; contiene errores de reconocimiento que se detallan en el capítulo 3.
+        </li>
+      </ol>
+
+      <h3 class="subseccion__titulo">Referencias que el entrevistado menciona y no aporta</h3>
+      <p>
+        Se enumeran para que el lector pueda distinguir lo que el video documenta de lo que solo se afirma en
+        él. Ninguna se ha verificado en esta edición:
+      </p>
+      <ul>
+        <li>Un documento del <strong>Royal United Services Institute (RUSI)</strong> sobre los Balcanes como
+          segundo frente. El entrevistado duda del nombre del centro y no cita el texto.</li>
+        <li>Una serie de <strong><em>McKinsey Quarterly</em></strong> de 2003 o 2004 sobre gestión de riesgos
+          en la industria petrolera.</li>
+        <li>Una <strong>encuesta francesa</strong> realizada dos semanas después de febrero de 2022, con un
+          56 % que atribuía motivos legítimos a Rusia.</li>
+        <li><strong>Sondeos de la OTAN</strong> sobre la opinión pública europea, conocidos por un contacto
+          del entrevistado, sin datos de muestra ni fechas.</li>
+        <li>El <strong>acuerdo de cooperación militar</strong> entre Reino Unido y Sarajevo, que él mismo sitúa
+          con un «creo que fue en febrero de 2024».</li>
+        <li>Los <strong>informes de la embajada estadounidense en Roma</strong> sobre Enrico Mattei y el
+          informe del jefe de estación de la CIA que menciona.</li>
+      </ul>
+
+      <h3 class="subseccion__titulo">Criterios de edición</h3>
+      <p>
+        La entrevista se ha reorganizado por asuntos, no por orden de aparición, conservando el hilo
+        argumental del entrevistado. Se han eliminado las repeticiones propias del habla y las llamadas a la
+        acción del canal; se han reconstruido la puntuación y las frases cortadas por la transcripción.
+      </p>
+      <p>
+        No se han alterado las tesis, no se han suavizado las afirmaciones polémicas y no se ha omitido ninguna
+        crítica. Cuando el entrevistado atribuye intenciones o autorías, el texto lo señala expresamente. Las
+        cifras que cita de memoria se reproducen como suyas y se marcan como no verificadas. Las citas entre
+        comillas son literales respecto de la transcripción automática, con la corrección de nombres propios.
+      </p>
+      <p>
+        Las imágenes del informe son de elaboración propia: la portada y los tres esquemas se han dibujado
+        para explicar la exposición. No se ha incorporado la miniatura del vídeo ni material de terceros.
+      </p>
+
+      <h3 class="subseccion__titulo">Licencia y uso</h3>
+      <p class="fuentes__nota">
+        Informe editorial independiente. Alex Krainer es el autor del contenido analizado; este documento es
+        una edición del mismo y no una obra propia. No se afirma afiliación, respaldo ni vínculo con el
+        entrevistado, con el canal ni con las instituciones mencionadas. Las marcas citadas pertenecen a sus
+        titulares.
+      </p>
+    </section>
+
+    <!-- ============ PIE EDITORIAL ============ -->
+    <footer class="pie">
+      <div class="pie__rejilla">
+        <div>
+          <span class="pie__clave">Edición</span>
+          Informe Analítico · 17 de octubre de 2026
+        </div>
+        <div>
+          <span class="pie__clave">Fuente</span>
+          Entrevista de Neutrality Studies · 1:12:24
+        </div>
+        <div>
+          <span class="pie__clave">Estructura</span>
+          13 capítulos · síntesis · cronología · glosario
+        </div>
+        <div>
+          <span class="pie__clave">Autoría del contenido</span>
+          Alex Krainer (entrevistado)
+        </div>
+      </div>
+      <p class="pie__aviso">
+        <strong>Dependencias externas:</strong> la página se lee sin conexión. Solo requiere Internet el
+        reproductor de YouTube incrustado y los enlaces con marca temporal al vídeo, que se abren en una
+        pestaña nueva. Las tipografías se declaran sin descargarse: si no están instaladas, se usa la del
+        sistema.
+      </p>
+      <p class="pie__aviso">
+        Las tesis, atribuciones y previsiones recogidas pertenecen al entrevistado. Este informe las reconstruye
+        sin refutarlas ni avalarlas.
+      </p>
+    </footer>
+
+  </main>
+</div>
+
+<button type="button" class="velo" id="velo" hidden aria-label="Cerrar el índice"></button>
+
+<button type="button" class="volver-arriba" id="volver-arriba" aria-label="Volver al inicio del documento">
+  <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false">
+    <path d="M10 15V6M5.5 10.5 10 6l4.5 4.5" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+</body>
+</html>
