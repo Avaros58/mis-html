@@ -1496,8 +1496,19 @@ html[data-modo="interactiva"] .portada__figura { max-width: 26rem; }
   font-family: var(--fuente-titulo);
   font-size: calc(.8rem * var(--escala-lectura, 1));
   font-weight: 700;
+  white-space: nowrap;
 }
 .reproductor__cargar:focus-visible { outline-offset: -4px; }
+
+/* El cartel del modulo audiovisual es un enlace a YouTube: conserva el aspecto de boton */
+a.reproductor__cargar {
+  text-decoration: none;
+  color: inherit;
+}
+a.reproductor__cargar:focus-visible {
+  outline: 3px solid var(--terracota);
+  outline-offset: -4px;
+}
 
 /* Aire bajo la entradilla de cada capítulo */
 .capitulo__entradilla { margin-bottom: 1.5rem; }
@@ -1553,11 +1564,6 @@ html[data-tamano="200"] { --escala-elegida:2; }
 @media (max-width:720px) { .contenido { font-size:calc(1.0625rem * var(--escala-lectura)); } }
 @media (max-width:360px) { .barra-superior { padding-inline:.5rem; gap:.2rem; } .barra-superior__acciones { gap:.2rem; } .selector-lectura { gap:.15rem; } }
 @media print { .contenido, .portada__subtitulo { --escala-lectura:1; } .contenido { font-size:11pt; } }
-
-/* Cartel con enlace directo, también operativo sin JavaScript. */
-.reproductor__enlace { text-decoration:none; }
-.reproductor__enlace:focus-visible { outline:3px solid var(--ocre); outline-offset:-4px; }
-.reproductor__enlace span { max-width:calc(100% - 1rem); width:max-content; text-align:center; }
 
 </style>
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IgogICAgIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSW5mb3JtZSBBbmFsw610aWNvIj4KICA8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxMiIgZmlsbD0iIzE0MkIzQSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjM2IiByeD0iMiIgZmlsbD0iI0U5RUZGMiIvPgogIDxyZWN0IHg9IjMwIiB5PSIxNCIgd2lkdGg9IjgiIGhlaWdodD0iMjAiIHJ4PSIyIiBmaWxsPSIjQTM0ODNGIi8+CiAgPGNpcmNsZSBjeD0iNDMiIGN5PSI0NSIgcj0iNiIgZmlsbD0iI0M0OUE1MiIvPgo8L3N2Zz4K" type="image/svg+xml">
@@ -2018,6 +2024,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+/* El reproductor ya no necesita JavaScript: el cartel es un enlace a YouTube. */
+
+});
+</script>
+
   <noscript>
     <style>
       .indice {
@@ -2281,19 +2294,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <p>
         La entrevista se publicó en el canal <em>Neutrality Studies Español</em> y se grabó en inglés; la
-        transcripción utilizada es su versión automática al español. El reproductor se incrusta en la
-        modalidad de privacidad mejorada de YouTube: solo carga si hay conexión. Todo el contenido del
-        informe es legible sin el vídeo.
+        transcripción utilizada es su versión automática al español. El cartel abre el vídeo en YouTube
+        en una pestaña nueva: el informe no incrusta el reproductor ni contacta con YouTube al abrirse.
+        Todo el contenido del informe es legible sin el vídeo.
       </p>
 
       <div class="fuente-audiovisual">
         <span class="fuente-audiovisual__etiqueta">Fuente audiovisual</span>
         <div class="fuente-audiovisual__rejilla">
           <div class="reproductor reproductor--marco">
-            <a class="reproductor__cargar reproductor__enlace" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw"
-               target="_blank" rel="noopener" aria-label="Ver entrevista en YouTube (se abre en una nueva pestaña)">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIg0KICAgICByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkNhcnRlbCBkZWwgdsOtZGVvOiBFbCBpbXBlcmlvIG5vIG11ZXJ0byBjb250cmFhdGFjYSwgZW50cmV2aXN0YSBhIEFsZXggS3JhaW5lciI+DQogIDxyZWN0IHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCIgZmlsbD0iIzBGMjQzMCIvPg0KDQogIDxnIHN0cm9rZT0iI0U5RUZGMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDciIHN0cm9rZS13aWR0aD0iMSI+DQogICAgPHBhdGggZD0iTTAgMTgwIEgxMjgwIE0wIDM2MCBIMTI4MCBNMCA1NDAgSDEyODAiLz4NCiAgICA8cGF0aCBkPSJNMzIwIDAgVjcyMCBNNjQwIDAgVjcyMCBNOTYwIDAgVjcyMCIvPg0KICA8L2c+DQoNCiAgPGNpcmNsZSBjeD0iNjQwIiBjeT0iMzMwIiByPSI2NCIgZmlsbD0iI0EzNDgzRiIvPg0KICA8cGF0aCBkPSJNNjIyIDMwMCBMNjc2IDMzMCBMNjIyIDM2MCBaIiBmaWxsPSIjRkFGQUY3Ii8+DQoNCg0KICA8cmVjdCB4PSIwIiB5PSI3MTIiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjgiIGZpbGw9IiNDNDlBNTIiLz4NCjwvc3ZnPg0K" width="1280" height="720" alt="Cartel de la entrevista a Alex Krainer, de Neutrality Studies Español.">
-              <span>Ver vídeo en YouTube ↗</span>
+            <a class="reproductor__cargar" href="https://www.youtube.com/watch?v=sZdBS9ZXgFw"
+               target="_blank" rel="noopener"
+               aria-label="Ver el vídeo en YouTube (se abre en una pestaña nueva)">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIg0KICAgICByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkNhcnRlbCBkZWwgdsOtZGVvOiBFbCBpbXBlcmlvIG5vIG11ZXJ0byBjb250cmFhdGFjYSwgZW50cmV2aXN0YSBhIEFsZXggS3JhaW5lciI+DQogIDxyZWN0IHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCIgZmlsbD0iIzBGMjQzMCIvPg0KDQogIDxnIHN0cm9rZT0iI0U5RUZGMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDciIHN0cm9rZS13aWR0aD0iMSI+DQogICAgPHBhdGggZD0iTTAgMTgwIEgxMjgwIE0wIDM2MCBIMTI4MCBNMCA1NDAgSDEyODAiLz4NCiAgICA8cGF0aCBkPSJNMzIwIDAgVjcyMCBNNjQwIDAgVjcyMCBNOTYwIDAgVjcyMCIvPg0KICA8L2c+DQoNCiAgPGNpcmNsZSBjeD0iNjQwIiBjeT0iMzMwIiByPSI2NCIgZmlsbD0iI0EzNDgzRiIvPg0KICA8cGF0aCBkPSJNNjIyIDMwMCBMNjc2IDMzMCBMNjIyIDM2MCBaIiBmaWxsPSIjRkFGQUY3Ii8+DQoNCg0KICA8cmVjdCB4PSIwIiB5PSI3MTIiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjgiIGZpbGw9IiNDNDlBNTIiLz4NCjwvc3ZnPg0K" width="1280" height="720" alt="Cartel del vídeo «El imperio no muerto contraataca», de Neutrality Studies Español.">
+              <span>Ver el vídeo en YouTube ↗</span>
             </a>
           </div>
 

@@ -101,6 +101,7 @@
   font-family: var(--fuente-titulo);
   font-size: calc(.8rem * var(--escala-lectura, 1));
   font-weight: 700;
+  white-space: nowrap;
 }
 .reproductor__cargar:focus-visible { outline-offset: -4px; }
 
@@ -159,7 +160,12 @@ html[data-tamano="200"] { --escala-elegida:2; }
 @media (max-width:360px) { .barra-superior { padding-inline:.5rem; gap:.2rem; } .barra-superior__acciones { gap:.2rem; } .selector-lectura { gap:.15rem; } }
 @media print { .contenido, .portada__subtitulo { --escala-lectura:1; } .contenido { font-size:11pt; } }
 
-/* Cartel con enlace directo, también operativo sin JavaScript. */
-.reproductor__enlace { text-decoration:none; }
-.reproductor__enlace:focus-visible { outline:3px solid var(--ocre); outline-offset:-4px; }
-.reproductor__enlace span { max-width:calc(100% - 1rem); width:max-content; text-align:center; }
+/* El cartel del modulo audiovisual es un enlace a YouTube: conserva el aspecto de boton */
+a.reproductor__cargar {
+  text-decoration: none;
+  color: inherit;
+}
+a.reproductor__cargar:focus-visible {
+  outline: 3px solid var(--terracota);
+  outline-offset: -4px;
+}
