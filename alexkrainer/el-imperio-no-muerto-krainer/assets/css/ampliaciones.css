@@ -158,3 +158,8 @@ html[data-tamano="200"] { --escala-elegida:2; }
 @media (max-width:720px) { .contenido { font-size:calc(1.0625rem * var(--escala-lectura)); } }
 @media (max-width:360px) { .barra-superior { padding-inline:.5rem; gap:.2rem; } .barra-superior__acciones { gap:.2rem; } .selector-lectura { gap:.15rem; } }
 @media print { .contenido, .portada__subtitulo { --escala-lectura:1; } .contenido { font-size:11pt; } }
+
+/* Cartel con enlace directo, también operativo sin JavaScript. */
+.reproductor__enlace { text-decoration:none; }
+.reproductor__enlace:focus-visible { outline:3px solid var(--ocre); outline-offset:-4px; }
+.reproductor__enlace span { max-width:calc(100% - 1rem); width:max-content; text-align:center; }
