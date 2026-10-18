@@ -1,0 +1,9 @@
+DOCUMENTO MULTIMEDIA · LA DERROTA DEL VENCEDOR
+
+Abre index.html junto con la carpeta assets. No requiere instalación. Para GitHub Pages, sube todo el contenido de esta carpeta a una carpeta de tu repositorio.
+
+Incluye informe, 15 diapositivas extraídas del PowerPoint, mapa mental con 56 nodos, infografía y audio M4A. Se adjuntan los originales. El audio requiere un navegador con soporte AAC/M4A. Las notas se guardan en el navegador y se pueden exportar.
+
+El HTML autónomo externo contiene los materiales multimedia incrustados para consulta sin carpeta assets; sus descargas de originales enlazan a la carpeta del paquete. Para disponer de todos los originales usa este ZIP.
+
+El contenido aportado se conserva con dos observaciones documentales sobre la Ley de Partidos y la sentencia de Bildu. No se ha verificado exhaustivamente el informe ni transcrito el audio.

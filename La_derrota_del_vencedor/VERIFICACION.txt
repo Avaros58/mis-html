@@ -1,0 +1,2 @@
+Comprobaciones superadas: recursos locales presentes; identificadores únicos; sintaxis de ambos HTML; selección y recorrido circular de 15 diapositivas; visor ampliado; zoom; velocidad del audio; guardado y exportación de notas. Contenedor M4A reconocido. Mapa con 56 nodos.
+Límite: pruebas de interacción ejecutadas con un DOM simulado; la vista previa en Chrome falló al iniciar el proceso gráfico. Sin revisión visual completa ni escucha/transcripción del audio.

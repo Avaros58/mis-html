@@ -1,0 +1,58 @@
+# ETA Mapa
+
+## La Derrota del Vencedor: El Final de ETA
+  - Nacionalismo Vascongado e Ideología
+    - Nacionalismo Institucional (PNV)
+      - Legitimación de fines nacionalistas
+      - Condena de métodos, no de ideas
+      - Interpretación del conflicto político
+      - Hegemonía social y política
+    - Nacionalismo Radical
+      - Ideología excluyente y xenófoba
+      - Vanguardia de la resistencia
+      - Religión de sustitución
+      - Odio al adversario ideológico
+  - Estrategia Político-Militar
+    - Estrategia de Masas
+      - Entramado KAS y organizaciones pantalla
+      - Control del espacio público y festivo
+      - Lucha institucional y callejera
+      - Financiación y subvenciones
+    - Socialización del Sufrimiento
+      - Persecución de cargos no nacionalistas
+      - Intimidación a periodistas y profesores
+      - Estrategia del desistimiento
+      - Aislamiento de los amenazados
+  - Impacto en la Sociedad Vasca
+    - Espiral del Silencio
+      - Miedo al aislamiento social
+      - Déficit democrático electoral
+      - Mimetización con el nacionalismo
+      - Renuncia a derechos civiles
+    - Exclusión Moral del Adversario
+      - Estigmatización de fuerzas de seguridad
+      - Categorización de 'malos vascos'
+      - Indiferencia ante el asesinato
+      - Desprecio social al disidente
+  - Las Víctimas del Terrorismo
+    - Deshumanización y Persecución
+      - Selección por criterios ideológicos
+      - Privación de la normalidad vital
+      - Inexistencia de justicia política
+      - Soledad y abandono social
+    - Humillación en el Posterrorismo
+      - Homenajes públicos a etarras
+      - Equiparación victimista de sufrimientos
+      - Blanqueo de la historia criminal
+      - Desactivación como grupo de presión
+  - Déficits del Final de ETA
+    - La Derrota del Vencedor
+      - Derrota policial sin victoria política
+      - Logros políticos del terrorismo
+      - Impunidad histórica y moral
+      - Falsedad de la derrota total
+    - Estados de Negación
+      - Denegación interpretativa del conflicto
+      - Neutralización de responsabilidades
+      - Uso de eufemismos y lenguaje manipulado
+      - Relativismo moral institucional
