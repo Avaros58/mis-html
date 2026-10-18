@@ -1,0 +1,27 @@
+ATLAS TAYLOR — VERSIÓN 2
+
+Abre index.html. Para publicar en GitHub Pages, copia index.html, .nojekyll y la carpeta assets en Los_origenes_de_la_segunda_guerra_mundial/ de tu repositorio mis-html. Conserva juntos los archivos. No requiere instalación ni compilación. La dirección #atlas abre el atlas.
+
+Se conservan las seis secciones originales. Se incorporan cuatro mapas locales, comparación en paralelo, zoom independiente, notas guardadas en el navegador y exportación. Mapas y navegación funcionan sin conexión; las fotografías externas de la primera versión y los enlaces a fuentes requieren internet.
+
+No se ha publicado ni modificado tu repositorio. No se recibió un EPUB accesible para cotejar de nuevo el texto.
+
+CRÉDITOS
+Europa en 1914
+Kahjo-TZ; corrección posterior de Alfred899. Basado en cartografía de la United States Military Academy. Dominio público.
+https://commons.wikimedia.org/wiki/File:Europe_in_1914.jpg
+
+Europa tras los tratados · 1923
+Historicair; adaptación inglesa de Fluteflute y colaboradores de Commons. CC BY-SA 2.5. Archivo sin modificar.
+https://commons.wikimedia.org/wiki/File:Map_Europe_1923-en.svg
+
+Alemania · pérdidas después de 1918
+52 Pickup, basado en cartografía de la Wikipedia neerlandesa. CC BY-SA 2.5. Archivo sin modificar.
+https://commons.wikimedia.org/wiki/File:German_losses_after_WWI.svg
+
+Expansión alemana · 1936–1939
+JMPerez, a partir de la versión francesa. CC BY-SA 2.5 (también disponible bajo CC BY-SA 3.0). Archivo sin modificar.
+https://commons.wikimedia.org/wiki/File:Extension_of_Germany_(1935-1939)-es.svg
+
+CC BY-SA 2.5: https://creativecommons.org/licenses/by-sa/2.5/
+Original: https://avaros58.github.io/mis-html/Los_origenes_de_la_segunda_guerra_mundial/
