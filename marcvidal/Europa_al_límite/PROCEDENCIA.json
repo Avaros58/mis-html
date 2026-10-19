@@ -1,0 +1,38 @@
+{
+  "fecha": "2026-10-19",
+  "estado": "Referencia crítica; paquete preparado, no publicado",
+  "titulo": "Europa al límite: la factura de la paz social",
+  "idioma": "es",
+  "fuente_primaria": {
+    "tipo": "Transcripción automática aportada por el usuario",
+    "video": "https://www.youtube.com/watch?v=Ozk2V828FvQ",
+    "cobertura": "00:00-42:28",
+    "sha256_transcripcion_archivada": "604004609D4ADB0241BC3D5F1C93ECAA3803BFB2AB77543D0C8FFBE122CB6897",
+    "nota": "La transcripción original no se redistribuye en este paquete"
+  },
+  "tratamiento_editorial": {
+    "enlaces_temporales": 44,
+    "referencias": 19,
+    "criterio": "Separación entre hechos contrastados, tesis del autor, hipótesis y límites de los datos",
+    "cotejo_audiovisual_integro": false
+  },
+  "imagenes": [
+    {
+      "archivo": "assets/europa-al-limite-portada.png",
+      "origen": "Ilustración editorial generada con ImageGen integrado",
+      "naturaleza": "No documental"
+    },
+    {
+      "archivo": "assets/europa-al-limite-social-1200x630.jpg",
+      "origen": "Recorte y exportación de la ilustración editorial generada",
+      "naturaleza": "No documental"
+    }
+  ],
+  "publicacion_prevista": {
+    "repositorio": "Avaros58/mis-html",
+    "rama": "main",
+    "ruta": "Trading/actualidad/europa-al-limite/",
+    "url": "https://avaros58.github.io/mis-html/Trading/actualidad/europa-al-limite/",
+    "publicada": false
+  }
+}
