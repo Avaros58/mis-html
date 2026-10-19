@@ -1,12 +1,12 @@
 # Europa al límite · Paquete para GitHub Pages
 
-Edición preparada el 19/10/2026. **Paquete local; todavía no publicado.**
+Edición preparada y publicada el 19/10/2026. Metadatos ajustados a la ubicación definitiva.
 
 ## Destino previsto
 
 - Repositorio: `Avaros58/mis-html`.
-- Carpeta dentro del repositorio: `Trading/actualidad/europa-al-limite/`.
-- URL pública prevista: <https://avaros58.github.io/mis-html/Trading/actualidad/europa-al-limite/>.
+- Carpeta dentro del repositorio: `marcvidal/Europa_al_límite/`.
+- URL pública: <https://avaros58.github.io/mis-html/marcvidal/Europa_al_l%C3%ADmite/>.
 
 El HTML ya contiene esa URL en `canonical`, Open Graph, Twitter Card y datos estructurados. Si cambia el repositorio o la carpeta, habrá que sustituirla en `index.html` antes de publicar y volver a generar el manifiesto.
 
@@ -24,7 +24,7 @@ La transcripción original, las capturas de control y los PDF de revisión no fo
 ## Incorporación al repositorio
 
 1. Descomprime el ZIP. GitHub no convierte por sí solo un ZIP subido en una web navegable.
-2. Copia **el contenido** de esta carpeta en `Trading/actualidad/europa-al-limite/` dentro del repositorio, conservando nombres, minúsculas y la carpeta `assets`.
+2. Copia **el contenido** de esta carpeta en `marcvidal/Europa_al_límite/` dentro del repositorio, conservando nombres, mayúsculas, minúsculas, la tilde y la carpeta `assets`.
 3. Revisa que no se eliminen ni modifiquen otras publicaciones del repositorio.
 4. Confirma el cambio, súbelo a la rama que ya sirve GitHub Pages y espera a que finalice el despliegue existente.
 5. Comprueba la URL pública, las dos imágenes, varios saltos temporales y el selector de letra.
