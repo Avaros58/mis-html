@@ -22,3 +22,13 @@
 @media(max-width:950px){.cover-text{padding:38px 30px;width:80%}.cover-hero{min-height:520px}}
 @media(max-width:700px){.cover-hero{min-height:0;margin-top:20px;flex-direction:column;align-items:stretch}.cover-text{width:100%;max-width:none;padding:32px 24px;order:1}.cover-text h1{font-size:clamp(2.5rem,10.7vw,3.5rem)}.cover-image{position:static;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;order:2}.cover-hero::after{display:none}.cover-text .lede{font-size:1.05rem}.cover-text .eyebrow{font-size:.65rem}.cover-text .subtitle{font-size:1.5rem}.search-controls label{flex-wrap:wrap}.search-controls{display:block}.search-controls label+label{margin-top:14px}.entry-list .entry-read{grid-column:2;justify-self:start}}
 @media print{.cover-hero{color:black;background:white;min-height:0;display:block}.cover-image,.cover-hero::after,.art-credit,.reading-collection{display:none}.cover-text{width:100%;padding:0}.cover-text h1,.cover-text .eyebrow,.cover-text .subtitle,.cover-text .lede{color:black}.source{display:none!important}.print-source{display:block}.synthesis-source{break-before:auto}}
+
+/* Legibilidad de portada y recorrido; escala compartida con las entregas. */
+html.readable-navigation{font-size:18.88px}
+.navigation-size{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:.6rem;padding:1rem 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.navigation-size button{border:1px solid var(--line);border-radius:3px;background:var(--white);color:var(--petrol);padding:.4rem .7rem;min-height:44px}
+.readable-navigation .volumes{grid-template-columns:repeat(2,minmax(0,1fr))}
+.readable-navigation .volume p{font-size:1rem}
+.readable-navigation .sidebox p{font-size:1rem}
+@media(max-width:700px){.navigation-size{justify-content:flex-start}.readable-navigation .volumes{grid-template-columns:1fr}.readable-navigation .section-head{flex-wrap:wrap}}
+@media print{html.readable-navigation{font-size:16px!important}.navigation-size{display:none!important}}

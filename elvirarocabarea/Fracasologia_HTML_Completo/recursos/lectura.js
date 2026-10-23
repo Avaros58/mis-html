@@ -11,6 +11,22 @@ document.documentElement.classList.add('js');
     a.textContent='Retomar la entrega '+last.number+' · '+last.title;
     resume.append(a);
   }
+  const navigationControls=document.querySelector('[data-navigation-size]');
+  if(navigationControls){
+    const stored=read(namespace+'tamano');
+    let size=Number.isFinite(stored)?Math.min(1.5,Math.max(1.06,stored)):1.18;
+    const updateNavigationSize=()=>{
+      document.documentElement.style.fontSize=(16*size)+'px';
+      document.querySelector('[data-navigation-size="minus"]').disabled=size<=1.06;
+      document.querySelector('[data-navigation-size="plus"]').disabled=size>=1.5;
+      document.querySelector('[data-navigation-status]').textContent=Math.round(size/1.18*100)+' %';
+    };
+    updateNavigationSize();
+    document.querySelectorAll('[data-navigation-size]').forEach(button=>button.addEventListener('click',()=>{
+      size=button.dataset.navigationSize==='reset'?1.18:Math.round((size+(button.dataset.navigationSize==='plus'?0.08:-0.08))*100)/100;
+      size=Math.min(1.5,Math.max(1.06,size));updateNavigationSize();save(namespace+'tamano',size);
+    }));
+  }
   const body=document.querySelector('.reading-body');
   if(body){
     let stored=read(namespace+'tamano');
