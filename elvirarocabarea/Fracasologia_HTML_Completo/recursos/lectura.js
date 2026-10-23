@@ -16,7 +16,7 @@ document.documentElement.classList.add('js');
     const stored=read(namespace+'tamano');
     let size=Number.isFinite(stored)?Math.min(1.5,Math.max(1.06,stored)):1.18;
     const updateNavigationSize=()=>{
-      document.documentElement.style.fontSize=(16*size)+'px';
+      document.documentElement.style.fontSize=(18*size)+'px';
       document.querySelector('[data-navigation-size="minus"]').disabled=size<=1.06;
       document.querySelector('[data-navigation-size="plus"]').disabled=size>=1.5;
       document.querySelector('[data-navigation-status]').textContent=Math.round(size/1.18*100)+' %';

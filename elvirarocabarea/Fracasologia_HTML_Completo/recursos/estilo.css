@@ -32,3 +32,20 @@ html.readable-navigation{font-size:18.88px}
 .readable-navigation .sidebox p{font-size:1rem}
 @media(max-width:700px){.navigation-size{justify-content:flex-start}.readable-navigation .volumes{grid-template-columns:1fr}.readable-navigation .section-head{flex-wrap:wrap}}
 @media print{html.readable-navigation{font-size:16px!important}.navigation-size{display:none!important}}
+
+/* Amplitud y tipografía para pantallas de sobremesa. */
+html.readable-navigation{font-size:21.24px}
+.readable-navigation .wrap{width:min(1600px,calc(100% - 80px))}
+.js .navigation-size{display:flex}
+.readable-navigation .catalog-layout{grid-template-columns:minmax(260px,320px) minmax(0,1fr);gap:48px}
+.readable-navigation .page-heading{max-width:1200px}
+.readable-navigation .entry-list .entry-title{font-size:1.08rem;line-height:1.55}
+.readable-navigation .entry-list li{padding:20px 0}
+.readable-navigation .entry-list .entry-number,.readable-navigation .entry-list .entry-read{font-size:.9rem}
+.readable-navigation .sidebox h2{font-size:.85rem}
+.readable-navigation .topnav{font-size:.95rem}
+.readable-navigation .section-intro{max-width:1100px}
+.readable-navigation .cover-text .lede{max-width:580px;font-size:1.15rem}
+@media(max-width:1000px){.readable-navigation .catalog-layout{grid-template-columns:1fr}.readable-navigation .sidebox{max-width:48rem}}
+@media(max-width:700px){.readable-navigation .wrap{width:calc(100% - 36px)}.readable-navigation .entry-list .entry-title{font-size:1rem}.readable-navigation .cover-text{padding:28px 20px}}
+@media print{.readable-navigation .wrap{width:100%}}
