@@ -14,7 +14,9 @@ document.documentElement.classList.add('js');
   const navigationControls=document.querySelector('[data-navigation-size]');
   if(navigationControls){
     const stored=read(namespace+'tamano');
-    let size=Number.isFinite(stored)?Math.min(1.5,Math.max(1.06,stored)):1.18;
+    const openingSize=Number(document.documentElement.dataset.openingSize)||null;
+    let size=openingSize||(Number.isFinite(stored)?Math.min(1.5,Math.max(1.06,stored)):1.18);
+    if(openingSize)save(namespace+'tamano',size);
     const updateNavigationSize=()=>{
       document.documentElement.style.fontSize=(18*size)+'px';
       document.querySelector('[data-navigation-size="minus"]').disabled=size<=1.06;
@@ -23,7 +25,7 @@ document.documentElement.classList.add('js');
     };
     updateNavigationSize();
     document.querySelectorAll('[data-navigation-size]').forEach(button=>button.addEventListener('click',()=>{
-      size=button.dataset.navigationSize==='reset'?1.18:Math.round((size+(button.dataset.navigationSize==='plus'?0.08:-0.08))*100)/100;
+      size=button.dataset.navigationSize==='reset'?(openingSize||1.18):Math.round((size+(button.dataset.navigationSize==='plus'?0.08:-0.08))*100)/100;
       size=Math.min(1.5,Math.max(1.06,size));updateNavigationSize();save(namespace+'tamano',size);
     }));
   }
