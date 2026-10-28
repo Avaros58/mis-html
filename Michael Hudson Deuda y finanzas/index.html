@@ -15,6 +15,47 @@ body{font-size:1rem}
 @media(max-width:850px){.g3,.g2,.versus{grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))}}
 @media(max-width:600px){.brand{flex-basis:100%}.topin{gap:8px}.font-control{margin-right:auto}.top .action:first-of-type{display:inline-block}.ti{grid-template-columns:minmax(85px,30%) minmax(0,1fr)}.timeline{margin-left:12px}.ti{margin-left:-15px}.resource{flex-wrap:wrap}}
 @media print{html{font-size:16px!important}}
+
+/* Ajustes de composición para tamaños de lectura grandes (100-200%). */
+html,body{max-width:100%;overflow-x:clip}
+.hero,.hero>div,.wrap,.head,.card,.resource,.resources,.visual{min-width:0}
+.hero h1,.head h2{overflow-wrap:normal;word-break:normal;hyphens:auto}
+.hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+/* La navegación se reparte en filas; ninguna pestaña queda oculta. */
+.tabs{flex-wrap:wrap;overflow:visible;align-content:start;scroll-margin-top:var(--top-height,57px)}
+.tab{white-space:normal;overflow-wrap:normal;text-align:center;max-width:100%}
+.panel{scroll-margin-top:calc(var(--top-height,57px) + 1rem)}
+/* Los enlaces conservan palabras completas y ocupan el ancho que precisan. */
+.resource{flex-wrap:wrap;align-items:flex-start}
+.resource>div{min-width:0;flex:1 1 14rem}
+.resource .action,.actions .action{display:inline-flex;align-items:center;justify-content:center;text-align:center;white-space:normal;overflow-wrap:normal;word-break:normal;min-width:max-content;max-width:100%}
+.resource>div:last-child{display:flex;flex:0 1 auto;flex-wrap:wrap;gap:.65rem;align-items:center}
+.resources{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* El gráfico deja de usar posiciones absolutas, evitando superposiciones. */
+@media(max-width:1100px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .visual{min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:24px;align-items:stretch;justify-items:stretch}
+  .visual .orb,.visual .era{position:static;left:auto;right:auto;top:auto;bottom:auto;transform:none;width:auto;height:auto;min-width:0}
+  .visual .orb{grid-column:1/-1;min-height:160px;padding:20px;border-radius:22px}
+  .visual .era{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.3rem}
+  .visual .era small{overflow-wrap:break-word}
+}
+@media(max-width:850px){
+ .resources{grid-template-columns:minmax(0,1fr)}
+ .visual{grid-template-columns:minmax(0,1fr)}
+ .visual .orb{grid-column:auto}
+ .head{flex-wrap:wrap}
+}
+/* Adaptación anticipada cuando el lector elige 140-200%, incluso en PC. */
+html[data-reader-scale="140"] .hero,html[data-reader-scale="150"] .hero,html[data-reader-scale="160"] .hero,html[data-reader-scale="170"] .hero,html[data-reader-scale="180"] .hero,html[data-reader-scale="190"] .hero,html[data-reader-scale="200"] .hero{grid-template-columns:minmax(0,1fr)}
+html[data-reader-scale="140"] .visual,html[data-reader-scale="150"] .visual,html[data-reader-scale="160"] .visual,html[data-reader-scale="170"] .visual,html[data-reader-scale="180"] .visual,html[data-reader-scale="190"] .visual,html[data-reader-scale="200"] .visual{min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:24px;align-items:stretch}
+html[data-reader-scale="140"] .visual .orb,html[data-reader-scale="150"] .visual .orb,html[data-reader-scale="160"] .visual .orb,html[data-reader-scale="170"] .visual .orb,html[data-reader-scale="180"] .visual .orb,html[data-reader-scale="190"] .visual .orb,html[data-reader-scale="200"] .visual .orb,
+html[data-reader-scale="140"] .visual .era,html[data-reader-scale="150"] .visual .era,html[data-reader-scale="160"] .visual .era,html[data-reader-scale="170"] .visual .era,html[data-reader-scale="180"] .visual .era,html[data-reader-scale="190"] .visual .era,html[data-reader-scale="200"] .visual .era{position:static;left:auto;right:auto;top:auto;bottom:auto;transform:none;width:auto;height:auto;min-width:0}
+html[data-reader-scale="140"] .visual .orb,html[data-reader-scale="150"] .visual .orb,html[data-reader-scale="160"] .visual .orb,html[data-reader-scale="170"] .visual .orb,html[data-reader-scale="180"] .visual .orb,html[data-reader-scale="190"] .visual .orb,html[data-reader-scale="200"] .visual .orb{grid-column:1/-1;min-height:160px;padding:20px;border-radius:22px}
+html[data-reader-scale="140"] .visual .era,html[data-reader-scale="150"] .visual .era,html[data-reader-scale="160"] .visual .era,html[data-reader-scale="170"] .visual .era,html[data-reader-scale="180"] .visual .era,html[data-reader-scale="190"] .visual .era,html[data-reader-scale="200"] .visual .era{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.3rem}
+html[data-reader-scale="150"] .resources,html[data-reader-scale="160"] .resources,html[data-reader-scale="170"] .resources,html[data-reader-scale="180"] .resources,html[data-reader-scale="190"] .resources,html[data-reader-scale="200"] .resources{grid-template-columns:minmax(0,1fr)}
+@media(max-width:600px){.hero{gap:20px}.visual{padding:14px}.resource .action{min-width:0}.tabs{position:static}.topin{justify-content:space-between}}
+@media print{html,body{overflow:visible}.tabs{display:none}.visual{display:none!important}.resources{grid-template-columns:1fr}}
 </style></head><body><header class="top"><div class="topin"><div class="brand">HUDSON <span>· HISTORIA DE LA DEUDA</span></div><label class="font-control" for="font-size-control">Tamaño de letra <select id="font-size-control" aria-label="Tamaño de letra"><option value="100">100 %</option><option value="110">110 %</option><option value="120">120 %</option><option value="130">130 %</option><option value="140">140 %</option><option value="150">150 %</option><option value="160">160 %</option><option value="170">170 %</option><option value="180">180 %</option><option value="190">190 %</option><option value="200">200 %</option></select></label><button class="action" onclick="print()">Imprimir / PDF</button></div></header><main><section class="hero"><div><span class="kicker">Informe interactivo · agosto de 2026</span><h1>El sistema financiero de Occidente al borde del colapso</h1><p class="lead">Una lectura histórica de Michael Hudson sobre cinco mil años de deuda: desde los jubileos mesopotámicos hasta la financiarización occidental y el contraste con China.</p><div class="meta"><span>Michael Hudson</span><span>Glenn Diesen</span><span>≈ 56 minutos</span></div><div class="actions"><a class="action primary" href="https://youtu.be/pi8ACFaM57I" target="_blank">▶ Ver entrevista</a><a class="action pdf" href="informe-michael-hudson-deuda-finanzas.pdf" target="_blank">▣ Abrir informe PDF</a><a class="action" href="informe-michael-hudson-deuda-finanzas.pdf" download>↓ Descargar PDF</a></div></div><div class="visual"><div class="orb"><b>5.000</b><small>años de deuda</small></div><div class="era e1"><b>Jubileo</b><small>Restaurar equilibrio</small></div><div class="era e2"><b>Oligarquía</b><small>Concentrar propiedad</small></div><div class="era e3"><b>Finanzas</b><small>Gobernar con deuda</small></div></div></section><aside class="notice"><b>Cautela editorial.</b> La página reconstruye la interpretación de Hudson. Sus tesis históricas deben distinguirse de los hechos documentados y contrastarse con la historiografía especializada.</aside><section class="wrap"><nav class="tabs"><button class="tab on" data-id="sintesis">Síntesis</button><button class="tab" data-id="historia">5.000 años</button><button class="tab" data-id="banca">Banca y guerra</button><button class="tab" data-id="modelos">Dos capitalismos</button><button class="tab" data-id="actualidad">Occidente y China</button><button class="tab" data-id="critica">Lectura crítica</button><button class="tab" data-id="fuentes">Fuentes y PDF</button></nav>
 <section id="sintesis" class="panel on"><div class="head"><div><span class="kicker">Tesis central</span><h2>Cuando la deuda crece más que la economía</h2></div><p>Las finanzas deben permanecer subordinadas a la reproducción material y social.</p></div><blockquote>Toda civilización debe decidir si el sistema financiero estará subordinado a la sociedad o si la sociedad quedará subordinada a los derechos acumulativos de los acreedores.</blockquote><div class="grid g3"><article class="card"><h3>El problema matemático</h3><p>El interés compuesto puede crecer más rápidamente que producción, salarios e ingresos públicos.</p></article><article class="card"><h3>El problema político</h3><p>La riqueza financiera convierte deuda en propiedad, dependencia e influencia institucional.</p></article><article class="card"><h3>La alternativa</h3><p>Crédito público, servicios asequibles, límites a las rentas e inversión productiva.</p></article></div><div class="flow"><div>Crece la deuda</div><div>Absorbe ingresos</div><div>Cae el consumo</div><div>Se venden activos</div><div>Crece la concentración</div></div></section>
 <section id="historia" class="panel"><div class="head"><div><span class="kicker">Larga duración</span><h2>Cinco mil años de deuda y poder</h2></div></div><div class="timeline"> <article class="ti"><div class="date">3000–500 a. C.</div><div><h3>Mesopotamia y Egipto</h3><p>Cancelaciones agrarias, liberación de servidores y restitución de tierras.</p></div></article><article class="ti"><div class="date">Tradición bíblica</div><div><h3>El jubileo</h3><p>Restaurar libertad, tierra y equilibrio comunitario.</p></div></article><article class="ti"><div class="date">Grecia y Roma</div><div><h3>Del contrato a la oligarquía</h3><p>Las deudas impagables se transforman en tierra, dependencia y poder.</p></div></article><article class="ti"><div class="date">Siglos XI–XIII</div><div><h3>Papado, Cruzadas y crédito</h3><p>Redes bancarias financian reyes, ejércitos y campañas.</p></div></article><article class="ti"><div class="date">Siglo XIX</div><div><h3>Capitalismo industrial</h3><p>La economía clásica combate rentas, monopolios e intereses improductivos.</p></div></article><article class="ti"><div class="date">Desde 1980</div><div><h3>Capitalismo financiero</h3><p>Privatización, deuda para activos y restauración rentista.</p></div></article></div></section>
@@ -34,6 +75,7 @@ body{font-size:1rem}
     const pct=Number(value);
     if(!Number.isFinite(pct)||pct<100||pct>200||pct%10!==0)return;
     document.documentElement.style.setProperty('--reader-font-size',(16*pct/100)+'px');
+     document.documentElement.dataset.readerScale=String(pct);
     control.value=String(pct);
     try {localStorage.setItem(storageKey,String(pct));}catch(e){}
     updateHeaderHeight();
