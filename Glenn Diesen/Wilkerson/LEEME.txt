@@ -1,0 +1,1 @@
+Informe Lawrence Wilkerson. Subir index.html y portada-redes.jpg juntos, dentro de una carpeta nueva del repositorio mis-html. No alterar el índice general ni otros archivos. La imagen incluye una representación editorial generada por IA. Verificar la URL tras Push origin.
