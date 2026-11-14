@@ -1,0 +1,109 @@
+WEBVTT
+
+1
+00:00:00.430 --> 00:00:02.832
+An AI agent in Attis writes an
+
+2
+00:00:02.832 --> 00:00:04.433
+indicator from your description.
+
+3
+00:00:05.714 --> 00:00:08.075
+Many indicators live only in a trader's
+
+4
+00:00:08.075 --> 00:00:10.797
+head. Say, big volume with delta
+
+5
+00:00:10.797 --> 00:00:13.159
+against the candle. This used to take a
+
+6
+00:00:13.159 --> 00:00:15.360
+programmer. Now all it takes is
+
+7
+00:00:15.360 --> 00:00:17.162
+describing the condition in words.
+
+8
+00:00:18.042 --> 00:00:19.963
+Describe the condition in words and
+
+9
+00:00:19.963 --> 00:00:22.925
+numbers. For example, volume twice
+
+10
+00:00:22.925 --> 00:00:25.447
+the 20 bar average with delta against the
+
+11
+00:00:25.447 --> 00:00:28.249
+candle color. The agent writes the
+
+12
+00:00:28.249 --> 00:00:30.651
+indicator and first runs it on your bars
+
+13
+00:00:30.731 --> 00:00:33.372
+without saving. The test passed.
+
+14
+00:00:33.773 --> 00:00:35.854
+The indicator is saved and marks the
+
+15
+00:00:35.854 --> 00:00:38.736
+right bars on the chart. The reply
+
+16
+00:00:38.736 --> 00:00:40.857
+tells you how many bars it marked and
+
+17
+00:00:40.857 --> 00:00:43.459
+what settings it has. Want to change
+
+18
+00:00:43.459 --> 00:00:45.461
+something?Say it in words too.
+
+19
+00:00:46.341 --> 00:00:48.422
+The agent changes what you asked for.
+
+20
+00:00:48.823 --> 00:00:51.184
+Here it's the styling, but the logic
+
+21
+00:00:51.184 --> 00:00:53.646
+changes the same way. The marks are
+
+22
+00:00:53.646 --> 00:00:56.288
+easier to spot and the indicator's logic
+
+23
+00:00:56.288 --> 00:00:59.250
+stays the same. Your own indicator,
+
+24
+00:00:59.490 --> 00:01:02.332
+no programming. Connect an AI agent to
+
+25
+00:01:02.492 --> 00:01:05.094
+Attis and describe your idea. You choose
+
+26
+00:01:05.094 --> 00:01:07.255
+the agent and its subscription yourself.
+
+27
+00:01:11.098 --> 00:01:13.259
+Imagine it. Attis does it.

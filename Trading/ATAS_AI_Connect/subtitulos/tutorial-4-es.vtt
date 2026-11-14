@@ -1,0 +1,145 @@
+WEBVTT
+
+1
+00:00:00.390 --> 00:00:03.273
+Un agente de IA en ATAS pone a prueba tus
+
+2
+00:00:03.273 --> 00:00:06.036
+hipótesis de trading. Comprobar una
+
+3
+00:00:06.036 --> 00:00:08.439
+idea de trading manualmente supone semanas
+
+4
+00:00:08.439 --> 00:00:09.640
+revisando gráficos y
+
+5
+00:00:09.640 --> 00:00:12.363
+hojas de cálculo. La herramienta de pruebas
+
+6
+00:00:12.363 --> 00:00:14.846
+de hipótesis la verifica con el histórico de ATAS
+
+7
+00:00:14.846 --> 00:00:17.649
+en minutos. Añade la herramienta y
+
+8
+00:00:17.649 --> 00:00:19.811
+el texto del curso, más una línea
+
+9
+00:00:19.811 --> 00:00:22.614
+al principio. Incluye reglas para una prueba
+
+10
+00:00:22.614 --> 00:00:25.577
+justa: precisar las condiciones, comparar
+
+11
+00:00:25.577 --> 00:00:27.979
+con entradas aleatorias y validar fuera de muestra.
+
+12
+00:00:28.710 --> 00:00:30.672
+Describe la idea como se la explicarías
+
+13
+00:00:30.672 --> 00:00:33.555
+a un compañero. Por ejemplo: compro
+
+14
+00:00:33.555 --> 00:00:35.557
+cuando una vela presenta tres niveles consecutivos
+
+15
+00:00:35.557 --> 00:00:37.960
+donde las compras triplican las ventas y
+
+16
+00:00:37.960 --> 00:00:40.763
+la vela cierra en su tercio superior. Stop por debajo
+
+17
+00:00:40.763 --> 00:00:43.326
+del mínimo de la vela; objetivo igual a la distancia
+
+18
+00:00:43.566 --> 00:00:46.209
+del stop, más la comisión. El agente
+
+19
+00:00:46.209 --> 00:00:48.771
+repite las reglas y pregunta por cualquier detalle
+
+20
+00:00:48.771 --> 00:00:51.614
+que pueda interpretarse de dos maneras. Tú confirmas
+
+21
+00:00:51.614 --> 00:00:54.588
+en un solo mensaje. El agente abre
+
+22
+00:00:54.588 --> 00:00:57.150
+otra pestaña con un gráfico, obtiene las velas
+
+23
+00:00:57.150 --> 00:00:59.313
+y el footprint de ATAS y calcula
+
+24
+00:00:59.393 --> 00:01:02.196
+cada operación. Tus gráficos quedan
+
+25
+00:01:02.196 --> 00:01:04.678
+como estaban. La prueba va en otra pestaña.
+
+26
+00:01:05.639 --> 00:01:07.721
+El informe muestra el número de operaciones,
+
+27
+00:01:07.882 --> 00:01:10.444
+los stops resultantes, una comparación
+
+28
+00:01:10.444 --> 00:01:12.446
+con entradas aleatorias y una comprobación
+
+29
+00:01:12.446 --> 00:01:15.329
+fuera de muestra. Es una prueba histórica.
+
+30
+00:01:15.650 --> 00:01:18.052
+Los resultados pasados no garantizan los futuros,
+
+31
+00:01:18.212 --> 00:01:21.045
+y la decisión es tuya. Conecta un
+
+32
+00:01:21.045 --> 00:01:23.768
+agente de IA a ATAS y prueba tus ideas
+
+33
+00:01:23.768 --> 00:01:26.571
+con datos históricos en minutos, no semanas. Tú
+
+34
+00:01:26.571 --> 00:01:28.413
+eliges el agente y su suscripción
+
+35
+00:01:28.413 --> 00:01:28.974
+por tu cuenta.
+
+36
+00:01:33.218 --> 00:01:35.381
+Imagínalo. ATAS lo hace.

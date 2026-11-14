@@ -1,0 +1,109 @@
+WEBVTT
+
+1
+00:00:00.430 --> 00:00:02.832
+Un agente de IA en ATAS crea un
+
+2
+00:00:02.832 --> 00:00:04.433
+indicador a partir de tu descripción.
+
+3
+00:00:05.714 --> 00:00:08.075
+Muchos indicadores solo existen en la
+
+4
+00:00:08.075 --> 00:00:10.797
+mente del trader. Por ejemplo, mucho volumen con delta
+
+5
+00:00:10.797 --> 00:00:13.159
+contrario a la vela. Antes hacía falta
+
+6
+00:00:13.159 --> 00:00:15.360
+un programador. Ahora basta con
+
+7
+00:00:15.360 --> 00:00:17.162
+describir la condición con palabras.
+
+8
+00:00:18.042 --> 00:00:19.963
+Describe la condición con palabras y
+
+9
+00:00:19.963 --> 00:00:22.925
+números. Por ejemplo, un volumen que duplique
+
+10
+00:00:22.925 --> 00:00:25.447
+la media de 20 velas, con delta contrario al
+
+11
+00:00:25.447 --> 00:00:28.249
+color de la vela. El agente crea el
+
+12
+00:00:28.249 --> 00:00:30.651
+indicador y primero lo prueba en tus velas
+
+13
+00:00:30.731 --> 00:00:33.372
+sin guardarlo. La prueba se supera.
+
+14
+00:00:33.773 --> 00:00:35.854
+El indicador se guarda y señala las
+
+15
+00:00:35.854 --> 00:00:38.736
+velas adecuadas en el gráfico. La respuesta
+
+16
+00:00:38.736 --> 00:00:40.857
+te indica cuántas velas ha marcado y
+
+17
+00:00:40.857 --> 00:00:43.459
+qué parámetros tiene. ¿Quieres cambiar
+
+18
+00:00:43.459 --> 00:00:45.461
+algo? También puedes pedirlo con palabras.
+
+19
+00:00:46.341 --> 00:00:48.422
+El agente realiza el cambio solicitado.
+
+20
+00:00:48.823 --> 00:00:51.184
+Aquí cambia el aspecto visual, pero la lógica
+
+21
+00:00:51.184 --> 00:00:53.646
+se modifica del mismo modo. Las marcas
+
+22
+00:00:53.646 --> 00:00:56.288
+son más fáciles de identificar y la lógica
+
+23
+00:00:56.288 --> 00:00:59.250
+del indicador sigue igual. Tu propio indicador,
+
+24
+00:00:59.490 --> 00:01:02.332
+sin programar. Conecta un agente de IA a
+
+25
+00:01:02.492 --> 00:01:05.094
+ATAS y describe tu idea. Tú eliges
+
+26
+00:01:05.094 --> 00:01:07.255
+el agente y su suscripción.
+
+27
+00:01:11.098 --> 00:01:13.259
+Imagínalo. ATAS lo hace.
