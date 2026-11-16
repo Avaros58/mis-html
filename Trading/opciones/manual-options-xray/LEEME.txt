@@ -1,24 +1,13 @@
-OPTIONS X-RAY · EDICIÓN DEFINITIVA CON GUÍA DE CONVERSACIONES
+OPTIONS X-RAY · ACTUALIZACIÓN DE PORTADA Y ANCHURA
 
-Archivo: index.html
+Destino: repositorio mis-html / Trading / opciones / manual-options-xray /
 
-CAMBIO DE ESTA EDICIÓN
-- Añadida una guía de tres párrafos al apartado «1. Un mapa de preguntas»: Consultar, Guardar y Recuperar.
-- Sustituida la referencia a Edge en la etiqueta del formulario por «tu navegador».
-- El resto del manual y las claves de localStorage permanecen intactos.
+1. Sustituir SOLO index.html por el de este paquete.
+2. Copiar imagenes/portada-options-xray.jpg a la carpeta imagenes/ EXISTENTE (NO borrarla: conserva las 12 capturas del manual).
+3. Commit to main y Push origin en GitHub Desktop.
+4. Abrir la URL habitual del manual y forzar recarga (Ctrl+F5) si aparece una versión antigua.
 
-PUBLICACIÓN
-1. Para actualizar el PILOTO, sustituye su index.html en:
-   Trading/opciones/manual-options-xray-piloto/index.html
-2. Para publicarlo como MANUAL PRINCIPAL después de validar el piloto, sustituye:
-   Trading/opciones/manual-options-xray/index.html
-3. Realiza Commit to main y Push origin desde GitHub Desktop.
+Cambios: diseño del contenido ampliado de 1260 a 1580 px, ajustes de tablas con desplazamiento horizontal en pantallas estrechas, portada dentro del manual, imagen para redes 1200x630, metadatos Open Graph y Twitter Card. Se conservan los 16 menús de conversación y las funciones de lectura.
 
-IMPORTANTE SOBRE IMÁGENES
-Esta edición utiliza las URLs de imágenes heredadas de la versión piloto, alojadas en el manual principal.
-No muevas ni elimines la carpeta imagenes/ del manual principal.
-
-PRIVACIDAD Y SINCRONIZACIÓN
-- Los favoritos del navegador pueden sincronizarse entre dispositivos si el usuario lo tiene activado.
-- localStorage no se sincroniza entre dispositivos; conservar el mismo origen web ayuda a mantener los vínculos locales.
-- La URL original del chat no debe confundirse con un enlace público de «Compartir».
+NOTA: Los datos numéricos de la imagen son ilustrativos, no cotizaciones observadas.
+NOTA: Las plataformas sociales pueden tardar en refrescar su caché de imágenes compartidas.
