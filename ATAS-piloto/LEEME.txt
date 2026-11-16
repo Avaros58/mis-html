@@ -1,0 +1,5 @@
+PILOTO: Guía ATAS Dinero Inteligente con ChatGPT y tamaño 100-200%.
+Publicar como carpeta independiente mis-html/ATAS-piloto/index.html.
+NO sustituir /ATAS/ antes de probar.
+Las imágenes permanecen embebidas, sin archivos adicionales.
+Los enlaces de chats se guardan localmente por navegador/origen; use favoritos sincronizados entre dispositivos.
