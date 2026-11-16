@@ -1,0 +1,24 @@
+OPTIONS X-RAY · EDICIÓN DEFINITIVA CON GUÍA DE CONVERSACIONES
+
+Archivo: index.html
+
+CAMBIO DE ESTA EDICIÓN
+- Añadida una guía de tres párrafos al apartado «1. Un mapa de preguntas»: Consultar, Guardar y Recuperar.
+- Sustituida la referencia a Edge en la etiqueta del formulario por «tu navegador».
+- El resto del manual y las claves de localStorage permanecen intactos.
+
+PUBLICACIÓN
+1. Para actualizar el PILOTO, sustituye su index.html en:
+   Trading/opciones/manual-options-xray-piloto/index.html
+2. Para publicarlo como MANUAL PRINCIPAL después de validar el piloto, sustituye:
+   Trading/opciones/manual-options-xray/index.html
+3. Realiza Commit to main y Push origin desde GitHub Desktop.
+
+IMPORTANTE SOBRE IMÁGENES
+Esta edición utiliza las URLs de imágenes heredadas de la versión piloto, alojadas en el manual principal.
+No muevas ni elimines la carpeta imagenes/ del manual principal.
+
+PRIVACIDAD Y SINCRONIZACIÓN
+- Los favoritos del navegador pueden sincronizarse entre dispositivos si el usuario lo tiene activado.
+- localStorage no se sincroniza entre dispositivos; conservar el mismo origen web ayuda a mantener los vínculos locales.
+- La URL original del chat no debe confundirse con un enlace público de «Compartir».
