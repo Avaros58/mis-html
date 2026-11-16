@@ -1,0 +1,8 @@
+ATAS · Dinero Inteligente — actualización del menú de conversaciones
+
+Sustituir exclusivamente index.html en la carpeta del piloto ATAS-piloto del repositorio mis-html.
+No altera otras rutas ni requiere imágenes adicionales: están integradas en el HTML.
+
+Al desplegar Vincular conversación aparecen dos campos: nombre sugerido (editable) y enlace original del chat. Ya no aparece una ventana emergente.
+Los enlaces previamente guardados siguen usando las mismas claves de localStorage, siempre que la URL pública no cambie.
+Para compartir entre dispositivos, conservar el favorito sincronizado del navegador.
