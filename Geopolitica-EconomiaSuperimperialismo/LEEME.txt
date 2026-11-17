@@ -1,0 +1,21 @@
+SUPER IMPERIALISMO · MICHAEL HUDSON
+Edición HTML interactiva basada en el informe editorial facilitado (15 páginas).
+Incluye la portada alegórica aprobada por el usuario.
+
+CONTENIDO DEL ZIP
+- index.html: texto completo, navegación, esquemas, ampliación y sistema de estudio con ChatGPT.
+- portada-superimperialismo.jpg: portada original horizontal de 1200 × 630 px.
+- LEEME.txt: estas indicaciones.
+
+PARA REVISAR EL HTML
+Extraer ambos archivos en la MISMA carpeta y abrir index.html en el navegador.
+Si se mueve index.html solo, la imagen no aparecerá: mantener la ruta relativa.
+
+PARA GITHUB PAGES
+1. Copiar index.html y portada-superimperialismo.jpg juntos a una carpeta nueva en mis-html.
+2. Ruta propuesta: mis-html/Geopolitica-Economia/Superimperialismo/
+3. Las consultas de ChatGPT usan esa ruta propuesta. Si se publica en otro lugar, actualizar la constante base del HTML.
+4. Comprobar el resultado en navegador antes de darlo por definitivo: portada, zoom 100–200 %, menú móvil, enlaces, paneles ChatGPT, guardado y recuperación.
+5. El enlace og:image es relativo y puede no funcionar como vista previa de redes en todos los servicios; una vez confirmada la URL pública, conviene convertirlo en URL absoluta para difusión social.
+6. Los enlaces personales de conversaciones se guardan en localStorage; no se sincronizan entre dispositivos.
+7. La portada es una ilustración alegórica (no una fotografía documental).
